@@ -1,0 +1,169 @@
+.header {
+    background-color: #282828;
+    color: #fff;
+    padding: 20px 0;
+
+
+    &-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    &-logo-text {
+        font-family: Hermes;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+        text-align: center;
+        margin-left: 10px;
+    }
+
+    &-navigation {
+        width: 44.5%;
+    }
+
+    &-menu-btn {
+        display: none;
+    }
+
+    &-menu-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+
+    }
+
+    &-navlink {
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 175%;
+        text-align: center;
+    }
+
+    &-search-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #FFFFFF1A;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+
+        a {
+            text-align: center;
+
+        }
+
+        i {
+            color: #fff;
+            font-weight: 900;
+            font-size: 16px;
+            line-height: 165%;
+        }
+    }
+
+    &-user-action {
+        display: flex;
+        align-items: center;
+    }
+
+    &-sign-in {
+        margin-right: 33px;
+        text-decoration: none;
+        color: #fff;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 175%;
+        text-align: center;
+    }
+
+    &-user-avatar {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &-user-icon {
+        font-size: 15px;
+        line-height: 165%;
+        text-align: center;
+        color: #282828;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 480px) {
+    .header {
+
+        &-logo {
+            order: 1;
+        }
+
+        &-logo-img {
+            width: 40px;
+        }
+
+        &-logo-text {
+            display: none;
+        }
+
+        &-navigation {
+            order: 0;
+            display: flex;
+            align-items: center;
+            width: auto;
+        }
+
+        &-menu-btn {
+            display: block;
+
+            i {
+                display: block;
+                font-size: 18px;
+                line-height: 165%;
+                text-align: center;
+                color: #FFFFFF;
+            }
+        }
+
+        &-menu-list {
+            display: none;
+        }
+
+        &-user-action {
+            order: 2
+        }
+
+        &-sign-in {
+            display: none;
+        }
+
+        &-user-avatar {
+            background-color: transparent;
+            width: auto;
+            height: auto;
+        }
+
+        &-user-icon {
+            font-size: 15px;
+            line-height: 165%;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    }
+}
