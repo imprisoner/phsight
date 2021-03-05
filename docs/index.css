@@ -697,7 +697,7 @@ button.swiper-pagination-bullet {
     max-width: 1175px;
   }
 }
-@media (min-width: 375px) and (max-width: 991px) {
+@media (min-width: 320px) and (max-width: 991px) {
   .container {
     width: calc(100% - 40px);
     margin: 0 auto;
@@ -794,7 +794,7 @@ button.swiper-pagination-bullet {
   text-align: center;
   color: #282828;
 }
-@media (min-width: 375px) and (max-width: 991px) {
+@media (min-width: 320px) and (max-width: 991px) {
   .header-logo {
     order: 1;
   }
@@ -892,7 +892,7 @@ button.swiper-pagination-bullet {
   color: #EEEEEE;
   text-decoration: none;
 }
-@media (min-width: 375px) and (max-width: 991px) {
+@media (min-width: 320px) and (max-width: 991px) {
   .footer {
     padding: 70px 0;
     text-align: center;
@@ -1009,7 +1009,7 @@ button.swiper-pagination-bullet {
 .swiper-slide {
   width: auto;
 }
-@media (min-width: 375px) and (max-width: 991px) {
+@media (min-width: 320px) and (max-width: 991px) {
   .content-title {
     margin-bottom: 26px;
   }
