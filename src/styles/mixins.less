@@ -1,7 +1,7 @@
-.rounded-button(@border-color: #2828281A, @padX, @bg-color: transparent) {
+.rounded-button(@border-color: #2828281A, @padX, @padY: 6px, @bg-color: transparent) {
     border: 2px solid @border-color;
     border-radius: 10px;
-    padding: 6px @padX;
+    padding: @padY @padX;
     background-color: @bg-color;
 }
 

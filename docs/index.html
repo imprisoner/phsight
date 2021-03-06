@@ -8,15 +8,16 @@
   <link href="index.css" rel="stylesheet"></head>
   <body> 
 <header class="header">
-  <div class="container flex jcb">
+  <div class="container flex">
     <div class="header-logo"><img class="header-logo-img" src="./img/logo.svg" alt="logo">
       <p class="header-logo-text">фото.сайт</p>
     </div>
     <div class="header-navigation">
       <div class="header-menu-btn"><i class="fas fa-bars"></i></div>
-      <nav class="header-menu-list"><a class="header-navlink" href="#">Фотографии</a><a class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a>
-        <div class="header-search-btn"><a class="header-search-icon" href="#"><i class="fas fa-search"></i></a></div>
-      </nav>
+      <nav class="header-menu-list"><a class="header-navlink" href="#">Фотографии</a><a class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a></nav>
+      <div class="header-search search"><a class="header-search-btn"><i class="fas fa-search"></i></a>
+        <input class="header-search-field" placeholder="Поиск...">
+      </div>
     </div>
     <div class="header-user-action"><a class="header-sign-in" href="#">Регистрация</a>
       <div class="header-user-avatar"> <a class="header-user-icon"><i class="fas fa-user"></i></a></div>
@@ -31,9 +32,10 @@
             <nav class="content-nav-tabs">
               <div class="content-tab-marker"></div>
               <div class="swiper-container"> 
-                <div class="swiper-wrapper"><a class="content-nav-link swiper-slide active" href="#">Все</a><a class="content-nav-link swiper-slide" href="#">Новые</a><a class="content-nav-link swiper-slide" href="#">Популярные</a><a class="content-nav-link swiper-slide" href="#">Выбор редакции</a></div>
+                <div class="swiper-wrapper"><a class="content-nav-link swiper-slide active" href="#">Все</a><a class="content-nav-link swiper-slide" href="#">Новые</a><a class="content-nav-link swiper-slide" href="#">Популярные</a><a class="content-nav-link swiper-slide" href="#">Выбор редакции</a>
+                </div>
               </div>
-            </nav><a class="content-current-page">1</a>
+            </nav><a class="content-current-page">1</a><span>стр.</span>
           </div>
         </div>
       </div>
@@ -41,6 +43,11 @@
       <div class="content-body">   
         <div class="container">
           <div class="content-gallery justified-gallery"><a href="./img/popgallery/image 1.jpg"><img src="./img/popgallery/image 1.jpg" alt=""></a><a href="./img/popgallery/image 2.jpg"><img src="./img/popgallery/image 2.jpg" alt=""></a><a href="./img/popgallery/image 3.jpg"><img src="./img/popgallery/image 3.jpg" alt=""></a><a href="./img/popgallery/image 4.jpg"><img src="./img/popgallery/image 4.jpg" alt=""></a><a href="./img/popgallery/image 5.jpg"><img src="./img/popgallery/image 5.jpg" alt=""></a><a href="./img/popgallery/image 6.jpg"><img src="./img/popgallery/image 6.jpg" alt=""></a><a href="./img/popgallery/image 7.jpg"><img src="./img/popgallery/image 7.jpg" alt=""></a><a href="./img/popgallery/image 8.jpg"><img src="./img/popgallery/image 8.jpg" alt=""></a><a href="./img/popgallery/image 9.jpg"><img src="./img/popgallery/image 9.jpg" alt=""></a><a href="./img/popgallery/image 10.jpg"><img src="./img/popgallery/image 10.jpg" alt=""></a><a href="./img/popgallery/image 11.jpg"><img src="./img/popgallery/image 11.jpg" alt=""></a><a href="./img/popgallery/image 12.jpg"><img src="./img/popgallery/image 12.jpg" alt=""></a><a href="./img/popgallery/image 17.jpg"><img src="./img/popgallery/image 17.jpg" alt=""></a><a href="./img/popgallery/image 18.jpg"><img src="./img/popgallery/image 18.jpg" alt=""></a></div>
+        </div>
+      </div>
+      <div class="content-footer"> 
+        <div class="container flex">
+          <div class="content-pagination pagination"></div><a class="content-current-page">1</a><span>стр.</span>
         </div>
       </div>
     </main>
@@ -54,5 +61,5 @@
     <div class="footer-col col-3"><a class="footer-support" href="#">Техническая поддержка</a><a class="footer-advertising" href="#">Реклама на сайте</a><a class="footer-abuse" href="#">Жалобы / Abuse</a></div>
   </div>
 </footer>
-  <script src="vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_swiper-bundle_esm_js.54fa09507d6b08fe97d2.js"></script><script src="index.54fa09507d6b08fe97d2.js"></script></body>
+  <script src="vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_esm_components_core_core-class_js.4c01e5a0391dbd84c849.js"></script><script src="index.4c01e5a0391dbd84c849.js"></script></body>
 </html>

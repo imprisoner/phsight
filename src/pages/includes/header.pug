@@ -1,5 +1,5 @@
 header.header
-   .container.flex.jcb
+   .container.flex
       .header-logo
          img(src="./img/logo.svg" alt="logo").header-logo-img
          p.header-logo-text фото.сайт
@@ -10,9 +10,10 @@ header.header
             a(href="#").header-navlink Фотографии
             a(href="#").header-navlink Рейтинги
             a(href="#").header-navlink Авторы
-            .header-search-btn
-               a(href="#").header-search-icon
-                  i.fas.fa-search
+         .header-search.search
+            a.header-search-btn
+               i.fas.fa-search
+            input(placeholder="Поиск...").header-search-field
       .header-user-action
          a(href="#").header-sign-in Регистрация
          .header-user-avatar 
