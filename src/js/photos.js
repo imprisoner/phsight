@@ -43,7 +43,7 @@ $(document).on('DOMContentLoaded', function () {
 
     // JG init
 
-    $('.content-gallery').justifiedGallery({
+    $('.justified-gallery').justifiedGallery({
         rowHeight: 310,
         margins: 2,
         lastRow: 'justify',

@@ -9,7 +9,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 const PUG_DIR = path.join(__dirname, 'src/pages')
 const PUG_PAGES = fs.readdirSync(PUG_DIR).filter(filename => filename.endsWith('.pug'))
-
+console.log(PUG_DIR)
+console.log(PUG_PAGES)
 module.exports = {
     mode: 'development',
     context: path.resolve(__dirname, 'src'),
@@ -21,6 +22,8 @@ module.exports = {
     },
     entry: {
         index: './index.js',
+        photos: './photos.js',
+        profile: './profile.js'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -28,7 +31,8 @@ module.exports = {
         port: 3000
     },
     output: {
-        filename: '[name].[fullhash].js',
+        // filename: '[name].[fullhash].js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: ''
     },
@@ -41,7 +45,8 @@ module.exports = {
         }),
         ...PUG_PAGES.map(page => new HTMLWebpackPlugin({
             template: `${PUG_DIR}/${page}`,
-            filename: `./${page}`.replace(/\.pug/, '.html')
+            filename: `./${page}`.replace(/\.pug/, '.html'),
+            chunks: [`${page}`.replace(/\.pug/, '')]
         })),
         new CopyPlugin({
             patterns: [{
@@ -69,7 +74,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -79,7 +84,7 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(jpg|png|svg|jpeg)$/,
+                test: /\.(jpg|png|svg|jpeg|svg)$/,
                 loader: 'file-loader'
             }
         ]

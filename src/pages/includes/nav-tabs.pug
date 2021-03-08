@@ -3,3 +3,8 @@ nav.content-nav-tabs
     .swiper-container 
         .swiper-wrapper
             block tabs
+                mixin tabs(links)
+                    each link in links
+                        a.content-nav-link.swiper-slide= link
+                    else
+                        p NO LINKS
