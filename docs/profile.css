@@ -916,7 +916,7 @@
 .tabs {
   margin: 0;
 }
-@media (min-width: 375px) and (max-width: 479px) {
+@media (min-width: 375px) and (max-width: 479px) and (min-resolution: 100dpi){
   .profile-current-page,
   .profile-current-page ~ span {
     display: none;
