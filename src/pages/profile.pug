@@ -7,29 +7,30 @@ block content
     main.profile 
         .profile-top
             .hero 
-                .container 
-                    .hero-wrap.flex
-                        div(style="background: url(./img/profile/avatar.jpg)").hero-avatar
-                        .hero-description
-                            h3.hero-name Дмитрий Зеленский
-                            p.hero-location Россия, Ставрополь, был
-                                span.hero-last-visited  18 декабря, 16:56
-                        .hero-contacts
-                            a(href="#").hero-contact-link
-                                i.fab.fa-facebook
-                            a(href="#").hero-contact-link
-                                i.fab.fa-vk
-                            a(href="#").hero-contact-link.phone
-                                i.fas.fa-phone
-                                span +7 (903) 567-45-67
-                            a(href="#").hero-contact-link
-                                i.fab.fa-flickr
-                            a(href="#").hero-contact-link
-                                i.fab.fa-500px
-                            a(href="#").hero-contact-link
-                                i.fab.fa-behance
+                .container.flex
+                    div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
+
+                    .hero-description
+                        h3.hero-name Дмитрий Зеленский
+                        p.hero-location Россия, Ставрополь,
+                            span.hero-last-visited  был 18 декабря, 16:56
+                            span.hero-online онлайн
+                    .hero-contacts
+                        a(href="#").hero-contact-link
+                            i.fab.fa-facebook
+                        a(href="#").hero-contact-link
+                            i.fab.fa-vk
+                        a(href="#").hero-contact-link.phone
+                            i.fas.fa-phone
+                            span +7 (903) 567-45-67
+                        a(href="#").hero-contact-link
+                            i.fab.fa-flickr
+                        a(href="#").hero-contact-link
+                            i.fab.fa-500px
+                        a(href="#").hero-contact-link
+                            i.fab.fa-behance
                     .hero-about 
-                        p i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits
+                        p i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits
             .info
                 .info-block
                     p.text загружено<br>фотографий
@@ -53,17 +54,19 @@ block content
                     p.text просмотров<br>фотографий
                     p.data.viewed 91 156
             .nav
-                .container.flex.jcb
-                    include includes/nav-tabs.pug
-                        block tabs
-                            +tabs(['Фотографии', 'Альбомы', 'Избранное', 'Статистика', 'Подписчики'])
+                .container
                     .nav-actions
+                        a(href="#").nav-btn.nav-info
+                            i.fas.fa-info
                         a(href="#").nav-btn.nav-subscribe 
                             span Подписаться
                         a(href="#").nav-btn.nav-sendmail
                             i.fas.fa-envelope
                         a(href="#").nav-btn.nav-more
                             i.fas.fa-ellipsis-h
+                    include includes/nav-tabs.pug
+                        block tabs
+                            +tabs(['Фотографии', 'Альбомы', 'Избранное', 'Статистика', 'Подписчики'])
         .profile-body    
             .container
                 .profile-gallery.justified-gallery

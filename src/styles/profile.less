@@ -1,12 +1,13 @@
-@import 'justifiedGallery.css';
+@import './libs/justifiedGallery.css';
 // @import 'swiper-bundle.css';
 @import '../../node_modules/swiper/swiper.less';
-@import 'fonts.less';
-@import 'spec.less';
-@import 'mixins.less';
-@import 'header.less';
-@import 'footer.less';
-@import 'pagination.less';
+@import './common/fonts.less';
+@import './common/spec.less';
+@import './common/mixins.less';
+@import './components/header.less';
+@import './components/footer.less';
+@import './components/pagination.less';
+@import './components/nav-tabs.less';
 
 
 
@@ -40,10 +41,10 @@
 }
 
 .hero {
-    padding-bottom: 175px;
+    padding-bottom: 100px;
 
     .container {
-
+        flex-wrap: wrap;
         position: relative;
 
     }
@@ -69,16 +70,18 @@
         .roboto()
     }
 
+    &-online {
+        display: none;
+    }
+
     &-about {
-        position: absolute;
-        bottom: -78px;
-        left: 185px;
+        position: relative;
+        margin-left: 190px;
         display: flex;
         align-items: center;
-        height: 76px;
-        width: 100%;
+        width: 775px;
         max-width: max-content;
-        padding: 0 33px;
+        padding: 15px 33px;
         background-color: #f4f4f4;
         border-radius: 25px;
 
@@ -88,7 +91,7 @@
     }
 
     &-about:before {
-        
+
         display: block;
         content: ' ';
         background-image: url('.././assets/img/chunk.svg');
@@ -169,11 +172,14 @@
     border: 1px solid #0000001A;
 
     .container {
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
 
     &-actions {
         display: flex;
+        order: 1;
     }
 
     &-btn {
@@ -205,72 +211,135 @@
         .rounded-button(#eaeaea, 0, @bg-color: #eaeaea);
     }
 
-}
-
-//================= NAVIGATION COMPONENT
-
-.content {
-
-    &-nav-tabs {
-        // this margin shouldn't be applied here
-        // margin: 0 auto;
-        display: flex;
-        align-items: center;
-        position: relative;
+    &-info {
+        display: none;
     }
-
-    &-tab-marker {
-        position: absolute;
-        height: 4px;
-        width: 0;
-        left: 0;
-        bottom: -38px;
-        background-color: #000000;
-        transition: 0.5s;
-
-    }
-
-    &-nav-link {
-        width: auto;
-        .roboto(@font-weight: 700, @color: #00000040);
-        text-transform: uppercase;
-        text-decoration: none;
-        cursor: pointer;
-
-        &:nth-child(n + 2) {
-            margin-left: 60px;
-        }
-    }
-
-
-    &-nav-link.active {
-        color: #000000;
-    }
-
-
-
-
-    // rewriting swiper styles
-
 
 }
 
-//================= NAVIGATION COMPONENT
+//================= NAV-TABS COMPONENT
+
+.tabs {
+    margin: 0;
+}
+
+//================= NAV-TABS COMPONENT
 
 
 @media (min-width: 375px) and (max-width: 479px) {
+    .profile {
+
+        &-current-page,
+        &-current-page~span {
+            display: none;
+        }
+
+    }
+
     .hero {
+        padding-bottom: 40px;
+
+        .container {
+            flex-direction: column;
+        }
+
         &-wrap {
             flex-direction: column;
         }
+
+        &-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+
+        }
+
+        &-description {
+            text-align: center;
+            margin: 0;
+            margin-bottom: 32px;
+        }
+
+        &-name {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        &-last-visited {
+            display: none;
+        }
+
+        &-online {
+            color: #4BBA07;
+        }
+
+        &-contacts {
+            margin-bottom: 45px;
+            margin-left: 0;
+        }
+
+        &-contact-link:nth-child(n+4) {
+            display: none;
+        }
+
+        &-about {
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            padding: 21px;
+            margin-bottom: 40px;
+        }
+
+        &-about:before {
+            display: block;
+            content: ' ';
+            background-image: url(../assets/img/piece.svg);
+            background-size: 40px 32px;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 32px;
+            width: 40px;
+            position: absolute;
+            left: calc(50% - 20px);
+            top: -23px;
+        }
     }
+
     .info {
         display: none;
     }
 
     .nav {
+        border: none;
+        padding: 0;
+
         .container {
-            flex-direction: column;
+            display: block;
+            width: 100%;
         }
+
+        &-actions {
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        &-info {
+            display: flex;
+        }
+    }
+
+    // ====== NAV-TABS COMPONENT
+    .tabs {
+        border-top: 1px solid #0000001A;
+        border-bottom: 1px solid #0000001A;
+        padding: 17px 0;
+        order: 1;
+    }
+
+    .tab-marker {
+        bottom: 0;
+    }
+    .tab-link:first-child {
+        margin-left: 15px;
     }
 }

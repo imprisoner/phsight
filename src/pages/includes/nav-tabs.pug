@@ -1,10 +1,10 @@
-nav.content-nav-tabs
-    .content-tab-marker
+nav.tabs
+    .tab-marker
     .swiper-container 
         .swiper-wrapper
             block tabs
                 mixin tabs(links)
                     each link in links
-                        a.content-nav-link.swiper-slide= link
+                        a.tab-link.swiper-slide= link
                     else
                         p NO LINKS

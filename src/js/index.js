@@ -6,14 +6,12 @@ import Swiper, {
     EffectCoverflow
 } from 'swiper'
 
+
 Swiper.use([Navigation, Autoplay, EffectFade, EffectCoverflow])
 
 new Swiper('.swiper-container', {
     autoplay: {delay: 7000, disableOnInteraction: false},
     effect: 'fade',
-    // fadeEffect: {
-    //     crossFade: true
-    // },
     navigation: {
         nextEl: '.slider-btn-next',
         prevEl: '.slider-btn-prev',

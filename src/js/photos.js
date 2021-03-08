@@ -7,7 +7,10 @@ import Pagination from './pagination'
 
 $(document).on('DOMContentLoaded', function () {
 
-    
+
+    const marker = $('.tab-marker')
+    const tabs = $('.tab-link')
+
     let swiperTabs
     let pgStep = 1
 
@@ -57,9 +60,6 @@ $(document).on('DOMContentLoaded', function () {
 
     // static nav on desktop
 
-    const marker = $('.content-tab-marker')
-    const tabs = $('.content-nav-link')
-
 
     const indicator = (target, shift = 0) => {
         marker.css('left', target.offsetLeft - shift)
@@ -93,7 +93,7 @@ $(document).on('DOMContentLoaded', function () {
     })
 
     //expanding search    
-    $('.header-search-btn').on('click', function() {
+    $('.header-search-btn').on('click', function () {
         $('.search').toggleClass('active')
         $('.header-search-field').trigger('focus')
     })
