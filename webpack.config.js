@@ -23,7 +23,8 @@ module.exports = {
     entry: {
         index: './index.js',
         photos: './photos.js',
-        profile: './profile.js'
+        profile: './profile.js',
+        view: './view.js'
     },
     devtool: 'inline-source-map',
     devServer: {

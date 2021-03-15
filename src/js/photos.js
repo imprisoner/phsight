@@ -14,22 +14,23 @@ $(document).on('DOMContentLoaded', function () {
     let swiperTabs
     let pgStep = 1
 
-    if (window.innerWidth < 992) {
+    if (window.innerWidth < 480) {
 
         // slider nav on mobile
 
         console.log('swiper init')
         swiperTabs = new Swiper('.swiper-container', {
             slidesPerView: 'auto',
+            // centerInsufficientSlides: true,
             slideToClickedSlide: true,
             freeMode: true
         })
-        $('.swiper-slide:nth-child(n-1)').on('click', function () {
-            swiperTabs.slidePrev()
-        })
-        $('.swiper-slide').last().on('click', function () {
-            swiperTabs.slideNext()
-        })
+        // $('.swiper-slide:nth-child(3)').on('click', function () {
+        //     swiperTabs.slideNext()
+        // })
+        // $('.swiper-slide').last().on('click', function () {
+        //     swiperTabs.slidePrev()
+        // })
         swiperTabs.on('setTranslate', () => {
             const translate = swiperTabs.translate
             marker.css('left', $('.active')[0].offsetLeft + translate - 5)

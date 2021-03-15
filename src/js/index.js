@@ -21,5 +21,8 @@ new Swiper('.swiper-container', {
 // expanding search    
 $('.header-search-btn').on('click', function () {
     $('.search').toggleClass('active')
-    $('.header-search-field').trigger('focus')
+    if($('.search').hasClass('active')) {
+        $('.header-search-field').trigger('focus')
+    } else  $('.header-search-field').trigger('blur')
+    
 })

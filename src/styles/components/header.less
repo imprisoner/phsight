@@ -6,9 +6,15 @@
 
     &-logo {
         display: flex;
-        // align-items: center;
+        align-items: center;
         text-decoration: none;
-        color: #fff
+        color: #fff;
+    }
+
+    &-logo-image {
+        background: url(../../assets/img/logo.svg) center / cover no-repeat;
+        width: 41px;
+        height: 33px;
     }
 
     &-logo-text {
@@ -17,14 +23,13 @@
         line-height: 28px;
         text-align: center;
         margin-left: 7px;
-        align-self: flex-end;
-        margin-bottom: -4px;
+        margin-top: 5px;
     }
- 
+
     &-navigation {
         display: flex;
         align-items: center;
-        margin-left: 21%;
+        margin-left: 24.5%;
     }
 
     &-menu-btn {
@@ -58,25 +63,24 @@
     }
 
     &-search.active>&-search-btn {
-        transform: translateX(-10px);
+        transform: translateX(160px);
     }
 
     &-search.active>&-search-field {
-        width: 160px;
-        margin-left: 10px;
+        width: 200px;
         border: 2px solid #FFFFFF1A;
+        padding: 10px 40px 10px 20px;
     }
 
     &-search-btn {
-        background-color: #282828;
+        background-color: transparent;
         position: absolute;
-        top: -1px;
+        top: 0;
         left: 0;
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 2px solid #FFFFFF1A;
         border-radius: 10px;
         width: 40px;
         height: 40px;
@@ -95,16 +99,15 @@
     }
 
     &-search-field {
+        .roboto(@color: #000000);
         width: 40px;
         height: 40px;
         border: 2px solid #282828;
         border-radius: 10px;
-        height: 38px;
-        padding: 10px;
-        padding-left: 20px;
         outline: none;
-        .roboto(@color: #000000);
         transition: width 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
 
         &:focus {
             outline: none
@@ -118,7 +121,7 @@
     }
 
     &-sign-in {
-        margin-right: 33px;
+        margin-right: 30px;
         text-decoration: none;
         color: #fff;
         font-family: Roboto;
@@ -148,11 +151,58 @@
     }
 }
 
-@media (max-width: 767px) {
+// media
+
+
+@media (max-width: 1279px) {
+    .header {
+        &-navigation {
+            margin-left: 18.5%;
+        }
+
+        &-navlink {
+            margin-right: 50px;
+        }
+
+        &-search.active>&-search-btn {
+            transform: translateX(130px);
+        }
+
+        &-search.active>&-search-field {
+            width: 170px;
+        }
+    }
+}
+
+@media (max-width: 1120px) {
+
+    .header {
+        &-navigation {
+            margin-left: 14.5%;
+        }
+
+        &-navlink {
+            margin-right: 40px;
+        }
+
+        &-search.active>&-search-btn {
+            transform: translateX(120px);
+        }
+
+        &-search.active>&-search-field {
+            width: 160px;
+        }
+    }
+
+
+}
+
+@media (max-width: 1024px) {
     .header {
         .container {
             justify-content: space-between;
         }
+
         &-logo {
             order: 1;
         }
@@ -172,9 +222,11 @@
             width: auto;
             margin: 0;
         }
+
         &-search {
             display: none;
         }
+
         &-menu-btn {
             display: block;
 

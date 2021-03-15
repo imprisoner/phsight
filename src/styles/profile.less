@@ -71,7 +71,7 @@
     }
 
     &-online {
-        display: none;
+        color: #4BBA07;
     }
 
     &-about {
@@ -108,7 +108,6 @@
     &-contacts {
         display: flex;
         justify-content: center;
-        // align-items: center;
         padding-top: 20px;
         margin-left: 35px;
     }
@@ -168,9 +167,8 @@
 }
 
 .nav {
-    padding: 30px 0;
     border: 1px solid #0000001A;
-
+    overflow: hidden;
     .container {
         display: flex;
         justify-content: space-between;
@@ -198,12 +196,11 @@
     }
 
     &-subscribe {
-        padding-left: 22px;
-        padding-right: 22px;
+        .rounded-button(transparent, 22px, @bg-color: #7BC220);
 
         span {
             text-decoration: none;
-            .roboto(@color: #000000)
+            .roboto(@color: #ffffff, @font-weight: 700)
         }
     }
 
@@ -215,19 +212,29 @@
         display: none;
     }
 
+
+
 }
 
 //================= NAV-TABS COMPONENT
 
 .tabs {
     margin: 0;
+
+    &:before,
+    &:after {
+        display: none;
+    }
 }
 
 //================= NAV-TABS COMPONENT
 
+@media (max-width: 1024px) {
 
-@media (max-width: 767px) {
     .profile {
+        &-body {
+            padding-top: 40px;
+        }
 
         &-current-page,
         &-current-page~span {
@@ -261,33 +268,20 @@
         }
 
         &-name {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        &-last-visited {
-            display: none;
-        }
-
-        &-online {
-            color: #4BBA07;
+            font-size: 29px;
+            margin-bottom: 18px;
         }
 
         &-contacts {
-            margin-bottom: 45px;
+            margin-bottom: 40px;
             margin-left: 0;
-        }
-
-        &-contact-link:nth-child(n+4) {
-            display: none;
+            padding: 0;
         }
 
         &-about {
             margin: 0 auto;
             text-align: center;
             width: 100%;
-            padding: 21px;
-            margin-bottom: 40px;
         }
 
         &-about:before {
@@ -305,6 +299,7 @@
         }
     }
 
+
     .info {
         display: none;
     }
@@ -314,32 +309,90 @@
         padding: 0;
 
         .container {
-            display: block;
-            width: 100%;
+            display: flex;
+            flex-direction: column;
+            // width: 100%;
         }
 
         &-actions {
             justify-content: center;
             margin-bottom: 40px;
+            width: 100%;
         }
 
         &-info {
             display: flex;
+            margin-right: auto;
         }
     }
 
-    // ====== NAV-TABS COMPONENT
+
+
+    //================= NAV-TABS COMPONENT
+
     .tabs {
-        border-top: 1px solid #0000001A;
-        border-bottom: 1px solid #0000001A;
-        padding: 17px 0;
+        width: fit-content;
         order: 1;
+
+        &:before,
+        &:after {
+            display: block;
+        }
+
     }
 
-    .tab-marker {
-        bottom: 0;
+    //================= NAV-TABS COMPONENT
+
+}
+
+
+@media (max-width: 480px) {
+
+
+    .hero {
+
+        &-name {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        &-last-visited {
+            display: none;
+        }
+
+        &-contact-link:nth-child(n+4) {
+            display: none;
+        }
+
+        &-about {
+            padding: 21px;
+        }
+
+
     }
-    .tab-link:first-child {
-        margin-left: 15px;
+
+    .nav {
+
+        .container {
+            display: block;
+            width: 100%;
+        }
+
+        &-info {
+            margin-right: unset;
+        }
+        &-slider-wrap {
+            overflow: hidden;
+            display: flex;
+        }
     }
+
+    //================= NAV-TABS COMPONENT
+
+    .tabs {
+        width: unset;
+    }
+
+    //================= NAV-TABS COMPONENT
+
 }

@@ -14,7 +14,7 @@ block content
                         h3.hero-name Дмитрий Зеленский
                         p.hero-location Россия, Ставрополь,
                             span.hero-last-visited  был 18 декабря, 16:56
-                            span.hero-online онлайн
+                            span(style="display: none;").hero-online онлайн
                     .hero-contacts
                         a(href="#").hero-contact-link
                             i.fab.fa-facebook
@@ -64,6 +64,7 @@ block content
                             i.fas.fa-envelope
                         a(href="#").nav-btn.nav-more
                             i.fas.fa-ellipsis-h
+                    
                     include includes/nav-tabs.pug
                         block tabs
                             +tabs(['Фотографии', 'Альбомы', 'Избранное', 'Статистика', 'Подписчики'])

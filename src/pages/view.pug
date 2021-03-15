@@ -1,0 +1,74 @@
+extends layouts/page.pug
+
+block title 
+    title Photosight - Просмотр фото
+
+block content
+    main.view
+        .photo-block
+            .container
+                .row
+                    .photo-action-left.col-xs-1
+                        a.photo-btn-share
+                            i.fas.fa-share-alt
+                        a.photo-btn-prev
+                            i.fas.fa-chevron-left
+                        .photo-likes
+                            a.photo-btn-like
+                                i.fas.fa-heart
+                            span.photo-likes-counter 7
+
+                    .photo-image.col-xs-10
+                        img(src="./img/maingallery/7121648_xlarge.jpg")
+                        .photo-preview-nav
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 1.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 2.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 3.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 4.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 5.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 6.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 7.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 8.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 9.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 10.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 11.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 12.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 13.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 14.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 15.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 16.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 17.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 18.jpg') center / cover no-repeat")
+                            a.photo-preview(href="")
+                                div(style="background:url('./img/popgallery/image 19.jpg') center / cover no-repeat")
+                    .photo-action-right.col-xs-1
+                        a.photo-btn-expand
+                            i.fas.fa-expand-alt
+                        a.photo-btn-next
+                            i.fas.fa-chevron-right
+                        a.photo-btn-warning
+                            i.fas.fa-exclamation
+                        
+
+
+
+        .comments-block.col-xs-12.col-md-8 
+        .info-block.col-xs-12.col-md-4

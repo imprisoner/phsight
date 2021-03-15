@@ -1,0 +1,113 @@
+@import '../../node_modules/swiper/swiper.less';
+// @import '../../node_modules/flexboxgrid/css/flexboxgrid.css';
+@import './libs/flexgrid.css';
+@import './common/spec.less';
+@import './common/fonts.less';
+@import './common/mixins.less';
+@import './components/header.less';
+@import './components/footer.less';
+
+.photo {
+    &-block {
+        background-color: #434343;
+        padding: 20px 0;
+    }
+
+    &-action-left,
+    &-action-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &-action-left {
+        align-items: flex-start;
+    }
+
+    &-action-right {
+        align-items: flex-end;
+    }
+    &-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 100%;
+        }
+    }
+
+    &-preview-nav {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    &-preview {
+
+        div {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &-btn {
+
+        &-warning {
+            .rounded-button(#ffa80040, 5px);
+            width: 40px;
+            height: 40px;
+
+            i {
+                font-weight: 900;
+                font-size: 16px;
+                line-height: 165%;
+                color: #FFA800;
+            }
+        }
+
+        &-prev,
+        &-next {
+            i {
+                font-weight: 300;
+                font-size: 42px;
+                line-height: 165%;
+                color: #fff;
+            }
+
+        }
+
+        &-prev {
+            margin-left: -10px;
+        }
+
+        &-next {
+            margin-right: -10px;
+        }
+        &-share,
+        &-expand,
+        &-like {
+            .rounded-button(#eaeaea1a, 5px);
+            width: 40px;
+            height: 40px;
+
+            i {
+                font-weight: 900;
+                font-size: 16px;
+                line-height: 165%;
+                color: #fff;
+            }
+        }
+
+
+    }
+
+    &-likes {
+        display: flex;
+        align-items: center;
+    }
+
+    &-likes-counter {
+        .roboto(24px, 130%, bold, #fff);
+        margin-left: 15px;
+    }
+}
