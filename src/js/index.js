@@ -23,6 +23,6 @@ $('.header-search-btn').on('click', function () {
     $('.search').toggleClass('active')
     if($('.search').hasClass('active')) {
         $('.header-search-field').trigger('focus')
-    } else  $('.header-search-field').trigger('blur')
+    } else  $('.header-search-field').trigger('blur').val('')
     
 })

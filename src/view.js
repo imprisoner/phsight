@@ -1,1 +1,2 @@
-import './styles/view.less'
+import './js/view'
+import './styles/view'

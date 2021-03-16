@@ -18,8 +18,39 @@ block content
                                 i.fas.fa-heart
                             span.photo-likes-counter 7
 
-                    .photo-image.col-xs-10
-                        img(src="./img/maingallery/7121648_xlarge.jpg")
+                    .photo-view.col-xs-10
+                        .photo-image
+                            img(src="./img/maingallery/7121648_xlarge.jpg")
+                            .ratings
+                                h5.ratings-title Оценки фото
+                                .ratings-panel
+                                    .ratings-category
+                                        .ratings-wrap
+                                            p.ratings-name Художественно
+                                            span.ratings-counter 18
+                                        a.ratings-rate-btn Оценить
+                                    .ratings-category
+                                        .ratings-wrap
+                                            p.ratings-name Оригинально
+                                            span.ratings-counter 0
+                                        a.ratings-rate-btn Оценить
+                                    .ratings-category
+                                        .ratings-wrap
+                                            p.ratings-name Технично
+                                            span.ratings-counter 1
+                                        a.ratings-rate-btn Оценить
+                                    .ratings-category
+                                        .ratings-wrap
+                                            p.ratings-name Нравится
+                                            span.ratings-counter 8
+                                        a.ratings-rate-btn Оценить
+                                    .ratings-category
+                                        .ratings-wrap
+                                            p.ratings-name Не нравится
+                                            span.ratings-counter 0
+                                        a.ratings-rate-btn Оценить
+                                p.ratings-warning Претенденты не могут голосовать за фото. Для голосования необходимо иметь статус любитель или выше. Подробнее о статусах можно узнать здесь
+
                         .photo-preview-nav
                             a.photo-preview(href="")
                                 div(style="background:url('./img/popgallery/image 1.jpg') center / cover no-repeat")
@@ -66,9 +97,336 @@ block content
                             i.fas.fa-chevron-right
                         a.photo-btn-warning
                             i.fas.fa-exclamation
-                        
 
 
 
-        .comments-block.col-xs-12.col-md-8 
-        .info-block.col-xs-12.col-md-4
+        .wall-block.container.wrap
+            .row
+                .comments-block.col-xs-12.col-md-8
+                    .hero
+                        div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
+                        .hero-wrap
+                            .row
+                                .hero-description
+                                    h5.hero-photo-name Речка в сосновом бору
+                                    p.hero-name Дмитрий Зеленский
+                                .hero-actions 
+                                    a(href="#").hero-btn.hero-subscribe Подписаться
+                                    a(href="#").hero-btn.hero-sendmail
+                                        i.fas.fa-envelope
+                            .row
+                                .hero-about 
+                                    p i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits 
+                    .comments 
+                        .comments-number 
+                            span 18 комментариев
+                        form.comments-textfield(action="POST")
+                            .row
+                                .comments-user-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                textarea(placeholder="Напишите свой комментарий") 
+                            button(type="submit").comments-post-comment Отправить
+                        .comments-wallpost 
+
+                            .post
+                                .post-container
+                                    .post-wrapper
+                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                        .post-content
+                                            .flex
+                                                .post-name Дмитрий Зеленский
+                                                .post-date 12 февраля 2021, 18:34:59
+                                            .post-text как чудесно ВЫ слагаете куплеты<br>рифма с вами дышит и живет<br>мне приятно ВАМ сказать об этом,<br>красота,беспечность,молодость уйдет....а гимны останутся))да,и талант не пропьешь...
+                                            .post-actions
+                                                .post-btn.post-reply
+                                                    i.fas.fa-reply
+                                                .post-btn.post-warning
+                                                    i.fas.fa-exclamation
+                                                .post-btn.post-like 
+                                                    i.fas.fa-heart
+
+
+                                .post-answer
+                                    .post
+                                        .post-container
+                                            .post-wrapper
+                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                .post-content
+                                                    .flex
+                                                        .post-name Активный юзер
+                                                        .post-date 12 февраля 2021, 18:34:59
+                                                    .post-text Нравится!! +Х
+                                                    .post-actions
+                                                        .post-btn.post-reply
+                                                            i.fas.fa-reply
+                                                        .post-btn.post-warning
+                                                            i.fas.fa-exclamation
+                                                        .post-btn.post-like 
+                                                            i.fas.fa-heart
+
+
+                                        .post-answer
+                                            .post
+                                                .post-container
+                                                    .post-wrapper
+                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                        .post-content
+                                                            .flex
+                                                                .post-name Активный юзер
+                                                                .post-date 12 февраля 2021, 18:34:59
+                                                            .post-text Нравится!! +Х
+                                                            .post-actions
+                                                                .post-btn.post-reply
+                                                                    i.fas.fa-reply
+                                                                .post-btn.post-warning
+                                                                    i.fas.fa-exclamation
+                                                                .post-btn.post-like 
+                                                                    i.fas.fa-heart
+
+
+                                                .post-answer
+                                                    .post
+                                                        .post-container
+                                                            .post-wrapper
+                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                .post-content
+                                                                    .flex
+                                                                        .post-name Активный юзер
+                                                                        .post-date 12 февраля 2021, 18:34:59
+                                                                    .post-text Нравится!! +Х
+                                                                    .post-actions
+                                                                        .post-btn.post-reply
+                                                                            i.fas.fa-reply
+                                                                        .post-btn.post-warning
+                                                                            i.fas.fa-exclamation
+                                                                        .post-btn.post-like 
+                                                                            i.fas.fa-heart
+
+
+                                                        .post-answer
+                                                            .post
+                                                                .post-container
+                                                                    .post-wrapper
+                                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                        .post-content
+                                                                            .flex
+                                                                                .post-name Активный юзер
+                                                                                .post-date 12 февраля 2021, 18:34:59
+                                                                            .post-text Нравится!! +Х
+                                                                            .post-actions
+                                                                                .post-btn.post-reply
+                                                                                    i.fas.fa-reply
+                                                                                .post-btn.post-warning
+                                                                                    i.fas.fa-exclamation
+                                                                                .post-btn.post-like 
+                                                                                    i.fas.fa-heart
+
+
+                                                                .post-answer
+                                                                    .post
+                                                                        .post-container
+                                                                            .post-wrapper
+                                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                                .post-content
+                                                                                    .flex
+                                                                                        .post-name Активный юзер
+                                                                                        .post-date 12 февраля 2021, 18:34:59
+                                                                                    .post-text Нравится!! +Х
+                                                                                    .post-actions
+                                                                                        .post-btn.post-reply
+                                                                                            i.fas.fa-reply
+                                                                                        .post-btn.post-warning
+                                                                                            i.fas.fa-exclamation
+                                                                                        .post-btn.post-like 
+                                                                                            i.fas.fa-heart
+
+
+                                                                        .post-answer
+                                                                            .post
+                                                                                .post-container
+                                                                                    .post-wrapper
+                                                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                                        .post-content
+                                                                                            .flex
+                                                                                                .post-name Активный юзер
+                                                                                                .post-date 12 февраля 2021, 18:34:59
+                                                                                            .post-text Нравится!! +Х
+                                                                                            .post-actions
+                                                                                                .post-btn.post-reply
+                                                                                                    i.fas.fa-reply
+                                                                                                .post-btn.post-warning
+                                                                                                    i.fas.fa-exclamation
+                                                                                                .post-btn.post-like 
+                                                                                                    i.fas.fa-heart
+
+
+                                                                                .post-answer
+                                                                                    .post
+                                                                                        .post-container
+                                                                                            .post-wrapper
+                                                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                                                .post-content
+                                                                                                    .flex
+                                                                                                        .post-name Активный юзер
+                                                                                                        .post-date 12 февраля 2021, 18:34:59
+                                                                                                    .post-text Нравится!! +Х
+                                                                                                    .post-actions
+                                                                                                        .post-btn.post-reply
+                                                                                                            i.fas.fa-reply
+                                                                                                        .post-btn.post-warning
+                                                                                                            i.fas.fa-exclamation
+                                                                                                        .post-btn.post-like 
+                                                                                                            i.fas.fa-heart
+
+
+                                                                                        .post-answer
+                                                                                            .post
+                                                                                                .post-container
+                                                                                                    .post-wrapper
+                                                                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                                                        .post-content
+                                                                                                            .flex
+                                                                                                                .post-name Активный юзер
+                                                                                                                .post-date 12 февраля 2021, 18:34:59
+                                                                                                            .post-text Нравится!! +Х
+                                                                                                            .post-actions
+                                                                                                                .post-btn.post-reply
+                                                                                                                    i.fas.fa-reply
+                                                                                                                .post-btn.post-warning
+                                                                                                                    i.fas.fa-exclamation
+                                                                                                                .post-btn.post-like 
+                                                                                                                    i.fas.fa-heart
+
+
+                                                                                                .post-answer
+                                                                                                    .post
+                                                                                                        .post-container
+                                                                                                            .post-wrapper
+                                                                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                                                                .post-content
+                                                                                                                    .flex
+                                                                                                                        .post-name Активный юзер
+                                                                                                                        .post-date 12 февраля 2021, 18:34:59
+                                                                                                                    .post-text Нравится!! +Х
+                                                                                                                    .post-actions
+                                                                                                                        .post-btn.post-reply
+                                                                                                                            i.fas.fa-reply
+                                                                                                                        .post-btn.post-warning
+                                                                                                                            i.fas.fa-exclamation
+                                                                                                                        .post-btn.post-like 
+                                                                                                                            i.fas.fa-heart
+
+
+                                                                                                        .post-answer
+                                                                                                            .post
+                                                                                                                .post-container
+                                                                                                                    .post-wrapper
+                                                                                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                                                                        .post-content
+                                                                                                                            .flex
+                                                                                                                                .post-name Активный юзер
+                                                                                                                                .post-date 12 февраля 2021, 18:34:59
+                                                                                                                            .post-text Нравится!! +Х
+                                                                                                                            .post-actions
+                                                                                                                                .post-btn.post-reply
+                                                                                                                                    i.fas.fa-reply
+                                                                                                                                .post-btn.post-warning
+                                                                                                                                    i.fas.fa-exclamation
+                                                                                                                                .post-btn.post-like 
+                                                                                                                                    i.fas.fa-heart
+
+
+                                                                                                                .post-answer
+                                                                                                                    .post
+                                                                                                                        .post-container
+                                                                                                                            .post-wrapper
+                                                                                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                                                                                .post-content
+                                                                                                                                    .flex
+                                                                                                                                        .post-name Активный юзер
+                                                                                                                                        .post-date 12 февраля 2021, 18:34:59
+                                                                                                                                    .post-text Нравится!! +Х
+                                                                                                                                    .post-actions
+                                                                                                                                        .post-btn.post-reply
+                                                                                                                                            i.fas.fa-reply
+                                                                                                                                        .post-btn.post-warning
+                                                                                                                                            i.fas.fa-exclamation
+                                                                                                                                        .post-btn.post-like 
+                                                                                                                                            i.fas.fa-heart
+
+
+                                                                                                                        .post-answer
+                                                                                                                            .post
+                                                                                                                                .post-container
+                                                                                                                                    .post-wrapper
+                                                                                                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                                                                                        .post-content
+                                                                                                                                            .flex
+                                                                                                                                                .post-name Людочка
+                                                                                                                                                .post-date 12 февраля 2021, 18:34:59
+                                                                                                                                            .post-text Спасибо! Снимала до реконструкции.В то время там были руины павильона.
+                                                                                                                                            .post-actions
+                                                                                                                                                .post-btn.post-reply
+                                                                                                                                                    i.fas.fa-reply
+                                                                                                                                                .post-btn.post-warning
+                                                                                                                                                    i.fas.fa-exclamation
+                                                                                                                                                .post-btn.post-like 
+                                                                                                                                                    i.fas.fa-heart
+
+
+                                                                                                                                .post-answer
+                    //- ==================================+====================================================================================================================================================
+                .info-block.col-xs-12.col-md-4
+                    .info-tags
+                        .info-tag Санкт-Петербург
+                        .info-tag День Защитника Отечества
+                        .info-tag Концерт
+                        .info-tag Ансамбль "Казачья доля"
+                        .info-tag Праздничный концерт
+                    .info-common
+                        p Загружена: 
+                            span 18 января 2021, 17:56
+                        p Просмотров: 
+                            span 3 402
+                        p Рубрика: 
+                            span "Портрет"
+                        p Альбом: 
+                            span "Портрет"
+                    .info-rewards
+                        .info-reward
+                        .info-reward
+                        .info-reward
+                        .info-reward
+                        .info-reward
+                        .info-reward
+                        .info-reward
+                    .info-location
+                        .info-map
+                        p Беларусь, Минск
+                    .info-device
+                        .info-camera
+                            .icon
+                            .model
+                                p Canon EOS 6D Kit
+                                p Canon EF 24-105mm f/3.5-5.6 IS STM
+                        .info-tech
+                            div
+                             .icon
+                             p 1/160s
+                            div
+                             .icon
+                             p f2.2
+                            div
+                             .icon
+                             p 200
+                            div
+                             .icon
+                             p 85mm
+                    .info-actions
+                        a(href="#").info-exif
+                            .info-btn
+                            p Показать EXIF
+
+
+
+
+

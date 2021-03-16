@@ -19,6 +19,7 @@
         flex-direction: column;
         justify-content: space-between;
     }
+
     &-action-left {
         align-items: flex-start;
     }
@@ -26,13 +27,20 @@
     &-action-right {
         align-items: flex-end;
     }
-    &-image {
+
+    &-view {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         img {
             width: 100%;
         }
+    }
+
+    &-image {
+        display: flex;
+        position: relative;
     }
 
     &-preview-nav {
@@ -83,6 +91,7 @@
         &-next {
             margin-right: -10px;
         }
+
         &-share,
         &-expand,
         &-like {
@@ -109,5 +118,350 @@
     &-likes-counter {
         .roboto(24px, 130%, bold, #fff);
         margin-left: 15px;
+    }
+}
+
+.ratings {
+
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #383838b5;
+    animation: fadeOut 0.15s ease-in;
+
+    &-title {
+        .roboto(19px, 130%, 700, #fff);
+        margin-bottom: 40px;
+    }
+
+    &-panel {
+        display: flex;
+    }
+
+    &-wrap {
+        width: 145px;
+
+        p {
+            .roboto(12px, 130%, 400, #ffffff80)
+        }
+
+        span {
+            .roboto(29px, 130%, 700, #fff)
+        }
+    }
+
+    &-wrap {
+        border-right: 2px solid #eaeaea40;
+    }
+
+    &-category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-category:last-child &-wrap {
+
+        border-right: none;
+    }
+
+    &-rate-btn {
+        .rounded-button(transparent, 22px, 7px, #7BC220);
+        .roboto(@font-weight: 700, @color: #fff);
+        margin-top: 20px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    &-warning {
+        .roboto(12px, 130%, 400, #fff);
+        max-width: 690px;
+        margin-top: 20px;
+    }
+}
+
+
+// ratings popup on hover
+@keyframes fadeIn {
+
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+// =============TODO animate fadeOut
+
+.photo-image>img:hover~.ratings,
+.ratings:hover {
+    animation: fadeIn 0.15s ease-in;
+    z-index: 2;
+    display: flex;
+
+
+}
+
+// ===========TODO
+.wall-block {
+    padding: 45px 0 60px 0;
+}
+
+.comments-block {
+    .hero {
+        padding-right: 20px;
+        display: flex;
+
+        .row {
+            margin: 0;
+        }
+
+        padding-bottom: 50px;
+
+        &-avatar {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+        }
+
+        &-wrap {
+            width: calc(100% - 75px);
+        }
+
+        &-wrap>.row:first-child {
+            height: 75px;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        &-description {
+            margin-left: 20px;
+            padding-top: 10px;
+
+        }
+
+        &-photo-name {
+            .roboto(19px, 130%, 700);
+            margin-bottom: 6px;
+        }
+
+        &-name {
+            .roboto();
+        }
+
+        &-actions {
+            display: flex;
+        }
+
+        &-subscribe {
+            .rounded-button(transparent, 22px, 7px, #7BC220);
+            .roboto(@font-weight: 700, @color: #fff);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        &-sendmail {
+            .rounded-button(#eaeaea, 0);
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            text-decoration: none;
+
+            i {
+                font-size: 15px;
+                line-height: 175%;
+                color: #282828;
+            }
+        }
+
+        &-about {
+            margin-left: 20px;
+            position: relative;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 25px 28px;
+            background-color: #f4f4f4;
+            border-radius: 25px;
+
+            p {
+                .roboto()
+            }
+        }
+
+        &-about:before {
+
+            display: block;
+            content: ' ';
+            background-image: url('.././assets/img/chunk.svg');
+            background-size: 35px 51px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 35px;
+            height: 51px;
+            position: absolute;
+            left: -30px;
+            top: 0;
+        }
+    }
+
+    .comments {
+        .row {
+            margin: 0;
+        }
+
+        &-number {
+            margin-bottom: 17px;
+
+            span {
+                .roboto(12px, 130%)
+            }
+        }
+
+        &-textfield {
+            padding: 40px 20px 40px 0;
+
+
+
+            textarea {
+                border: 2px solid #EAEAEA;
+                border-radius: 10px;
+                padding: 10px 20px;
+                width: calc(100% - 70px);
+                margin-left: 20px;
+                min-height: 67px;
+            }
+        }
+
+        &-post-comment {
+            margin-top: 10px;
+            margin-left: auto;
+            .rounded-button(@padX: 22px, @padY: 7px);
+            .roboto(@font-weight: 700);
+        }
+
+        &-user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        &-wallpost {
+            padding: 20px 0;
+        }
+    }
+}
+
+// posts
+
+.post {
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        min-width: fit-content;
+    }
+
+    &-wrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    &-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    &-content {
+        margin-left: 20px;
+        width: calc(100% - 70px);
+    }
+
+    .flex {
+        width: 100%;
+    }
+
+    &-name {
+        .roboto(12px, 130%, 700);
+        white-space: nowrap;
+
+    }
+
+    &-date {
+        margin-left: 20px;
+        .roboto(12px, 130%, @color: #BCBCBC);
+        white-space: nowrap;
+    }
+
+    &-text {
+        margin-top: 8px;
+        .roboto();
+    }
+
+    &-actions {
+        margin-top: 20px;
+        display: none;
+        width: 100%;
+    }
+
+    &-like {
+        margin-left: 9px;
+    }
+
+    &-warning {
+        margin-left: auto;
+    }
+
+    // onclick
+    &-active {
+        background-color: #f4f4f4;
+        border-radius: 20px;
+    }
+
+    &-active &-actions {
+        display: flex;
+    }
+
+    &-btn {
+        .rounded-button(@padX: 0, @bg-color: #fff);
+        width: 40px;
+        height: 40px;
+    }
+
+    &>.post-answer {
+        // margin-left: 40px;
+        // margin-top: 40px;
+        width: calc(100% - 40px);
+        margin-left: auto;
+    }
+}
+
+.info {
+    &-tags {
+        display: flex;
+        flex-wrap: wrap;
+        
     }
 }
