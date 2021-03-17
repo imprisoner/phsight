@@ -7,8 +7,8 @@ block content
     main.view
         .photo-block
             .container
-                .row
-                    .photo-action-left.col-xs-1
+                .row.wrap
+                    .photo-action-left.col-lg-1.col-xs-6
                         a.photo-btn-share
                             i.fas.fa-share-alt
                         a.photo-btn-prev
@@ -18,7 +18,7 @@ block content
                                 i.fas.fa-heart
                             span.photo-likes-counter 7
 
-                    .photo-view.col-xs-10
+                    .photo-view.col-xs-12.col-lg-10
                         .photo-image
                             img(src="./img/maingallery/7121648_xlarge.jpg")
                             .ratings
@@ -90,7 +90,7 @@ block content
                                 div(style="background:url('./img/popgallery/image 18.jpg') center / cover no-repeat")
                             a.photo-preview(href="")
                                 div(style="background:url('./img/popgallery/image 19.jpg') center / cover no-repeat")
-                    .photo-action-right.col-xs-1
+                    .photo-action-right.col-lg-1.col-xs-6
                         a.photo-btn-expand
                             i.fas.fa-expand-alt
                         a.photo-btn-next
@@ -100,10 +100,11 @@ block content
 
 
 
-        .wall-block.container.wrap
-            .row
-                .comments-block.col-xs-12.col-md-8
-                    .hero
+        .wall-block.container
+              
+                .row.wrap
+
+                    .hero.col-xs-12.col-lg-8
                         div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
                         .hero-wrap
                             .row
@@ -114,12 +115,44 @@ block content
                                     a(href="#").hero-btn.hero-subscribe Подписаться
                                     a(href="#").hero-btn.hero-sendmail
                                         i.fas.fa-envelope
+                                    a(href="#").hero-btn.hero-more
+                                        i.fas.fa-ellipsis-h
                             .row
                                 .hero-about 
                                     p i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits 
-                    .comments 
+                    .ratings
+                        h5.ratings-title Оценки фото
+                        .swiper-container
+                            .ratings-panel.swiper-wrapper
+                                .ratings-category.swiper-slide
+                                    .ratings-wrap
+                                        p.ratings-name Художественно
+                                        span.ratings-counter 18
+                                    a.ratings-rate-btn Оценить
+                                .ratings-category.swiper-slide
+                                    .ratings-wrap
+                                        p.ratings-name Оригинально
+                                        span.ratings-counter 0
+                                    a.ratings-rate-btn Оценить
+                                .ratings-category.swiper-slide
+                                    .ratings-wrap
+                                        p.ratings-name Технично
+                                        span.ratings-counter 1
+                                    a.ratings-rate-btn Оценить
+                                .ratings-category.swiper-slide
+                                    .ratings-wrap
+                                        p.ratings-name Нравится
+                                        span.ratings-counter 8
+                                    a.ratings-rate-btn Оценить
+                                .ratings-category.swiper-slide
+                                    .ratings-wrap
+                                        p.ratings-name Не нравится
+                                        span.ratings-counter 0
+                                    a.ratings-rate-btn Оценить
+                        p.ratings-warning Претенденты не могут голосовать за фото. Для голосования необходимо иметь статус любитель или выше. Подробнее о статусах можно узнать здесь
+                    .comments.col-xs-12.col-lg-8
                         .comments-number 
-                            span 18 комментариев
+                            span <b>18</b> комментариев
                         form.comments-textfield(action="POST")
                             .row
                                 .comments-user-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
@@ -266,9 +299,9 @@ block content
                                                                                                 .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
                                                                                                 .post-content
                                                                                                     .flex
-                                                                                                        .post-name Активный юзер
+                                                                                                        .post-name Людочка
                                                                                                         .post-date 12 февраля 2021, 18:34:59
-                                                                                                    .post-text Нравится!! +Х
+                                                                                                    .post-text Спасибо! Снимала до реконструкции.В то время там были руины павильона.
                                                                                                     .post-actions
                                                                                                         .post-btn.post-reply
                                                                                                             i.fas.fa-reply
@@ -279,152 +312,66 @@ block content
 
 
                                                                                         .post-answer
-                                                                                            .post
-                                                                                                .post-container
-                                                                                                    .post-wrapper
-                                                                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                                                                                                        .post-content
-                                                                                                            .flex
-                                                                                                                .post-name Активный юзер
-                                                                                                                .post-date 12 февраля 2021, 18:34:59
-                                                                                                            .post-text Нравится!! +Х
-                                                                                                            .post-actions
-                                                                                                                .post-btn.post-reply
-                                                                                                                    i.fas.fa-reply
-                                                                                                                .post-btn.post-warning
-                                                                                                                    i.fas.fa-exclamation
-                                                                                                                .post-btn.post-like 
-                                                                                                                    i.fas.fa-heart
-
-
-                                                                                                .post-answer
-                                                                                                    .post
-                                                                                                        .post-container
-                                                                                                            .post-wrapper
-                                                                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                                                                                                                .post-content
-                                                                                                                    .flex
-                                                                                                                        .post-name Активный юзер
-                                                                                                                        .post-date 12 февраля 2021, 18:34:59
-                                                                                                                    .post-text Нравится!! +Х
-                                                                                                                    .post-actions
-                                                                                                                        .post-btn.post-reply
-                                                                                                                            i.fas.fa-reply
-                                                                                                                        .post-btn.post-warning
-                                                                                                                            i.fas.fa-exclamation
-                                                                                                                        .post-btn.post-like 
-                                                                                                                            i.fas.fa-heart
-
-
-                                                                                                        .post-answer
-                                                                                                            .post
-                                                                                                                .post-container
-                                                                                                                    .post-wrapper
-                                                                                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                                                                                                                        .post-content
-                                                                                                                            .flex
-                                                                                                                                .post-name Активный юзер
-                                                                                                                                .post-date 12 февраля 2021, 18:34:59
-                                                                                                                            .post-text Нравится!! +Х
-                                                                                                                            .post-actions
-                                                                                                                                .post-btn.post-reply
-                                                                                                                                    i.fas.fa-reply
-                                                                                                                                .post-btn.post-warning
-                                                                                                                                    i.fas.fa-exclamation
-                                                                                                                                .post-btn.post-like 
-                                                                                                                                    i.fas.fa-heart
-
-
-                                                                                                                .post-answer
-                                                                                                                    .post
-                                                                                                                        .post-container
-                                                                                                                            .post-wrapper
-                                                                                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                                                                                                                                .post-content
-                                                                                                                                    .flex
-                                                                                                                                        .post-name Активный юзер
-                                                                                                                                        .post-date 12 февраля 2021, 18:34:59
-                                                                                                                                    .post-text Нравится!! +Х
-                                                                                                                                    .post-actions
-                                                                                                                                        .post-btn.post-reply
-                                                                                                                                            i.fas.fa-reply
-                                                                                                                                        .post-btn.post-warning
-                                                                                                                                            i.fas.fa-exclamation
-                                                                                                                                        .post-btn.post-like 
-                                                                                                                                            i.fas.fa-heart
-
-
-                                                                                                                        .post-answer
-                                                                                                                            .post
-                                                                                                                                .post-container
-                                                                                                                                    .post-wrapper
-                                                                                                                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                                                                                                                                        .post-content
-                                                                                                                                            .flex
-                                                                                                                                                .post-name Людочка
-                                                                                                                                                .post-date 12 февраля 2021, 18:34:59
-                                                                                                                                            .post-text Спасибо! Снимала до реконструкции.В то время там были руины павильона.
-                                                                                                                                            .post-actions
-                                                                                                                                                .post-btn.post-reply
-                                                                                                                                                    i.fas.fa-reply
-                                                                                                                                                .post-btn.post-warning
-                                                                                                                                                    i.fas.fa-exclamation
-                                                                                                                                                .post-btn.post-like 
-                                                                                                                                                    i.fas.fa-heart
-
-
-                                                                                                                                .post-answer
                     //- ==================================+====================================================================================================================================================
-                .info-block.col-xs-12.col-md-4
-                    .info-tags
-                        .info-tag Санкт-Петербург
-                        .info-tag День Защитника Отечества
-                        .info-tag Концерт
-                        .info-tag Ансамбль "Казачья доля"
-                        .info-tag Праздничный концерт
-                    .info-common
-                        p Загружена: 
-                            span 18 января 2021, 17:56
-                        p Просмотров: 
-                            span 3 402
-                        p Рубрика: 
-                            span "Портрет"
-                        p Альбом: 
-                            span "Портрет"
-                    .info-rewards
-                        .info-reward
-                        .info-reward
-                        .info-reward
-                        .info-reward
-                        .info-reward
-                        .info-reward
-                        .info-reward
-                    .info-location
-                        .info-map
-                        p Беларусь, Минск
-                    .info-device
-                        .info-camera
-                            .icon
-                            .model
-                                p Canon EOS 6D Kit
-                                p Canon EF 24-105mm f/3.5-5.6 IS STM
-                        .info-tech
-                            div
-                             .icon
-                             p 1/160s
-                            div
-                             .icon
-                             p f2.2
-                            div
-                             .icon
-                             p 200
-                            div
-                             .icon
-                             p 85mm
-                    .info-actions
-                        a(href="#").info-exif
-                            .info-btn
-                            p Показать EXIF
+                    .info-block.col-xs-12.col-lg-4
+                        .info-tags
+                            .info-tag 
+                                span Санкт-Петербург
+                            .info-tag 
+                                span День Защитника Отечества
+                            .info-tag 
+                                span Концерт
+                            .info-tag 
+                                span Ансамбль "Казачья доля"
+                            .info-tag 
+                                span Праздничный концерт
+                        .info-common
+                            p Загружена: 
+                                span 18 января 2021, 17:56
+                            p Просмотров: 
+                                span 3 402
+                            p Рубрика: 
+                                span "Портрет"
+                            p Альбом: 
+                                span "Портрет"
+                        .info-rewards
+                            .flex
+                                .info-prize.week1
+                                .info-prize.day1
+                                .info-prize.m20
+                                .info-prize.m200
+                            .flex
+                                .info-prize.w20
+                                .info-prize.w50
+                                .info-prize.artistical
+                        .info-location
+                            .info-map
+                            p Беларусь, Минск
+                        .info-device
+                            .info-camera
+                                .icon
+                                .model
+                                    p Canon EOS 6D Kit
+                                    p Canon EF 24-105mm f/3.5-5.6 IS STM
+                            .info-tech
+                                div
+                                    .icon
+                                    p 1/160s
+                                div
+                                    .icon
+                                    p f2.2
+                                div
+                                    .icon
+                                    p 200
+                                div
+                                    .icon
+                                    p 85mm
+                        .info-meta
+                            a(href="#").info-exif
+                                .flex
+                                    .info-btn
+                                        span exif
+                                    p Показать EXIF
 
 
 

@@ -1,7 +1,7 @@
 import $ from 'jquery'
 import './libs/jquery.justifiedGallery'
 import Swiper from 'swiper/core'
-import Pagination from './pagination'
+// import Pagination from './pagination'
 
 
 

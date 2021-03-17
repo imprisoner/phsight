@@ -228,7 +228,7 @@
     margin-left: 100%
 }
 
-@media(min-width:481px) {
+@media(min-width:480px) {
     /* .container {
         width: 750px
     } */
@@ -349,7 +349,7 @@
     }
 }
 
-@media(min-width:1025px) {
+@media(min-width:1024px) {
     /* .container {
         width: 970px
     } */
@@ -470,7 +470,7 @@
     }
 }
 
-@media(min-width:1281px) {
+@media(min-width:1280px) {
     /* .container {
         width: 1175px
     } */

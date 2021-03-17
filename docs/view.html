@@ -25,11 +25,11 @@
     <main class="view">
       <div class="photo-block">
         <div class="container">
-          <div class="row">
-            <div class="photo-action-left col-xs-1"><a class="photo-btn-share"><i class="fas fa-share-alt"></i></a><a class="photo-btn-prev"><i class="fas fa-chevron-left"></i></a>
+          <div class="row wrap">
+            <div class="photo-action-left col-lg-1 col-xs-6"><a class="photo-btn-share"><i class="fas fa-share-alt"></i></a><a class="photo-btn-prev"><i class="fas fa-chevron-left"></i></a>
               <div class="photo-likes"><a class="photo-btn-like"><i class="fas fa-heart"></i></a><span class="photo-likes-counter">7</span></div>
             </div>
-            <div class="photo-view col-xs-10">
+            <div class="photo-view col-xs-12 col-lg-10">
               <div class="photo-image"><img src="./img/maingallery/7121648_xlarge.jpg">
                 <div class="ratings">
                   <h5 class="ratings-title">Оценки фото</h5>
@@ -84,298 +84,224 @@
                   <div style="background:url('./img/popgallery/image 18.jpg') center / cover no-repeat"></div></a><a class="photo-preview" href="">
                   <div style="background:url('./img/popgallery/image 19.jpg') center / cover no-repeat"></div></a></div>
             </div>
-            <div class="photo-action-right col-xs-1"><a class="photo-btn-expand"><i class="fas fa-expand-alt"></i></a><a class="photo-btn-next"><i class="fas fa-chevron-right"></i></a><a class="photo-btn-warning"><i class="fas fa-exclamation"></i></a></div>
+            <div class="photo-action-right col-lg-1 col-xs-6"><a class="photo-btn-expand"><i class="fas fa-expand-alt"></i></a><a class="photo-btn-next"><i class="fas fa-chevron-right"></i></a><a class="photo-btn-warning"><i class="fas fa-exclamation"></i></a></div>
           </div>
         </div>
       </div>
-      <div class="wall-block container wrap">
-        <div class="row">
-          <div class="comments-block col-xs-12 col-md-8">
-            <div class="hero">
-              <div class="hero-avatar" style="background: url(./img/profile/avatar.jpg) center / cover"></div>
-              <div class="hero-wrap">
-                <div class="row">
-                  <div class="hero-description">
-                    <h5 class="hero-photo-name">Речка в сосновом бору</h5>
-                    <p class="hero-name">Дмитрий Зеленский</p>
-                  </div>
-                  <div class="hero-actions"> <a class="hero-btn hero-subscribe" href="#">Подписаться</a><a class="hero-btn hero-sendmail" href="#"><i class="fas fa-envelope"></i></a></div>
+      <div class="wall-block container">
+        <div class="row wrap">
+          <div class="hero col-xs-12 col-lg-8">
+            <div class="hero-avatar" style="background: url(./img/profile/avatar.jpg) center / cover"></div>
+            <div class="hero-wrap">
+              <div class="row">
+                <div class="hero-description">
+                  <h5 class="hero-photo-name">Речка в сосновом бору</h5>
+                  <p class="hero-name">Дмитрий Зеленский</p>
                 </div>
-                <div class="row">
-                  <div class="hero-about"> 
-                    <p>i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits </p>
-                  </div>
+                <div class="hero-actions"> <a class="hero-btn hero-subscribe" href="#">Подписаться</a><a class="hero-btn hero-sendmail" href="#"><i class="fas fa-envelope"></i></a><a class="hero-btn hero-more" href="#"><i class="fas fa-ellipsis-h"></i></a></div>
+              </div>
+              <div class="row">
+                <div class="hero-about"> 
+                  <p>i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits </p>
                 </div>
               </div>
             </div>
-            <div class="comments"> 
-              <div class="comments-number"> <span>18 комментариев</span></div>
-              <form class="comments-textfield" action="POST">
-                <div class="row">
-                  <div class="comments-user-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                  <textarea placeholder="Напишите свой комментарий"> </textarea>
+          </div>
+          <div class="ratings">
+            <h5 class="ratings-title">Оценки фото</h5>
+            <div class="swiper-container">
+              <div class="ratings-panel swiper-wrapper">
+                <div class="ratings-category swiper-slide">
+                  <div class="ratings-wrap">
+                    <p class="ratings-name">Художественно</p><span class="ratings-counter">18</span>
+                  </div><a class="ratings-rate-btn">Оценить</a>
                 </div>
-                <button class="comments-post-comment" type="submit">Отправить</button>
-              </form>
-              <div class="comments-wallpost"> 
-                <div class="post">
-                  <div class="post-container">
-                    <div class="post-wrapper">
-                      <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                      <div class="post-content">
-                        <div class="flex">
-                          <div class="post-name">Дмитрий Зеленский</div>
-                          <div class="post-date">12 февраля 2021, 18:34:59</div>
-                        </div>
-                        <div class="post-text">как чудесно ВЫ слагаете куплеты<br>рифма с вами дышит и живет<br>мне приятно ВАМ сказать об этом,<br>красота,беспечность,молодость уйдет....а гимны останутся))да,и талант не пропьешь...</div>
-                        <div class="post-actions">
-                          <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                          <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                          <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                        </div>
+                <div class="ratings-category swiper-slide">
+                  <div class="ratings-wrap">
+                    <p class="ratings-name">Оригинально</p><span class="ratings-counter">0</span>
+                  </div><a class="ratings-rate-btn">Оценить</a>
+                </div>
+                <div class="ratings-category swiper-slide">
+                  <div class="ratings-wrap">
+                    <p class="ratings-name">Технично</p><span class="ratings-counter">1</span>
+                  </div><a class="ratings-rate-btn">Оценить</a>
+                </div>
+                <div class="ratings-category swiper-slide">
+                  <div class="ratings-wrap">
+                    <p class="ratings-name">Нравится</p><span class="ratings-counter">8</span>
+                  </div><a class="ratings-rate-btn">Оценить</a>
+                </div>
+                <div class="ratings-category swiper-slide">
+                  <div class="ratings-wrap">
+                    <p class="ratings-name">Не нравится</p><span class="ratings-counter">0</span>
+                  </div><a class="ratings-rate-btn">Оценить</a>
+                </div>
+              </div>
+            </div>
+            <p class="ratings-warning">Претенденты не могут голосовать за фото. Для голосования необходимо иметь статус любитель или выше. Подробнее о статусах можно узнать здесь</p>
+          </div>
+          <div class="comments col-xs-12 col-lg-8">
+            <div class="comments-number"> <span><b>18</b> комментариев</span></div>
+            <form class="comments-textfield" action="POST">
+              <div class="row">
+                <div class="comments-user-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                <textarea placeholder="Напишите свой комментарий"> </textarea>
+              </div>
+              <button class="comments-post-comment" type="submit">Отправить</button>
+            </form>
+            <div class="comments-wallpost"> 
+              <div class="post">
+                <div class="post-container">
+                  <div class="post-wrapper">
+                    <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                    <div class="post-content">
+                      <div class="flex">
+                        <div class="post-name">Дмитрий Зеленский</div>
+                        <div class="post-date">12 февраля 2021, 18:34:59</div>
+                      </div>
+                      <div class="post-text">как чудесно ВЫ слагаете куплеты<br>рифма с вами дышит и живет<br>мне приятно ВАМ сказать об этом,<br>красота,беспечность,молодость уйдет....а гимны останутся))да,и талант не пропьешь...</div>
+                      <div class="post-actions">
+                        <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
+                        <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
+                        <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
                       </div>
                     </div>
                   </div>
-                  <div class="post-answer">
-                    <div class="post">
-                      <div class="post-container">
-                        <div class="post-wrapper">
-                          <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                          <div class="post-content">
-                            <div class="flex">
-                              <div class="post-name">Активный юзер</div>
-                              <div class="post-date">12 февраля 2021, 18:34:59</div>
-                            </div>
-                            <div class="post-text">Нравится!! +Х</div>
-                            <div class="post-actions">
-                              <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                              <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                              <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                            </div>
+                </div>
+                <div class="post-answer">
+                  <div class="post">
+                    <div class="post-container">
+                      <div class="post-wrapper">
+                        <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                        <div class="post-content">
+                          <div class="flex">
+                            <div class="post-name">Активный юзер</div>
+                            <div class="post-date">12 февраля 2021, 18:34:59</div>
+                          </div>
+                          <div class="post-text">Нравится!! +Х</div>
+                          <div class="post-actions">
+                            <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
+                            <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
+                            <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
                           </div>
                         </div>
                       </div>
-                      <div class="post-answer">
-                        <div class="post">
-                          <div class="post-container">
-                            <div class="post-wrapper">
-                              <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                              <div class="post-content">
-                                <div class="flex">
-                                  <div class="post-name">Активный юзер</div>
-                                  <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                </div>
-                                <div class="post-text">Нравится!! +Х</div>
-                                <div class="post-actions">
-                                  <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                  <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                  <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                </div>
+                    </div>
+                    <div class="post-answer">
+                      <div class="post">
+                        <div class="post-container">
+                          <div class="post-wrapper">
+                            <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                            <div class="post-content">
+                              <div class="flex">
+                                <div class="post-name">Активный юзер</div>
+                                <div class="post-date">12 февраля 2021, 18:34:59</div>
+                              </div>
+                              <div class="post-text">Нравится!! +Х</div>
+                              <div class="post-actions">
+                                <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
+                                <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
+                                <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
                               </div>
                             </div>
                           </div>
-                          <div class="post-answer">
-                            <div class="post">
-                              <div class="post-container">
-                                <div class="post-wrapper">
-                                  <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                  <div class="post-content">
-                                    <div class="flex">
-                                      <div class="post-name">Активный юзер</div>
-                                      <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                    </div>
-                                    <div class="post-text">Нравится!! +Х</div>
-                                    <div class="post-actions">
-                                      <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                      <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                      <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                    </div>
+                        </div>
+                        <div class="post-answer">
+                          <div class="post">
+                            <div class="post-container">
+                              <div class="post-wrapper">
+                                <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                                <div class="post-content">
+                                  <div class="flex">
+                                    <div class="post-name">Активный юзер</div>
+                                    <div class="post-date">12 февраля 2021, 18:34:59</div>
+                                  </div>
+                                  <div class="post-text">Нравится!! +Х</div>
+                                  <div class="post-actions">
+                                    <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
+                                    <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
+                                    <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
                                   </div>
                                 </div>
                               </div>
-                              <div class="post-answer">
-                                <div class="post">
-                                  <div class="post-container">
-                                    <div class="post-wrapper">
-                                      <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                      <div class="post-content">
-                                        <div class="flex">
-                                          <div class="post-name">Активный юзер</div>
-                                          <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                        </div>
-                                        <div class="post-text">Нравится!! +Х</div>
-                                        <div class="post-actions">
-                                          <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                          <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                          <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                        </div>
+                            </div>
+                            <div class="post-answer">
+                              <div class="post">
+                                <div class="post-container">
+                                  <div class="post-wrapper">
+                                    <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                                    <div class="post-content">
+                                      <div class="flex">
+                                        <div class="post-name">Активный юзер</div>
+                                        <div class="post-date">12 февраля 2021, 18:34:59</div>
+                                      </div>
+                                      <div class="post-text">Нравится!! +Х</div>
+                                      <div class="post-actions">
+                                        <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
+                                        <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
+                                        <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="post-answer">
-                                    <div class="post">
-                                      <div class="post-container">
-                                        <div class="post-wrapper">
-                                          <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                          <div class="post-content">
-                                            <div class="flex">
-                                              <div class="post-name">Активный юзер</div>
-                                              <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                            </div>
-                                            <div class="post-text">Нравится!! +Х</div>
-                                            <div class="post-actions">
-                                              <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                              <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                              <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                            </div>
+                                </div>
+                                <div class="post-answer">
+                                  <div class="post">
+                                    <div class="post-container">
+                                      <div class="post-wrapper">
+                                        <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                                        <div class="post-content">
+                                          <div class="flex">
+                                            <div class="post-name">Активный юзер</div>
+                                            <div class="post-date">12 февраля 2021, 18:34:59</div>
+                                          </div>
+                                          <div class="post-text">Нравится!! +Х</div>
+                                          <div class="post-actions">
+                                            <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
+                                            <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
+                                            <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
                                           </div>
                                         </div>
                                       </div>
-                                      <div class="post-answer">
-                                        <div class="post">
-                                          <div class="post-container">
-                                            <div class="post-wrapper">
-                                              <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                              <div class="post-content">
-                                                <div class="flex">
-                                                  <div class="post-name">Активный юзер</div>
-                                                  <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                                </div>
-                                                <div class="post-text">Нравится!! +Х</div>
-                                                <div class="post-actions">
-                                                  <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                                  <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                                  <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                                </div>
+                                    </div>
+                                    <div class="post-answer">
+                                      <div class="post">
+                                        <div class="post-container">
+                                          <div class="post-wrapper">
+                                            <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                                            <div class="post-content">
+                                              <div class="flex">
+                                                <div class="post-name">Активный юзер</div>
+                                                <div class="post-date">12 февраля 2021, 18:34:59</div>
+                                              </div>
+                                              <div class="post-text">Нравится!! +Х</div>
+                                              <div class="post-actions">
+                                                <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
+                                                <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
+                                                <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
                                               </div>
                                             </div>
                                           </div>
-                                          <div class="post-answer">
-                                            <div class="post">
-                                              <div class="post-container">
-                                                <div class="post-wrapper">
-                                                  <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                                  <div class="post-content">
-                                                    <div class="flex">
-                                                      <div class="post-name">Активный юзер</div>
-                                                      <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                                    </div>
-                                                    <div class="post-text">Нравится!! +Х</div>
-                                                    <div class="post-actions">
-                                                      <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                                      <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                                      <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                                    </div>
+                                        </div>
+                                        <div class="post-answer">
+                                          <div class="post">
+                                            <div class="post-container">
+                                              <div class="post-wrapper">
+                                                <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
+                                                <div class="post-content">
+                                                  <div class="flex">
+                                                    <div class="post-name">Людочка</div>
+                                                    <div class="post-date">12 февраля 2021, 18:34:59</div>
                                                   </div>
-                                                </div>
-                                              </div>
-                                              <div class="post-answer">
-                                                <div class="post">
-                                                  <div class="post-container">
-                                                    <div class="post-wrapper">
-                                                      <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                                      <div class="post-content">
-                                                        <div class="flex">
-                                                          <div class="post-name">Активный юзер</div>
-                                                          <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                                        </div>
-                                                        <div class="post-text">Нравится!! +Х</div>
-                                                        <div class="post-actions">
-                                                          <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                                          <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                                          <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                  <div class="post-answer">
-                                                    <div class="post">
-                                                      <div class="post-container">
-                                                        <div class="post-wrapper">
-                                                          <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                                          <div class="post-content">
-                                                            <div class="flex">
-                                                              <div class="post-name">Активный юзер</div>
-                                                              <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                                            </div>
-                                                            <div class="post-text">Нравится!! +Х</div>
-                                                            <div class="post-actions">
-                                                              <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                                              <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                                              <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                      <div class="post-answer">
-                                                        <div class="post">
-                                                          <div class="post-container">
-                                                            <div class="post-wrapper">
-                                                              <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                                              <div class="post-content">
-                                                                <div class="flex">
-                                                                  <div class="post-name">Активный юзер</div>
-                                                                  <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                                                </div>
-                                                                <div class="post-text">Нравится!! +Х</div>
-                                                                <div class="post-actions">
-                                                                  <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                                                  <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                                                  <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                          <div class="post-answer">
-                                                            <div class="post">
-                                                              <div class="post-container">
-                                                                <div class="post-wrapper">
-                                                                  <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                                                  <div class="post-content">
-                                                                    <div class="flex">
-                                                                      <div class="post-name">Активный юзер</div>
-                                                                      <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                                                    </div>
-                                                                    <div class="post-text">Нравится!! +Х</div>
-                                                                    <div class="post-actions">
-                                                                      <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                                                      <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                                                      <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                                                    </div>
-                                                                  </div>
-                                                                </div>
-                                                              </div>
-                                                              <div class="post-answer">
-                                                                <div class="post">
-                                                                  <div class="post-container">
-                                                                    <div class="post-wrapper">
-                                                                      <div class="post-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                                                                      <div class="post-content">
-                                                                        <div class="flex">
-                                                                          <div class="post-name">Людочка</div>
-                                                                          <div class="post-date">12 февраля 2021, 18:34:59</div>
-                                                                        </div>
-                                                                        <div class="post-text">Спасибо! Снимала до реконструкции.В то время там были руины павильона.</div>
-                                                                        <div class="post-actions">
-                                                                          <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
-                                                                          <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
-                                                                          <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
-                                                                        </div>
-                                                                      </div>
-                                                                    </div>
-                                                                  </div>
-                                                                  <div class="post-answer"></div>
-                                                                </div>
-                                                              </div>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
+                                                  <div class="post-text">Спасибо! Снимала до реконструкции.В то время там были руины павильона.</div>
+                                                  <div class="post-actions">
+                                                    <div class="post-btn post-reply"><i class="fas fa-reply"></i></div>
+                                                    <div class="post-btn post-warning"><i class="fas fa-exclamation"></i></div>
+                                                    <div class="post-btn post-like"> <i class="fas fa-heart"></i></div>
                                                   </div>
                                                 </div>
                                               </div>
                                             </div>
+                                            <div class="post-answer"></div>
                                           </div>
                                         </div>
                                       </div>
@@ -393,13 +319,13 @@
               </div>
             </div>
           </div>
-          <div class="info-block col-xs-12 col-md-4">
+          <div class="info-block col-xs-12 col-lg-4">
             <div class="info-tags">
-              <div class="info-tag">Санкт-Петербург</div>
-              <div class="info-tag">День Защитника Отечества</div>
-              <div class="info-tag">Концерт</div>
-              <div class="info-tag">Ансамбль "Казачья доля"</div>
-              <div class="info-tag">Праздничный концерт</div>
+              <div class="info-tag"> <span>Санкт-Петербург</span></div>
+              <div class="info-tag"> <span>День Защитника Отечества</span></div>
+              <div class="info-tag"> <span>Концерт</span></div>
+              <div class="info-tag"> <span>Ансамбль "Казачья доля"</span></div>
+              <div class="info-tag"> <span>Праздничный концерт</span></div>
             </div>
             <div class="info-common">
               <p>Загружена: <span>18 января 2021, 17:56</span></p>
@@ -408,13 +334,17 @@
               <p>Альбом: <span>"Портрет"</span></p>
             </div>
             <div class="info-rewards">
-              <div class="info-reward"></div>
-              <div class="info-reward"></div>
-              <div class="info-reward"></div>
-              <div class="info-reward"></div>
-              <div class="info-reward"></div>
-              <div class="info-reward"></div>
-              <div class="info-reward"></div>
+              <div class="flex">
+                <div class="info-prize week1"></div>
+                <div class="info-prize day1"></div>
+                <div class="info-prize m20"></div>
+                <div class="info-prize m200"></div>
+              </div>
+              <div class="flex">
+                <div class="info-prize w20"></div>
+                <div class="info-prize w50"></div>
+                <div class="info-prize artistical"></div>
+              </div>
             </div>
             <div class="info-location">
               <div class="info-map"></div>
@@ -447,9 +377,11 @@
                 </div>
               </div>
             </div>
-            <div class="info-actions"><a class="info-exif" href="#">
-                <div class="info-btn"></div>
-                <p>Показать EXIF</p></a></div>
+            <div class="info-meta"><a class="info-exif" href="#">
+                <div class="flex">
+                  <div class="info-btn"><span>exif</span></div>
+                  <p>Показать EXIF</p>
+                </div></a></div>
           </div>
         </div>
       </div>
@@ -464,5 +396,5 @@
     <div class="footer-col col-3"><a class="footer-support" href="#">Техническая поддержка</a><a class="footer-advertising" href="#">Реклама на сайте</a><a class="footer-abuse" href="#">Жалобы / Abuse</a></div>
   </div>
 </footer>
-  <script src="vendors-node_modules_jquery_dist_jquery_js.js"></script><script src="view.js"></script></body>
+  <script src="vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_esm_components_core_core-class_js.js"></script><script src="view.js"></script></body>
 </html>
