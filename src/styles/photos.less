@@ -20,8 +20,14 @@
     }
 
     &-nav {
-        // position: relative;
+        position: relative;
         align-items: center;
+
+        .tabs {
+            &::before {
+                display: none;
+            }
+        }
     }
 
     &-divider {
@@ -32,18 +38,33 @@
     &-current-category {
         .rounded-button(@padX: 63px);
         .roboto(@font-weight: 700, @color: #000000);
-
+        position: absolute;
+        left: 0;
     }
 
     &-current-page {
-        .rounded-button(@padX: 24px);
-        .roboto(@font-weight: 700, @color: #000000);
-        margin-left: auto;
-    }
+        display: flex;
+        position: absolute;
+        right: 0;
+        align-items: center;
 
-    &-current-page~span {
-        .roboto(@color: #000000);
-        margin-left: 10px;
+        input {
+
+            &:active,
+            &:focus {
+                outline: none;
+            }
+
+            .rounded-button(@padX: 10px);
+            .roboto(@font-weight: 700, @color: #000000);
+            width: 60px;
+        }
+
+        span {
+            .roboto(@color: #000000);
+            margin-left: 10px
+        }
+
     }
 
     &-body {
@@ -54,22 +75,11 @@
 
         .container {
             align-items: center;
+            position: relative;
         }
 
     }
-    // =========== NAV-TABS COMPONENT
-    .tabs {
-        
-        &:before, &:after {
-            display: none;
-        }
 
-
-    }
-    .tab-marker {
-        bottom: -1px;
-    }
-    // =========== NAV-TABS COMPONENT
 }
 
 
@@ -77,12 +87,17 @@
 @media (max-width: 480px) {
     .content {
         padding-top: 35px;
+
         .container {
             width: calc(100% - 20px);
         }
+
         &-nav {
             overflow: hidden;
+
+
         }
+
         &-top {
             .container {
                 width: 100%;
@@ -93,7 +108,7 @@
             margin-bottom: 26px;
         }
 
-        
+
 
     }
 }
@@ -107,9 +122,13 @@
         &-nav {
             flex-direction: column;
 
+            .tabs::before {
+                display: block;
+            }
         }
 
         &-current-category {
+            position: static;
             margin: 0 auto 30px;
             padding: 6px 22px;
         }

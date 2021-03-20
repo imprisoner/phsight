@@ -51,8 +51,8 @@
 } */
 
 .row {
-    margin-left: -10px;
-    margin-right: -10px;
+    /* margin-left: -10px;
+    margin-right: -10px; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;

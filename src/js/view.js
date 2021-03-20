@@ -1,21 +1,16 @@
 import $ from 'jquery'
-import Swiper from 'swiper/core'
+import {
+    initSlider,
+} from './utils'
 
 $(document).on('DOMContentLoaded', function () { 
 
-    // if (window.innerWidth < 480) {
+    // setting slider
 
-        console.log('swiper init')
-        const swiperTabs = new Swiper('.swiper-container', {
-            slidesPerView: 'auto',
-            slideToClickedSlide: true,
-            freeMode: true
-        })
-       
-    // }
+    initSlider(768)
 
-
-    //expanding search    
+    //expanding search
+    
     $('.header-search-btn').on('click', function () {
         $('.search').toggleClass('active')
         if ($('.search').hasClass('active')) {

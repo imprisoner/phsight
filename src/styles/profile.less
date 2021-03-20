@@ -1,7 +1,7 @@
 @import './libs/justifiedGallery.css';
-// @import 'swiper-bundle.css';
 @import '../../node_modules/swiper/swiper.less';
 @import './common/fonts.less';
+@import './libs/flexgrid.css';
 @import './common/spec.less';
 @import './common/mixins.less';
 @import './components/header.less';
@@ -12,6 +12,7 @@
 
 
 .profile {
+
     &-top {
         padding-top: 80px;
     }
@@ -21,32 +22,44 @@
     }
 
     &-current-page {
-        .rounded-button(@padX: 24px);
-        .roboto(@font-weight: 700, @color: #000000);
-        margin-left: auto;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        
+        input {
+            width: 60px;
+            .rounded-button(@padX: 10px);
+            .roboto(@font-weight: 700, @color: #000000);
+            
+            &:active, &:focus {
+                outline: none;
+            }
+        }
+
+        span {
+            .roboto(@color: #000000);
+            margin-left: 10px;
+        }
     }
 
-    &-current-page~span {
-        .roboto(@color: #000000);
-        margin-left: 10px;
-    }
 
     &-footer {
         padding: 50px 0;
 
         .container {
+            position: relative;
             align-items: center;
         }
     }
 }
 
 .hero {
+
     padding-bottom: 100px;
 
     .container {
-        flex-wrap: wrap;
         position: relative;
-
     }
 
     &-avatar {
@@ -55,8 +68,16 @@
         border-radius: 50%;
     }
 
-    &-description {
+    &-wrap {
+
         margin-left: 45px;
+
+        .flex {
+            margin-bottom: 42px;
+        }
+    }
+
+    &-description {
         padding-top: 20px;
 
     }
@@ -76,12 +97,11 @@
 
     &-about {
         position: relative;
-        margin-left: 190px;
         display: flex;
         align-items: center;
         width: 775px;
         max-width: max-content;
-        padding: 15px 33px;
+        padding: 20px 33px;
         background-color: #f4f4f4;
         border-radius: 25px;
 
@@ -169,6 +189,7 @@
 .nav {
     border: 1px solid #0000001A;
     overflow: hidden;
+
     .container {
         display: flex;
         justify-content: space-between;
@@ -250,8 +271,8 @@
             flex-direction: column;
         }
 
-        &-wrap {
-            flex-direction: column;
+        &-description {
+            margin-bottom: 32px;
         }
 
         &-avatar {
@@ -261,10 +282,13 @@
 
         }
 
-        &-description {
+        &-wrap {
             text-align: center;
             margin: 0;
             margin-bottom: 32px;
+            .flex {
+                flex-direction: column;
+            }
         }
 
         &-name {
@@ -273,7 +297,7 @@
         }
 
         &-contacts {
-            margin-bottom: 40px;
+            // margin-bottom: 40px;
             margin-left: 0;
             padding: 0;
         }
@@ -282,6 +306,8 @@
             margin: 0 auto;
             text-align: center;
             width: 100%;
+            max-width: 800px;
+            padding: 20px;
         }
 
         &-about:before {
@@ -381,6 +407,7 @@
         &-info {
             margin-right: unset;
         }
+
         &-slider-wrap {
             overflow: hidden;
             display: flex;
@@ -394,5 +421,460 @@
     }
 
     //================= NAV-TABS COMPONENT
+
+}
+
+@media (max-width: 375px) {
+    .hero {
+        &-contact-link.phone {
+            span {
+                font-size: 14px
+            }
+        }
+    }
+}
+
+// SUBSCRIBERS
+
+.profile-subscribers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.subscriber {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    width: 32.3%;
+
+    &-avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    &-description {
+        margin-left: 22px;
+        padding: 7px 0;
+
+    }
+
+    &-name {
+        .roboto(19px, 130%, 700);
+        margin-bottom: 10px;
+    }
+
+    &-location {
+        .roboto()
+    }
+
+    &-online {
+        color: #4BBA07;
+        display: none;
+    }
+
+}
+
+@media (max-width: 1279px) {
+    .subscriber {
+        margin-bottom: 55px;
+        width: 48.6%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .subscriber {
+        align-items: flex-start;
+        margin-bottom: 40px;
+        width: 100%;
+
+        &-avatar {
+            width: 50px;
+            height: 50px;
+        }
+
+        &-description {
+            padding: 0;
+        }
+    }
+}
+
+// ALBUMS
+
+.profile-albums {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.album {
+
+
+
+    background-color: #f4f4f4;
+    margin-bottom: 40px;
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    &-main {
+        height: 289px;
+        width: 289px;
+    }
+
+    &-previews {
+        display: flex;
+    }
+
+    &-crops {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 4px;
+
+    }
+
+    &-crop {
+        height: 94px;
+        width: 94px;
+    }
+
+    a&-info {
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    &-name {
+        .roboto()
+    }
+
+    &-rate {
+        .roboto(29px, 130%, 700);
+        margin-left: auto;
+    }
+}
+
+// @media (max-width: 1379px) {
+//     .profile-albums {
+//         justify-content: space-between;
+
+//     }
+// }
+
+@media (max-width: 1439px) {
+
+    .profile-albums {
+        justify-content: space-between;
+    }
+
+    .album {
+        &:nth-child(3n + 2) {
+            margin: 0 10px 40px;
+        }
+
+        &-main {
+            height: 256px;
+            width: 256px;
+        }
+
+        &-crop {
+            height: 81px;
+            width: 81px;
+        }
+
+    }
+
+}
+
+@media (max-width: 1082px) {
+    // .profile-albums {
+    //     justify-content: space-around;
+    // }
+
+    .album {
+        &:nth-child(3n + 2) {
+            margin: 0;
+        }
+
+        &:nth-child(2n + 1) {
+            margin: 0 10px;
+            margin-bottom: 40px;
+        }
+
+        &:nth-child(2n) {
+            margin: 0 10px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .profile-albums {
+        justify-content: center;
+    }
+
+
+    .album {
+        &:nth-child(2n + 1) {
+            margin: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        &:nth-child(2n) {
+            margin: 0 10px;
+            margin-bottom: 20px;
+        }
+
+
+        &-main {
+            height: 264px;
+            width: 264px;
+        }
+
+        &-crop {
+            height: 86px;
+            width: 86px;
+        }
+
+    }
+
+}
+
+@media (max-width: 374px) {
+
+
+
+    .album {
+        margin-bottom: 20px;
+
+        &:nth-child(2n + 1) {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        &:nth-child(2n) {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        &-main {
+            height: 220px;
+            width: 220px;
+        }
+
+        &-crop {
+            height: 70px;
+            width: 70px;
+        }
+
+    }
+
+}
+
+
+
+// large desktops media
+
+// 3 in row
+
+@media (min-width: 1440px) {
+    .album {
+        margin-left: 79px;
+
+        &:nth-child(3n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+@media (min-width: 1520px) and (max-width: 1904px) {
+    .album {
+        &:nth-child(3n) {
+            margin-right: 79px;
+        }
+    }
+}
+
+// 4 in row
+
+@media (min-width: 1905px) {
+    .album {
+
+
+        &:nth-child(3n + 1) {
+            margin-left: 79px;
+        }
+
+        &:nth-child(4n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+@media (min-width: 1985px) and (max-width: 2370px) {
+    .album {
+        &:nth-child(4n) {
+            margin-right: 79px;
+        }
+    }
+}
+
+
+// 5 in row
+
+@media (min-width: 2371px) {
+    .album {
+
+
+        &:nth-child(4n + 1) {
+            margin-left: 79px;
+        }
+
+        &:nth-child(5n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+@media (min-width: 2451px) and (max-width: 2836px) {
+    .album {
+        &:nth-child(5n) {
+            margin-right: 79px;
+        }
+    }
+}
+
+// 6 in row 
+
+@media (min-width: 2837px) {
+    .album {
+
+
+        &:nth-child(5n + 1) {
+            margin-left: 79px;
+        }
+
+        &:nth-child(6n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+@media (min-width: 2917px) and (max-width: 3302px) {
+    .album {
+        &:nth-child(6n) {
+            margin-right: 79px;
+        }
+    }
+}
+
+// 6 in row 
+
+@media (min-width: 3303px) {
+    .album {
+
+
+        &:nth-child(6n + 1) {
+            margin-left: 79px;
+        }
+
+        &:nth-child(7n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+@media (min-width: 3383px) and (max-width: 3768px) {
+    .album {
+        &:nth-child(7n) {
+            margin-right: 79px;
+        }
+    }
+}
+
+// 8 in row
+
+@media (min-width: 3769px) {
+
+    .album {
+
+        &:nth-child(7n + 1) {
+            margin-left: 79px;
+        }
+
+        &:nth-child(8n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+@media (min-width: 3849px) and (max-width: 4234px) {
+    .album {
+        &:nth-child(8n) {
+            margin-right: 79px;
+        }
+    }
+}
+
+// 9 in row
+
+@media (min-width: 4235px) {
+
+    .album {
+
+        &:nth-child(8n + 1) {
+            margin-left: 79px;
+        }
+
+        &:nth-child(9n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+@media (min-width: 4315px) and (max-width: 4700px) {
+    .album {
+        &:nth-child(9n) {
+            margin-right: 79px;
+        }
+    }
+}
+
+// 10 in row
+
+@media (min-width: 4701px) {
+
+    .album {
+
+        &:nth-child(9n + 1) {
+            margin-left: 79px;
+        }
+
+        &:nth-child(10n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+// STATISTICS
+
+.statistics {
+
+
+    td p {
+        .roboto(19px, 130%)
+    }
+
+    &-date p {
+        .roboto()
+    }
+
 
 }

@@ -1,107 +1,196 @@
-extends layouts/page.pug
+extends layouts/profile.pug
+block profileContents
+    //- =====> вкладка Фотографии
+    //- include includes/profileContents/photos.pug 
 
-block title 
-    title Photosight - Профиль
+    //- =====> вкладка Подписчики
+    //- include includes/profileContents/subscribers.pug
 
-block content 
-    main.profile 
-        .profile-top
-            .hero 
-                .container.flex
-                    div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
+    //- =====> вкладка Альбомы
+    include includes/profileContents/albums.pug
 
-                    .hero-description
-                        h3.hero-name Дмитрий Зеленский
-                        p.hero-location Россия, Ставрополь,
-                            span.hero-last-visited  был 18 декабря, 16:56
-                            span(style="display: none;").hero-online онлайн
-                    .hero-contacts
-                        a(href="#").hero-contact-link
-                            i.fab.fa-facebook
-                        a(href="#").hero-contact-link
-                            i.fab.fa-vk
-                        a(href="#").hero-contact-link.phone
-                            i.fas.fa-phone
-                            span +7 (903) 567-45-67
-                        a(href="#").hero-contact-link
-                            i.fab.fa-flickr
-                        a(href="#").hero-contact-link
-                            i.fab.fa-500px
-                        a(href="#").hero-contact-link
-                            i.fab.fa-behance
-                    .hero-about 
-                        p i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits
-            .info
-                .info-block
-                    p.text загружено<br>фотографий
-                    p.data.uploaded 44
-                .info-block
-                    p.text получено<br>комментариев
-                    p.data.received 431
-                .info-block
-                    p.text написано<br>комментариев
-                    p.data.written 110
-                .info-block
-                    p.text подписано<br>пользователей
-                    p.data.subscribers 36
-                .info-block
-                    p.text избранных<br>авторов
-                    p.data.authors 5
-                .info-block
-                    p.text оценённых<br>фотографий
-                    p.data.rated 113
-                .info-block
-                    p.text просмотров<br>фотографий
-                    p.data.viewed 91 156
-            .nav
-                .container
-                    .nav-actions
-                        a(href="#").nav-btn.nav-info
-                            i.fas.fa-info
-                        a(href="#").nav-btn.nav-subscribe 
-                            span Подписаться
-                        a(href="#").nav-btn.nav-sendmail
-                            i.fas.fa-envelope
-                        a(href="#").nav-btn.nav-more
-                            i.fas.fa-ellipsis-h
-                    
-                    include includes/nav-tabs.pug
-                        block tabs
-                            +tabs(['Фотографии', 'Альбомы', 'Избранное', 'Статистика', 'Подписчики'])
-        .profile-body    
-            .container
-                .profile-gallery.justified-gallery
-                    a(href="./img/popgallery/image 1.jpg")
-                        img(src="./img/popgallery/image 1.jpg" alt="")
-                    a(href="./img/popgallery/image 2.jpg")
-                        img(src="./img/popgallery/image 2.jpg" alt="")
-                    a(href="./img/popgallery/image 3.jpg")
-                        img(src="./img/popgallery/image 3.jpg" alt="")
-                    a(href="./img/popgallery/image 4.jpg")
-                        img(src="./img/popgallery/image 4.jpg" alt="")
-                    a(href="./img/popgallery/image 5.jpg")
-                        img(src="./img/popgallery/image 5.jpg" alt="")
-                    a(href="./img/popgallery/image 6.jpg")
-                        img(src="./img/popgallery/image 6.jpg" alt="")
-                    a(href="./img/popgallery/image 7.jpg")
-                        img(src="./img/popgallery/image 7.jpg" alt="")
-                    a(href="./img/popgallery/image 8.jpg")
-                        img(src="./img/popgallery/image 8.jpg" alt="")
-                    a(href="./img/popgallery/image 9.jpg")
-                        img(src="./img/popgallery/image 9.jpg" alt="")
-                    a(href="./img/popgallery/image 10.jpg")
-                        img(src="./img/popgallery/image 10.jpg" alt="")
-                    a(href="./img/popgallery/image 11.jpg")
-                        img(src="./img/popgallery/image 11.jpg" alt="")
-                    a(href="./img/popgallery/image 12.jpg")
-                        img(src="./img/popgallery/image 12.jpg" alt="")
-                    a(href="./img/popgallery/image 17.jpg")
-                        img(src="./img/popgallery/image 17.jpg" alt="")
-                    a(href="./img/popgallery/image 18.jpg")
-                        img(src="./img/popgallery/image 18.jpg" alt="")
+    //- =====> вкладка Статистика
+    //- include includes/profileContents/statistics.pug
 
-        .profile-footer 
-            .container.flex
-                .profile-pagination.pagination
-                a.profile-current-page 1
-                span стр.
+    //- =====> вкладка Избранное
+    //- include includes/profileContents/favorites.pug
+    //- .container    
+        .profile-statistics
+            table
+                thead.statistics-header
+                    tr
+                        th
+                            .fas.fa-image 
+                            p Фото
+                        th
+                            .fas.fa-upload 
+                            p Загружено
+                        th
+                            .fas.fa-book
+                            p Раздел
+                        th
+                            .fas.fa-eye
+                            p Просмотров
+                        th
+                            .fas.fa-star
+                            p Рейтинг
+                        th
+                            .fas.fa-comment
+                            p Комментариев
+                        th
+                            .fas.fa-heart
+                            p В избранном
+
+                tbody.statistics-content
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 1.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p НЮ
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 2.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Натюрморт
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 3.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Свадебное фото
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 4.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Ню
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 5.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Натюрморт
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 6.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Свадебное фото
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 7.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Ню
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 8.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Натюрморт
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 9.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Свадебное фото
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+                    tr.statistics-row
+                        td.statistics-image
+                            a(style="background: url(\"./img/popgallery/image 10.jpg\") center / cover no-repeat")
+                        td.statistics-date
+                            p 15 марта, 12:56
+                        td.statistics-category
+                            p Ню
+                        td.statistics-views
+                            p 1290
+                        td.statistics-rate
+                            p 67
+                        td.statistics-comments
+                            p 569
+                        td.statistics-favorites
+                            p 3
+
+   

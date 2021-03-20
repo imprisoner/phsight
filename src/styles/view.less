@@ -1,5 +1,4 @@
 @import '../../node_modules/swiper/swiper.less';
-// @import '../../node_modules/flexboxgrid/css/flexboxgrid.css';
 @import './libs/flexgrid.css';
 @import './common/spec.less';
 @import './common/fonts.less';
@@ -40,7 +39,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        max-width: fit-content;
+        margin: 0 auto;
         img {
             width: 100%;
         }
@@ -287,6 +287,7 @@
 
     &-actions {
         display: flex;
+
         a {
             text-decoration: none
         }
@@ -313,7 +314,12 @@
         }
     }
 
+    &-more {
+        display: none;
+    }
+
     &-about {
+        max-width: 800px;
         margin-left: 20px;
         position: relative;
         margin-top: 30px;
@@ -342,6 +348,10 @@
         position: absolute;
         left: -30px;
         top: 0;
+    }
+
+    &-about.mobile {
+        display: none;
     }
 }
 
@@ -517,14 +527,19 @@
         display: flex;
         flex-wrap: wrap;
         margin-bottom: 75px;
+        max-width: 426px;
 
         .flex {
             align-items: center;
             width: 100%;
 
             &:first-child {
-                justify-content: space-between;
+                justify-content: center;
                 margin-bottom: 8px;
+
+                .info-prize:nth-child(n + 2) {
+                    margin-left: 30px;
+                }
             }
 
             &:last-child {
@@ -683,8 +698,41 @@
 
 
 // media-queries
+@media (max-width: 1439px) {
+    .info {
+        &-rewards {
+            .flex {
+                align-items: center;
+                width: 100%;
+    
+                &:first-child {
+                    justify-content: space-between;
+    
+                    .info-prize:nth-child(n + 2) {
+                        margin-left: unset;
+                    }
+                }
+    
+                &:last-child {
+                    justify-content: center;
+                }
+            }
+        }
+
+        &-prize.w50 {
+            margin: 0 20px;
+        }
+    }
+}
 
 @media (max-width: 1279px) {
+
+    .photo-image>img:hover~.ratings,
+    .ratings:hover {
+        display: none;
+
+
+    }
 
     .photo {
         &-block .col-xs-12 {
@@ -737,12 +785,11 @@
         }
 
         .ratings {
-            display: flex;
+            display: block;
             height: auto;
 
             background-color: transparent;
             position: static;
-
 
             h5,
             p,
@@ -752,6 +799,7 @@
 
             p {
                 color: #bcbcbc;
+                margin: auto;
             }
 
             &-title {
@@ -761,8 +809,8 @@
 
             &-panel {
                 padding: 20px 0;
-                border-top: 1px solid #EAEAEA;
-                border-bottom: 1px solid #EAEAEA;
+                width: fit-content;
+                margin: 0 auto;
             }
 
             &-wrap {
@@ -770,6 +818,11 @@
             }
 
             // rewriting swiper style
+            .swiper-container {
+                border-top: 1px solid #EAEAEA;
+                border-bottom: 1px solid #EAEAEA;
+            }
+
             .swiper-slide {
                 width: auto;
             }
@@ -795,29 +848,6 @@
             margin-bottom: 45px;
         }
 
-        // &-rewards {
-
-        //     .flex:first-child,
-        //     .flex:last-child {
-        //         justify-content: flex-start;
-        //         width: auto;
-        //     }
-
-        //     .w50 {
-        //         margin: 0;
-        //         margin-left: 20px;
-        //     }
-
-        //     .week1 {
-        //         margin-left: 0;
-        //     }
-        // }
-
-        // &-prize {
-        //     margin: 0;
-        //     margin-left: 20px;
-        // }
-
         &-rewards {
 
             .flex {
@@ -841,8 +871,6 @@
             margin: 0 20px;
         }
 
-
-
     }
 
     .comments {
@@ -860,9 +888,62 @@
     }
 }
 
-@media (max-width: 480px) {
-    .hero {
+@media (max-width: 767px) {
 
+
+    // ============ slider troubleshooting
+    .wall-block.container {
+        .ratings {
+            width: 100vw;
+            margin-left: -20px;
+
+            &-panel {
+                border: none;
+                // setting swiper wrapper width default value
+                width: 100%;
+            }
+
+            &-warning {
+                margin: 0 20px;
+            }
+        }
+
+    }
+
+    .hero {
+        flex-wrap: wrap;
+
+        &-wrap {
+            width: calc(100% - 50px);
+
+            &>.row:first-child {
+                align-items: center;
+                height: 50px;
+            }
+        }
+
+        &-about {
+            display: none;
+        }
+
+        &-about.mobile {
+            display: flex;
+            margin-top: 22px;
+            margin-left: 0;
+        }
+
+        &-about.mobile:before {
+            content: '';
+            background: url(../assets/img/chunk2.svg) center / contain no-repeat;
+            position: absolute;
+            top: -31px;
+            left: 40px;
+        }
+
+        &-about.mobile p {
+            font-size: 12px;
+            line-height: 130%;
+        }
 
         &-subscribe {
             display: none;
@@ -875,9 +956,10 @@
         &-more {
             display: flex;
             .rounded-button(transparent, 0, @bg-color: #eaeaea);
-               i {
-                   color: #282828;
-               }
+
+            i {
+                color: #282828;
+            }
         }
 
         &-avatar {
@@ -895,60 +977,86 @@
             margin-bottom: 0;
         }
 
-        &-about {
-            display: none;
-        }
     }
 
-    // ============ slider troubleshooting
-    .wall-block.container {
-        .ratings {
-            display: block;
-            width: 100vw;
-            margin-left: -30px;
-
-            &-panel {
-                border: none;
-            }
-
-            .swiper-container {
-                border-top: 1px solid #EAEAEA;
-                border-bottom: 1px solid #EAEAEA;
-            }
-        }
-
-        // position: relative;
-        // width: 100%;
-    }
-
-    .col-xs-12 {
-        // width: unset
-    }
-
-    // ============ slider troubleshooting
     .info {
         &-rewards {
-            // display: flex;
-            // flex-wrap: wrap;
-            // margin-bottom: 75px;
 
             .flex {
                 align-items: center;
 
                 &:first-child {
-                    justify-content: space-between;
+                    justify-content: center;
                     width: 100%;
                     margin-bottom: 3px;
+
+                    &>.info-prize {
+                        margin-right: unset;
+                        margin-left: 20px;
+                    }
+
+                    &>.week1 {
+                        margin-left: 0;
+                    }
                 }
 
-                &:first-child>.info-prize {
-                    margin-right: unset;
-                }
+
 
                 &:last-child {
                     justify-content: center;
                     width: 100%;
                 }
+            }
+        }
+
+        &-prize.w50 {
+            margin: 0 20px;
+        }
+    }
+}
+
+// ============ slider troubleshooting
+
+
+
+
+.post {
+    &>.post-answer {
+        width: 100%;
+        margin-left: unset;
+    }
+
+    &-content>.flex {
+        flex-direction: column;
+    }
+
+    &-date {
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .wall-block.container {
+        .ratings {
+            margin-left: -10px;
+        }
+    }
+
+    .info {
+        &-rewards {
+
+            .flex {
+
+                &:first-child {
+                    &>.info-prize {
+                        margin-left: 6px;
+                    }
+
+                    &>.week1 {
+                        margin-left: 0;
+                    }
+                }
+
             }
         }
 
@@ -968,24 +1076,59 @@
             height: 205px;
         }
     }
+}
 
 
-    .comments {
-        // display: none;
+
+@media (max-width: 374px) {
+
+
+    .info {
+        &-rewards {
+
+            .flex {
+
+                &:first-child {
+                    justify-content: space-between;
+
+                    &>.info-prize {
+                        margin-left: 0;
+                    }
+
+                    &>.week1 {
+                        margin-left: 0;
+                    }
+                }
+
+
+            }
+
+
+
+
+        }
+
+        &-prize {
+            width: 75px;
+            height: 75px;
+        }
+
+        &-prize.w50 {
+            margin: 0 3px;
+        }
     }
 
     .post {
-        &>.post-answer {
-            width: 100%;
-            margin-left: unset;
+        &-name {
+            margin-bottom: 5px;
         }
 
-        &-content>.flex {
-            flex-direction: column;
+        &-container {
+            padding: 10px;
         }
 
-        &-date {
-            margin: 0;
+        &-text {
+            font-size: 12px;
         }
     }
 }

@@ -20,9 +20,9 @@ block content
                     include includes/nav-tabs.pug
                         block tabs
                             +tabs(['Все', 'Новые', 'Популярные', 'Выбор редакции'])
-                    a.content-current-page 1
-                    span стр.
-        .content-divider
+                    .content-current-page
+                        input(type="text" value="1")
+                        span стр.
         .content-body    
             .container
                 .content-gallery.justified-gallery
@@ -58,5 +58,7 @@ block content
         .content-footer 
             .container.flex
                 .content-pagination.pagination
-                a.content-current-page 1
-                span стр.
+                .content-current-page
+                    input(type="text" value="1")
+                    span стр.
+
