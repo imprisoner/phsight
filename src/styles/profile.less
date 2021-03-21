@@ -26,13 +26,14 @@
         align-items: center;
         position: absolute;
         right: 0;
-        
+
         input {
             width: 60px;
             .rounded-button(@padX: 10px);
             .roboto(@font-weight: 700, @color: #000000);
-            
-            &:active, &:focus {
+
+            &:active,
+            &:focus {
                 outline: none;
             }
         }
@@ -286,6 +287,7 @@
             text-align: center;
             margin: 0;
             margin-bottom: 32px;
+
             .flex {
                 flex-direction: column;
             }
@@ -512,8 +514,9 @@
 }
 
 .album {
-
-
+    position: relative;
+    padding-top: 29.333%;
+    width: 29.333%;
 
     background-color: #f4f4f4;
     margin-bottom: 40px;
@@ -523,29 +526,46 @@
         text-decoration: none;
     }
 
-    &-main {
-        height: 289px;
-        width: 289px;
-    }
 
     &-previews {
         display: flex;
+        top: 0;
+        right: 0;
+        bottom: 25.4%;
+        left: 0;
+        position: absolute;
     }
+
+    &-main {
+        height: 100%;
+        width: 74.6%;
+    }
+
 
     &-crops {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        margin-left: 4px;
+        align-items: flex-end;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 74.6%;
+        position: absolute;
 
     }
 
     &-crop {
-        height: 94px;
-        width: 94px;
+        height: 33%;
+        width: 97%;
     }
 
     a&-info {
+        position: absolute;
+        top: 74.6%;
+        right: 0;
+        bottom: 0;
+        left: 0;
         padding: 12px 20px;
         display: flex;
         align-items: center;
@@ -561,155 +581,30 @@
     }
 }
 
-// @media (max-width: 1379px) {
-//     .profile-albums {
-//         justify-content: space-between;
-
-//     }
-// }
-
-@media (max-width: 1439px) {
-
-    .profile-albums {
-        justify-content: space-between;
-    }
-
-    .album {
-        &:nth-child(3n + 2) {
-            margin: 0 10px 40px;
-        }
-
-        &-main {
-            height: 256px;
-            width: 256px;
-        }
-
-        &-crop {
-            height: 81px;
-            width: 81px;
-        }
-
-    }
-
-}
-
-@media (max-width: 1082px) {
-    // .profile-albums {
-    //     justify-content: space-around;
-    // }
-
-    .album {
-        &:nth-child(3n + 2) {
-            margin: 0;
-        }
-
-        &:nth-child(2n + 1) {
-            margin: 0 10px;
-            margin-bottom: 40px;
-        }
-
-        &:nth-child(2n) {
-            margin: 0 10px;
-            margin-bottom: 40px;
-        }
-    }
-}
-
-@media (max-width: 767px) {
-    .profile-albums {
-        justify-content: center;
-    }
-
-
-    .album {
-        &:nth-child(2n + 1) {
-            margin: 0 10px;
-            margin-bottom: 20px;
-        }
-
-        &:nth-child(2n) {
-            margin: 0 10px;
-            margin-bottom: 20px;
-        }
-
-
-        &-main {
-            height: 264px;
-            width: 264px;
-        }
-
-        &-crop {
-            height: 86px;
-            width: 86px;
-        }
-
-    }
-
-}
-
-@media (max-width: 374px) {
-
-
-
-    .album {
-        margin-bottom: 20px;
-
-        &:nth-child(2n + 1) {
-            margin: 0;
-            margin-bottom: 20px;
-        }
-
-        &:nth-child(2n) {
-            margin: 0;
-            margin-bottom: 20px;
-        }
-
-        &-main {
-            height: 220px;
-            width: 220px;
-        }
-
-        &-crop {
-            height: 70px;
-            width: 70px;
-        }
-
-    }
-
-}
-
-
-
-// large desktops media
-
+// ===============large desktops 
 // 3 in row
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1679px) {
     .album {
-        margin-left: 79px;
+
+        margin-left: 5.999%;
 
         &:nth-child(3n + 1) {
             margin-left: unset;
-        }
-    }
-}
-
-@media (min-width: 1520px) and (max-width: 1904px) {
-    .album {
-        &:nth-child(3n) {
-            margin-right: 79px;
         }
     }
 }
 
 // 4 in row
 
-@media (min-width: 1905px) {
+@media (min-width: 1680px) and (max-width: 2047px) {
     .album {
-
+        padding-top: 22%;
+        width: 22%;
+        margin-left: 4%;
 
         &:nth-child(3n + 1) {
-            margin-left: 79px;
+            margin-left: 4%;
         }
 
         &:nth-child(4n + 1) {
@@ -717,24 +612,17 @@
         }
     }
 }
-
-@media (min-width: 1985px) and (max-width: 2370px) {
-    .album {
-        &:nth-child(4n) {
-            margin-right: 79px;
-        }
-    }
-}
-
 
 // 5 in row
 
-@media (min-width: 2371px) {
+@media (min-width: 2048px) {
     .album {
-
+        padding-top: 17.6%;
+        width: 17.6%;
+        margin-left: 3%;
 
         &:nth-child(4n + 1) {
-            margin-left: 79px;
+            margin-left: 3%;
         }
 
         &:nth-child(5n + 1) {
@@ -743,125 +631,31 @@
     }
 }
 
-@media (min-width: 2451px) and (max-width: 2836px) {
-    .album {
-        &:nth-child(5n) {
-            margin-right: 79px;
-        }
+
+@media (max-width: 1023px) {
+    .profile-albums {
+        justify-content: space-between;
     }
-}
 
-// 6 in row 
-
-@media (min-width: 2837px) {
-    .album {
-
-
-        &:nth-child(5n + 1) {
-            margin-left: 79px;
-        }
-
-        &:nth-child(6n + 1) {
-            margin-left: unset;
-        }
-    }
-}
-
-@media (min-width: 2917px) and (max-width: 3302px) {
-    .album {
-        &:nth-child(6n) {
-            margin-right: 79px;
-        }
-    }
-}
-
-// 6 in row 
-
-@media (min-width: 3303px) {
-    .album {
-
-
-        &:nth-child(6n + 1) {
-            margin-left: 79px;
-        }
-
-        &:nth-child(7n + 1) {
-            margin-left: unset;
-        }
-    }
-}
-
-@media (min-width: 3383px) and (max-width: 3768px) {
-    .album {
-        &:nth-child(7n) {
-            margin-right: 79px;
-        }
-    }
-}
-
-// 8 in row
-
-@media (min-width: 3769px) {
 
     .album {
-
-        &:nth-child(7n + 1) {
-            margin-left: 79px;
-        }
-
-        &:nth-child(8n + 1) {
-            margin-left: unset;
-        }
+        padding-top: 47.25%;
+        width: 47.25%;
     }
+
 }
 
-@media (min-width: 3849px) and (max-width: 4234px) {
+@media (max-width: 375px) {
     .album {
-        &:nth-child(8n) {
-            margin-right: 79px;
-        }
+        padding-top: 100%;
+        width: 100%;
     }
+
 }
 
-// 9 in row
 
-@media (min-width: 4235px) {
 
-    .album {
 
-        &:nth-child(8n + 1) {
-            margin-left: 79px;
-        }
-
-        &:nth-child(9n + 1) {
-            margin-left: unset;
-        }
-    }
-}
-
-@media (min-width: 4315px) and (max-width: 4700px) {
-    .album {
-        &:nth-child(9n) {
-            margin-right: 79px;
-        }
-    }
-}
-
-// 10 in row
-
-@media (min-width: 4701px) {
-
-    .album {
-
-        &:nth-child(9n + 1) {
-            margin-left: 79px;
-        }
-
-        &:nth-child(10n + 1) {
-            margin-left: unset;
-        }
-    }
-}
 
 // STATISTICS
 
