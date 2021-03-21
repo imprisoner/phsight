@@ -1,2 +1,2 @@
 import './styles/profile'
-import './js/photos'
+import './js/profile'

@@ -134,7 +134,7 @@
     }
 
     &-contact-link {
-        .rounded-button(@padX: 0);
+        .rounded-button(#3D3D3D, @padX: 0);
 
         text-decoration: none;
 
@@ -373,6 +373,32 @@
 
 }
 
+@media (max-width: 679px) {
+    .nav {
+
+        .container {
+            display: block;
+            width: 100%;
+        }
+
+        &-info {
+            margin-right: unset;
+        }
+
+        &-slider-wrap {
+            overflow: hidden;
+            display: flex;
+        }
+    }
+
+    //================= NAV-TABS COMPONENT
+
+    .tabs {
+        width: unset;
+    }
+
+    //================= NAV-TABS COMPONENT
+}
 
 @media (max-width: 480px) {
 
@@ -399,30 +425,9 @@
 
     }
 
-    .nav {
 
-        .container {
-            display: block;
-            width: 100%;
-        }
 
-        &-info {
-            margin-right: unset;
-        }
 
-        &-slider-wrap {
-            overflow: hidden;
-            display: flex;
-        }
-    }
-
-    //================= NAV-TABS COMPONENT
-
-    .tabs {
-        width: unset;
-    }
-
-    //================= NAV-TABS COMPONENT
 
 }
 
@@ -441,7 +446,6 @@
 .profile-subscribers {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -449,7 +453,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 60px;
-    width: 32.3%;
+
+
 
     &-avatar {
         width: 100px;
@@ -479,7 +484,55 @@
 
 }
 
+@media (min-width: 2048px) {
+    .subscriber {
+        width: 19%;
+        margin-left: 1.25%;
+
+        &:nth-child(4n + 1) {
+            margin-left: 1.25%;
+        }
+
+        &:nth-child(5n + 1) {
+            margin-left: unset;
+        }
+    }
+}
+
+@media (min-width: 1680px) and (max-width: 2047px) {
+    .subscriber {
+        width: 24%;
+        margin-left: 1.33%;
+
+        &:nth-child(3n + 1) {
+            margin-left: 1.33%;
+        }
+
+        &:nth-child(4n + 1) {
+            margin-left: unset;
+        }
+    }
+
+}
+
+@media (min-width: 1280px) and (max-width: 1679px) {
+    .subscriber {
+        width: 32.3%;
+        margin-left: 1.55%;
+
+        &:nth-child(3n + 1) {
+            margin-left: unset;
+        }
+    }
+
+
+}
+
 @media (max-width: 1279px) {
+    .profile-subscribers {
+        justify-content: space-between;
+    }
+
     .subscriber {
         margin-bottom: 55px;
         width: 48.6%;
@@ -660,15 +713,385 @@
 // STATISTICS
 
 .statistics {
+    &-table {
+        position: relative;
+        width: 100%;
 
+        &-wrap_1,
+        &-wrap_2,
+        &-wrap_3 {
+            float: left
+        }
+
+        &-wrap_1 {
+            width: 10.7%;
+        }
+
+        &-wrap_2 {
+            width: 49.3%;
+        }
+
+        &-wrap_3 {
+            width: 40%;
+        }
+    }
 
     td p {
+        .roboto(19px, 130%)
+    }
+
+    &-header {
+        th {
+            padding-bottom: 25px;
+            // width: 200px;
+        }
+
+        .flex {
+            align-items: center;
+        }
+
+        p {
+            margin-left: 8px;
+            .roboto(@color: #bcbcbc)
+        }
+
+        .icon {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .far {
+            color: #bcbcbc;
+            line-height: 165%;
+        }
+
+        .fa-image {
+            font-size: 18px;
+
+        }
+
+        .fa-upload {
+            font-size: 16px;
+
+        }
+
+        .fa-book {
+            font-size: 18px;
+
+        }
+
+        .fa-eye {
+            font-size: 18px;
+
+        }
+
+        .fa-star {
+            font-size: 19px;
+
+        }
+
+        .fa-comment {
+            font-size: 19px;
+
+        }
+
+        .fa-heart {
+            font-size: 19px;
+
+        }
+
+        &-image {
+            min-width: 162px;
+        }
+
+        &-date {
+            min-width: 212px;
+        }
+
+        &-category {
+            min-width: 215px;
+        }
+
+        &-views {
+            min-width: 195px;
+        }
+
+        &-rate {
+            min-width: 185px;
+        }
+
+        &-comments {
+            min-width: 200px;
+        }
+
+        &-favorites {
+            p {
+                min-width: fit-content;
+            }
+        }
+    }
+
+    &-header::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: calc(100%);
+        background-color: #eaeaea;
+
+
+    }
+
+
+
+    &-content a {
+        display: block;
+        width: 100px;
+        height: 100px;
+    }
+
+    &-table-row td {
+        padding-top: 40px;
+        height: 140px;
+
+
+
+    }
+
+    &-category p,
+    &-views p,
+    &-rate p,
+    &-comments p,
+    &-favorites p {
         .roboto(19px, 130%)
     }
 
     &-date p {
         .roboto()
     }
+}
 
+@media (max-width: 1279px) {
+    .profile-statistics {
 
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: flex;
+        }
+
+    }
+
+    .statistics {
+        &-header {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        &-table-wrap_2,
+        &-table-wrap_3 {
+            .statistics-table-row {
+                padding-left: 40px;
+            }
+
+            td:before {
+                font-family: 'Font Awesome 5 Pro';
+                font-weight: 400;
+                width: 22px;
+                height: 22px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #bcbcbc;
+                line-height: 130%;
+
+            }
+
+            td {
+                align-items: center;
+
+                p:before {
+                    .roboto(@color: #bcbcbc);
+                    padding-left: 8px;
+                }
+            }
+        }
+
+        &-table-wrap {
+            &_1 {
+                width: unset;
+            }
+
+            &_2 {
+                width: unset;
+
+                td:nth-of-type(1):before {
+                    content: '\f093';
+                    font-size: 16px;
+                }
+
+                td:nth-of-type(2):before {
+                    content: '\f02d';
+                    font-size: 18px;
+                }
+
+                td:nth-of-type(3):before {
+                    content: '\f06e';
+                    font-size: 18px;
+                }
+
+                td:nth-of-type(1) {
+                    p:before {
+                        content: 'Загружено ';
+
+                    }
+                }
+
+                td:nth-of-type(2) {
+                    p:before {
+                        content: 'Раздел ';
+
+                    }
+                }
+
+                td:nth-of-type(3) {
+                    p:before {
+                        content: 'Просмотров ';
+
+                    }
+                }
+
+            }
+
+            &_3 {
+                width: unset;
+
+                td:nth-of-type(1):before {
+                    content: '\f005';
+                    font-size: 19px;
+                }
+
+                td:nth-of-type(2):before {
+                    content: '\f075';
+                    font-size: 19px;
+                }
+
+                td:nth-of-type(3):before {
+                    content: '\f004';
+                    font-size: 19px;
+                }
+
+                td:nth-of-type(1) {
+                    order: 2;
+
+                    p:before {
+
+                        content: 'Рейтинг ';
+
+                    }
+                }
+
+                td:nth-of-type(2) {
+
+                    p:before {
+                        content: 'Комментариев ';
+
+                    }
+                }
+
+                td:nth-of-type(3) {
+                    order: 1;
+
+                    p:before {
+                        content: 'В избранном ';
+
+                    }
+                }
+            }
+
+        }
+
+        &-content {
+            flex-direction: column;
+        }
+
+        &-table-row {
+            flex-direction: column;
+
+            height: 100px;
+            justify-content: space-around;
+            margin-bottom: 40px;
+
+            td {
+                padding: unset;
+                height: unset;
+
+            }
+        }
+
+        &-category p,
+        &-views p,
+        &-rate p,
+        &-comments p,
+        &-favorites p {
+            .roboto()
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .statistics {
+        &-row {
+            position: relative;
+        }
+
+        &-table-wrap_3 {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        &-table-row {
+            margin-bottom: 140px;
+        }
+
+        &-table-wrap_2,
+        &-table-wrap_3 {
+            .statistics-table-row {
+                padding-left: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 359px) {
+    .statistics {
+        &-content a {
+            width: 80px;
+            height: 80px;
+        }
+        &-table-wrap_2,
+        &-table-wrap_3 {
+            .statistics-table-row {
+                padding-left: 5px;
+            }
+
+            td {
+                p:before  {
+                    padding-left: 4px;
+                }
+            }
+        }
+
+        &-table-wrap_3 {
+            left: 80px;
+        }
+    }
 }

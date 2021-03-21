@@ -41,6 +41,7 @@
         align-items: center;
         max-width: fit-content;
         margin: 0 auto;
+
         img {
             width: 100%;
         }
@@ -181,7 +182,7 @@
     }
 
     &-rate-btn {
-        .rounded-button(transparent, 22px, 7px, #7BC220);
+        .rounded-button(#eaeaea80, 22px, 7px);
         .roboto(@font-weight: 700, @color: #fff);
         margin-top: 20px;
         cursor: pointer;
@@ -192,6 +193,13 @@
         .roboto(12px, 130%, 400, #fff);
         max-width: 690px;
         margin-top: 20px;
+    }
+
+    .swiper-container {
+        .ratings-rate-btn {
+            color: #000;
+            border-color: #eaeaea;
+        }
     }
 }
 
@@ -301,7 +309,7 @@
     }
 
     &-sendmail {
-        .rounded-button(#eaeaea, 0);
+        .rounded-button(#3D3D3D, 0);
         width: 40px;
         height: 40px;
         margin-left: 10px;
@@ -704,15 +712,15 @@
             .flex {
                 align-items: center;
                 width: 100%;
-    
+
                 &:first-child {
                     justify-content: space-between;
-    
+
                     .info-prize:nth-child(n + 2) {
                         margin-left: unset;
                     }
                 }
-    
+
                 &:last-child {
                     justify-content: center;
                 }
@@ -849,6 +857,7 @@
         }
 
         &-rewards {
+            max-width: unset;
 
             .flex {
 
@@ -981,18 +990,25 @@
 
     .info {
         &-rewards {
+            max-width: 354px;
+            margin: 0 auto;
+            margin-bottom: 54px;
 
             .flex {
                 align-items: center;
 
+
                 &:first-child {
-                    justify-content: center;
+                    justify-content: space-between;
                     width: 100%;
                     margin-bottom: 3px;
 
+                    &>.info-prize:nth-child(n + 2) {
+                        margin-left: unset;
+                    }
+
                     &>.info-prize {
                         margin-right: unset;
-                        margin-left: 20px;
                     }
 
                     &>.week1 {
@@ -1010,7 +1026,22 @@
         }
 
         &-prize.w50 {
-            margin: 0 20px;
+            margin: 0 8px;
+        }
+    }
+
+    .post {
+        &>.post-answer {
+            width: 100%;
+            margin-left: unset;
+        }
+
+        &-content>.flex {
+            flex-direction: column;
+        }
+
+        &-date {
+            margin: 0;
         }
     }
 }
@@ -1020,22 +1051,10 @@
 
 
 
-.post {
-    &>.post-answer {
-        width: 100%;
-        margin-left: unset;
-    }
 
-    &-content>.flex {
-        flex-direction: column;
-    }
-
-    &-date {
-        margin: 0;
-    }
-}
 
 @media (max-width: 480px) {
+
     .wall-block.container {
         .ratings {
             margin-left: -10px;
