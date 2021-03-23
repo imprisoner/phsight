@@ -24,7 +24,9 @@ module.exports = {
         index: './index.js',
         photos: './photos.js',
         profile: './profile.js',
-        view: './view.js'
+        view: './view.js',
+        error: './error.js',
+        techworks: './techworks.js'
     },
     devtool: 'inline-source-map',
     devServer: {

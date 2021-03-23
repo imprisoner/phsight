@@ -3,7 +3,9 @@ import './libs/jquery.justifiedGallery'
 import {
     initSlider,
     initNavTabs,
-    initPagination
+    initPagination,
+    toggleBurger,
+    expandSearch
 } from './utils'
 
 $(document).on('DOMContentLoaded', function () {
@@ -28,13 +30,9 @@ $(document).on('DOMContentLoaded', function () {
 
     //expanding search
 
-    $('.header-search-btn').on('click', function () {
-        $('.search').toggleClass('active')
-        if ($('.search').hasClass('active')) {
-            $('.header-search-field').trigger('focus')
-        } else {
-            $('.header-search-field').trigger('blur').val('')
-        }
-    })
+   expandSearch('header')
 
+    // burger-menu
+
+    toggleBurger()
 })

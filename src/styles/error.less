@@ -1,0 +1,132 @@
+@import './common/fonts.less';
+@import './common/spec.less';
+@import './common/mixins.less';
+@import './components/mini-footer.less';
+
+.top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    z-index: 2;
+
+    &-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-logo-image {
+        width: 91px;
+        height: 66px;
+        background: url(../assets/img/logo/logo_black.svg) center / cover no-repeat;
+    }
+}
+
+.message {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        height: calc(100% - 59px);
+        text-align: center;
+    }
+
+    // technical works page only!!!
+
+    &-logo {
+        width: 161px;
+        height: 114px;
+        margin-bottom: 60px;
+    }
+
+    // technical works page only!!!
+    &-code {
+        width: 108px;
+        height: 58px;
+        margin-bottom: 32px;
+    }
+
+    &-text {
+        .roboto();
+        margin-bottom: 60px;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    &-search {
+        display: flex;
+        position: relative;
+    }
+
+
+    &-search-btn {
+        background-color: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+        transition: transform 0.33s ease;
+        cursor: pointer;
+
+        i {
+            font-size: 16px;
+            line-height: 165%;
+            color: #282828;
+        }
+
+        &:focus {
+            outline: none
+        }
+    }
+
+    &-search-field {
+        .roboto(@color: #282828);
+        width: 40px;
+        height: 40px;
+        border: 2px solid #282828;
+        border-radius: 10px;
+        outline: none;
+        transition: width 0.3s ease;
+        border: 2px solid #EAEAEA;
+        background: rgba(255, 255, 255, 0.05);
+
+        &:focus {
+            outline: none
+        }
+    }
+
+    &-search.active>&-search-btn {
+        transform: translateX(255px);
+    }
+
+    &-search.active>&-search-field {
+        width: 295px;
+        // border: 2px solid #FFFFFF1A;
+        padding: 10px 40px 10px 10px;
+    }
+}
+
+@media (max-width: 1239px) {
+    .message-text {
+        max-width: 615px;
+    }
+}

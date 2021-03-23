@@ -6,7 +6,8 @@ html(lang="en")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         title Photosight - Главная
-    body 
+    body
+        include ./includes/burger-menu.pug 
         include ./includes/header.pug
         main.main
             .swiper-container.slider
@@ -61,18 +62,4 @@ html(lang="en")
                     i.fas.fa-chevron-left
                 a.slider-btn-next
                     i.fas.fa-chevron-right
-        footer.main-footer
-                    .main-footer-social
-                        a(href="#").main-footer-social-link
-                            i.fab.fa-facebook
-                        a(href="#").main-footer-social-link
-                            i.fab.fa-vk
-                        a(href="#").main-footer-social-link
-                            i.fab.fa-odnoklassniki
-                        a(href="#").main-footer-social-link
-                            i.fab.fa-instagram
-                        a(href="#").main-footer-social-link
-                            i.fab.fa-telegram
-                        a(href="#").main-footer-social-link
-                            i.fab.fa-tumblr
-                    .main-footer-copyright PhotoSight LLP &copy; 1999-2021
+        include ./includes/mini-footer.pug  

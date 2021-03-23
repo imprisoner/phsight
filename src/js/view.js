@@ -1,6 +1,8 @@
 import $ from 'jquery'
 import {
     initSlider,
+    toggleBurger,
+    expandSearch
 } from './utils'
 
 $(document).on('DOMContentLoaded', function () { 
@@ -11,14 +13,10 @@ $(document).on('DOMContentLoaded', function () {
 
     //expanding search
     
-    $('.header-search-btn').on('click', function () {
-        $('.search').toggleClass('active')
-        if ($('.search').hasClass('active')) {
-            $('.header-search-field').trigger('focus')
-        } else {
-            $('.header-search-field').trigger('blur').val('')
-        }
+    expandSearch()
 
-    })
+    // burger-menu
+
+    toggleBurger()
 
 })

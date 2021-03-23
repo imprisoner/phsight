@@ -8,8 +8,8 @@
 @import './components/footer.less';
 @import './components/pagination.less';
 @import './components/nav-tabs.less';
-
-
+@import './components/burger-menu.less';
+@import './components/mini-footer.less';
 
 .profile {
 
@@ -1077,6 +1077,7 @@
             width: 80px;
             height: 80px;
         }
+
         &-table-wrap_2,
         &-table-wrap_3 {
             .statistics-table-row {
@@ -1084,7 +1085,7 @@
             }
 
             td {
-                p:before  {
+                p:before {
                     padding-left: 4px;
                 }
             }
@@ -1094,4 +1095,100 @@
             left: 80px;
         }
     }
+}
+
+
+
+// favorites
+
+.favorites {
+    &-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        background-color: #f4f4f4;
+        border-top: 2px solid #282828;
+        border-bottom: 2px solid #282828;
+    }
+
+    &-navlink {
+        text-decoration: none;
+        text-transform: uppercase;
+
+        .roboto(@color: #bcbcbc);
+
+        &.active {
+            font-weight: 700;
+            color: #282828;
+
+            span {
+                font-weight: 400;
+            }
+        }
+
+        &:nth-child(n+2) {
+            margin-left: 60px;
+        }
+    }
+
+
+
+
+}
+
+// authors container 
+
+.favorites-authors .container {
+    flex-wrap: wrap;
+}
+
+.author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 40px;
+    // 1440 фтв 3 in row
+    width: 30.9%;
+    margin-right: 2.433%;
+    :nth-child(3n) {
+        margin-right: unset;
+    }
+
+    &-avatar {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    &-name {
+        .roboto(19px, 130%, 700);
+        margin-bottom: 10px;
+    }
+
+    &-location {
+        .roboto();
+        margin-bottom: 22px;
+    }
+
+    &-previews {
+        display: flex;
+    }
+
+    &-crop {
+        width: 99px;
+        height: 99px;
+
+        &:nth-child(n+2) {
+            margin-left: 4px;
+        }
+    }
+
+
+
 }

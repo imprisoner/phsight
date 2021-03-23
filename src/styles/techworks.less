@@ -1,0 +1,48 @@
+@import './common/fonts.less';
+@import './common/spec.less';
+@import './common/mixins.less';
+@import './components/mini-footer.less';
+
+
+.message {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        height: calc(100% - 59px);
+        text-align: center;
+    }
+
+    // technical works page only!!!
+
+    &-logo {
+        width: 161px;
+        height: 114px;
+        margin-bottom: 60px;
+    }
+
+    // technical works page only!!!
+    &-text {
+        .roboto();
+        margin-bottom: 60px;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+}
+
+@media (max-width: 1239px) {
+    .message-text {
+        max-width: 486px;
+    }
+} 

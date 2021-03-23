@@ -4,6 +4,8 @@
 @import './common/spec.less';
 @import './common/mixins.less';
 @import './components/header.less';
+@import './components/burger-menu.less';
+@import './components/mini-footer.less';
 
 .header {
     position: absolute;
@@ -82,53 +84,7 @@
 
 }
 
-// footer
 
-
-.main-footer {
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
-    // width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #282828;
-    padding: 8px 60px;
-
-
-    &-social-link {
-        font-size: 18px;
-        line-height: 240%;
-        text-align: right;
-        color: #FFFFFF;
-    }
-
-    &-social-link:nth-child(n + 2) {
-        margin-left: 33px;
-        font-size: 18px;
-        line-height: 240%;
-        text-align: right;
-        color: #FFFFFF;
-    }
-
-    &-copyright {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 175%;
-        color: #EEEEEE;
-    }
-
-
-
-    &-faq-link {
-        margin-left: 100px;
-    }
-
-
-}
 
 @media (max-width: 1279px) {
     .header {
@@ -138,39 +94,9 @@
     }
 }
 
-@media (max-width: 1120px) {
 
-}
-
-@media (max-width: 480px) {
-
-
-    .slider {
-        height: calc(100vh - 100px);
-    }
-
-    .slide {
-        &-footer {
-            padding: 0 0 40px 0;
-        }
-
-        &-copyright {
-            display: none;
-        }
-
-        &-photo-name {
-            margin: 0 auto;
-        }
-    }
-
-
-}
 
 @media (max-width: 1024px) {
-
-    .main-footer {
-        align-items: center;
-    }
 
     .header {
         padding: 15px 0;
@@ -193,34 +119,31 @@
         }
     }
 
-    .main-footer {
-        padding: 16px 53px;
-        flex-direction: column;
-        text-align: center;
+    
 
-        .container {
-            flex-direction: column;
-        }
+}
 
-        &-faq-link {
-            margin-left: unset;
-        }
 
-        &-social {
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
+@media (max-width: 767px) {
 
-        &-social-link:nth-child(n + 2) {
-            margin-left: 0;
+
+    .slider {
+        height: calc(100vh - 101px);
+    }
+
+    .slide {
+        &-footer {
+            padding: 0 0 40px 0;
         }
 
         &-copyright {
-            font-size: 12px;
-            line-height: 130%;
+            display: none;
+        }
+
+        &-photo-name {
+            margin: 0 auto;
         }
     }
+
 
 }

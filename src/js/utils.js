@@ -69,3 +69,34 @@ export function initPagination(breakpoint) {
     Pagination.Init(document.getElementsByClassName('pagination'), options)
 
 }
+
+// burger-menu
+
+export function toggleBurger() {
+
+    $('.header-menu-btn').on('click', function (e) {
+        e.stopPropagation()
+        $('.burger').show()
+
+    })
+
+    $('.burger-close').on('click', function (evt) {
+        evt.stopPropagation()
+        $('.burger').hide()
+    })
+
+    expandSearch('burger')
+}
+
+// expanding search
+
+export function expandSearch(area = '') {
+
+    $(`.${area}-search-btn`).on('click', function () {
+        $('.search').toggleClass('active')
+        if ($('.search').hasClass('active')) {
+            $(`.${area}-search-field`).trigger('focus')
+        } else $(`.${area}-search-field`).trigger('blur').val('')
+
+    })
+}

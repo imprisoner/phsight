@@ -1,0 +1,18 @@
+.burger
+    .burger-top
+        .container
+            .burger-close
+                i.fas.fa-times
+            a(href="/").burger-logo
+                .burger-logo-image   
+    .burger-navigation
+        .container
+            nav.burger-menu
+                a(href="/photos.html").burger-navlink Фотографии
+                a(href="#").burger-navlink Рейтинги
+                a(href="#").burger-navlink Авторы
+            .burger-search.search
+                a.burger-search-btn
+                    i.fas.fa-search
+                input(placeholder="").burger-search-field
+    include ./mini-footer.pug
