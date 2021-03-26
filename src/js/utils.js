@@ -73,19 +73,23 @@ export function initPagination(breakpoint) {
 // burger-menu
 
 export function toggleBurger() {
-
+    const modal = $('.burger-popup').hasClass('user-menu') ? 'user' : 'burger'
+    console.log(modal)
     $('.header-menu-btn').on('click', function (e) {
         e.stopPropagation()
-        $('.burger').show()
-
+        $(`.${modal}-menu`).show()
+        $("body").css("overflow-y", "hidden");
     })
 
-    $('.burger-close').on('click', function (evt) {
+    $(`.${modal}-close`).on('click', function (evt) {
         evt.stopPropagation()
-        $('.burger').hide()
+        $(`.${modal}-menu`).hide()
+        $("body").css("overflow-y", "");
     })
-
-    expandSearch('burger')
+   
+    if (modal === 'burger') {
+        expandSearch(modal)
+    }
 }
 
 // expanding search

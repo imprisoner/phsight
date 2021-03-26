@@ -1,17 +1,22 @@
 .burger {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #282828;
-    z-index: 999;
+    &-menu {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #282828;
+        z-index: 999;
 
+        
     .container {
         padding-top: 20px;
         height: 100%;
     }
+    }
+
+
 
     &-top {
         display: flex;
@@ -25,6 +30,7 @@
     &-close {
         position: absolute;
         z-index: 5;
+
         i {
             font-size: 19px;
             line-height: 165%;
@@ -48,6 +54,7 @@
         position: absolute;
         top: 0;
         bottom: 0;
+
         .container {
             display: flex;
             align-items: center;
@@ -58,7 +65,7 @@
 
     }
 
-    &-menu {
+    &-nav {
         margin-bottom: 55px;
     }
 

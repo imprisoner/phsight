@@ -1,0 +1,24 @@
+extends layouts/page2.pug
+block content
+    main.registration
+        .container.flex 
+            h4.registration-title Регистрация
+            form.registration-form(action="POST")
+                input(placeholder="Ваш логин").registration-login
+                input(placeholder="Электронная почта").registration-email
+                .registration-captcha
+                    div(style="background: url(./img/captcha.svg) center / cover no-repeat").registration-captcha-pic
+                    input(placeholder="Введите код").registration-captcha-input
+                    a.registration-captcha-refresh
+                        i.fas.fa-redo-alt
+                .registration-acception
+                    label(for="accept") Я принимаю&nbsp;
+                        a.rules-link правила Фотосайта
+                    .registration-checkbox
+                        input(type="checkbox" name="accept")
+                btn(type="submit").registration-submit Зарегистрироваться
+            .registration-alt-action
+                p У вас уже есть аккаунт?&nbsp;
+                    a Войдите!
+                    
+            

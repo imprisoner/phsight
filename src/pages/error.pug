@@ -1,16 +1,7 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(http-equiv="X-UA-Compatible" content="IE=edge")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title Photosight - Oops!
-    body 
-        header.top
-                a(href="/").top-logo
-                    .top-logo-image
-        
-        include includes/errors/500.pug
+extends layouts/page2.pug
 
-        include includes/mini-footer.pug
+block title
+    title Photosight - Oops!
 
+block content
+    include includes/errors/500.pug

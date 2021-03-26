@@ -1,0 +1,19 @@
+extends layouts/page2.pug
+block content 
+    .authorization
+        .container.flex 
+            h4.authorization-title Вход
+            form.authorization-form(action="POST")
+                input(placeholder="Ваш логин").authorization-login
+                input(placeholder="Пароль").authorization-password
+                btn(type="submit").authorization-submit Войти
+            .authorization-social
+                p Войти через
+                a(href="#").authorization-btn-social
+                    i.fab.fa-facebook
+                a(href="#").authorization-btn-social
+                    i.fab.fa-vk
+            .authorization-alt-action 
+                p У вас ещё нет аккаунта?&nbsp;
+                        a.authorization-register Зарегистрируйтесь!
+                a.authorization-remind Забыли пароль?

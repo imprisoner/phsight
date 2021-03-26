@@ -1,0 +1,159 @@
+@import './common/fonts.less';
+@import './common/spec.less';
+@import './common/mixins.less';
+@import './common/mixins-new.less';
+@import './components/mini-footer.less';
+
+.top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    z-index: 2;
+
+    &-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-logo-image {
+        width: 91px;
+        height: 66px;
+        background: url(../assets/img/logo/logo_black.svg) center / cover no-repeat;
+    }
+}
+
+main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #282828;
+    color: #fff;
+}
+
+.registration {
+    height: calc(100vh - 59px);
+
+    .container {
+        height: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-title {
+        .h4(@white);
+        margin-bottom: 20px;
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    &-login,
+    &-email {
+        .rounded-button(#ffffff1a, 13px, 7px, #ffffff0d);
+        .p(@white);
+        text-align: left;
+        width: 295px;
+        outline: none;
+    }
+
+    &-login {
+        margin-bottom: 20px;
+    }
+    &-email {
+        margin-bottom: 40px;
+    }
+
+    &-captcha {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        width: 100%;
+    }
+
+    &-captcha-pic {
+        border-radius: 10px;
+        width: 96px;
+        height: 40px;
+
+    }
+
+    &-captcha-input {
+        .rounded-button(#ffffff0d, 13px, 7px, #ffffff1a);
+        .p(@white);
+        text-align: left;
+        width: 189px;
+        outline: none;
+    }
+
+    &-captcha-refresh {
+        position: absolute;
+        right: -26px;
+        cursor: pointer;
+    }
+
+    &-acception {
+        padding: 40px 0;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        label {
+            .p(@white)
+        }
+
+        a {
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+    }
+
+    &-checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        border: 2px solid #3D3D3D;
+        margin-right: 10px;
+        input {
+            cursor: pointer;
+        }
+    }
+
+    &-submit {
+        .rounded-button(#eaeaea, 22px, 7px);
+        .p_bold(@white);
+        cursor: pointer;
+    }
+
+    &-alt-action {
+        padding-top: 78px;
+        p {
+            .p(@white)
+        }
+
+        a {
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+}

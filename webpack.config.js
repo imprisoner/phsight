@@ -6,6 +6,9 @@ const {
 } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require("copy-webpack-plugin");
+const {
+    options
+} = require('less')
 
 const PUG_DIR = path.join(__dirname, 'src/pages')
 const PUG_PAGES = fs.readdirSync(PUG_DIR).filter(filename => filename.endsWith('.pug'))
@@ -26,7 +29,9 @@ module.exports = {
         profile: './profile.js',
         view: './view.js',
         error: './error.js',
-        techworks: './techworks.js'
+        techworks: './techworks.js',
+        authorization: './authorization.js',
+        registration: './registration.js'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -35,16 +40,15 @@ module.exports = {
     },
     output: {
         // filename: '[name].[fullhash].js',
-        filename: '[name].js',
+        filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist'),
         publicPath: ''
     },
     plugins: [
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
+            filename: 'styles/[name].css',
             chunkFilename: '[id].css',
-
         }),
         ...PUG_PAGES.map(page => new HTMLWebpackPlugin({
             template: `${PUG_DIR}/${page}`,
@@ -71,9 +75,13 @@ module.exports = {
                 test: /\.less|.css$/,
                 use: [{
                         loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: '../'
+                        }
                     },
+
                     'css-loader',
-                    'less-loader'
+                    'less-loader',
                 ]
             },
             {
@@ -88,7 +96,10 @@ module.exports = {
             },
             {
                 test: /\.(jpg|png|svg|jpeg|svg)$/,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                options: {
+                    outputPath: 'icons/'
+                }
             }
         ]
     },
