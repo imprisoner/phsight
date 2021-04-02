@@ -30,8 +30,8 @@ module.exports = {
         view: './view.js',
         error: './error.js',
         techworks: './techworks.js',
-        authorization: './authorization.js',
-        registration: './registration.js'
+        authorize: './authorize.js',
+        register: './register.js'
     },
     devtool: 'inline-source-map',
     devServer: {

@@ -106,6 +106,8 @@
         }
     }
 
+    // not authorized
+
     &-user-action {
         display: flex;
         align-items: center;
@@ -124,8 +126,9 @@
         text-align: center;
     }
 
+    &-user-register,
     &-user-avatar {
-        background-color: #fff;
+        background: #fff center / cover no-repeat;
         border-radius: 50%;
         width: 40px;
         height: 40px;
@@ -141,6 +144,23 @@
         text-align: center;
         color: #282828;
     }
+
+    // authorized
+
+    &-user-logged {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+
+    }
+
+    &-greets {
+        .roboto(@color: #fff);
+        margin-right: 10px;
+    }
+
+
 }
 
 // media
@@ -163,6 +183,7 @@
             justify-content: space-between;
             width: calc(100% - 80px);
         }
+
         &-navigation {
             margin-left: calc(50% - 365px);
         }
@@ -216,19 +237,21 @@
 
 }
 
-@media (max-width: 1439px) {
-    
-}
+// @media (max-width: 1439px) {
+
+// }
 
 @media (max-width: 1024px) {
     .header {
         .container {
             justify-content: space-between;
-
+            position: relative;
+            width: calc(100% - 40px);
         }
 
         &-logo {
             order: 1;
+            margin: 0 auto;
         }
 
         &-logo-image {
@@ -243,6 +266,8 @@
             align-items: center;
             width: auto;
             margin: 0;
+            position: absolute;
+            top: calc(50% - 14.5px);
         }
 
         &-search {
@@ -274,10 +299,12 @@
             display: none;
         }
 
-        &-user-avatar {
+        &-user-register {
             background-color: transparent;
             width: auto;
             height: auto;
+            position: absolute;
+            right: 0;
         }
 
         &-user-icon {
@@ -286,6 +313,19 @@
             text-align: center;
             color: #FFFFFF;
         }
+
+        // auth
+        &-greets {
+            display: none;
+        }
+
+        &-user-logged {
+            order: 2;
+            margin-left: unset;
+            position: absolute;
+            right: 0;
+            top: calc(50% - 20px);
+        }
     }
 }
 
@@ -293,6 +333,21 @@
     .header {
         .container {
             width: calc(100% - 40px);
+            position: relative;
+        }
+
+        &-navigation {
+            position: absolute;
+        }
+
+        &-user-logged {
+            position: absolute;
+            right: 0;
+            top: calc(50% - 20px);
+        }
+
+        &-logo {
+            margin: 0 auto;
         }
     }
 }

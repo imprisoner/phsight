@@ -1,35 +1,40 @@
 .user {
     &-menu {
         display: none;
+        background-color: #282828;
+        z-index: 999;
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: #282828;
-        z-index: 999;
 
         .container {
-            padding-top: 20px;
+            padding-top: 15px;
+            width: calc(100% - 40px);
+            position: relative;
+            height: 100%;
+        }
+
+        .wrap {
+            position: fixed;
+            width: 100%;
+            overflow-y: auto;
             height: 100%;
         }
     }
 
 
-   
+
 
     &-top {
         display: flex;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-
     }
 
     &-close {
         position: absolute;
         z-index: 5;
+        right: 0;
 
         i {
             font-size: 19px;
@@ -51,38 +56,38 @@
 
     &-navigation {
         width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
+        height: calc(100vh - 121px);
 
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            width: 100%;
         }
 
     }
+
     &-info {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-bottom: 65px;
-            a {
-                display: block;
-                width: 30px;
-                height: 30px;
-                border-radius:50%;
-                margin-bottom: 10px;
-            }
 
-            span {
-                .roboto(@color:#fff)
-            }
-          
+        a {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        span {
+            .roboto(@color: #fff)
+        }
+
     }
+
     &-nav {
         margin-bottom: 65px;
         text-align: center;
@@ -90,7 +95,7 @@
 
     &-navlink {
         text-transform: uppercase;
-        
+
         text-decoration: none;
         display: block;
         .roboto(@color: #fff)
@@ -107,4 +112,71 @@
         .roboto(@color: #fff)
     }
 
+    &-wallet {
+        margin-left: 27px;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+    .user {
+        &-navigation {
+            height: calc(100vh - 163px);
+        }
+    }
+}
+
+
+@media (max-width: 480px) {
+    .user {
+        &-top {
+            .container {
+                width: calc(100% - 40px);
+            }
+        }
+    }
+}
+
+
+@media (max-height: 666px) {
+    .user {
+
+        &-navigation {
+            padding: 14px 0;
+        }
+
+        &-info {
+            margin-bottom: 30px;
+        }
+
+        &-nav {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media (max-height: 479px) {
+    .user {
+        &-navigation {
+            height: auto;
+        }
+    }
+}
+
+@media (max-height: 375px) {
+    .user {
+        &-nav {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media (max-height: 359px) {
+    .user {
+
+        &-navlink:not(:nth-child(5)) {
+            margin-bottom: 12px;
+        }
+    }
 }

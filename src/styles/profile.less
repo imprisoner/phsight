@@ -8,9 +8,10 @@
 @import './components/footer.less';
 @import './components/pagination.less';
 @import './components/nav-tabs.less';
-// @import './components/burger-menu.less';
+@import './components/burger-menu.less';
 @import './components/user-menu.less';
 @import './components/mini-footer.less';
+@import './components/ads.less';
 
 .profile {
 
@@ -18,9 +19,9 @@
         padding-top: 80px;
     }
 
-    &-body {
-        padding-top: 50px;
-    }
+    // &-body {
+    //     padding-top: 50px;
+    // }
 
     &-current-page {
         display: flex;
@@ -47,13 +48,21 @@
 
 
     &-footer {
-        padding: 50px 0;
+        // padding: 50px 0;
 
         .container {
             position: relative;
             align-items: center;
         }
     }
+
+    // includes
+
+    &-photos {
+        padding-bottom: 40px;
+    }
+
+
 }
 
 .hero {
@@ -135,7 +144,7 @@
     }
 
     &-contact-link {
-        .rounded-button(#3D3D3D, @padX: 0);
+        .rounded-button(@padX: 0);
 
         text-decoration: none;
 
@@ -255,9 +264,9 @@
 @media (max-width: 1024px) {
 
     .profile {
-        &-body {
-            padding-top: 40px;
-        }
+        // &-body {
+        //     padding-top: 40px;
+        // }
 
         &-current-page,
         &-current-page~span {
@@ -375,6 +384,13 @@
 }
 
 @media (max-width: 679px) {
+
+    //================= NAV-TABS COMPONENT
+    .tab-link:first-child {
+        margin-left: 8px;
+    }
+
+    //================= NAV-TABS COMPONENT
     .nav {
 
         .container {
@@ -448,6 +464,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    padding: 20px 0 15px;
 }
 
 .subscriber {
@@ -541,7 +558,11 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+    .profile-subscribers {
+        padding: unset;
+    }
+
     .subscriber {
         align-items: flex-start;
         margin-bottom: 40px;
@@ -712,6 +733,11 @@
 
 
 // STATISTICS
+.profile-statistics {
+    float: left;
+    padding: 20px 0 60px;
+    width: 100%;
+}
 
 .statistics {
     &-table {
@@ -806,7 +832,8 @@
         }
 
         &-image {
-            min-width: 162px;
+            // min-width: 162px;
+            min-width: 140px;
         }
 
         &-date {
@@ -877,6 +904,7 @@
 
 @media (max-width: 1279px) {
     .profile-statistics {
+        display: flex;
 
         table,
         thead,
@@ -890,6 +918,10 @@
     }
 
     .statistics {
+        &-row {
+            margin: 0 auto;
+        }
+
         &-header {
             position: absolute;
             top: -9999px;
@@ -1048,6 +1080,10 @@
 }
 
 @media (max-width: 767px) {
+    .profile-statistics {
+        padding: 0 0 40px;
+    }
+
     .statistics {
         &-row {
             position: relative;
@@ -1122,6 +1158,7 @@
         &.active {
             font-weight: 700;
             color: #282828;
+            cursor: default;
 
             span {
                 font-weight: 400;
@@ -1138,6 +1175,11 @@
 
 }
 
+.favorites-photos,
+.favorites-author-photos {
+    padding-bottom: 40px;
+}
+
 @media (max-width: 767px) {
     .favorites {
         &-nav {
@@ -1147,15 +1189,17 @@
 
         &-navlink {
             margin-bottom: 10px;
+
             &:nth-child(3) {
-                margin-bottom: 0; 
-               
+                margin-bottom: 0;
+
             }
+
             &:nth-child(n+2) {
-                margin-left: 0; 
-               
+                margin-left: 0;
+
             }
-           
+
         }
     }
 }
@@ -1176,7 +1220,7 @@
     // 1440 фтв 3 in row
     width: 30.9%;
     margin-right: 2.433%;
-    margin-bottom: 80px;
+    padding: 20px 0 60px;
 
     &:nth-child(3n) {
         margin-right: unset;
@@ -1253,7 +1297,6 @@
 
 @media (max-width: 1439px) {
     .author {
-        margin-bottom: 50px;
 
         &-crop {
             width: 83px;

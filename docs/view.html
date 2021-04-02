@@ -5,40 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photosight - Просмотр фото</title>
-  <link href="assets_fonts_all_min_css.css" rel="stylesheet"><link href="styles_libs_flexgrid_css.css" rel="stylesheet"><link href="view.css" rel="stylesheet"></head>
+  <link href="styles/assets_fonts_all_min_css.css" rel="stylesheet"><link href="styles/styles_libs_flexgrid_css.css" rel="stylesheet"><link href="styles/view.css" rel="stylesheet"></head>
   <body>
-<div class="burger">
-  <div class="burger-top">
-    <div class="container">
-      <div class="burger-close"><i class="fas fa-times"></i></div><a class="burger-logo" href="/">
-        <div class="burger-logo-image">  </div></a>
-    </div>
-  </div>
-  <div class="burger-navigation">
-    <div class="container">
-      <nav class="burger-menu"><a class="burger-navlink" href="/photos.html">Фотографии</a><a class="burger-navlink" href="#">Рейтинги</a><a class="burger-navlink" href="#">Авторы</a></nav>
-      <div class="burger-search search"><a class="burger-search-btn"><i class="fas fa-search"></i></a>
-        <input class="burger-search-field" placeholder="">
+<div class="burger-menu">
+  <div class="wrap">
+    <div class="burger-top">
+      <div class="container">
+        <div class="burger-close"><i class="fas fa-times"></i></div><a class="burger-logo" href="/phsight">
+          <div class="burger-logo-image">  </div></a>
       </div>
     </div>
-  </div>
+    <div class="burger-navigation">
+      <div class="container">
+        <nav class="burger-nav"><a class="burger-navlink" href="phsight/photos.html">Фотографии</a><a class="burger-navlink" href="#">Рейтинги</a><a class="burger-navlink" href="#">Авторы</a></nav>
+        <div class="burger-search search"><a class="burger-search-btn"><i class="fas fa-search"></i></a>
+          <input class="burger-search-field" placeholder="">
+        </div>
+      </div>
+    </div>
 <footer class="mini-footer">
   <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-tumblr"></i></a></div>
   <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
 </footer>
+  </div>
+</div>
+<div class="user-menu">
+  <div class="wrap">
+    <div class="user-top">
+      <div class="container">
+        <div class="user-close"><i class="fas fa-times"></i></div><a class="user-logo" href="/phsight">
+          <div class="user-logo-image">  </div></a>
+      </div>
+    </div>
+    <div class="user-navigation">
+      <div class="container">
+        <div class="user-info"><a class="user-avatar" style="background: url(./img/subscribers/image%2039-3.jpg) center / cover no-repeat"></a><span class="user-name">Sub-Zero</span></div>
+        <nav class="user-nav"><a class="user-navlink" href="#">Профиль</a><a class="user-navlink" href="#">Настройки</a><a class="user-navlink" href="#">Переписка</a><a class="user-navlink" href="#">Загрузить фото</a><a class="user-navlink" href="#">Личный счёт<span class="user-wallet">$2.00</span></a></nav><a class="user-logout" href="#">Выйти</a>
+      </div>
+    </div>
+<footer class="mini-footer">
+  <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-tumblr"></i></a></div>
+  <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+</footer>
+  </div>
 </div>
 <header class="header">
-  <div class="container flex"><a class="header-logo" href="/">
+  <div class="container flex"><a class="header-logo" href="/phsight">
       <div class="header-logo-image">  </div></a>
     <div class="header-navigation">
       <div class="header-menu-btn"><i class="fas fa-bars"></i></div>
-      <nav class="header-menu-list"><a class="header-navlink" href="photos.html">Фотографии</a><a class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a></nav>
+      <nav class="header-menu-list"><a class="header-navlink" href="phsight/photos.html">Фотографии</a><a class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a></nav>
       <div class="header-search search"><a class="header-search-btn"><i class="fas fa-search"></i></a>
         <input class="header-search-field" placeholder="">
       </div>
     </div>
-    <div class="header-user-action"><a class="header-sign-in" href="#">Регистрация</a>
-      <div class="header-user-avatar user-avatar"><a class="header-user-icon"><i class="fas fa-user"></i></a></div>
+    <div class="header-user-action"><a class="header-sign-in" href="phsight/register.html">Регистрация</a>
+      <div class="header-user-register user-avatar"><a class="header-user-icon" href="phsight/authorize.html"><i class="fas fa-user"></i></a></div>
     </div>
   </div>
 </header>
@@ -113,7 +135,11 @@
       <div class="wall-block container">
         <div class="row wrap">
           <div class="hero col-xs-12 col-lg-8">
-            <div class="hero-avatar" style="background: url(./img/profile/avatar.jpg) center / cover"></div>
+            <div class="hero-avatar" style="background: url(./img/profile/avatar.jpg) center / cover">
+              <div class="hero-pro">
+                <div class="hero-pro-icon"></div>
+              </div>
+            </div>
             <div class="hero-wrap">
               <div class="row">
                 <div class="hero-description">
@@ -170,7 +196,7 @@
             <form class="comments-textfield" action="POST">
               <div class="row">
                 <div class="comments-user-avatar" style="background: url('./img/user-avatar.jpg') center / cover no-repeat;"></div>
-                <textarea placeholder="Напишите свой комментарий"> </textarea>
+                <textarea placeholder="Напишите свой комментарий"></textarea>
               </div>
               <button class="comments-post-comment" type="submit">Отправить</button>
             </form>
@@ -421,5 +447,5 @@
     <div class="footer-col col-3"><a class="footer-support" href="#">Техническая поддержка</a><a class="footer-advertising" href="#">Реклама на сайте</a><a class="footer-abuse" href="#">Жалобы / Abuse</a></div>
   </div>
 </footer>
-  <script src="vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_esm_components_core_core-class_js.js"></script><script src="view.js"></script></body>
+  <script src="js/vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_esm_components_core_core-class_js.js"></script><script src="js/view.js"></script></body>
 </html>

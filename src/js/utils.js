@@ -25,7 +25,11 @@ export function initNavTabs(breakpoint = 0, sliderInstance) {
     const tabs = $('.tab-link')
 
     function indicator(target, shift = 0) {
-        marker.css('left', target.offsetLeft - shift)
+        if (shift >= 0) {
+            marker.css('left', target.offsetLeft - shift)
+        } else {
+            marker.css('left', target.offsetLeft + shift)
+        }
         marker.css('width', target.offsetWidth + 9)
     }
 
@@ -40,8 +44,8 @@ export function initNavTabs(breakpoint = 0, sliderInstance) {
             } else
                 indicator(target, 5)
         })
-        if (i === 0) {
-            $(this).trigger('click')
+        if ($(this).hasClass('active')) {
+            indicator(this, -4)
         }
     })
     if (sliderInstance) {
@@ -70,25 +74,28 @@ export function initPagination(breakpoint) {
 
 }
 
-// burger-menu
+// user-menu and burger-menu
+/** 
+ * Adds listeners and toggles popups
+ * @param   {String} target element you click
+ * @param   {String} popup popup you call
+ */
+export function togglePopup(target, popup) {
+    if (target) {
+        $(`.${target}`).on('click', function (e) {
+            e.stopPropagation()
+            $(`.${popup}-menu`).show()
+            $("body").css("overflow-y", "hidden");
+        })
 
-export function toggleBurger() {
-    const modal = $('.burger-popup').hasClass('user-menu') ? 'user' : 'burger'
-    console.log(modal)
-    $('.header-menu-btn').on('click', function (e) {
-        e.stopPropagation()
-        $(`.${modal}-menu`).show()
-        $("body").css("overflow-y", "hidden");
-    })
-
-    $(`.${modal}-close`).on('click', function (evt) {
-        evt.stopPropagation()
-        $(`.${modal}-menu`).hide()
-        $("body").css("overflow-y", "");
-    })
-   
-    if (modal === 'burger') {
-        expandSearch(modal)
+        $(`.${popup}-close`).on('click', function (evt) {
+            evt.stopPropagation()
+            $(`.${popup}-menu`).hide()
+            $("body").css("overflow-y", "");
+        })
+    }
+    if (popup === 'burger') {
+        expandSearch(popup)
     }
 }
 

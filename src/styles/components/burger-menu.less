@@ -9,27 +9,31 @@
         background-color: #282828;
         z-index: 999;
 
-        
-    .container {
-        padding-top: 20px;
-        height: 100%;
-    }
+
+        .container {
+            height: 100%;
+            position: relative;
+        }
+
+        .wrap {
+            position: fixed;
+            width: 100%;
+            overflow-y: auto;
+            height: 100%;
+        }
     }
 
-
+    
 
     &-top {
         display: flex;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-
+        padding-top: 15px;
     }
 
     &-close {
         position: absolute;
         z-index: 5;
+        top: calc(50% - 15.5px);
 
         i {
             font-size: 19px;
@@ -51,16 +55,13 @@
 
     &-navigation {
         width: 100%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
+        height: calc(100vh - 121px);
 
         .container {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            width: 100%;
         }
 
     }
@@ -80,7 +81,6 @@
         font-size: 15px;
         line-height: 175%;
         text-align: center;
-        // margin-right: 60px;
     }
 
     &-navlink:not(:nth-child(3)) {
@@ -109,7 +109,6 @@
         cursor: pointer;
 
         i {
-            // color: #fff;
             font-size: 16px;
             line-height: 165%;
             color: #fff;
@@ -144,5 +143,37 @@
         width: 295px;
         border: 2px solid #FFFFFF1A;
         padding: 10px 40px 10px 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .burger {
+        &-navigation {
+            height: calc(100vh - 163px);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .burger {
+        &-top {
+            .container {
+                width: calc(100% - 40px);
+            }
+        }
+    }
+}
+
+@media (max-height: 420px) {
+    .burger {
+        // &-menu {
+        //     .mini-footer {
+        //         display: none;
+        //     }
+        // }
+
+        &-navigation {
+            height: calc(100vh - 62px);
+        }
     }
 }

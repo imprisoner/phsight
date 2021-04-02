@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles/assets_fonts_all_min_css.css" rel="stylesheet"><link href="styles/register.css" rel="stylesheet"></head>
+  <body> 
+    <header class="top"><a class="top-logo" href="/">
+        <div class="top-logo-image"></div></a></header>
+    <main>
+      <div class="registration">
+        <div class="container flex"> 
+          <h4 class="registration-title">Регистрация</h4>
+          <form class="registration-form" action="POST">
+            <input class="registration-login" placeholder="Ваш логин">
+            <input class="registration-email" placeholder="Электронная почта">
+            <div class="registration-captcha">
+              <div class="registration-captcha-pic" style="background: url(./img/captcha.svg) center / cover no-repeat"></div>
+              <input class="registration-captcha-input" placeholder="Введите код"><a class="registration-captcha-refresh"><i class="fas fa-redo-alt"></i></a>
+            </div>
+            <div class="registration-acception">
+              <label for="accept">Я принимаю&nbsp;<a class="rules-link">правила Фотосайта</a></label>
+              <div class="registration-checkbox">
+                <input type="checkbox" name="accept">
+              </div>
+            </div>
+            <btn class="registration-submit" type="submit">Зарегистрироваться</btn>
+          </form>
+          <div class="registration-alt-action">
+            <p>У вас уже есть аккаунт?&nbsp;<a>Войдите!</a></p>
+          </div>
+        </div>
+      </div>
+    </main>
+<footer class="mini-footer">
+  <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-tumblr"></i></a></div>
+  <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+</footer>
+  <script src="js/register.js"></script></body>
+</html>

@@ -4,7 +4,7 @@ import {
     initSlider,
     initNavTabs,
     initPagination,
-    toggleBurger,
+    togglePopup,
     expandSearch
 } from './utils'
 
@@ -23,7 +23,7 @@ $(document).on('DOMContentLoaded', function () {
     // setting JustifiedGallery plugin
 
     $('.justified-gallery').justifiedGallery({
-        rowHeight: 310,
+        rowHeight: 250,
         margins: 2,
         lastRow: 'justify',
         randomize: true
@@ -33,9 +33,10 @@ $(document).on('DOMContentLoaded', function () {
 
     expandSearch('header')
 
-    // burger-menu
+    // popups
 
-    toggleBurger()
+    togglePopup('header-menu-btn','burger')
+    togglePopup('header-user-logged', 'user')
 
 })
 

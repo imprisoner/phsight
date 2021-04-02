@@ -106,6 +106,8 @@ block content
 
                     .hero.col-xs-12.col-lg-8
                         div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
+                            .hero-pro
+                                div.hero-pro-icon
                         .hero-wrap
                             .row
                                 .hero-description
@@ -159,7 +161,7 @@ block content
                         form.comments-textfield(action="POST")
                             .row
                                 .comments-user-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                                textarea(placeholder="Напишите свой комментарий") 
+                                textarea(placeholder="Напишите свой комментарий")
                             button(type="submit").comments-post-comment Отправить
                         .comments-wallpost 
 

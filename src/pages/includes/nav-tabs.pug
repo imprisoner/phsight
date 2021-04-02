@@ -5,6 +5,6 @@ nav.tabs
             block tabs
                 mixin tabs(links)
                     each link in links
-                        a.tab-link.swiper-slide= link
+                        a(href="#").tab-link.swiper-slide= link
                     else
                         p NO LINKS

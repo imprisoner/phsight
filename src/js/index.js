@@ -5,18 +5,24 @@ import Swiper, {
     EffectFade,
     EffectCoverflow
 } from 'swiper'
-import {toggleBurger, expandSearch} from './utils'
+import {
+    expandSearch,
+    togglePopup
+} from './utils'
 
 Swiper.use([Navigation, Autoplay, EffectFade, EffectCoverflow])
 
 new Swiper('.swiper-container', {
-    autoplay: {delay: 7000, disableOnInteraction: false},
+    autoplay: {
+        delay: 7000,
+        disableOnInteraction: false
+    },
     effect: 'fade',
     navigation: {
         nextEl: '.slider-btn-next',
         prevEl: '.slider-btn-prev',
         disabledClass: 'slider-btn-disabled'
-      },
+    },
 })
 
 // header expanding search
@@ -24,5 +30,6 @@ new Swiper('.swiper-container', {
 expandSearch('header')
 
 
-// burger listeners
-toggleBurger()
+// popup listeners
+togglePopup('header-menu-btn', 'burger')
+togglePopup('header-user-logged', 'user')

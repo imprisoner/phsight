@@ -6,6 +6,7 @@
 @import './components/header.less';
 @import './components/footer.less';
 @import './components/burger-menu.less';
+@import './components/user-menu.less';
 @import './components/mini-footer.less';
 
 .photo {
@@ -75,7 +76,7 @@
             .rounded-button(#ffa80040, 5px);
             width: 40px;
             height: 40px;
-
+            cursor: pointer;
             i {
                 font-weight: 900;
                 font-size: 16px;
@@ -86,6 +87,7 @@
 
         &-prev,
         &-next {
+            cursor: pointer;
             i {
                 font-weight: 300;
                 font-size: 42px;
@@ -106,6 +108,7 @@
         &-share,
         &-expand,
         &-like {
+            cursor: pointer;
             .rounded-button(#eaeaea1a, 5px);
             width: 40px;
             height: 40px;
@@ -122,6 +125,7 @@
     }
 
     &-likes {
+        cursor: pointer;
         display: flex;
         align-items: center;
     }
@@ -257,6 +261,7 @@
 .hero {
     padding-right: 20px;
     display: flex;
+   
 
     .row {
         margin: 0;
@@ -268,8 +273,25 @@
         width: 75px;
         height: 75px;
         border-radius: 50%;
+        position: relative;
     }
 
+    &-pro {
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+        background-color: #282828;
+        border-radius: 2px;
+        width: 23px;
+        height: 11px;
+        padding: 2px;
+
+    }
+    &-pro-icon {
+        background: url(../assets/img/pro.svg) center / cover no-repeat;
+        width: 100%;
+        height: 100%;
+    }
     &-wrap {
         width: calc(100% - 75px);
     }
@@ -381,15 +403,18 @@
     &-textfield {
         padding: 40px 20px 40px 0;
         border-top: 1px solid #EAEAEA;
-
+        
         textarea {
+            .roboto();
             border: 2px solid #EAEAEA;
             border-radius: 10px;
             padding: 10px 20px;
             width: calc(100% - 70px);
-            margin-left: 20px;
+            margin-left: auto;
             min-height: 67px;
             outline: none;
+            resize: none;
+            overflow: hidden;
         }
     }
 
@@ -399,6 +424,7 @@
         .rounded-button(@padX: 22px, @padY: 7px);
         .roboto(@font-weight: 700);
         outline: none;
+        cursor: pointer;
     }
 
     &-user-avatar {
@@ -515,7 +541,7 @@
         .rounded-button(transparent, 13px, 13px, #EAEAEA);
         margin-right: 10px;
         margin-bottom: 10px;
-
+        cursor: pointer;
         span {
             .roboto(12px, 117%)
         }
@@ -664,9 +690,11 @@
                 background: url(../assets/img/tech-icons/iso.svg) center / cover no-repeat;
             }
 
-            &:last-child .icon {
+            &:last-child {
+                margin-right: unset;
+                .icon {
                 background: url(../assets/img/tech-icons/angle.svg) center / cover no-repeat;
-            }
+            }}
 
 
 
@@ -726,6 +754,10 @@
                 &:last-child {
                     justify-content: center;
                 }
+            } 
+
+            &-tech div {
+                margin-right: 35px;
             }
         }
 

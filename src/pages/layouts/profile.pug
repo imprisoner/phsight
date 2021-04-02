@@ -71,6 +71,13 @@ block content
                         block tabs
                             +tabs(['Фотографии', 'Альбомы', 'Избранное', 'Статистика', 'Подписчики'])
         .profile-body
+            //- .container 
+                include ../includes/ads.pug
+                    block mocks
+                        .ads-unit
+                            img(src="./img/mock-ads/4.jpg" alt="mock")
+                        .ads-unit
+                            img(src="./img/mock-ads/6.jpg" alt="mock")
             block profileContents
 
         .profile-footer 
@@ -79,3 +86,8 @@ block content
                 .profile-current-page 
                     input(type="text" value="1")
                     span стр.
+        .container
+            include ../includes/ads.pug
+                block mocks
+                    .ads-unit
+                        img(src="./img/mock-ads/5.jpg" alt="mock")                   
