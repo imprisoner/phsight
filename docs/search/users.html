@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../styles/assets_fonts_all_min_css.css" rel="stylesheet">
+  <link href="../styles/search.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="burger-menu">
+    <div class="wrap">
+      <div class="burger-top">
+        <div class="container">
+          <div class="burger-close"><i class="fas fa-times"></i></div><a class="burger-logo" href="/phsight">
+            <div class="burger-logo-image"> </div>
+          </a>
+        </div>
+      </div>
+      <div class="burger-navigation">
+        <div class="container">
+          <nav class="burger-nav"><a class="burger-navlink" href="/phsight/photos.html">Фотографии</a><a
+              class="burger-navlink" href="#">Рейтинги</a><a class="burger-navlink" href="#">Авторы</a></nav>
+          <div class="burger-search search"><a class="burger-search-btn"><i class="fas fa-search"></i></a>
+            <input class="burger-search-field" placeholder="">
+          </div>
+        </div>
+      </div>
+      <footer class="mini-footer">
+        <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-tumblr"></i></a></div>
+        <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </footer>
+    </div>
+  </div>
+  <div class="user-menu">
+    <div class="wrap">
+      <div class="user-top">
+        <div class="container">
+          <div class="user-close"><i class="fas fa-times"></i></div><a class="user-logo" href="/phsight">
+            <div class="user-logo-image"> </div>
+          </a>
+        </div>
+      </div>
+      <div class="user-navigation">
+        <div class="container">
+          <div class="user-info"><a class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-3.jpg) center / cover no-repeat"></a><span
+              class="user-name">Sub-Zero</span></div>
+          <nav class="user-nav"><a class="user-navlink" href="#">Профиль</a><a class="user-navlink"
+              href="#">Настройки</a><a class="user-navlink" href="#">Переписка</a><a class="user-navlink"
+              href="#">Загрузить фото</a><a class="user-navlink" href="#">Личный счёт<span
+                class="user-wallet">$2.00</span></a></nav><a class="user-logout" href="#">Выйти</a>
+        </div>
+      </div>
+      <footer class="mini-footer">
+        <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-tumblr"></i></a></div>
+        <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </footer>
+    </div>
+  </div>
+  <header class="header">
+    <div class="container flex"><a class="header-logo" href="/phsight">
+        <div class="header-logo-image"> </div>
+      </a>
+      <div class="header-navigation">
+        <div class="header-menu-btn"><i class="fas fa-bars"></i></div>
+        <nav class="header-menu-list"><a class="header-navlink" href="/phsight/photos.html">Фотографии</a><a
+            class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a></nav>
+        <div class="header-search search"><a class="header-search-btn"><i class="fas fa-search"></i></a>
+          <input class="header-search-field" placeholder="">
+        </div>
+      </div>
+      <div class="header-user-action"><a class="header-sign-in" href="/phsight/register.html">Регистрация</a>
+        <div class="header-user-register user-avatar"><a class="header-user-icon" href="/phsight/authorize.html"><i
+              class="fas fa-user"></i></a></div>
+      </div>
+    </div>
+  </header>
+  <main class="search">
+    <div class="search-top">
+      <h1 class="search-title">Поиск</h1>
+      <form class="search-form" action="POST">
+        <div class="search-textfield"><a class="search-btn"><i class="fas fa-search"></i></a>
+          <input class="search-field" placeholder="введите текст для поиска">
+        </div>
+        <div class="search-navigation">
+          <div class="search-tabs">
+            <div class="container">
+              <nav class="tabs">
+                <div class="tab-marker"></div>
+                <div class="swiper-container">
+                  <div class="swiper-wrapper"><a class="tab-link swiper-slide" href="/phsight/search/photos.html">Фотографии</a><a
+                      class="tab-link swiper-slide active" href="/phsight/search/users.html">Пользователи</a>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="search-current">
+            <div class="container">
+              <div class="search-result">
+                <p>Найдено&nbsp;<span>801</span>&nbsp;фото</p>
+              </div>
+              <div class="search-current-page">
+                <input type="text" value="1"><span>стр.</span>
+              </div>
+            </div>
+          </div>
+          <div class="search-options">
+            <div class="options swiper-container">
+              <div class="container swiper-wrapper">
+                <div class="search-params-field swiper-slide">
+                  <input class="checked" type="radio" name="params" id="all" value="all" checked>
+                  <label for="all">Искать везде</label>
+                </div>
+                <div class="search-params-field swiper-slide">
+                  <input type="radio" name="params" id="name" value="name">
+                  <label for="name">В названии</label>
+                </div>
+                <div class="search-params-field swiper-slide">
+                  <input type="radio" name="params" id="description" value="description">
+                  <label for="description">В описании</label>
+                </div>
+                <div class="search-params-field swiper-slide">
+                  <input type="radio" name="params" id="tags" value="tags">
+                  <label for="tags">По тегам</label>
+                </div>
+                <div class="search-params-field swiper-slide"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="search-body">
+      <div class="container">
+        <div class="ads">
+          <div class="ads-wrap">
+            <div class="ads-unit"><img src="../img/mock-ads/1.jpg" alt="mock"></div>
+            <div class="ads-unit"><img src="../img/mock-ads/2.jpg" alt="mock"></div>
+            <div class="ads-unit"><img src="../img/mock-ads/3.jpg" alt="mock"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="search-users">
+          <div class="user">
+            <div class="user-avatar" style="background: url(../img/subscribers/image%2039.jpg) center / cover no-repeat">
+            </div>
+            <div class="user-description">
+              <h5 class="user-name">Анастасия Никаноровская</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-1.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Константин</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited" style="display: none;">была
+                  18 декабря, 16:56</span><span class="user-online" style="display: inline;">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-2.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Sub-Zero</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-3.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Mickey</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited" style="display: none;">была
+                  18 декабря, 16:56</span><span class="user-online" style="display: inline;">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-4.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Mouse</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-5.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Run Bitch</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar" style="background: url(../img/subscribers/image%2039.jpg) center / cover no-repeat">
+            </div>
+            <div class="user-description">
+              <h5 class="user-name">Анастасия Никаноровская</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-3.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Mickey</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited" style="display: none;">была
+                  18 декабря, 16:56</span><span class="user-online" style="display: inline;">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-1.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Константин</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited" style="display: none;">была
+                  18 декабря, 16:56</span><span class="user-online" style="display: inline;">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-2.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Sub-Zero</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-4.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Mouse</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-5.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Run Bitch</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar" style="background: url(../img/subscribers/image%2039.jpg) center / cover no-repeat">
+            </div>
+            <div class="user-description">
+              <h5 class="user-name">Анастасия Никаноровская</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-3.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Mickey</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited" style="display: none;">была
+                  18 декабря, 16:56</span><span class="user-online" style="display: inline;">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-1.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Константин</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited" style="display: none;">была
+                  18 декабря, 16:56</span><span class="user-online" style="display: inline;">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-2.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Sub-Zero</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-4.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Mouse</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-5.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Run Bitch</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-5.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Run Bitch</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+          <div class="user">
+            <div class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-5.jpg) center / cover no-repeat"></div>
+            <div class="user-description">
+              <h5 class="user-name">Run Bitch</h5>
+              <p class="user-location">Россия, Ставрополь<br><span class="user-last-visited">была 18 декабря,
+                  16:56</span><span class="user-online">онлайн </span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search-footer">
+      <div class="container flex">
+        <div class="search-pagination pagination"></div>
+        <div class="search-current-page">
+          <input type="text" value="1"><span>стр.</span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="ads">
+          <div class="ads-wrap">
+            <div class="ads-unit"><img src="../img/mock-ads/1.jpg" alt="mock"></div>
+            <div class="ads-unit"><img src="../img/mock-ads/2.jpg" alt="mock"></div>
+            <div class="ads-unit"><img src="../img/mock-ads/3.jpg" alt="mock"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container flex jcb">
+      <div class="footer-col col-1">
+        <div class="footer-social"><a class="footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a
+            class="footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="footer-social-link" href="#"><i class="fab fa-tumblr"></i></a>
+        </div>
+        <div class="footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </div>
+      <div class="footer-col col-2"> <a class="footer-rules-link" href="#">Правила</a><a class="footer-faq-link"
+          href="#">Вопросы и ответы</a></div>
+      <div class="footer-col col-3"><a class="footer-support" href="#">Техническая поддержка</a><a
+          class="footer-advertising" href="#">Реклама на сайте</a><a class="footer-abuse" href="#">Жалобы / Abuse</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_esm_components_core_core-class_js.js">
+  </script>
+  <script src="../js/js_libs_jquery_justifiedGallery_js-js_utils_js.js"></script>
+  <script src="../js/search.js"></script>
+</body>
+
+</html>

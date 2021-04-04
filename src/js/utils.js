@@ -4,12 +4,13 @@ import Pagination from './pagination'
 
 // setting slider
 
-export function initSlider(breakpoint = 0) {
+export function initSlider(breakpoint = 0, clickSlide = true) {
     console.log('slider init')
     let sliderInstance = window.innerWidth < breakpoint ?
         new Swiper('.swiper-container', {
             slidesPerView: 'auto',
-            slideToClickedSlide: true,
+            // speed: 100,
+            slideToClickedSlide: clickSlide,
             freeMode: true
         }) :
         null

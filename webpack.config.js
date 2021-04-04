@@ -31,7 +31,8 @@ module.exports = {
         error: './error.js',
         techworks: './techworks.js',
         authorize: './authorize.js',
-        register: './register.js'
+        register: './register.js',
+        search: './search.js'
     },
     devtool: 'inline-source-map',
     devServer: {

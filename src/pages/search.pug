@@ -1,0 +1,69 @@
+extends layouts/page.pug
+
+block content
+    main.search 
+        .search-top
+            h1.search-title Поиск
+            form(action="POST").search-form
+                .search-textfield
+                    a.search-btn
+                        i.fas.fa-search
+                    input(placeholder="введите текст для поиска").search-field
+                .search-navigation
+                    .search-tabs
+                        .container
+                            include includes/nav-tabs.pug
+                                block tabs
+                                    +tabs(['Фотографии', 'Пользователи'])
+                    .search-current
+                        .container
+                            .search-result
+                                p Найдено&nbsp;<span>801</span>&nbsp;фото
+                            .search-current-page
+                                input(type="text" value="1")
+                                span стр.
+                    .search-options
+                        .options.swiper-container
+                            .container.swiper-wrapper
+                                .search-params-field.swiper-slide
+                                    input(type="radio" name="params" id="all" value="all" checked).checked
+                                    label(for="all") Искать везде
+                                .search-params-field.swiper-slide
+                                    input(type="radio" name="params" id="name" value="name")
+                                    label(for="name") В названии
+                                .search-params-field.swiper-slide
+                                    input(type="radio" name="params" id="description" value="description")
+                                    label(for="description") В описании
+                                .search-params-field.swiper-slide
+                                    input(type="radio" name="params" id="tags" value="tags")
+                                    label(for="tags") По тегам
+                                .search-params-field.swiper-slide
+        .search-body
+            .container
+                include includes/ads.pug
+                    .ads-unit
+                        img(src="./img/mock-ads/1.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/2.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/3.jpg" alt="mock")
+            //- main content
+            //- include includes/search/photos.pug
+            include includes/search/users.pug
+            //- main content
+        .search-footer 
+            .container.flex
+                .search-pagination.pagination
+                .search-current-page
+                    input(type="text" value="1")
+                    span стр.
+            .container 
+                include includes/ads.pug
+                    block mocks
+                        .ads-unit
+                            img(src="./img/mock-ads/1.jpg" alt="mock")
+                        .ads-unit
+                            img(src="./img/mock-ads/2.jpg" alt="mock")
+                        .ads-unit
+                            img(src="./img/mock-ads/3.jpg" alt="mock")
+
