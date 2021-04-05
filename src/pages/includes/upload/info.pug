@@ -1,0 +1,120 @@
+.upload-top 
+    h1 Добавление Фотографии
+    h3 Информация о фото
+.upload-body.info
+    form(method="POST" action="").info-form
+        .container
+            section.info-crop
+                div(style="background: url(./img/popgallery/image%201.jpg) center / cover no-repeat;").img
+                a(href="#").edit
+                    i.fas.fa-crop
+                    p изменить миниатюру
+            section.info-main
+                .info-section-top
+                    h4 Основная информация
+                .info-part.category
+                    label.subheader Рубрика
+                    p.hint Выберите рубрику, в которую хотите разместить фотографию
+                    input(type="text" name="category" placeholder="рубрика не выбрана")
+                .info-part.album
+                    label.subheader Альбом
+                    p.hint Выберите альбомы, в которыю хотите разместить фотографию
+                    .part-wrap
+                        input(type="text" name="album" placeholder="не добавлять фото в альбомы")
+                        button.create-album Создать альбом
+                .info-part.name
+                    label.subheader Название работы
+                    input(type="text" name="name" placeholder="без названия")
+                .info-part.description
+                    label.subheader Краткое описание
+                    p.hint Укажите ключевые слова к фотографии через запятую, например: цветы, шоколад, красивая штучка
+                    textarea(name="description" placeholder="здесь могла быть ваша реклама")
+                .info-part.tags
+                    label.subheader Ключевые теги
+                    input(type="text" name="tags" placeholder="здесь могла быть ваша реклама")
+                .info-part.quiz
+                    ul.quiz-list 
+
+
+                        li.quiz-item
+                            .item-wrap
+                                .checkbox
+                                    input(type="checkbox" id="nu" name="nu")
+                                    label(for="nu")
+                                .content
+                                    p.subheader На фото присутствует обнажённая натура
+                        li.quiz-item
+                            .item-wrap
+                                .checkbox
+                                    input(type="checkbox" id="exclude" name="exclude")
+                                    label(for="exclude")
+                                .content
+                                    p.subheader Исключить фотографию из рейтингов
+                                    p.hint Фотографию нельзя будет добавить или убрать из рейтингов после размещения
+                        ul.quiz-sublist
+                            li.quiz-item
+                                .item-wrap
+                                    .checkbox.disabled
+                                        input(type="checkbox" id="anonymous" name="anonymous" disabled)
+                                        label(for="anonymous")
+                                    .content
+                                        p.subheader Анонимный постинг
+                                        p.hint Для объективности голосования, имя автора скрывается на 6 часов с момента добавления фотографии
+                            li.quiz-item
+                                .item-wrap
+                                    .checkbox.disabled
+                                        input(type="checkbox" id="norate" name="norate" disabled)
+                                        label(for="norate")
+                                    .content
+                                        p.subheader Запретить оценивать фотографию
+                                        p.hint Пользователи не смогут голосовать за художественность, за оригинальность, за техничность, либо поставить оценку «Нравится» или «Не нравится»l
+                        li.quiz-item
+                            .item-wrap
+                                .checkbox 
+                                    input(type="checkbox" id="nocomment" name="nocomment")
+                                    label(for="nocomment")
+                                .content
+                                    p.subheader Запретить комментарии
+
+
+            section.info-device
+                .info-section-top
+                    h4 Фототехника
+                    p.hint Укажите, какую фототехнику вы использовали во время съемки этого кадра
+                .info-part.camera
+                    p.subheader Фотокамера
+                    .part-wrap
+                        input(type="text" name="camera" placeholder="фотокамера не выбрана")
+                        button.add-camera Добавить новую
+                .info-part.lens
+                    p.subheader Объектив
+                    .part-wrap
+                        input(type="text" name="lens" placeholder="объектив не выбран")
+                        button.add-lens Добавить новый
+            section.info-details
+                .info-section-top
+                    h4 Техническая информация о снимке 
+                    p.hint Вы можете вручную указать данные о чувствительности, дифарагме, выдержке и фокусном расстоянии
+                .info-part.details
+                    .info-iso
+                        label.subheader ISO
+                        input(type="text" name="ISO")
+                    .info-diaphragm
+                        label.subheader Диафрагма
+                        input(type="text" name="diaphragm")
+                    .info-delay
+                        label.subheader Выдержка
+                        input(type="text" name="delay")
+                    .info-focus
+                        label.subheader Фокусное расст.
+                        input(type="text" name="focus")
+            section.info-publish
+                .container 
+                    .info-agreement
+                        .publish-wrap
+                            .checkbox 
+                                input(type="checkbox" id="agreement" name="agreement")
+                                label(for="agreement")
+                            .content
+                                p.subheader При нажатии кнопки «Добавить» я выражаю свое согласие с <b>«Правилами»</b>, гарантирую, что являюсь автором фотографий, фотографии созданы мною лично и не содержат заимствований из произведений третьих лиц 
+                    button(type="submit").info-submit Опубликовать

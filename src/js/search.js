@@ -37,7 +37,7 @@ $(document).on('DOMContentLoaded', function () {
     togglePopup('header-user-logged', 'user')
 
     // radio inputs
-
+ 
     const radioButtons = $('input[type="radio"]')
     radioButtons.each(function () {
         $(this).on('click', function (e) {

@@ -1,0 +1,17 @@
+main.upload
+    .upload-top 
+        h1 Добавление Фотографии
+        h3 Выбор файла
+    .upload-body.file
+        .container
+            .upload-warn 
+                p Вы можете загружать фотографии размером до 10 МБ с максимальной стороной кадра (горизонталь или вертикаль) до 6000 px без дополнительных оплат.
+            form(method="POST" action="" enctype="multipart/form-data").upload-photo
+                .upload-area
+                    input(type="file" placeholder="выберите файл или перетяните его в эту область").file-input
+                    i.fas.fa-upload
+                    button.replacement выберите файл или перетяните его в эту область
+                button(type="submit") Загрузить фото
+            .upload-about
+                p Вы можете загрузить&nbsp;<b>5</b>&nbsp;фотографий
+                p За последние&nbsp;<b>7</b>&nbsp;вы загрузили&nbsp;<b>0</b>&nbsp;фотографий
