@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../styles/assets_fonts_all_min_css.css" rel="stylesheet">
+  <link href="../styles/upload.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container flex"><a class="header-logo" href="/phsight">
+        <div class="header-logo-image"> </div>
+      </a>
+      <div class="header-navigation">
+        <div class="header-menu-btn"><i class="fas fa-bars"></i></div>
+        <nav class="header-menu-list"><a class="header-navlink" href="/phsight/photos.html">Фотографии</a><a
+            class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a></nav>
+        <div class="header-search search"><a class="header-search-btn"><i class="fas fa-search"></i></a>
+          <input class="header-search-field" placeholder="">
+        </div>
+      </div>
+      <div class="header-user-logged">
+        <p class="header-greets">Привет, Sub-Zero!</p><a class="header-user-avatar user-avatar" href="#"
+          style="background-image: url(../img/subscribers/image%2039-3.jpg)"></a>
+      </div>
+    </div>
+  </header>
+  <div class="user-menu">
+    <div class="wrap">
+      <div class="user-top">
+        <div class="container">
+          <div class="user-close"><i class="fas fa-times"></i></div><a class="user-logo" href="/phsight">
+            <div class="user-logo-image"> </div>
+          </a>
+        </div>
+      </div>
+      <div class="user-navigation">
+        <div class="container">
+          <div class="user-info"><a class="user-avatar"
+              style="background: url(../img/subscribers/image%2039-3.jpg) center / cover no-repeat"></a><span
+              class="user-name">Sub-Zero</span></div>
+          <nav class="user-nav"><a class="user-navlink" href="#">Профиль</a><a class="user-navlink"
+              href="#">Настройки</a><a class="user-navlink" href="#">Переписка</a><a class="user-navlink"
+              href="#">Загрузить фото</a><a class="user-navlink" href="#">Личный счёт<span
+                class="user-wallet">$2.00</span></a></nav><a class="user-logout" href="#">Выйти</a>
+        </div>
+      </div>
+      <footer class="mini-footer">
+        <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-tumblr"></i></a></div>
+        <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </footer>
+    </div>
+  </div>
+  <div class="burger-menu">
+    <div class="wrap">
+      <div class="burger-top">
+        <div class="container">
+          <div class="burger-close"><i class="fas fa-times"></i></div><a class="burger-logo" href="/phsight">
+            <div class="burger-logo-image"> </div>
+          </a>
+        </div>
+      </div>
+      <div class="burger-navigation">
+        <div class="container">
+          <nav class="burger-nav"><a class="burger-navlink" href="/phsight/photos.html">Фотографии</a><a
+              class="burger-navlink" href="#">Рейтинги</a><a class="burger-navlink" href="#">Авторы</a></nav>
+          <div class="burger-search search"><a class="burger-search-btn"><i class="fas fa-search"></i></a>
+            <input class="burger-search-field" placeholder="">
+          </div>
+        </div>
+      </div>
+      <footer class="mini-footer">
+        <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-tumblr"></i></a></div>
+        <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </footer>
+    </div>
+  </div>
+  <main class="upload">
+    <div class="upload-top">
+      <h1>Добавление Фотографии</h1>
+      <h3>Информация о фото</h3>
+    </div>
+    <div class="upload-body info">
+      <form class="info-form" method="POST" action="">
+        <div class="container">
+          <section class="info-crop">
+            <div class="img" style="background: url(../img/popgallery/image%201.jpg) center / cover no-repeat;"></div><a
+              class="edit" href="#"><i class="fas fa-crop"></i>
+              <p>изменить миниатюру</p>
+            </a>
+          </section>
+          <section class="info-main">
+            <div class="info-section-top">
+              <h4>Основная информация</h4>
+            </div>
+            <div class="info-part category">
+              <label class="subheader">Рубрика</label>
+              <p class="hint">Выберите рубрику, в которую хотите разместить фотографию</p>
+              <input type="text" name="category" placeholder="рубрика не выбрана">
+            </div>
+            <div class="info-part album">
+              <label class="subheader">Альбом</label>
+              <p class="hint">Выберите альбомы, в которыю хотите разместить фотографию</p>
+              <div class="part-wrap">
+                <input type="text" name="album" placeholder="не добавлять фото в альбомы">
+                <button class="create-album">Создать альбом</button>
+              </div>
+            </div>
+            <div class="info-part name">
+              <label class="subheader">Название работы</label>
+              <input type="text" name="name" placeholder="без названия">
+            </div>
+            <div class="info-part description">
+              <label class="subheader">Краткое описание</label>
+              <p class="hint">Укажите ключевые слова к фотографии через запятую, например: цветы, шоколад, красивая
+                штучка</p>
+              <textarea name="description" placeholder="здесь могла быть ваша реклама"></textarea>
+            </div>
+            <div class="info-part tags">
+              <label class="subheader">Ключевые теги</label>
+              <input type="text" name="tags" placeholder="здесь могла быть ваша реклама">
+            </div>
+            <div class="info-part quiz">
+              <ul class="quiz-list">
+                <li class="quiz-item">
+                  <div class="item-wrap">
+                    <div class="checkbox">
+                      <input type="checkbox" id="nu" name="nu">
+                      <label for="nu"></label>
+                    </div>
+                    <div class="content">
+                      <p class="subheader">На фото присутствует обнажённая натура</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="quiz-item">
+                  <div class="item-wrap">
+                    <div class="checkbox">
+                      <input type="checkbox" id="exclude" name="exclude">
+                      <label for="exclude"></label>
+                    </div>
+                    <div class="content">
+                      <p class="subheader">Исключить фотографию из рейтингов</p>
+                      <p class="hint">Фотографию нельзя будет добавить или убрать из рейтингов после размещения</p>
+                    </div>
+                  </div>
+                </li>
+                <ul class="quiz-sublist">
+                  <li class="quiz-item">
+                    <div class="item-wrap">
+                      <div class="checkbox disabled">
+                        <input type="checkbox" id="anonymous" name="anonymous" disabled>
+                        <label for="anonymous"></label>
+                      </div>
+                      <div class="content">
+                        <p class="subheader">Анонимный постинг</p>
+                        <p class="hint">Для объективности голосования, имя автора скрывается на 6 часов с момента
+                          добавления фотографии</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="quiz-item">
+                    <div class="item-wrap">
+                      <div class="checkbox disabled">
+                        <input type="checkbox" id="norate" name="norate" disabled>
+                        <label for="norate"></label>
+                      </div>
+                      <div class="content">
+                        <p class="subheader">Запретить оценивать фотографию</p>
+                        <p class="hint">Пользователи не смогут голосовать за художественность, за оригинальность, за
+                          техничность, либо поставить оценку «Нравится» или «Не нравится»l</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <li class="quiz-item">
+                  <div class="item-wrap">
+                    <div class="checkbox">
+                      <input type="checkbox" id="nocomment" name="nocomment">
+                      <label for="nocomment"></label>
+                    </div>
+                    <div class="content">
+                      <p class="subheader">Запретить комментарии</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section class="info-device">
+            <div class="info-section-top">
+              <h4>Фототехника</h4>
+              <p class="hint">Укажите, какую фототехнику вы использовали во время съемки этого кадра</p>
+            </div>
+            <div class="info-part camera">
+              <p class="subheader">Фотокамера</p>
+              <div class="part-wrap">
+                <input type="text" name="camera" placeholder="фотокамера не выбрана">
+                <button class="add-camera">Добавить новую</button>
+              </div>
+            </div>
+            <div class="info-part lens">
+              <p class="subheader">Объектив</p>
+              <div class="part-wrap">
+                <input type="text" name="lens" placeholder="объектив не выбран">
+                <button class="add-lens">Добавить новый</button>
+              </div>
+            </div>
+          </section>
+          <section class="info-details">
+            <div class="info-section-top">
+              <h4>Техническая информация о снимке </h4>
+              <p class="hint">Вы можете вручную указать данные о чувствительности, дифарагме, выдержке и фокусном
+                расстоянии</p>
+            </div>
+            <div class="info-part details">
+              <div class="info-iso">
+                <label class="subheader">ISO</label>
+                <input type="text" name="ISO">
+              </div>
+              <div class="info-diaphragm">
+                <label class="subheader">Диафрагма</label>
+                <input type="text" name="diaphragm">
+              </div>
+              <div class="info-delay">
+                <label class="subheader">Выдержка</label>
+                <input type="text" name="delay">
+              </div>
+              <div class="info-focus">
+                <label class="subheader">Фокусное расст.</label>
+                <input type="text" name="focus">
+              </div>
+            </div>
+          </section>
+          <section class="info-publish">
+            <div class="container">
+              <div class="info-agreement">
+                <div class="publish-wrap">
+                  <div class="checkbox">
+                    <input type="checkbox" id="agreement" name="agreement">
+                    <label for="agreement"></label>
+                  </div>
+                  <div class="content">
+                    <p class="subheader">При нажатии кнопки «Добавить» я выражаю свое согласие с <b>«Правилами»</b>,
+                      гарантирую, что являюсь автором фотографий, фотографии созданы мною лично и не содержат
+                      заимствований из произведений третьих лиц </p>
+                  </div>
+                </div>
+              </div>
+              <button class="info-submit" type="submit">Опубликовать</button>
+            </div>
+          </section>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container flex jcb">
+      <div class="footer-col col-1">
+        <div class="footer-social"><a class="footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a
+            class="footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="footer-social-link" href="#"><i class="fab fa-tumblr"></i></a>
+        </div>
+        <div class="footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </div>
+      <div class="footer-col col-2"> <a class="footer-rules-link" href="#">Правила</a><a class="footer-faq-link"
+          href="#">Вопросы и ответы</a></div>
+      <div class="footer-col col-3"><a class="footer-support" href="#">Техническая поддержка</a><a
+          class="footer-advertising" href="#">Реклама на сайте</a><a class="footer-abuse" href="#">Жалобы / Abuse</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_esm_components_core_core-class_js.js">
+  </script>
+  <script src="../js/upload.js"></script>
+</body>
+
+</html>

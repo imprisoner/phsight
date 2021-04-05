@@ -33,7 +33,8 @@ module.exports = {
         authorize: './authorize.js',
         register: './register.js',
         search: './search.js',
-        upload: './upload.js'
+        upload: './upload.js',
+        settings: './settings.js'
     },
     devtool: 'inline-source-map',
     devServer: {

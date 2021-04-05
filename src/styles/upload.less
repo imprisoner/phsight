@@ -8,17 +8,9 @@
 @import './components/mini-footer.less';
 @import './components/footer.less';
 
-body {
-    position: relative;
-}
+// common
 
 .upload {
-
-    // height: calc(100vh - 229px);
-    .file {
-        text-align: center;
-    }
-
     &-top {
         padding: 80px 0 40px;
         text-align: center;
@@ -34,6 +26,17 @@ body {
             font-weight: 400;
         }
     }
+}
+
+// common 
+
+.file {
+
+    height: calc(100vh - 329px);
+    min-height: 620px;
+    text-align: center;
+
+
 
     &-warn {
         background-color: #F6F2E2;
@@ -110,11 +113,11 @@ body {
     }
 }
 
-.footer {
-    position: absolute;
-    width: 100%;
-    bottom: -249px;
-}
+// .file ~ .footer {
+//     position: absolute;
+//     width: 100%;
+//     bottom: 0;
+// }
 
 
 // FILE INFO FORM
@@ -383,7 +386,7 @@ body {
                 align-items: flex-start;
             }
 
-            
+
 
             .content {
                 margin-left: 10px;
