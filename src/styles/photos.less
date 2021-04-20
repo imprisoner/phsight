@@ -16,6 +16,10 @@
 .content {
     padding-top: 70px;
 
+    &-top {
+        overflow: hidden;
+    }
+
     &-title {
         .roboto(46px, 130%, @color: #000000);
         text-align: center;
@@ -30,6 +34,7 @@
             &::before {
                 display: none;
             }
+
         }
     }
 
@@ -38,11 +43,22 @@
         width: 100%;
     }
 
-    &-current-category {
-        .rounded-button(@padX: 63px);
+    &-subscribe {
+        .rounded-button(#eaeaea, @padX: 63px); 
         .roboto(@font-weight: 700, @color: #000000);
         position: absolute;
         left: 0;
+        cursor: pointer;
+        &:hover {
+            background-color: #eaeaea;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
+        }
     }
 
     &-current-page {
@@ -144,4 +160,65 @@
 
 
     }
+}
+
+// JG
+
+
+.pic {
+    &-footer {
+        display: flex;
+        justify-content: flex-end;
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            transform: rotate(-180deg);
+            padding: 20px;
+        }
+    }
+
+    &-name {
+        padding-top: 12px;
+        display: flex;
+        margin-right: 15px;
+        align-items: center;
+        .roboto(15px, 175%, @color: #fff);
+        flex-wrap: wrap;
+        span {
+            
+            white-space: nowrap;
+        }
+        b {
+            color: #fff;
+            white-space: nowrap;
+        }
+    }
+
+    &-actions {
+        padding-top: 12px;
+        display: flex;
+        span {
+            margin-left: 10px;
+            color: #fff;
+            .roboto(18.75px, 130%, @color: #fff)
+        }
+
+        i {
+            font-size: 20px;
+            line-height: 165%;
+            color: #fff;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+                margin-left: 25px;
+            }
+        }
+    }
+
 }

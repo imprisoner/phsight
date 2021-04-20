@@ -3,10 +3,11 @@ block content
     .authorization
         .container.flex 
             h4.authorization-title Вход
-            form.authorization-form(action="POST")
-                input(placeholder="Ваш логин").authorization-login
-                input(placeholder="Пароль").authorization-password
-                btn(type="submit").authorization-submit Войти
+            form.authorization-form(name="login_form" id="login_form" action="http://localhost:80/test.php" method="post")
+                input(placeholder="Ваш логин" title="логин" name="LoginForm[username]" id="LoginForm_username" type="text").authorization-login
+                input( placeholder="Пароль" title="пароль" name="LoginForm[password]" id="LoginForm_password" type="password").authorization-password
+                input(т type="hidden" name="yt1" value="войти")
+                button(type="submit").authorization-submit Войти
             .authorization-social
                 p Войти через
                 a(href="#").authorization-btn-social
@@ -15,5 +16,6 @@ block content
                     i.fab.fa-vk
             .authorization-alt-action 
                 p У вас ещё нет аккаунта?&nbsp;
-                        a.authorization-register Зарегистрируйтесь!
-                a.authorization-remind Забыли пароль?
+                        a(href="/registration/").authorization-register Зарегистрируйтесь!
+                a(href="/forgot_password/" rel="nofollow").authorization-remind Забыли пароль?
+                

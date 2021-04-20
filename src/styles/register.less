@@ -5,10 +5,7 @@
 @import './components/mini-footer.less';
 
 .top {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // left: 0;
+
     display: flex;
     justify-content: center;
     padding-top: 40px;
@@ -28,11 +25,7 @@
 }
 
 main {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    // left: 0;
-    // bottom: 0;
+
     background-color: #282828;
     color: #fff;
 }
@@ -90,6 +83,7 @@ main {
         border-radius: 10px;
         width: 96px;
         height: 40px;
+        background: center / cover no-repeat;
 
     }
 
@@ -105,6 +99,7 @@ main {
         position: absolute;
         right: -26px;
         cursor: pointer;
+        color: #C2C2C2;
     }
 
     &-acception {
@@ -115,7 +110,7 @@ main {
         justify-content: flex-end;
         align-items: center;
 
-        label {
+        p {
             .p(@white)
         }
 
@@ -129,24 +124,70 @@ main {
     }
 
     &-checkbox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 25px;
-        height: 25px;
-        border-radius: 5px;
-        border: 2px solid #3D3D3D;
-        margin-right: 10px;
 
-        input {
-            cursor: pointer;
+        .checkbox {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            label {
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 2px solid #3D3D3D;
+                border-radius: 5px;
+            }
+    
+            label:after {
+                content: '';
+                width: 13px;
+                height: 13px;
+                position: absolute;
+                top: 4px;
+                left: 4px;
+                background: @grey;
+                opacity: 0;
+                border-radius: 2px;
+            }
+    
+            input[type="checkbox"] {
+                visibility: hidden;
+            }
+    
+            input[type="checkbox"]:checked+label:after {
+                opacity: 1;
+            }
+    
+            &.disabled~.content {
+    
+                .hint,
+                .subheader {
+                    color: #bcbcbc
+                }
+            }
         }
+
     }
 
     &-submit {
         .rounded-button(#eaeaea, 22px, 7px);
         .p_bold(@white);
         cursor: pointer;
+        
+        &:hover {
+            background-color: @grey;
+            color: @black;
+        }
+
+        &:active, &:focus {
+            border-color: #fff;
+            background-color: #fff;
+            color: @black;
+            outline: none;
+        }
     }
 
     &-alt-action {
@@ -187,6 +228,7 @@ main {
         &-alt-action {
             padding-top: 20px;
         }
+
         &-acception {
             padding: 25px 0;
         }

@@ -3,22 +3,25 @@ block content
     .registration
         .container.flex 
             h4.registration-title Регистрация
-            form.registration-form(action="POST")
-                input(placeholder="Ваш логин").registration-login
-                input(placeholder="Электронная почта").registration-email
+            form.registration-form(id="registration-form" method="post" action="http://localhost:80/test.php")
+                input(placeholder="Ваш логин" name="RegistrationForm[login]" id="RegistrationForm_login" type="text" maxlength="30").registration-login
+                input(placeholder="Электронная почта" name="RegistrationForm[email]" id="RegistrationForm_email" type="text" maxlength="50").registration-email
                 .registration-captcha
-                    div(style="background: url(./img/captcha.svg) center / cover no-repeat").registration-captcha-pic
-                    input(placeholder="Введите код").registration-captcha-input
-                    a.registration-captcha-refresh
+                    div(id="yw0" style="background-image: url(./img/captcha.svg)").registration-captcha-pic
+                    input(placeholder="Введите код" name="RegistrationForm[verifyCode]" id="RegistrationForm_verifyCode" type="text").registration-captcha-input
+                    a(id="yw0_button" href="/auth/captcha?refresh=1").registration-captcha-refresh
                         i.fas.fa-redo-alt
                 .registration-acception
-                    label(for="accept") Я принимаю&nbsp;
+                    p Я принимаю&nbsp;
                         a.rules-link правила Фотосайта
                     .registration-checkbox
-                        input(type="checkbox" name="accept")
-                btn(type="submit").registration-submit Зарегистрироваться
+                        .checkbox
+                            input(id="ytRegistrationForm_accept" type="hidden" value="0" name="RegistrationForm[accept]")
+                            input(name="RegistrationForm[accept]" id="RegistrationForm_accept" value="1" type="checkbox")
+                            label(for="RegistrationForm_accept")
+                input(type="hidden" name="yt0" value="Зарегистрироваться")
+                button(type="submit").registration-submit Зарегистрироваться
             .registration-alt-action
                 p У вас уже есть аккаунт?&nbsp;
                     a Войдите!
-                    
-            
+

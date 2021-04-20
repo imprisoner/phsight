@@ -5,16 +5,17 @@ import {
     initNavTabs,
     initPagination,
     togglePopup,
-    expandSearch
+    expandSearch,
 } from './utils'
 $(document).on('DOMContentLoaded', function () {
 
-    // setting slider and navtabs animation
-    $('.tabs .swiper-container').removeClass('swiper-container')
+    // setting navtabs animation
 
-    
-    initNavTabs()
+    $('.tabs .swiper-container').removeClass('swiper-container')
+    initNavTabs('.tab-link')
+
     // setting pagination
+    
     initSlider(580, false)
     initPagination(680)
 
@@ -27,17 +28,17 @@ $(document).on('DOMContentLoaded', function () {
         randomize: true
     })
 
-    //expanding search
+    //header animations
 
     expandSearch('header')
-
+    initNavTabs('.header-navlink')
     // popups
 
     togglePopup('header-menu-btn', 'burger')
     togglePopup('header-user-logged', 'user')
 
     // radio inputs
- 
+
     const radioButtons = $('input[type="radio"]')
     radioButtons.each(function () {
         $(this).on('click', function (e) {
@@ -45,4 +46,15 @@ $(document).on('DOMContentLoaded', function () {
             $(this).addClass('checked')
         })
     })
+
+    // desktop user menu hover appearance
+    
+    if (window.innerWidth > 1279) {
+        $('.header-user-avatar').on('mouseenter', function () {
+            $('.user-menu').show(200)
+            $('.user-menu').on('mouseleave', function () {
+                $(this).hide(200)
+            })
+        })
+    }
 })

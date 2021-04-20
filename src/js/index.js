@@ -7,7 +7,8 @@ import Swiper, {
 } from 'swiper'
 import {
     expandSearch,
-    togglePopup
+    togglePopup,
+    initNavTabs
 } from './utils'
 
 Swiper.use([Navigation, Autoplay, EffectFade, EffectCoverflow])
@@ -28,7 +29,7 @@ new Swiper('.swiper-container', {
 // header expanding search
 
 expandSearch('header')
-
+initNavTabs('.header-navlink')
 
 // popup listeners
 togglePopup('header-menu-btn', 'burger')
@@ -43,3 +44,6 @@ if (window.innerWidth > 1279) {
         })
     })
 }
+
+
+// header-nav-tabs

@@ -101,13 +101,13 @@
           <p>Вы можете загружать фотографии размером до 10 МБ с максимальной стороной кадра (горизонталь или вертикаль)
             до 6000 px без дополнительных оплат.</p>
         </div>
-        <form class="file-photo" method="POST" action="" enctype="multipart/form-data">
+        <form class="file-photo" method="POST" action="http://localhost:80/test.php" enctype="multipart/form-data">
           <div class="file-area">
             <input class="file-input" type="file" placeholder="выберите файл или перетяните его в эту область"><i
-              class="fas fa-file"></i>
+              class="fas fa-upload"></i>
             <button class="replacement">выберите файл или перетяните его в эту область</button>
           </div>
-          <button type="submit">Загрузить фото</button>
+          <button type="submit" class="submit-button">Загрузить фото</button>
         </form>
         <div class="file-about">
           <p>Вы можете загрузить&nbsp;<b>5</b>&nbsp;фотографий</p>

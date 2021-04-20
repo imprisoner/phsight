@@ -111,8 +111,28 @@
         text-decoration: none;
         display: block;
         .roboto(@color: #fff)
-    }
 
+        
+    }
+    &-navlink:nth-child(3) {
+        position: relative;
+
+        .message {
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            span {
+                margin-left: 7px;
+                font-weight: bold;
+            }
+            i {
+                font-weight: 300;
+                font-size: 15px;
+                line-height: 175%;
+            }
+        }
+    }
     &-navlink:not(:nth-child(5)) {
         margin-bottom: 20px;
     }

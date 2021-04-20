@@ -1,0 +1,34 @@
+.settings-devices.devices 
+    form(method="post" action="http://localhost:80/test.php").container
+        .row
+            .col-lg-4.col-md-6.col-xs-12
+                section.devices-camera
+                    h4.devices-title Камеры
+                    .devices-items
+                        div(data-id="555555").devices-device
+                            .devices-name 
+                                p.name Aiptek - PocketCam 4000
+                            .devices-delete.delete-button
+                                i.fas.fa-times
+                        div(data-id="444444").devices-device
+                            .devices-name 
+                                p.name Ingo Devices - Hello Kitty HEC050N
+                            .devices-delete.delete-button
+                                i.fas.fa-times
+                    a.btn.add-camera Добавить новую камеру
+            .col-lg-4.col-md-6.col-xs-12 
+                section.devices-lens 
+                    h4.devices-title Объективы
+                    .devices-items
+                        div(data-id="348363").devices-device
+                            .devices-name 
+                                p.name Lomography - Petzval 85mm f/2.2 Art Lens Canon EF
+                            .devices-delete.delete-button
+                                i.fas.fa-times
+                        div(data-id="322211").devices-device
+                            .devices-name
+                                p.name Aiptek - PocketCam 4000
+                            .devices-delete.delete-button
+                                i.fas.fa-times
+                    a.btn.add-lens Добавить новый объектив
+        

@@ -2,7 +2,8 @@ import $ from 'jquery'
 import {
     initSlider,
     togglePopup,
-    expandSearch
+    expandSearch,
+    initNavTabs
 } from './utils'
 
 $(document).on('DOMContentLoaded', function () {
@@ -11,18 +12,31 @@ $(document).on('DOMContentLoaded', function () {
 
     initSlider(768)
 
-    //expanding search
+    //header animations
 
     expandSearch()
-
+    initNavTabs('.header-navlink')
     // popups
 
     togglePopup('header-menu-btn', 'burger')
     togglePopup('header-user-logged', 'user')
 
     // auto-expanding textarea
+    
     $('textarea').on('input', function (e) {
         e.target.style.height = e.target.scrollHeight + 'px';
     })
+
+    // desktop user menu hover appearance
+    
+    if (window.innerWidth > 1279) {
+        $('.header-user-avatar').on('mouseenter', function () {
+            $('.user-menu').show(200)
+            $('.user-menu').on('mouseleave', function () {
+                $(this).hide(200)
+            })
+        })
+    }
+    
 })
 // auto-expanding textarea

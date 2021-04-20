@@ -3,7 +3,7 @@ main.upload.info
         h1 Добавление Фотографии
         h3 Информация о фото
     .upload-body
-        form(method="POST" action="").info-form
+        form(method="post" action="http://localhost:80/test.php").info-form
             .container
                 section.info-crop
                     div(style="background: url(./img/popgallery/image%201.jpg) center / cover no-repeat;").img
@@ -14,25 +14,76 @@ main.upload.info
                     .info-section-top
                         h4 Основная информация
                     .info-part.category
-                        label.subheader Рубрика
+                        p.subheader Рубрика
                         p.hint Выберите рубрику, в которую хотите разместить фотографию
-                        input(type="text" name="category" placeholder="рубрика не выбрана")
+                        label(for="PhotoEditFormModel_category_id").select.category-select
+                            span(style="color: #eaeaea;") рубрика не выбрана
+                            input(type="hidden" name="PhotoEditFormModel[category_id]" id="PhotoEditFormModel_category_id" placeholder="рубрика не выбрана").selection
+                            .datalist 
+                                div(data-value="61899").option НЮ
+                                div(data-value="61901").option Свадебные фото
+                                div(data-value="60789").option Натюрморт
+                                div(data-value="96").option На модерацию
                     .info-part.album
-                        label.subheader Альбом
+                        p.subheader Альбом
                         p.hint Выберите альбомы, в которыю хотите разместить фотографию
                         .part-wrap
-                            input(type="text" name="album" placeholder="не добавлять фото в альбомы")
+                            label(for="PhotoEditFormModel_set_id").album-select
+                                span(style="color: #eaeaea;") не добавлять фото в альбомы
+                                .datalist 
+                                    .option
+                                        .checkbox
+                                            input(id="PhotoEditFormModel_set_id_60294" value="60294"
+                                                type="checkbox" name="PhotoEditFormModel[set_id][]")
+                                            label(for="PhotoEditFormModel_set_id_60294")
+                                        .content
+                                            p.subheader Портретное
+                                    .option
+                                        .checkbox
+                                            input(id="PhotoEditFormModel_set_id_60281" value="60281"
+                                                type="checkbox" name="PhotoEditFormModel[set_id][]")
+                                            label(for="PhotoEditFormModel_set_id_60281")
+                                        .content
+                                            p.subheader Природа
+                                    .option
+                                        .checkbox
+                                            input(id="PhotoEditFormModel_set_id_60297" value="60297"
+                                                type="checkbox" name="PhotoEditFormModel[set_id][]")
+                                            label(for="PhotoEditFormModel_set_id_60297")
+                                        .content
+                                            p.subheader Свадьба
+                                    .option
+                                        .checkbox
+                                            input(id="PhotoEditFormModel_set_id_60282" value="60282"
+                                                type="checkbox" name="PhotoEditFormModel[set_id][]")
+                                            label(for="PhotoEditFormModel_set_id_60282")
+                                        .content
+                                            p.subheader Грусть
+                                    .option
+                                        .checkbox
+                                            input(id="PhotoEditFormModel_set_id_60295" value="60295"
+                                                type="checkbox" name="PhotoEditFormModel[set_id][]")
+                                            label(for="PhotoEditFormModel_set_id_60295")
+                                        .content
+                                            p.subheader Весна
+                                    .option
+                                        .checkbox
+                                            input(id="PhotoEditFormModel_set_id_60288" value="60288"
+                                                type="checkbox" name="PhotoEditFormModel[set_id][]")
+                                            label(for="PhotoEditFormModel_set_id_60288")
+                                        .content
+                                            p.subheader Просто альбом
                             button.create-album Создать альбом
                     .info-part.name
-                        label.subheader Название работы
-                        input(type="text" name="name" placeholder="без названия")
+                        p.subheader Название работы
+                        input(type="text" name="PhotoEditFormModel[title]" id="PhotoEditFormModel_title" placeholder="без названия")
                     .info-part.description
-                        label.subheader Краткое описание
+                        p.subheader Краткое описание
                         p.hint Укажите ключевые слова к фотографии через запятую, например: цветы, шоколад, красивая штучка
-                        textarea(name="description" placeholder="здесь могла быть ваша реклама")
+                        textarea(name="PhotoEditFormModel[description]" id="PhotoEditFormModel[description]")
                     .info-part.tags
-                        label.subheader Ключевые теги
-                        input(type="text" name="tags" placeholder="здесь могла быть ваша реклама")
+                        p.subheader Ключевые теги
+                        input(type="text" name="PhotoEditFormModel[keywords]" id="PhotoEditFormModel_keywords")
                     .info-part.quiz
                         ul.quiz-list 
 
@@ -40,15 +91,17 @@ main.upload.info
                             li.quiz-item
                                 .item-wrap
                                     .checkbox
-                                        input(type="checkbox" id="nu" name="nu")
-                                        label(for="nu")
+                                        input(id="ytPhotoEditFormModel_is_adult" type="hidden" value="0" name="PhotoEditFormModel[is_adult]")
+                                        input(name="PhotoEditFormModel[is_adult]" id="PhotoEditFormModel_is_adult" value="1" type="checkbox")
+                                        label(for="PhotoEditFormModel_is_adult")
                                     .content
                                         p.subheader На фото присутствует обнажённая натура
                             li.quiz-item
                                 .item-wrap
                                     .checkbox
-                                        input(type="checkbox" id="exclude" name="exclude")
-                                        label(for="exclude")
+                                        input(id="ytPhotoEditFormModel_exclude_from_ratings" type="hidden" value="0" name="PhotoEditFormModel[exclude_from_ratings]")
+                                        input(name="PhotoEditFormModel[exclude_from_ratings]" id="PhotoEditFormModel_exclude_from_ratings" value="1" type="checkbox")
+                                        label(for="PhotoEditFormModel_exclude_from_ratings")
                                     .content
                                         p.subheader Исключить фотографию из рейтингов
                                         p.hint Фотографию нельзя будет добавить или убрать из рейтингов после размещения
@@ -56,24 +109,27 @@ main.upload.info
                                 li.quiz-item
                                     .item-wrap
                                         .checkbox.disabled
-                                            input(type="checkbox" id="anonymous" name="anonymous" disabled)
-                                            label(for="anonymous")
+                                            input(id="ytPhotoEditFormModel_anonymous" type="hidden" value="0" name="PhotoEditFormModel[anonymous]")
+                                            input(name="PhotoEditFormModel[anonymous]" id="PhotoEditFormModel_anonymous" value="1" type="checkbox" disabled)
+                                            label(for="PhotoEditFormModel_anonymous")
                                         .content
                                             p.subheader Анонимный постинг
                                             p.hint Для объективности голосования, имя автора скрывается на 6 часов с момента добавления фотографии
                                 li.quiz-item
                                     .item-wrap
                                         .checkbox.disabled
-                                            input(type="checkbox" id="norate" name="norate" disabled)
-                                            label(for="norate")
+                                            input(id="ytPhotoEditFormModel_disallow_recommendation" type="hidden" value="0" name="PhotoEditFormModel[disallow_recommendation]")
+                                            input(name="PhotoEditFormModel[disallow_recommendation]" id="PhotoEditFormModel_disallow_recommendation" value="1" type="checkbox" disabled)
+                                            label(for="PhotoEditFormModel_disallow_recommendation")
                                         .content
                                             p.subheader Запретить оценивать фотографию
                                             p.hint Пользователи не смогут голосовать за художественность, за оригинальность, за техничность, либо поставить оценку «Нравится» или «Не нравится»l
                             li.quiz-item
                                 .item-wrap
-                                    .checkbox 
-                                        input(type="checkbox" id="nocomment" name="nocomment")
-                                        label(for="nocomment")
+                                    .checkbox
+                                        input(id="ytPhotoEditFormModel_comment_rule_mask" value="0" type="hidden" name="PhotoEditFormModel[comment_rule_mask]")
+                                        input(id="PhotoEditFormModel_comment_rule_mask" value="1" type="checkbox" name="PhotoEditFormModel[comment_rule_mask]")
+                                        label(for="PhotoEditFormModel_comment_rule_mask")
                                     .content
                                         p.subheader Запретить комментарии
 
@@ -85,37 +141,50 @@ main.upload.info
                     .info-part.camera
                         p.subheader Фотокамера
                         .part-wrap
-                            input(type="text" name="camera" placeholder="фотокамера не выбрана")
-                            button.add-camera Добавить новую
+                            label(for="PhotoEditFormModel[camera_id]").select.camera-select
+                                span(style="color: #eaeaea;") камера не выбрана
+                                input(type="text" name="PhotoEditFormModel[camera_id]" id="PhotoEditFormModel_camera_id" placeholder="фотокамера не выбрана").selection
+                                .datalist
+                                    div(data-value="0").option У меня нет камеры
+                                    div(data-value="6021").option Bronica BRONICA ETRSi
+                                    div(data-value="-1").option Модели нет в моей технике
+                            button.add-camera Добавить новую камеру
                     .info-part.lens
                         p.subheader Объектив
                         .part-wrap
-                            input(type="text" name="lens" placeholder="объектив не выбран")
-                            button.add-lens Добавить новый
+                            label(for="PhotoEditFormModel[lens_id]").select.lens-select
+                                span(style="color: #eaeaea;") объектив не выбран
+                                input(type="text" name="PhotoEditFormModel[lens_id]" id="PhotoEditFormModel_lens_id" placeholder="объектив не выбран").selection
+                                .datalist 
+                                    div(data-value="0").option У меня нет объектива
+                                    div(data-value="6273").option Distagon T* 2/28
+                                    div(data-value="-1").option Модели нет в моей технике
+                            button.add-lens Добавить новый объектив
                 section.info-details
                     .info-section-top
                         h4 Техническая информация о снимке 
                         p.hint Вы можете вручную указать данные о чувствительности, дифарагме, выдержке и фокусном расстоянии
                     .info-part.details
                         .info-iso
-                            label.subheader ISO
-                            input(type="text" name="ISO")
+                            label(for="PhotoEditFormModel_iso").subheader ISO
+                            input(type="text" name="PhotoEditFormModel[iso]" id="PhotoEditFormModel_iso")
                         .info-diaphragm
-                            label.subheader Диафрагма
-                            input(type="text" name="diaphragm")
+                            label(for="PhotoEditFormModel_fnumber").subheader Диафрагма
+                            input(type="text" name="PhotoEditFormModel[fnumber]" id="PhotoEditFormModel_fnumber")
                         .info-delay
-                            label.subheader Выдержка
-                            input(type="text" name="delay")
+                            label(for="PhotoEditFormModel_exposure_time").subheader Выдержка
+                            input(type="text" name="PhotoEditFormModel[exposure_time]" id="PhotoEditFormModel_exposure_time")
                         .info-focus
-                            label.subheader Фокусное расст.
-                            input(type="text" name="focus")
+                            label(for="PhotoEditFormModel_focal_length").subheader Фокусное расст.
+                            input(type="text" name="PhotoEditFormModel[focal_length]" id="PhotoEditFormModel_focal_length")
                 section.info-publish
                     .container 
                         .info-agreement
                             .publish-wrap
                                 .checkbox 
-                                    input(type="checkbox" id="agreement" name="agreement")
-                                    label(for="agreement")
+                                    input(type="hidden" id="ytPhotoEditFormModel_agreement" value="0" name="PhotoEditFormModel[agreement]")
+                                    input(type="checkbox" id="PhotoEditFormModel_agreement" value="1" name="PhotoEditFormModel[agreement]")
+                                    label(for="PhotoEditFormModel_agreement")
                                 .content
                                     p.subheader При нажатии кнопки «Добавить» я выражаю свое согласие с <b>«Правилами»</b>, гарантирую, что являюсь автором фотографий, фотографии созданы мною лично и не содержат заимствований из произведений третьих лиц 
-                        button(type="submit").info-submit Опубликовать
+                        input(type="submit" name="yt0" value="Опубликовать").info-submit

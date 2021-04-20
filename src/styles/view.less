@@ -51,7 +51,7 @@
     }
 
     &-image {
-        display: flex;
+        // display: flex;
         position: relative;
     }
 
@@ -77,17 +77,35 @@
             width: 40px;
             height: 40px;
             cursor: pointer;
+
             i {
                 font-weight: 900;
                 font-size: 16px;
                 line-height: 165%;
                 color: #FFA800;
             }
+
+            &:hover {
+                border-color: #725C32;
+                background-color: #725C32;
+            }
+
+            &:active,
+            &:focus {
+                border-color: #FFA800;
+                background-color: #FFA800;
+                outline: none;
+
+                i {
+                    color: #434343;
+                }
+            }
         }
 
         &-prev,
         &-next {
             cursor: pointer;
+
             i {
                 font-weight: 300;
                 font-size: 42px;
@@ -118,6 +136,23 @@
                 font-size: 16px;
                 line-height: 165%;
                 color: #fff;
+            }
+
+
+            &:hover {
+                border-color: #545454;
+                background-color: #545454;
+            }
+
+            &:active,
+            &:focus {
+                border-color: #fff;
+                background-color: #fff;
+                outline: none;
+
+                i {
+                    color: #434343;
+                }
             }
         }
 
@@ -188,11 +223,26 @@
     }
 
     &-rate-btn {
-        .rounded-button(#eaeaea80, 22px, 7px);
+        .rounded-button(#eaeaea, 22px, 7px);
         .roboto(@font-weight: 700, @color: #fff);
         margin-top: 20px;
         cursor: pointer;
         text-decoration: none;
+
+        &:hover {
+            background-color: #eaeaea;
+
+            color: #282828;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #fff;
+            background-color: #fff;
+            outline: none;
+
+            color: #282828;
+        }
     }
 
     &-warning {
@@ -261,7 +311,7 @@
 .hero {
     padding-right: 20px;
     display: flex;
-   
+
 
     .row {
         margin: 0;
@@ -287,11 +337,13 @@
         padding: 2px;
 
     }
+
     &-pro-icon {
         background: url(../assets/img/pro.svg) center / cover no-repeat;
         width: 100%;
         height: 100%;
     }
+
     &-wrap {
         width: calc(100% - 75px);
     }
@@ -330,10 +382,26 @@
         .roboto(@font-weight: 700, @color: #fff);
         cursor: pointer;
         text-decoration: none;
+
+        &:hover {
+            background-color: #61A30D;
+            border-color: #61A30D;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #4C8109;
+            background-color: #4C8109;
+            outline: none;
+
+            i {
+                color: #fff;
+            }
+        }
     }
 
     &-sendmail {
-        .rounded-button(#3D3D3D, 0);
+        .rounded-button(#eaeaea, 0);
         width: 40px;
         height: 40px;
         margin-left: 10px;
@@ -343,6 +411,17 @@
             font-size: 15px;
             line-height: 175%;
             color: #282828;
+        }
+
+        &:hover {
+            background-color: #eaeaea;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
         }
     }
 
@@ -403,7 +482,7 @@
     &-textfield {
         padding: 40px 20px 40px 0;
         border-top: 1px solid #EAEAEA;
-        
+
         textarea {
             .roboto();
             border: 2px solid #EAEAEA;
@@ -421,10 +500,23 @@
     &-post-comment {
         margin-top: 10px;
         margin-left: auto;
-        .rounded-button(@padX: 22px, @padY: 7px);
+        .rounded-button(#eaeaea, @padX: 22px, @padY: 7px);
         .roboto(@font-weight: 700);
         outline: none;
         cursor: pointer;
+
+
+        &:hover {
+            background-color: #eaeaea;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
+        }
+
     }
 
     &-user-avatar {
@@ -512,10 +604,21 @@
     }
 
     &-btn {
-        .rounded-button(@padX: 0, @bg-color: #fff);
+        .rounded-button(#eaeaea, @padX: 0, @bg-color: #fff);
         width: 40px;
         height: 40px;
         cursor: pointer;
+
+        &:hover {
+            background-color: #eaeaea;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
+        }
     }
 
     &>.post-answer {
@@ -542,6 +645,7 @@
         margin-right: 10px;
         margin-bottom: 10px;
         cursor: pointer;
+
         span {
             .roboto(12px, 117%)
         }
@@ -624,13 +728,17 @@
         p {
             .roboto()
         }
+
+
     }
 
     &-map {
         width: 100%;
         height: 245px;
         margin-bottom: 8px;
-        background: url('../assets/img/mockmap.svg') center / cover no-repeat;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        border-radius: 10px;
     }
 
     &-device {
@@ -692,9 +800,11 @@
 
             &:last-child {
                 margin-right: unset;
+
                 .icon {
-                background: url(../assets/img/tech-icons/angle.svg) center / cover no-repeat;
-            }}
+                    background: url(../assets/img/tech-icons/angle.svg) center / cover no-repeat;
+                }
+            }
 
 
 
@@ -722,7 +832,7 @@
     }
 
     &-btn {
-        .rounded-button(@padX: auto);
+        .rounded-button(#eaeaea, @padX: auto);
         width: 40px;
         height: 40px;
         margin-right: 10px;
@@ -730,6 +840,17 @@
         span {
             text-transform: uppercase;
             .roboto(10px, @font-weight: 900)
+        }
+
+        &:hover {
+            background-color: #eaeaea;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
         }
     }
 }
@@ -754,15 +875,17 @@
                 &:last-child {
                     justify-content: center;
                 }
-            } 
-
-            &-tech div {
-                margin-right: 35px;
             }
+
+
         }
 
         &-prize.w50 {
             margin: 0 20px;
+        }
+
+        &-tech div {
+            margin-right: 35px;
         }
     }
 }
@@ -1002,6 +1125,22 @@
 
             i {
                 color: #282828;
+            }
+
+            &:hover {
+                background-color: #bcbcbc;
+                border-color: #bcbcbc;
+            }
+
+            &:active,
+            &:focus {
+                border-color: #434343;
+                background-color: #434343;
+                outline: none;
+
+                i {
+                    color: #fff;
+                }
             }
         }
 

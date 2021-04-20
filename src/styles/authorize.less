@@ -14,6 +14,7 @@
     padding-top: 40px;
     z-index: 2;
     background-color: #282828;
+
     &-logo {
         display: flex;
         justify-content: center;
@@ -38,6 +39,7 @@ main {
 
 .authorization {
     height: calc(100vh - 165px);
+
     .container {
         height: 100%;
         height: 100%;
@@ -73,6 +75,19 @@ main {
         .rounded-button(#eaeaea, 22px, 7px);
         .p_bold(@white);
         cursor: pointer;
+
+        &:hover {
+            background-color: @grey;
+            color: @black;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #fff;
+            background-color: #fff;
+            color: @black;
+            outline: none;
+        }
     }
 
     &-social {
@@ -84,6 +99,8 @@ main {
             margin-right: 24px;
             .p(@white)
         }
+
+
     }
 
     &-btn-social {
@@ -104,6 +121,21 @@ main {
         &:first-of-type {
             margin-right: 10px;
         }
+
+        &:hover {
+            background-color: #3d3d3d;
+        }
+
+        &:active,
+        &:focus {
+            border-color: #fff;
+            background-color: #fff;
+            outline: none;
+
+            i {
+                color: @black;
+            }
+        }
     }
 
     &-alt-action {
@@ -121,9 +153,11 @@ main {
         text-decoration: none;
         cursor: pointer;
     }
+
     &-remind {
         .p(@white)
     }
+
     &-register {
         .p_bold(@white);
     }

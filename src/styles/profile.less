@@ -138,7 +138,7 @@
     }
 
     &-contact-link {
-        .rounded-button(@padX: 0);
+        .rounded-button(#eaeaea ,@padX: 0);
 
         text-decoration: none;
 
@@ -147,12 +147,20 @@
             font-size: 15px;
             line-height: 175%;
         }
+        &:hover {
+            background-color: #eaeaea;
+        }
 
+        &:active, &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
+        }
 
     }
 
     &-contact-link.phone {
-        .rounded-button(@padX: 12px);
+        .rounded-button(#eaeaea ,@padX: 12px);
 
         i {
             font-size: 12px;
@@ -161,6 +169,16 @@
         span {
             margin-left: 10px;
             .roboto()
+        }
+
+        &:hover {
+            background-color: #eaeaea;
+        }
+
+        &:active, &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
         }
     }
 
@@ -192,7 +210,8 @@
 }
 
 .nav {
-    border: 1px solid #0000001A;
+    border-top: 1px solid #0000001A;
+    border-bottom: 1px solid #0000001A;
     overflow: hidden;
 
     .container {
@@ -207,8 +226,7 @@
     }
 
     &-btn {
-        .rounded-button(@padX: 0);
-        text-decoration: none;
+        height: 40px;
 
         i {
             color: #000000;
@@ -228,14 +246,67 @@
             text-decoration: none;
             .roboto(@color: #ffffff, @font-weight: 700)
         }
-    }
 
+        &:hover {
+            background-color: #61A30D;
+            border-color: #61A30D;
+        }
+
+        &:active, &:focus {
+            border-color: #4C8109;
+            background-color: #4C8109;
+            outline: none;
+
+            i {
+                color: #fff;
+            }
+        }
+    }
+    &-sendmail {
+        .rounded-button(#eaeaea, 0);
+
+        &:hover {
+            background-color: #eaeaea;
+        }
+
+        &:active, &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
+        }
+    }
     &-more {
         .rounded-button(#eaeaea, 0, @bg-color: #eaeaea);
+
+        &:hover {
+            background-color: #bcbcbc;
+            border-color: #bcbcbc;
+        }
+
+        &:active, &:focus {
+            border-color: #434343;
+            background-color: #434343;
+            outline: none;
+
+            i {
+                color: #fff;
+            }
+        }
     }
 
     &-info {
         display: none;
+        .rounded-button(#eaeaea, 0);
+        height: 40px;
+        &:hover {
+            background-color: #eaeaea;
+        }
+
+        &:active, &:focus {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
+        }
     }
 
 

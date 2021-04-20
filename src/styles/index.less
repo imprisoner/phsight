@@ -25,7 +25,53 @@
     }
 }
 
+// .main {
+//     &::before {
+//         content: '';
+//         background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
+//         position: absolute;
+//         top: 0;
+//         right: 0;
+//         left:0;
+//         bottom: calc(100vh - 260px);
+//         z-index: 2;
+//     }
+//     &::after {
+//         content: '';
+//         background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
+//         position: absolute;
+//         top: calc(100vh - 260px);
+//         right: 0;
+//         left:0;
+//         bottom: 0;
+//         z-index: 2;
+//         transform: rotate(-180deg);
+//     }
+// }
 
+.swiper-slide {
+        &::before {
+            content: '';
+            background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
+            position: absolute;
+            top: 0;
+            right: 0;
+            left:0;
+            bottom: calc(100vh - 260px);
+            z-index: 2;
+        }
+        &::after {
+            content: '';
+            background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
+            position: absolute;
+            top: calc(100vh - 260px);
+            right: 0;
+            left:0;
+            bottom: 0;
+            // z-index: 2;
+            transform: rotate(-180deg);
+        }
+    }
 .slider {
     height: calc(100vh - 59px);
 
@@ -68,6 +114,7 @@
         justify-content: space-between;
         padding: 0 60px 40px;
         align-items: baseline;
+        z-index: 1;
     }
 
     &-photo-name {

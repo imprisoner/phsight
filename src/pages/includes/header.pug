@@ -6,20 +6,26 @@ header.header
          .header-menu-btn
             i.fas.fa-bars
          nav.header-menu-list
+            .header-tab-marker
             a(href="phsight/photos.html").header-navlink Фотографии
+               //- .header-tab-marker
             a(href="#").header-navlink Рейтинги
+               //- .header-tab-marker
             a(href="#").header-navlink Авторы
+               //- .header-tab-marker
          .header-search.search
             a.header-search-btn
                i.fas.fa-search
-            input(placeholder="").header-search-field
+            input(placeholder="" name="header-search").header-search-field
       //- .header-user-action
-         a(href="phsight/register.html").header-sign-in Регистрация
+         a(href="/phsight/register.html").header-sign-in Регистрация
          .header-user-register.user-avatar
             a(href="phsight/authorize.html").header-user-icon
                i.fas.fa-user
       .header-user-logged
          p.header-greets Привет, Sub-Zero!
          a(href="#" style="background-image: url(./img/subscribers/image%2039-3.jpg)").header-user-avatar.user-avatar
+         .new-message
+                    i.far.fa-envelope
 
 

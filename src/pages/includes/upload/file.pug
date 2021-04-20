@@ -6,12 +6,55 @@ main.upload.file
         .container
             .file-warn 
                 p Вы можете загружать фотографии размером до 10 МБ с максимальной стороной кадра (горизонталь или вертикаль) до 6000 px без дополнительных оплат.
-            form(method="POST" action="" enctype="multipart/form-data").file-photo
+            form(method="POST" id="photo_form" action="http://localhost:80/test.php" enctype="multipart/form-data").file-photo
                 .file-area
-                    input(type="file" placeholder="выберите файл или перетяните его в эту область").file-input
-                    i.fas.fa-file
-                    button.replacement выберите файл или перетяните его в эту область
-                button(type="submit") Загрузить фото
+                    input(type="hidden" name="UploadPhotoFormModel[file]" id="ytUploadPhotoFormModel_file" value placeholder="выберите файл или перетяните его в эту область" accept="image/jpg,jpeg,png").file-input
+                    input(type="file" name="UploadPhotoFormModel[file]" id="UploadPhotoFormModel_file" placeholder="выберите файл или перетяните его в эту область" accept="image/jpg,jpeg,png").file-input
+                    i.fas.fa-upload
+                    button.replacement 
+                        p выберите файл 
+                            span или перетяните его в эту область
+                input(type="submit" value="Загрузить фото" name="yt0").submit-button
+            //- script.
+                function check_file() {
+                    var $this = $('#UploadPhotoFormModel_file');
+                    if ($this[0].files[0] == undefined) {
+                        var popup = new PopUp();
+                        popup.setContent('<h3>Выберите файл</h3><p>Вы не указали загружаемую фотографию.</p>');
+                        popup.open();
+                        return false;
+                    }
+
+                    var fSize = $this[0].files[0].size
+                    if (fSize > (1024 * 1024 * 10)) {
+                        var popup = new PopUp();
+                        popup.setContent('<h3>Превышение размера файла</h3><p>Вы не можете загрузить фотографию, превышающую максимально допустимый размер.</p>');
+                        popup.open();
+                        return false;
+                    }
+
+                    var fup = document.getElementById('UploadPhotoFormModel_file');
+                    var fileName = fup.value;
+                    var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+                    if (ext !== "gif" && ext !== "GIF" && ext !== "JPEG" && ext !== "jpeg" && ext !== "jpg" && ext !== "JPG" && ext !== "png" && ext !== 'PNG') {
+                        var popup = new PopUp();
+                        popup.setContent('<h3>Неверный тип файла</h3><p>Вы не можете загрузить файл в формате ' + ext + '</p>');
+                        popup.open();
+                        return false;
+                    }
+                    return true;
+                }
+
+                $('#UploadPhotoFormModel_file').change(function () {
+                    check_file();
+                });
+
+                $('#photo_form').submit(function() {
+                    if(!check_file()) {
+                        return false;
+                    }
+                    $('#submit-button').prop('disabled', true).val('Подождите...');
+                });
             .file-about
                 p Вы можете загрузить&nbsp;<b>5</b>&nbsp;фотографий
-                p За последние&nbsp;<b>7</b>&nbsp;вы загрузили&nbsp;<b>0</b>&nbsp;фотографий
+                p За последние&nbsp;<b>7</b>&nbsp;дней вы загрузили&nbsp;<b>0</b>&nbsp;фотографий

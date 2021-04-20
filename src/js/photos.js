@@ -5,38 +5,45 @@ import {
     initNavTabs,
     initPagination,
     togglePopup,
-    expandSearch
+    expandSearch,
 } from './utils'
 
 
 $(document).on('DOMContentLoaded', function () {
-
+    
     // setting slider and navtabs animation
 
-    const slider = initSlider(480)
-    initNavTabs(480, slider)
+    initSlider(480)
+    initNavTabs('.tab-link')
 
     // setting pagination
-    
-    initPagination(480)
 
+    initPagination(480)
+    $('input').after
     // setting JustifiedGallery plugin
 
     $('.justified-gallery').justifiedGallery({
-        rowHeight: 250,
+        rowHeight: 415,
         margins: 2,
         lastRow: 'justify',
         randomize: true
     })
-
-    //expanding search
+ 
 
     expandSearch('header')
-
+    initNavTabs('.header-navlink')
     // popups
 
-    togglePopup('header-menu-btn','burger')
+    togglePopup('header-menu-btn', 'burger')
     togglePopup('header-user-logged', 'user')
 
+    // desktop user menu hover appearance
+    if (window.innerWidth > 1279) {
+        $('.header-user-avatar').on('mouseenter', function () {
+            $('.user-menu').show(200)
+            $('.user-menu').on('mouseleave', function () {
+                $(this).hide(200)
+            })
+        })
+    }
 })
-

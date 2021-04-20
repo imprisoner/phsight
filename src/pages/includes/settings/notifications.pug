@@ -1,0 +1,64 @@
+.settings-notifications.notifications 
+    form(method="post" id="yw0" action="http://localhost:80/test.php").container
+        input(name="SubscribeFormModel[mailing_events_receipt_type]" id="SubscribeFormModel_mailing_events_receipt_type" type="hidden" value="10")
+        .row
+            .col-lg-3.col-md-6.col-xs-12
+                section.notifications-notify
+                    h4.notifications-title Уведомления
+                    .notifications-quiz
+                        .notifications-item
+                            .checkbox
+                                input(type="hidden" id="ytSubscribeFormModel_is_mail_replies" name="SubscribeFormModel[is_mail_replies]" value="0")
+                                input(type="checkbox" name="SubscribeFormModel[is_mail_replies]" id="SubscribeFormModel_is_mail_replies" value="1")
+                                label(for="SubscribeFormModel_is_mail_replies")
+                            p.subheader Ответы на мои комментарии
+
+                        .notifications-item
+                            .checkbox
+                                input(id="ytSubscribeFormModel_is_mail_comments_to_my_photo" type="hidden" value="0" name="SubscribeFormModel[is_mail_comments_to_my_photo]")
+                                input(type="checkbox" id="SubscribeFormModel_is_mail_comments_to_my_photo" value="1" name="SubscribeFormModel[is_mail_comments_to_my_photo]")
+                                label(for="SubscribeFormModel_is_mail_comments_to_my_photo")
+                            p.subheader Комментарии на мои фото
+
+                        .notifications-item
+                            .checkbox
+                                input(id="ytSubscribeFormModel_is_mail_private_messages" type="hidden" value="0" name="SubscribeFormModel[is_mail_private_messages]")
+                                input(type="checkbox" input id="SubscribeFormModel_is_mail_private_messages" value="1" name="SubscribeFormModel[is_mail_private_messages]")
+                                label(for="SubscribeFormModel_is_mail_private_messages")
+                            p.subheader Новые приватные сообщения
+
+                        .notifications-item
+                            .checkbox
+                                input(name="SubscribeFormModel[is_mail_favourite_authors_photo]" id="ytSubscribeFormModel_is_mail_favourite_authors_photo" value="0" type="hidden")
+                                input(name="SubscribeFormModel[is_mail_favourite_authors_photo]" id="SubscribeFormModel_is_mail_favourite_authors_photo" value="1" type="checkbox")
+                                label(for="SubscribeFormModel_is_mail_favourite_authors_photo")
+                            p.subheader Фотографии избранных авторов
+
+            .col-lg-3.col-md-6.col-xs-12 
+                section.notifications-sendout
+                    h4.notifications-title Регулярные рассылки  
+                    .notifications-quiz
+                        .notifications-item
+                            .checkbox
+                                input(name="SubscribeFormModel[is_mail_weekly]" id="ytSubscribeFormModel_is_mail_weekly" value="0" type="hidden")
+                                input(name="SubscribeFormModel[is_mail_weekly]" id="SubscribeFormModel_is_mail_weekly" value="1" type="checkbox")
+                                label(for="SubscribeFormModel_is_mail_weekly")
+                            p.subheader Фото Недели
+
+                        .notifications-item
+                            .checkbox
+                                input(name="SubscribeFormModel[is_mail_daily]" id="ytSubscribeFormModel_is_mail_daily" value="0" type="hidden")
+                                input(name="SubscribeFormModel[is_mail_daily]" id="SubscribeFormModel_is_mail_daily" value="1" type="checkbox")
+                                label(for="SubscribeFormModel_is_mail_daily")
+                            p.subheader Фото дня
+
+                        .notifications-item
+                            .checkbox
+                                input(name="SubscribeFormModel[is_mail_photosight_message]" id="ytSubscribeFormModel_is_mail_photosight_message" value="0" type="hidden")
+                                input(name="SubscribeFormModel[is_mail_photosight_message]" id="SubscribeFormModel_is_mail_photosight_message" value="1" type="checkbox")
+                                label(for="SubscribeFormModel_is_mail_photosight_message")
+                            p.subheader Новости Фото.Сайта
+
+        section.notifications-submit.submit
+            .container
+                input(type="submit" name="yt0" value="Сохранить изменения").submit-button.btn

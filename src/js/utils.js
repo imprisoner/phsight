@@ -9,7 +9,6 @@ export function initSlider(breakpoint = 0, clickSlide = true) {
     let sliderInstance = window.innerWidth < breakpoint ?
         new Swiper('.swiper-container', {
             slidesPerView: 'auto',
-            // speed: 100,
             slideToClickedSlide: clickSlide,
             freeMode: true
         }) :
@@ -20,41 +19,18 @@ export function initSlider(breakpoint = 0, clickSlide = true) {
 
 // setting navtabs animation
 
-export function initNavTabs(breakpoint = 0, sliderInstance) {
+export function initNavTabs(el = '') {
 
-    const marker = $('.tab-marker')
-    const tabs = $('.tab-link')
-
-    function indicator(target, shift = 0) {
-        if (shift >= 0) {
-            marker.css('left', target.offsetLeft - shift)
-        } else {
-            marker.css('left', target.offsetLeft + shift)
-        }
-        marker.css('width', target.offsetWidth + 9)
-    }
+    const tabs = $(el)
 
     tabs.each(function (i) {
         $(this).on('click', function (e) {
-            const target = e.target
+
             tabs.removeClass('active')
             $(this).addClass('active')
-            if (sliderInstance) {
-                const translate = sliderInstance.translate
-                indicator(target, 5 - translate)
-            } else
-                indicator(target, 5)
+
         })
-        if ($(this).hasClass('active')) {
-            indicator(this, -4)
-        }
     })
-    if (sliderInstance) {
-        sliderInstance.on('setTranslate', () => {
-            const translate = sliderInstance.translate
-            marker.css('left', $('.active')[0].offsetLeft + translate - 5)
-        })
-    }
 }
 
 // setting pagination
@@ -112,3 +88,93 @@ export function expandSearch(area = '') {
 
     })
 }
+
+// custom select-inputs
+export function selectize(selects = []) {
+    selects.each(function (i) {
+        const input = $(this)
+        const label = $(this).closest('label')
+        const datalist = input[0] === label[0] ? $(this).find('.datalist') : $(this).next('.datalist')
+        console.log(input)
+        const span = label.find('span')
+
+
+        label.on('click', function (e) {
+            $(document).trigger('click')
+            e.stopPropagation()
+            e.preventDefault()
+
+            if (!datalist.hasClass('active')) {
+                console.log('works!')
+                datalist.addClass('active')
+                datalist.show()
+            }
+
+            if ($(e.target).hasClass('option')) {
+
+                input[0].value = e.target.dataset.value
+                console.log(input[0].value)
+                span.css('color', '')
+                span[0].innerText = e.target.innerHTML
+                datalist.removeClass('active')
+                datalist.hide()
+            }
+
+            // datalist clicks
+                // datalist.on('click', function(e) {
+                //     e.stopPropagation()
+                // })
+            // closing on outside clicks
+
+            $(document)
+                .one('click', function (e) {
+                    e.stopPropagation()
+                    datalist.removeClass('active')
+                    datalist.hide()
+                })
+        })
+
+    })
+
+}
+
+// export function selectizeQuiz(selects = []) {
+//     $(selects).each(function (i) {
+//         const input = $(this)
+//         const label = $(this).closest('label')
+//         const datalist = $(this).next('.datalist')
+//         const span = label.find('span')
+
+
+//         label.on('click', function (e) {
+//             $(document).trigger('click')
+//             e.stopPropagation()
+//             e.preventDefault()
+
+//             if (!datalist.hasClass('active')) {
+//                 console.log('works!')
+//                 datalist.addClass('active')
+//                 datalist.show()
+//             }
+
+//             if ($(e.target).hasClass('option')) {
+
+//                 input.val(e.target.dataset.value)
+//                 span[0].innerText = e.target.innerHTML
+//                 datalist.removeClass('active')
+//                 datalist.hide()
+//             }
+
+//             // closing on outside clicks
+
+//             $(document)
+//                 .one('click', function (e) {
+//                     e.stopPropagation()
+//                     datalist.removeClass('active')
+//                     datalist.hide()
+//                 })
+//         })
+
+//     })
+
+// }

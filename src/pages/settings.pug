@@ -1,1 +1,17 @@
 extends layouts/page.pug
+
+block content
+    main.settings
+        h1 Настройки профиля
+        .settings-navigation
+            include includes/nav-tabs.pug
+                block tabs
+                    +tabs(['Основное', 'Услуги', 'Техника', 'Уведомления', 'Смена пароля', 'Чёрный список'])
+
+        include includes/settings/general.pug
+        //- include includes/settings/services.pug
+        //- include includes/settings/devices.pug
+        //- include includes/settings/notifications.pug
+        //- include includes/settings/password.pug
+        //- include includes/settings/blacklist.pug
+        
