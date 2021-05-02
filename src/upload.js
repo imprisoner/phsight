@@ -1,2 +1,3 @@
-import './styles/upload.less'
 import './js/upload'
+import './styles/common'
+import './styles/upload.less'

@@ -1,4 +1,5 @@
 .settings-services.services
+    include ../add-album.pug
     form(id="yw0" method="post" action="http://localhost:80/test.php").container
         section.services-description 
             .row
@@ -16,12 +17,12 @@
                         p.hint Выберите один из ваших альбомов, который лучше всего иллюстрирует ваш профиль в рубрике «Услуги». Отсутствие фотографий делает ваш профиль менее заметным и сильно снижает его привлекательность для заказчиков! Профили без альбома будет выводиться в самом конце списка.
                         label.select
                             span 
-                            input(type="text" id="JobMemberSettingsForm_set_id" name="JobMemberSettingsForm[set_id]" placeholder="альбом не выбран").selection
+                            input(type="hidden" id="JobMemberSettingsForm_set_id" name="JobMemberSettingsForm[set_id]" placeholder="альбом не выбран").selection
                             .datalist 
                                 div(data-value="60123").option Люди
                                 div(data-value="60124").option Всякие штуки
                                 div(data-value="60125").option Цветы
-                        button.create-album Создать альбом
+                        a(href="#").btn.album-popup Создать альбом
 
         section.services-region
             .row
@@ -34,7 +35,7 @@
                         p.subheader Страна
                         label.select
                             span 
-                            input(type="text" id="JobMemberSettingsForm_country_id" name="JobMemberSettingsForm[country_id]" placeholder="страна не выбрана").selection
+                            input(type="hidden" id="JobMemberSettingsForm_country_id" name="JobMemberSettingsForm[country_id]" placeholder="страна не выбрана").selection
                             .datalist 
                                 div(data-value="11111").option Казахстан
                                 div(data-value="22222").option Россия
@@ -56,7 +57,7 @@
                         p.subheader Валюта
                         label.select
                             span 
-                            input(type="text" id="JobMemberSettingsForm_price_currency" name="JobMemberSettingsForm[price_currency]").selection
+                            input(type="hidden" id="JobMemberSettingsForm_price_currency" name="JobMemberSettingsForm[price_currency]").selection
                             .datalist 
                                 div(data-value="RUR").option Рубли
                                 div(data-value="USD").option Доллары

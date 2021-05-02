@@ -1,0 +1,11 @@
+.dots-menu
+    .dots-wrap
+      block menu
+        mixin menu(links)
+                    each link in links
+                        a(href="#").dots-option= link
+                    else
+                        p NO LINKS
+        //- a(href="#").dots-option Пожаловаться
+        //- a(href="#").dots-option Заблокировать
+

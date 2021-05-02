@@ -1,0 +1,19 @@
+.add-lens-menu 
+    .wrap
+        .add-lens-close
+            i.far.fa-times
+        h5 Добавление нового объектива
+        .add-lens-selects
+            label(for="brand").select.brand-select
+                span(style="color: #777777;") выберите бренд
+                input(type="hidden" name="PhotoEditFormModel[lens_brand]" id="lens_brand" placeholder="выберите бренд").selection
+                .datalist
+                    div(data-value="2021").option Lomography
+                    div(data-value="2022").option Canon
+            label(for="model").select.model-select
+                span(style="color: #777777;") выберите модель
+                input(type="hidden" name="PhotoEditFormModel[lens_model]" id="lens_model" placeholder="выберите модель").selection
+                .datalist 
+                    //- div(data-value="6273").option BRONICA ETRSi
+                    //- div(data-value="6274").option BRONICA ETRSh
+        a(href="#").add-lens-button.disabled Добавить объектив

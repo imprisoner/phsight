@@ -1,0 +1,82 @@
+extends layouts/page.pug
+
+block title 
+    title Photosight - Счёт
+
+block content
+    main.wallet
+        section.wallet-top
+            .container
+                .row
+                    .col-lg-6.col-xs-12
+                        .wallet-title 
+                            h1 Счёт
+                            .wallet-balance 
+                                h1 7&nbsp;
+                                h3 у.е.
+                        p.wallet-info В настоящий момент пополнение кошелька приостановлено
+                        form(action="http://localhost:80/test.php" method="post").wallet-trans.trans
+                            h4.trans-title Перевод другому пользователю
+                            .trans-textfields
+                                .trans-field
+                                    label(for="ID") ID пользователя
+                                    input(name="ID" id="ID")
+                                .trans-field
+                                    label(for="sum") Сумма в у.е.
+                                    input(name="sum" id="sum")
+                                input(type="submit" name="yt0" value="Перевести").btn.submit-button
+
+        section.wallet-body.pricing
+            .container
+                .row
+                    .col-sm-7.col-xs-12
+                        .pricing-service
+                            h4.pricing-name Загрузка сверх лимита
+                            p.pricing-about Загрузить более чем 5 фотографий за 7 дней
+                    .col-sm-5.col-xs-12
+                        h3.pricing-cost <span>2</span> у.е.
+                        a.btn.activate-button.disabled Активировать
+                .row
+                    .col-sm-7.col-xs-12
+                        .pricing-service
+                            h4.pricing-name Чёрный список
+                            p.pricing-about Активируйте возможность добавлять пользователей в черный список, и они больше не смогут комментировать ваши фотографии.
+                    .col-sm-5.col-xs-12
+                        h3.pricing-cost <span class="free">бесплатно</span>
+                        a(href="#").btn.activate-button Активировать
+                .row
+                    .col-sm-7.col-xs-12
+                        .pricing-service
+                            h4.pricing-name Ещё какая-то услуга
+                            p.pricing-about Загрузить более чем 5 фотографий за 7 дней
+                    .col-sm-5.col-xs-12 
+                        h3.pricing-cost <span>2</span> у.е.
+                        a.btn.activate-button.used Активировано
+
+        section.wallet-bottom.history
+            .container
+                h4.history-title История операций
+                table
+                    thead 
+                        tr.row
+                            th.col-sm-2.col-lg-2 Дата
+                            th.col-sm-3.col-lg-3 Описание <br>операции
+                            th.col-sm-4.col-lg-4 Объект
+                            th.col-sm-2.col-lg-2 Поступление, <br>у.е 
+                            th.col-sm-1.col-lg-1 Расход, <br>у.е.
+                    tbody
+                        tr.row 
+                            td.col-sm-2.col-lg-2.history-date 15 марта, <br> 12:56
+                            td.col-sm-3.col-lg-3.history-operation Перевод от <br>пользователя
+                            td.col-sm-4.col-lg-4.history-object
+                                <b class="object-name">Фото.Сайт @ Администрация</b>, <br>ID 417985
+                            td.col-sm-2.col-lg-2.history-plus 5.00
+                            td.col-sm-1.col-lg-1.history-minus 
+                        tr.row 
+                            td.col-sm-2.col-lg-2.history-date 15 марта, <br>12:56
+                            td.col-sm-3.col-lg-3.history-operation Перевод от <br>пользователя
+                            td.col-sm-4.col-lg-4.history-object 
+                                <b class="object-name">Lev Novikov</b>, <br>ID 417985
+                            td.col-sm-2.col-lg-2.history-plus 5.00
+                            td.col-sm-1.col-lg-1.history-minus 
+

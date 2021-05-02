@@ -1,12 +1,18 @@
-@import './common/fonts.less';
-@import './common/spec.less';
-@import './common/mixins.less';
+//;
+// @import './common/fonts.less';
+// @import './common/spec.less';
+// @import './common/mixins.less';
 @import './common/mixins-new.less';
-@import './components/header.less';
-@import './components/burger-menu.less';
-@import './components/user-menu.less';
-@import './components/mini-footer.less';
-@import './components/footer.less';
+// @import './components/header.less';
+// @import './components/burger-menu.less';
+// @import './components/user-menu.less';
+// @import './components/mini-footer.less';
+// @import './components/footer.less';
+
+// info-popups
+@import './components/add-album.less';
+@import './components/add-camera.less';
+@import './components/add-lens.less';
 
 // common
 
@@ -35,13 +41,13 @@ input[type="submit"] {
     margin-left: 10px;
     outline: none;
     cursor: pointer;
-
-    &:hover {
+    width: fit-content;
+    &:hover,
+    &:focus  {
         background-color: #eaeaea;
     }
 
-    &:active,
-    &:focus {
+    &:active{
         border-color: #bcbcbc;
         background-color: #bcbcbc;
         outline: none;
@@ -49,12 +55,27 @@ input[type="submit"] {
 
 }
 
-// input[type="text"]::-moz-placeholder,
-// input[type="text"]:-moz-placeholder,
-// input[type="text"]:-ms-input-placeholder,
-input[type="text"]::-webkit-input-placeholder,
-input[type="text"]::placeholder {
-    color: #eaeaea;
+input[type="text"] {
+
+    &::-moz-placeholder {
+        color: #eaeaea;
+    }
+
+    &:-moz-placeholder {
+        color: #eaeaea;
+    }
+
+    &:-ms-input-placeholder {
+        color: #eaeaea;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #eaeaea;
+    }
+
+    &::placeholder {
+        color: #eaeaea;
+    }
 }
 
 @media (max-width: 1279px) {
@@ -77,7 +98,7 @@ input[type="text"]::placeholder {
 
 .file {
 
-    height: calc(100vh - 329px);
+    height: calc(100vh - 318px);
     min-height: 620px;
     text-align: center;
 
@@ -226,7 +247,7 @@ input[type="text"]::placeholder {
 
     // typo =============
 
-    input[type="text"] {
+    input {
         .rounded-button(#EAEAEA, 12px, 7px);
         .p(@black);
         height: 40px;
@@ -308,19 +329,19 @@ input[type="text"]::placeholder {
         .p(@black);
     }
 
-    button {
+    .btn {
         .rounded-button(#EAEAEA, 22px);
         .p_bold(@black);
         cursor: pointer;
         outline: none;
-        min-width: fit-content;
+        width: fit-content;
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: #eaeaea;
         }
 
-        &:active,
-        &:focus {
+        &:active {
             border-color: #bcbcbc;
             background-color: #bcbcbc;
             outline: none;
@@ -345,9 +366,9 @@ input[type="text"]::placeholder {
         padding: 40px 0 70px;
 
         .img {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 23px;
+            width: 400px;
+            height: 400px;
+            margin-bottom: 20px;
         }
 
         .edit {
@@ -464,23 +485,23 @@ input[type="text"]::placeholder {
 
             input {
                 &::-webkit-input-placeholder {
-                    color: @black;
+                    color: @dark-grey;
                 }
 
                 &::-moz-placeholder {
-                    color: @black;
+                    color: @dark-grey;
                 }
 
                 &:-moz-placeholder {
-                    color: @black;
+                    color: @dark-grey;
                 }
 
                 &:-ms-input-placeholder {
-                    color: @black;
+                    color: @dark-grey;
                 }
 
                 &::placeholder {
-                    color: @black;
+                    color: @dark-grey;
                 }
             }
 
@@ -659,6 +680,13 @@ input[type="text"]::placeholder {
             width: 100%;
         }
 
+        &-crop {
+            .img {
+                width: 355px;
+                height: 355px;
+            }
+        }
+
         &-main {
             label {
                 margin-bottom: 10px;
@@ -672,7 +700,7 @@ input[type="text"]::placeholder {
             .part-wrap {
                 flex-wrap: wrap;
 
-                button {
+                .btn {
                     margin: 0 auto;
                 }
             }
@@ -691,7 +719,7 @@ input[type="text"]::placeholder {
             .part-wrap {
                 flex-wrap: wrap;
 
-                button {
+                .btn {
                     margin: 0 auto;
                 }
             }
@@ -724,6 +752,17 @@ input[type="text"]::placeholder {
         &-agreement {
             width: 100%;
             padding-bottom: 20px;
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .info {
+        &-crop {
+            .img {
+                width: 300px;
+                height: 300px;
+            }
         }
     }
 }

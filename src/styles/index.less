@@ -1,12 +1,13 @@
+//;
 @import '../../node_modules/swiper/swiper.less';
 @import '../../node_modules/swiper/components/effect-fade/effect-fade.less';
-@import './common/fonts.less';
-@import './common/spec.less';
-@import './common/mixins.less';
-@import './components/header.less';
-@import './components/burger-menu.less';
-@import './components/user-menu.less';
-@import './components/mini-footer.less';
+// @import './common/fonts.less';
+// @import './common/spec.less';
+@import './common/mixins-new.less';
+// @import './components/header.less';
+// @import './components/burger-menu.less';
+// @import './components/user-menu.less';
+// @import './components/mini-footer.less';
 
 .header {
     position: absolute;
@@ -21,33 +22,9 @@
     }
 
     &-navigation {
-         margin-left: calc(50% - 338px);
+         margin-left: calc(50% - 398px);
     }
 }
-
-// .main {
-//     &::before {
-//         content: '';
-//         background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
-//         position: absolute;
-//         top: 0;
-//         right: 0;
-//         left:0;
-//         bottom: calc(100vh - 260px);
-//         z-index: 2;
-//     }
-//     &::after {
-//         content: '';
-//         background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
-//         position: absolute;
-//         top: calc(100vh - 260px);
-//         right: 0;
-//         left:0;
-//         bottom: 0;
-//         z-index: 2;
-//         transform: rotate(-180deg);
-//     }
-// }
 
 .swiper-slide {
         &::before {
@@ -137,14 +114,16 @@
 @media (max-width: 1279px) {
     .header {
         &-navigation {
-            margin-left: calc(50% - 288px);
+            margin-left: calc(50% - 378px);
         }
     }
+
+   
 }
 
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1191px) {
 
     .header {
         padding: 15px 0;
@@ -177,6 +156,10 @@
 
     .slider {
         height: calc(100vh - 101px);
+
+        &-btn-prev, &-btn-next {
+            display: none;
+        }
     }
 
     .slide {
@@ -193,5 +176,10 @@
         }
     }
 
+}
 
+@media (max-height: 767px) {
+   .slider {
+       min-height: 767px;
+   }
 }

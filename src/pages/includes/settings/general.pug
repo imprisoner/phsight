@@ -1,127 +1,140 @@
 .settings-general.general
-            form(method="post" action="http://localhost:80/test.php").container
-                section.general-avatar
-                    .row
-                        .col-lg-2
-                            .general-avatar-preview
-                                i.far.fa-camera
-                            .general-avatar-upload
-                                i.far.fa-upload 
-                                p загрузить аватар
-                section.general-personal.personal
-                    .row
+    form(method="post" action="http://localhost:80/test.php").container
+        section.general-avatar
+            .row
+                .col-lg-2
+                    .general-avatar-preview
+                        i.far.fa-camera
+                    a(href="#").general-avatar-upload
+                        i.far.fa-upload 
+                        p загрузить аватар
+        section.general-personal.personal
+            .row
 
-                        .col-lg-3.col-md-6.col-xs-12
-                            .personal-textfield
-                                p.subheader Электронная почта
-                                input(type="email" id="email" name="email")
-                        .col-lg-3.col-md-6.col-xs-12
-                            .personal-textfield
-                                p.subheader  Ваше имя на сайте
-                                input(type="text" id="name" name="name")
+                .col-lg-3.col-md-6.col-xs-12
+                    .personal-textfield
+                        p.subheader Электронная почта
+                        input(type="email" id="email" name="email")
+                .col-lg-3.col-md-6.col-xs-12
+                    .personal-textfield
+                        p.subheader  Ваше имя на сайте
+                        input(type="text" id="name" name="name")
 
-                    .row
-                        .col-lg-3.col-md-6.col-xs-12
-                            .personal-textfield
-                                p.subheader Пол
+            .row
+                .col-lg-3.col-md-6.col-xs-12
+                    .personal-textfield
+                        p.subheader Пол
+                        label.select
+                            span 
+                            input(type="hidden" id="gender" name="gender").selection
+                            .datalist
+                                div(data-value="male").option мужской
+                                div(data-value="female").option женский
+                .col-lg-3.col-md-6.col-xs-12
+                    .personal-textfield
+                        p.subheader Дата рождения
+                        label(for="date") 
+                            input(type="date" id="date" name="date")
+            .row
+                .col-lg-3.col-md-6.col-xs-12
+                    .personal-textfield
+                        p.subheader Страна
+                        label.select
+                            span 
+                            input(type="hidden" id="country" name="country" placeholder="страна не выбрана").selection
+                            .datalist 
+                                div(data-value="11111").option Казахстан
+                                div(data-value="22222").option Россия
+                                div(data-value="33333").option Беларусь
+                .col-lg-3.col-md-6.col-xs-12
+                    .personal-textfield
+                        p.subheader Город
+                        input(type="text" id="city" name="city")
+
+            .row
+                .col-lg-6.col-xs-12
+                    .personal-textfield 
+                        p.subheader Расскажите о себе
+                        textarea(name="about")
+
+
+        section.general-contacts.contacts
+
+            .row 
+                .col-lg-6.col-xs-12
+                    h4.contacts-title Контакты
+                    .contacts-fields
+
+                        .contacts-item
+                            .contacts-select
                                 label.select
-                                    span 
-                                    input(type="text" id="gender" name="gender").selection
+                                    span Behance
+                                    input(type="hidden").selection
                                     .datalist
-                                        div(data-value="male").option мужской
-                                        div(data-value="female").option женский
-                        .col-lg-3.col-md-6.col-xs-12
-                            .personal-textfield
-                                p.subheader Дата рождения
-                                label(for="date") 
-                                    input(type="date" id="date" name="date")
-                    .row
-                        .col-lg-3.col-md-6.col-xs-12
-                            .personal-textfield
-                                p.subheader Страна
+                                        div(data-value="be").option Behance
+                                        div(data-value="tw").option Twitter
+                                        div(data-value="tg").option Telegram
+                                        div(data-value="500px").option 500px
+                                        div(data-value="fl").option Flickr
+                                        div(data-value="fb").option Facebook
+                            .contacts-textfield
+                                input(type="text" name="behance" value="http://behance.com/").link 
+                                a(href="#").contacts-delete.delete-button
+                                    i.fas.fa-times
+
+
+                        .contacts-item
+                            .contacts-select
                                 label.select
-                                    span 
-                                    input(type="text" id="country" name="country" placeholder="страна не выбрана").selection
+                                    span 500px
+                                    input(type="hidden").selection
                                     .datalist 
-                                        div(data-value="11111").option Казахстан
-                                        div(data-value="22222").option Россия
-                                        div(data-value="33333").option Беларусь
-                        .col-lg-3.col-md-6.col-xs-12
-                            .personal-textfield
-                                p.subheader Город
-                                input(type="text" id="city" name="city")
-
-                    .row
-                        .col-lg-6.col-xs-12
-                            .personal-textfield 
-                                p.subheader Расскажите о себе
-                                textarea(name="about")
+                                        div(data-value="be").option Behance
+                                        div(data-value="tw").option Twitter
+                                        div(data-value="tg").option Telegram
+                                        div(data-value="500px").option 500px
+                                        div(data-value="fl").option Flickr
+                                        div(data-value="fb").option Facebook
+                            .contacts-textfield
+                                input(type="text" name="500px" value="http://500px.com/").link
+                                a(href="#").contacts-delete.delete-button
+                                    i.fas.fa-times
 
 
-                section.general-contacts.contacts
+                        .contacts-item
+                            .contacts-select
+                                label.select
+                                    span Twitter
+                                    input(type="hidden").selection
+                                    .datalist 
+                                        div(data-value="be").option Behance
+                                        div(data-value="tw").option Twitter
+                                        div(data-value="tg").option Telegram
+                                        div(data-value="500px").option 500px
+                                        div(data-value="fl").option Flickr
+                                        div(data-value="fb").option Facebook
+                            .contacts-textfield
+                                input(type="text" name="twitter" value="http://twitter.com").link
+                                a(href="#").contacts-delete.delete-button
+                                    i.fas.fa-times
 
-                    .row 
-                        .col-lg-6.col-xs-12
-                            h4.contacts-title Контакты
-                            .contacts-fields
+            .row
+                .col-lg-6.col-xs-12
+                    a(href="#").btn.contacts-add-contact Добавить контакт
 
-                                .contacts-item
-                                    .contacts-select
-                                        label.select
-                                            span Behance
-                                            input(type="text").selection
-                                            .datalist
-                                                div(data-value="be").option Behance
-                                                div(data-value="tw").option Twitter
-                                                div(data-value="tg").option Telegram
-                                                div(data-value="500px").option 500px
-                                                div(data-value="fl").option Flickr
-                                                div(data-value="fb").option Facebook
-                                    .contacts-textfield
-                                        input(type="text" name="behance" value="http://behance.com/").link 
-                                        .contacts-delete.delete-button
-                                            i.fas.fa-times
+        section.general-accounts.accounts
+            .row
+                .col-lg-6.col-xs-12
+                    h4.accounts-title Привязка учётных записей социальных сетей
+                    p.accounts-about Привязка учетных записей социальных сетей (можно сразу нескольких) к аккаунту на Фотосайте позволит вам входить в один клик. Кроме того, вы сможете уведомлять своих подписчиков в социальных сетях о новых фотографиях, выходе в рейтинги и многих других приятных событиях.
+                    .accounts-links
+                        .account-fb 
+                            .icon
+                            a(href="#").btn.account-btn.fb-btn Привязать к Facebook
+                        .account-vk 
+                            .icon
+                            a(href="#").btn.account-btn.vk-btn Привязать к Vkontakte
 
-
-                                .contacts-item
-                                    .contacts-select
-                                        label.select
-                                            span 500px
-                                            input(type="text").selection
-                                            .datalist 
-                                                div(data-value="be").option Behance
-                                                div(data-value="tw").option Twitter
-                                                div(data-value="tg").option Telegram
-                                                div(data-value="500px").option 500px
-                                                div(data-value="fl").option Flickr
-                                                div(data-value="fb").option Facebook
-                                    .contacts-textfield
-                                        input(type="text" name="500px" value="http://500px.com/").link
-                                        .contacts-delete.delete-button
-                                            i.fas.fa-times
-
-
-                                .contacts-item
-                                    .contacts-select
-                                        label.select
-                                            span Twitter
-                                            input(type="text").selection
-                                            .datalist 
-                                                div(data-value="be").option Behance
-                                                div(data-value="tw").option Twitter
-                                                div(data-value="tg").option Telegram
-                                                div(data-value="500px").option 500px
-                                                div(data-value="fl").option Flickr
-                                                div(data-value="fb").option Facebook
-                                    .contacts-textfield
-                                        input(type="text" name="twitter" value="http://twitter.com").link
-                                        .contacts-delete.delete-button
-                                            i.fas.fa-times
-
-                    .row
-                        .col-lg-6.col-xs-12
-                            button.contacts-add-contact Добавить контакт
-
-                section.general-submit.submit
-                    .container
-                        button(type="submit").submit-button Сохранить изменения
+        section.general-submit.submit
+            .container
+                input(type="submit" name="yt0" value="Сохранить изменения").btn.submit-button

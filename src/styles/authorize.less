@@ -1,8 +1,12 @@
-@import './common/fonts.less';
-@import './common/spec.less';
-@import './common/mixins.less';
+//;
+// @import './common/fonts.less';
+// @import './common/spec.less';
+// @import './common/mixins.less';
 @import './common/mixins-new.less';
-@import './components/mini-footer.less';
+// @import './components/mini-footer.less';
+body {
+    background-color: @black;
+}
 
 .top {
     // position: absolute;
@@ -75,14 +79,16 @@ main {
         .rounded-button(#eaeaea, 22px, 7px);
         .p_bold(@white);
         cursor: pointer;
+        margin-bottom: 20px;
+        outline: none;
 
-        &:hover {
+        &:hover,
+        &:focus  {
             background-color: @grey;
             color: @black;
         }
 
-        &:active,
-        &:focus {
+        &:active{
             border-color: #fff;
             background-color: #fff;
             color: @black;
@@ -143,9 +149,15 @@ main {
 
         p {
             .p(@white);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
+        a {
+            .rounded-button(transparent, 22px, 7px, @light-grey);
+            .p_bold(@black);
+            width: fit-content;
+            margin: 0 auto;
+        }
     }
 
     &-register,

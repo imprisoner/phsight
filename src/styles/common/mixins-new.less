@@ -18,6 +18,15 @@
 
 }
 
+.h3(@color: #c4c4c4) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 130%;
+    color: @color;
+
+}
 .h3_bold(@color: #c4c4c4) {
     font-family: Roboto;
     font-style: normal;
@@ -120,3 +129,26 @@
 @light-grey: #f4f4f4;
 @white: #ffffff;
 @green: #7BC220;
+
+
+.rounded-button(@border-color: #2828281A, @padX, @padY: 5px, @bg-color: transparent) {
+    border: 2px solid @border-color;
+    border-radius: 10px;
+    padding: @padY @padX;
+    background-color: @bg-color;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+}
+
+.roboto(@size: 15px, @line-height: 175%, @font-weight: 400, @color: #282828) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: @font-weight;
+    font-size: @size;
+    line-height: @line-height;
+    color: @color;
+}

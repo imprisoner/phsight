@@ -1,7 +1,7 @@
 extends layouts/page.pug
 
 block title 
-    title Photosight - Главная
+    title Photosight - Фотографии
 
 
 
@@ -11,24 +11,23 @@ block content
             .container
                 h1.content-title Все фотографии
                 .content-nav.flex
-                    a.content-subscribe Подписаться
+                    a(href="#").content-subscribe Подписаться
 
                     include includes/nav-tabs.pug
                         block tabs
-                            +tabs(['Все', 'Новые', 'Популярные', 'Выбор редакции'])
+                            +tabs(['Все', 'Новые', 'Популярные', 'Выбор редакции', ''])
                     .content-current-page
                         input(type="text" value="1")
                         span стр.
         .content-body
-            .container
-                include includes/ads.pug
-                    block mocks
-                        .ads-unit
-                            img(src="./img/mock-ads/1.jpg" alt="mock")
-                        .ads-unit
-                            img(src="./img/mock-ads/2.jpg" alt="mock")
-                        .ads-unit
-                            img(src="./img/mock-ads/3.jpg" alt="mock")
+            include includes/ads.pug
+                block mocks
+                    .ads-unit
+                        img(src="./img/mock-ads/1.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/2.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/3.jpg" alt="mock")
             .content-gallery    
                 .container
                     include includes/jg.pug
@@ -39,13 +38,12 @@ block content
                 .content-current-page
                     input(type="text" value="1")
                     span стр.
-            .container 
-                include includes/ads.pug
-                    block mocks
-                        .ads-unit
-                            img(src="./img/mock-ads/1.jpg" alt="mock")
-                        .ads-unit
-                            img(src="./img/mock-ads/2.jpg" alt="mock")
-                        .ads-unit
-                            img(src="./img/mock-ads/3.jpg" alt="mock")
+            include includes/ads.pug
+                block mocks
+                    .ads-unit
+                        img(src="./img/mock-ads/1.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/2.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/3.jpg" alt="mock")
 

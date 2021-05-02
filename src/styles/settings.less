@@ -1,16 +1,24 @@
+//;
 @import '../../node_modules/swiper/swiper.less';
-@import './common/fonts.less';
-@import './common/spec.less';
-@import './common/mixins.less';
+// @import './common/fonts.less';
+// @import './common/spec.less';
+// @import './common/mixins.less';
 @import './common/mixins-new.less';
-@import './components/header.less';
-@import './components/burger-menu.less';
-@import './components/user-menu.less';
-@import './components/mini-footer.less';
-@import './components/footer.less';
+// @import './components/header.less';
+// @import './components/burger-menu.less';
+// @import './components/user-menu.less';
+// @import './components/mini-footer.less';
+// @import './components/footer.less';
 @import './libs/flexgrid.css';
-@import './components/nav-tabs.less';
+// @import './components/nav-tabs.less';
 
+// SERVICES
+
+@import './components/add-album.less';
+
+// DEVICES
+@import './components/add-camera.less';
+@import './components/add-lens.less';
 
 // common
 
@@ -45,9 +53,11 @@ p.hint {
     margin-bottom: 20px;
 }
 
-input:not(input[type="submit"]):not(.header-search-field):not(.select>input),
+input[type="text"]:not(#header_search),
+input[type="password"],
+input[type="date"],
+input[type="email"],
 textarea {
-
     .p(@black);
     .rounded-button(#EAEAEA, 12px, 7px);
     width: 100%;
@@ -67,14 +77,15 @@ input {
 }
 
 
-button, .btn {
+button,
+.btn {
     .rounded-button(#EAEAEA, 22px);
     .p_bold(@black);
     cursor: pointer;
     outline: none;
     min-width: fit-content;
     max-width: max-content;
-    
+
     &:hover {
         background-color: #eaeaea;
     }
@@ -258,6 +269,7 @@ button, .btn {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        cursor: pointer;
 
         i {
             font-size: 16px;
@@ -334,11 +346,55 @@ button, .btn {
     }
 }
 
+.accounts {
+    padding-bottom: 80px;
+
+    &-title {
+        padding-bottom: 20px;
+    }
+
+    &-about {
+        .p(@black);
+        color: #000000;
+        padding-bottom: 40px;
+    }
+
+    &-links {
+        display: flex;
+    }
+
+    .account-fb,
+    .account-vk {
+        display: flex;
+        width: 50%;
+        align-items: center;
+        justify-content: flex-start;
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+        }
+    }
+
+    .account-fb {
+        .icon {
+            background: url(../assets/img/icons/bluefb.svg);
+        }
+    }
+
+    .account-vk {
+        .icon {
+            background: url(../assets/img/icons/bluevk.svg);
+        }
+    }
+}
+
 .submit {
     padding: 40px 0;
     border-top: 1px solid #bcbcbc;
 
-    button {
+    &-button {
         margin-left: auto;
     }
 }
@@ -380,6 +436,21 @@ button, .btn {
             }
         }
     }
+
+    .accounts {
+        &-links {
+            flex-wrap: wrap;
+        }
+
+        .account-fb,
+        .account-vk {
+            width: 100%;
+        }
+
+        .account-fb {
+            margin-bottom: 20px;
+        }
+    }
 }
 
 
@@ -387,7 +458,7 @@ button, .btn {
 .services {
 
     // common 
-    textarea#details {
+    #JobMemberSettingsForm_full_description {
         height: 200px;
     }
 
@@ -676,7 +747,7 @@ button, .btn {
         align-items: center;
         justify-content: space-between;
     }
-    
+
     &-support {
         padding-right: 100px;
 

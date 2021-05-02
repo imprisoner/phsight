@@ -66,7 +66,9 @@ block content
                             i.fas.fa-envelope
                         a(href="#").nav-btn.nav-more
                             i.fas.fa-ellipsis-h
-
+                        include ../includes/dots-menu.pug
+                            block menu
+                                +menu(['Пожаловаться', 'Заблокировать'])
                     include ../includes/nav-tabs.pug
                         block tabs
                             +tabs(['Фотографии', 'Альбомы', 'Избранное', 'Статистика', 'Подписчики'])
@@ -86,8 +88,7 @@ block content
                 .profile-current-page 
                     input(type="text" value="1")
                     span стр.
-        .container
-            include ../includes/ads.pug
-                block mocks
-                    .ads-unit
-                        img(src="./img/mock-ads/5.jpg" alt="mock")                   
+        include ../includes/ads.pug
+            block mocks
+                .ads-unit
+                    img(src="./img/mock-ads/5.jpg" alt="mock")                   

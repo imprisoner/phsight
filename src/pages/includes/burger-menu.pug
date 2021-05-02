@@ -12,8 +12,9 @@
                 a(href="phsight/photos.html").burger-navlink Фотографии
                 a(href="#").burger-navlink Рейтинги
                 a(href="#").burger-navlink Авторы
-            .burger-search.search
+                a(href="#").burger-navlink Работа
+            form(action="" method="post").burger-search.search
                 a.burger-search-btn
                     i.fas.fa-search
-                input(placeholder="").burger-search-field
+                input(placeholder="" name="burger_search").burger-search-field
     include ./mini-footer.pug

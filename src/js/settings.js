@@ -23,8 +23,8 @@ initNavTabs('.tab-link')
 
 // popup listeners
 togglePopup('header-menu-btn', 'burger')
-togglePopup('header-user-logged', 'user')
-
+if(window.innerWidth < 1279) togglePopup('header-user-logged', 'user')
+expandSearch('burger')
 // desktop user menu hover appearance
 if (window.innerWidth > 1279) {
     $('.header-user-avatar').on('mouseenter', function () {
@@ -38,6 +38,8 @@ if (window.innerWidth > 1279) {
 // select inputs
 const selects = $('.selection')
 selectize(selects)
+
+// GENERAL
 
 // input name grabber (for contacts)
 
@@ -204,8 +206,45 @@ $('.delete-button').on('click', function () {
     });
 });
 
+togglePopup('camera-popup', 'add-camera')
+togglePopup('lens-popup', 'add-lens')
+
+// add-camera
+$('#camera_brand').on('change', function(e) {
+    if($(this).val() !== -1) {
+        $('.add-camera-button').removeClass('disabled')
+    }
+})
+$('.add-camera-button').on('click', function(e) {
+
+    if($(this).hasClass('disabled')) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+
+})
+
+//  add-lens
+$('#lens_brand').on('change', function(e) {
+    if($(this).val() !== -1) {
+        $('.add-lens-button').removeClass('disabled')
+    }
+})
+$('.add-lens-button').on('click', function(e) {
+
+    if($(this).hasClass('disabled')) {
+        e.preventDefault()
+        e.stopPropagation()
+    }
+
+})
+
+
 
 // services
+
+togglePopup('album-popup', 'add-album')
+
 
 // if($('.services')) {
 //     $(function () {

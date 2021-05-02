@@ -1,2 +1,3 @@
-import './styles/search.less'
 import './js/search'
+import './styles/common'
+import './styles/search.less'

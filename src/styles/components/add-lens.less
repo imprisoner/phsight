@@ -1,0 +1,124 @@
+.add-lens {
+    &-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #434343cc;
+        z-index: 999;
+
+        .wrap {
+            position: relative;
+            width: 560px;
+            max-width: 90%;
+            padding: 40px;
+            background-color: @dark;
+            margin: calc(50vh - 112px) auto;
+            border-radius: 20px;
+        }
+
+        h5 {
+            .h5_bold(@white);
+            margin-bottom: 20px;
+        }
+
+        .add-lens-button {
+            .rounded-button(#EAEAEA, 22px);
+            .p_bold(@black);
+            width: fit-content;
+            margin-left: auto;
+            color: #5E5E5E;
+            border-color: #5E5E5E;
+
+            &:not(.disabled) {
+                color: @white;
+                border-color: @white;
+                &:hover,
+                &:focus {
+                    background-color: @grey;
+                    color: @black;
+                    border-color: transparent;
+                }
+
+                &:active {
+                    border-color: @white;
+                    background-color: @white;
+                    color: @black;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+
+    &-selects {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        label.brand-select,
+        label.model-select {
+            width: calc(50% - 5px);
+            color: @white;
+            border-color: #ffffff1a;
+            background-color: #4C4C4C;
+
+            &:after {
+                color: @grey;
+                z-index: 5;
+                top: 5px;
+            }
+        }
+    }
+
+
+
+    &-close {
+        font-size: 20px;
+        line-height: 165%;
+        color: @white;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .add-lens {
+        &-menu {
+            .wrap {
+                padding: 40px 20px;
+                margin: calc(50vh - 137px) auto;
+            }
+        }
+
+        &-selects {
+
+            label.brand-select,
+            label.model-select {
+                width: 100%;
+            }
+
+            label.brand-select {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media (max-width: 374px) {
+    .add-lens {
+        &-menu {
+            .wrap {
+                margin: calc(50vh - 149px) auto;
+            }
+        }
+    }
+}

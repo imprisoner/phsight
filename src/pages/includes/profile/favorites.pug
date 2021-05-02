@@ -5,11 +5,12 @@
             span.favorites-authors-count (7)
         a(href="favphotos.html").favorites-navlink Избранные фото&nbsp;
             span.favorites-photos-count (45)
-    .container 
-        include ../ads.pug
-            block mocks
-                .ads-unit
-                    img(src="./img/mock-ads/4.jpg" alt="mock")
-                .ads-unit
-                    img(src="./img/mock-ads/6.jpg" alt="mock")
-    include favauthorphotos.pug
+    include ../ads.pug
+        block mocks
+            .ads-unit
+                img(src="./img/mock-ads/4.jpg" alt="mock")
+            .ads-unit
+                img(src="./img/mock-ads/6.jpg" alt="mock")
+    //- include favauthorphotos.pug
+    include favauthors.pug
+    //- include favphotos.pug

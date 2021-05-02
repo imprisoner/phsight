@@ -35,8 +35,8 @@ $(document).on('DOMContentLoaded', function () {
     // popups
 
     togglePopup('header-menu-btn', 'burger')
-    togglePopup('header-user-logged', 'user')
-
+    if(window.innerWidth < 1279) togglePopup('header-user-logged', 'user')
+    expandSearch('burger')
     // radio inputs
 
     const radioButtons = $('input[type="radio"]')

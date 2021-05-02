@@ -1,15 +1,7 @@
 .header {
     background-color: #282828;
     color: #fff;
-    padding: 20px 0;
-
-
-    // &-logo {
-    //     display: flex;
-    //     align-items: center;
-    //     text-decoration: none;
-    //     color: #fff;
-    // }
+    padding: 14.5px 0;
 
     &-logo-image {
         background: url(../../assets/img/logo/logo_page.svg) center / cover no-repeat;
@@ -21,7 +13,7 @@
     &-navigation {
         display: flex;
         align-items: center;
-        margin-left: calc(50% - 370px);
+        margin-left: calc(50% - 446px);
     }
 
     &-menu-btn {
@@ -81,11 +73,11 @@
     }
 
     &-search.active>&-search-btn {
-        transform: translateX(160px);
+        transform: translateX(140px);
     }
 
     &-search.active>&-search-field {
-        width: 200px;
+        width: 180px;
         border: 2px solid #FFFFFF1A;
         padding: 10px 40px 10px 10px;
     }
@@ -204,7 +196,7 @@
 }
 
 // media
-@media (min-width: 1440px) {
+@media (min-width: 1500px) {
     .header {
         &-search.active>&-search-field {
             width: 250px;
@@ -213,7 +205,6 @@
         &-search.active>&-search-btn {
             transform: translateX(210px);
         }
-
     }
 }
 
@@ -225,7 +216,7 @@
         }
 
         &-navigation {
-            margin-left: calc(50% - 365px);
+            margin-left: calc(50% - 420px);
         }
 
         &-navlink {
@@ -237,32 +228,11 @@
 @media (max-width: 1279px) {
     .header {
         &-navigation {
-            margin-left: calc(50% - 340px);
+            margin-left: calc(50% - 406px);
         }
 
         &-navlink {
             margin-right: 40px;
-        }
-
-        &-search.active>&-search-btn {
-            transform: translateX(130px);
-        }
-
-        &-search.active>&-search-field {
-            width: 170px;
-        }
-    }
-}
-
-@media (max-width: 1119px) {
-
-    .header {
-        &-navigation {
-            margin-left: calc(50% - 330px);
-        }
-
-        &-navlink {
-            margin-right: 30px;
         }
 
         &-search.active>&-search-btn {
@@ -273,15 +243,9 @@
             width: 160px;
         }
     }
-
-
 }
 
-// @media (max-width: 1439px) {
-
-// }
-
-@media (max-width: 1024px) {
+@media (max-width: 1191px) {
     .header {
         .container {
             justify-content: space-between;

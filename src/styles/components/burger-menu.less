@@ -33,7 +33,7 @@
     &-close {
         position: absolute;
         z-index: 5;
-        top: calc(50% - 15.5px);
+        // top: calc(50% - 15.5px);
         cursor: pointer;
         i {
             font-size: 19px;
@@ -85,7 +85,7 @@
         text-align: center;
     }
 
-    &-navlink:not(:nth-child(3)) {
+    &-navlink:not(:last-child) {
         margin-bottom: 30px;
     }
 
@@ -166,7 +166,7 @@
     }
 }
 
-@media (max-height: 420px) {
+@media (max-height: 532px) {
     .burger {
         // &-menu {
         //     .mini-footer {
@@ -175,7 +175,9 @@
         // }
 
         &-navigation {
-            height: calc(100vh - 62px);
+            // height: calc(100vh - 62px);
+            margin-top: 40px;
+            height: auto;
         }
     }
 }

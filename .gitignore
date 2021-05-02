@@ -4,3 +4,5 @@ dist
 pug.md
 #src/assets/fonts
 docs/api
+checkout
+checkout-auth

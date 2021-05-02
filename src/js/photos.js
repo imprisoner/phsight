@@ -19,7 +19,7 @@ $(document).on('DOMContentLoaded', function () {
     // setting pagination
 
     initPagination(480)
-    $('input').after
+    
     // setting JustifiedGallery plugin
 
     $('.justified-gallery').justifiedGallery({
@@ -33,9 +33,10 @@ $(document).on('DOMContentLoaded', function () {
     expandSearch('header')
     initNavTabs('.header-navlink')
     // popups
-
+    
     togglePopup('header-menu-btn', 'burger')
-    togglePopup('header-user-logged', 'user')
+    expandSearch('burger')
+    if(window.innerWidth < 1279) togglePopup('header-user-logged', 'user')
 
     // desktop user menu hover appearance
     if (window.innerWidth > 1279) {

@@ -26,15 +26,18 @@ module.exports = {
     entry: {
         index: './index.js',
         photos: './photos.js',
-        profile: './profile.js',
+        // profile: './profile.js',
         view: './view.js',
         error: './error.js',
-        techworks: './techworks.js',
-        authorize: './authorize.js',
-        register: './register.js',
-        search: './search.js',
-        upload: './upload.js',
-        settings: './settings.js'
+        // techworks: './techworks.js',
+        // authorize: './authorize.js',
+        // register: './register.js',
+        // search: './search.js',
+        // upload: './upload.js',
+        // settings: './settings.js',
+        // messages: './messages.js',
+        // wallet: './wallet.js',
+        
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -98,7 +101,7 @@ module.exports = {
                 }]
             },
             {
-                test: /\.(jpg|png|svg|jpeg|svg)$/,
+                test: /\.(jpg|png|svg|jpeg|svg|gif)$/,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'icons/'

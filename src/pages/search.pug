@@ -4,7 +4,7 @@ block content
     main.search 
         .search-top
             h1.search-title Поиск
-            form(action="POST").search-form
+            form(action="" method="post").search-form
                 .search-textfield
                     a.search-btn
                         i.fas.fa-search
@@ -39,31 +39,31 @@ block content
                                     label(for="tags") По тегам
                                 .search-params-field.swiper-slide
         .search-body
-            .container
-                include includes/ads.pug
-                    .ads-unit
-                        img(src="./img/mock-ads/1.jpg" alt="mock")
-                    .ads-unit
-                        img(src="./img/mock-ads/2.jpg" alt="mock")
-                    .ads-unit
-                        img(src="./img/mock-ads/3.jpg" alt="mock")
+            include includes/ads.pug
+                .ads-unit
+                    img(src="./img/mock-ads/1.jpg" alt="mock")
+                .ads-unit
+                    img(src="./img/mock-ads/2.jpg" alt="mock")
+                .ads-unit
+                    img(src="./img/mock-ads/3.jpg" alt="mock")
+
             //- main content
-            //- include includes/search/photos.pug
-            include includes/search/users.pug
+            include includes/search/photos.pug
+            //- include includes/search/users.pug
             //- main content
+
         .search-footer 
             .container.flex
                 .search-pagination.pagination
                 .search-current-page
                     input(type="text" value="1")
                     span стр.
-            .container 
-                include includes/ads.pug
-                    block mocks
-                        .ads-unit
-                            img(src="./img/mock-ads/1.jpg" alt="mock")
-                        .ads-unit
-                            img(src="./img/mock-ads/2.jpg" alt="mock")
-                        .ads-unit
-                            img(src="./img/mock-ads/3.jpg" alt="mock")
+            include includes/ads.pug
+                block mocks
+                    .ads-unit
+                        img(src="./img/mock-ads/1.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/2.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/3.jpg" alt="mock")
 

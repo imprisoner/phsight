@@ -1,26 +1,24 @@
 header.header
    .container.flex
-      a(href="/phsight").header-logo
+      a(href="/").header-logo
          .header-logo-image   
       .header-navigation
          .header-menu-btn
             i.fas.fa-bars
          nav.header-menu-list
             .header-tab-marker
-            a(href="phsight/photos.html").header-navlink Фотографии
-               //- .header-tab-marker
+            a(href="#").header-navlink Фотографии
             a(href="#").header-navlink Рейтинги
-               //- .header-tab-marker
             a(href="#").header-navlink Авторы
-               //- .header-tab-marker
-         .header-search.search
+            a(href="#").header-navlink Работа
+         form(action="" method="post").header-search.search
             a.header-search-btn
                i.fas.fa-search
-            input(placeholder="" name="header-search").header-search-field
+            input(placeholder="" type="text" id="header_search" name="header_search" ).header-search-field
       //- .header-user-action
-         a(href="/phsight/register.html").header-sign-in Регистрация
-         .header-user-register.user-avatar
-            a(href="phsight/authorize.html").header-user-icon
+         a(href="/register.html").header-sign-in Регистрация
+         a(href="/authorize.html").header-user-register.user-avatar
+            .header-user-icon
                i.fas.fa-user
       .header-user-logged
          p.header-greets Привет, Sub-Zero!

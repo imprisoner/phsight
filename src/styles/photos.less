@@ -1,17 +1,18 @@
 // common
+//;
 @import './libs/justifiedGallery.css';
 @import '../../node_modules/swiper/swiper.less';
-@import './common/fonts.less';
-@import './common/spec.less';
-@import './common/mixins.less';
-@import './components/header.less';
-@import './components/footer.less';
+// @import './common/fonts.less';
+// @import './common/spec.less';
+@import './common/mixins-new.less';
+// @import './components/header.less';
+// @import './components/footer.less';
 @import './components/pagination.less';
-@import './components/nav-tabs.less';
-@import './components/burger-menu.less';
-@import './components/user-menu.less';
-@import './components/mini-footer.less';
-@import './components/ads.less';
+// @import './components/nav-tabs.less';
+// @import './components/burger-menu.less';
+// @import './components/user-menu.less';
+// @import './components/mini-footer.less';
+// @import './components/ads.less';
 
 .content {
     padding-top: 70px;
@@ -44,17 +45,19 @@
     }
 
     &-subscribe {
-        .rounded-button(#eaeaea, @padX: 63px); 
+        .rounded-button(#eaeaea, @padX: 63px);
         .roboto(@font-weight: 700, @color: #000000);
         position: absolute;
         left: 0;
         cursor: pointer;
-        &:hover {
+        width: fit-content;
+
+        &:hover,
+        &:focus {
             background-color: #eaeaea;
         }
 
-        &:active,
-        &:focus {
+        &:active {
             border-color: #bcbcbc;
             background-color: #bcbcbc;
             outline: none;
@@ -112,6 +115,9 @@
         &-nav {
             overflow: hidden;
 
+            &.flex {
+                display: block;
+            }
 
         }
 
@@ -144,7 +150,7 @@
             }
         }
 
-        &-current-category {
+        &-subscribe {
             position: static;
             margin: 0 auto 30px;
             padding: 6px 22px;
@@ -169,6 +175,7 @@
     &-footer {
         display: flex;
         justify-content: flex-end;
+
         .wrap {
             display: flex;
             flex-wrap: wrap;
@@ -186,19 +193,28 @@
         align-items: center;
         .roboto(15px, 175%, @color: #fff);
         flex-wrap: wrap;
+
         span {
-            
+
             white-space: nowrap;
         }
+
         b {
             color: #fff;
             white-space: nowrap;
         }
     }
 
+    &-photographer {
+        span {
+            font-weight: 400;
+        }
+    }
+
     &-actions {
         padding-top: 12px;
         display: flex;
+
         span {
             margin-left: 10px;
             color: #fff;

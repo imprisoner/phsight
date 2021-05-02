@@ -36,8 +36,8 @@ $(document).on('DOMContentLoaded', function () {
     // popups
 
     togglePopup('header-menu-btn', 'burger')
-    togglePopup('header-user-logged', 'user')
-
+    if(window.innerWidth < 1279) togglePopup('header-user-logged', 'user')
+    expandSearch('burger')
     // init small nav
 
     const smallTabs = $('.favorites-navlink')
@@ -57,4 +57,33 @@ $(document).on('DOMContentLoaded', function () {
             })
         })
     }
+
+    // more-btn
+    // togglePopup('nav-more', 'dots')
+    $('.nav-more').on('click', function(e) {
+        
+        e.stopPropagation()
+        const target = $('.dots-menu')
+        target.on('click', function(e) {
+            e.stopPropagation()
+        })
+        target.toggle()
+
+
+        $(document).one('keydown', function (e) {
+
+            if (e.code === 'Escape') {
+                $('.dots-menu').hide()
+                $('.nav-more').trigger('blur')
+                $(document).off()
+            }
+            
+        })
+        $(document).one('click', function (e) {
+
+                $('.dots-menu').hide()
+                $(document).off()
+           
+        })
+    })
 })

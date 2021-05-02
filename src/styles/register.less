@@ -1,9 +1,12 @@
-@import './common/fonts.less';
-@import './common/spec.less';
-@import './common/mixins.less';
+//;
+// @import './common/fonts.less';
+// @import './common/spec.less';
+// @import './common/mixins.less';
 @import './common/mixins-new.less';
-@import './components/mini-footer.less';
-
+// @import './components/mini-footer.less';
+body {
+    background-color: @black;
+}
 .top {
 
     display: flex;
@@ -115,6 +118,7 @@ main {
         }
 
         a {
+            color: #fff;
             font-weight: 700;
             text-decoration: none;
             cursor: pointer;
@@ -130,6 +134,7 @@ main {
             width: 25px;
             height: 25px;
             margin-right: 10px;
+
             label {
                 width: 25px;
                 height: 25px;
@@ -140,7 +145,7 @@ main {
                 border: 2px solid #3D3D3D;
                 border-radius: 5px;
             }
-    
+
             label:after {
                 content: '';
                 width: 13px;
@@ -152,17 +157,17 @@ main {
                 opacity: 0;
                 border-radius: 2px;
             }
-    
+
             input[type="checkbox"] {
                 visibility: hidden;
             }
-    
+
             input[type="checkbox"]:checked+label:after {
                 opacity: 1;
             }
-    
+
             &.disabled~.content {
-    
+
                 .hint,
                 .subheader {
                     color: #bcbcbc
@@ -176,13 +181,14 @@ main {
         .rounded-button(#eaeaea, 22px, 7px);
         .p_bold(@white);
         cursor: pointer;
-        
-        &:hover {
+        outline: none;
+        &:hover,
+        &:focus {
             background-color: @grey;
             color: @black;
         }
 
-        &:active, &:focus {
+        &:active {
             border-color: #fff;
             background-color: #fff;
             color: @black;
@@ -194,12 +200,15 @@ main {
         padding-top: 78px;
 
         p {
-            .p(@white)
+            .p(@white);
+            margin-bottom: 15px;
         }
 
         a {
-            font-weight: 700;
-            cursor: pointer;
+            .rounded-button(transparent, 22px, 7px, @light-grey);
+            .p_bold(@black);
+            width: fit-content;
+            margin: 0 auto;
         }
     }
 }
@@ -235,7 +244,7 @@ main {
     }
 }
 
-@media (max-height: 639px) {
+@media (max-height: 617px) {
     .registration {
         height: auto;
         padding: 30px 0;

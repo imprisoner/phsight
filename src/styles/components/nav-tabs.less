@@ -3,6 +3,9 @@
     display: flex;
     align-items: center;
     position: relative;
+    // border-top: 1px solid #eaeaea;
+    // border-bottom: 1px solid #eaeaea;
+
 }
 .tabs::before {
     content: '';
@@ -84,6 +87,16 @@
 
     .tab-link:nth-child(n + 2) {
         margin-left: 30px;
+    }
+
+    .tabs::before {
+        
+        left: 0;
+    }
+    
+    .tabs::after {
+       
+        left: 0;
     }
 
 }

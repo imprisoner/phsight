@@ -1,0 +1,19 @@
+.add-camera-menu 
+    .wrap
+        .add-camera-close
+            i.far.fa-times
+        h5 Добавление новой камеры
+        .add-camera-selects
+            label(for="camera_brand").select.brand-select
+                span(style="color: #777777;") выберите бренд
+                input(type="hidden" name="PhotoEditFormModel[camera_brand]" id="camera_brand" placeholder="выберите бренд").selection
+                .datalist
+                    div(data-value="6021").option Bronica
+                    div(data-value="6022").option Canon
+            label(for="camera_model").select.model-select
+                span(style="color: #777777;") выберите модель
+                input(type="hidden" name="PhotoEditFormModel[camera_model]" id="camera_model" placeholder="выберите модель").selection
+                .datalist 
+                    //- div(data-value="6273").option BRONICA ETRSi
+                    //- div(data-value="6274").option BRONICA ETRSh
+        a(href="#").add-camera-button.disabled Добавить камеру

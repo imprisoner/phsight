@@ -9,11 +9,11 @@ block content
                 .registration-captcha
                     div(id="yw0" style="background-image: url(./img/captcha.svg)").registration-captcha-pic
                     input(placeholder="Введите код" name="RegistrationForm[verifyCode]" id="RegistrationForm_verifyCode" type="text").registration-captcha-input
-                    a(id="yw0_button" href="/auth/captcha?refresh=1").registration-captcha-refresh
+                    a(id="yw0_button").registration-captcha-refresh
                         i.fas.fa-redo-alt
                 .registration-acception
                     p Я принимаю&nbsp;
-                        a.rules-link правила Фотосайта
+                        a(href="#").rules-link правила Фотосайта
                     .registration-checkbox
                         .checkbox
                             input(id="ytRegistrationForm_accept" type="hidden" value="0" name="RegistrationForm[accept]")
@@ -23,5 +23,5 @@ block content
                 button(type="submit").registration-submit Зарегистрироваться
             .registration-alt-action
                 p У вас уже есть аккаунт?&nbsp;
-                    a Войдите!
+                a(href="authorize.html") Войти
 

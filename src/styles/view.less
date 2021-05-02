@@ -1,13 +1,17 @@
 @import '../../node_modules/swiper/swiper.less';
+@import './common/mixins-new.less';
+@import './components/popup.less';
+@import './components/dots-menu.less';
 @import './libs/flexgrid.css';
-@import './common/spec.less';
-@import './common/fonts.less';
-@import './common/mixins.less';
-@import './components/header.less';
-@import './components/footer.less';
-@import './components/burger-menu.less';
-@import './components/user-menu.less';
-@import './components/mini-footer.less';
+@import './libs/lightbox.css';
+// @import './common/spec.less';
+// @import './common/fonts.less';
+// @import './components/ads.less';
+// @import './components/burger-menu.less';
+// @import './components/user-menu.less';
+// @import './components/mini-footer.less';
+// @import './components/header.less';
+// @import './components/footer.less';
 
 .photo {
     &-block {
@@ -68,11 +72,17 @@
             width: 40px;
             height: 40px;
         }
+
+        &.active {
+            div {
+                border: 3px solid #fff;
+            }
+        }
     }
 
     &-btn {
 
-        &-warning {
+        &-complain {
             .rounded-button(#ffa80040, 5px);
             width: 40px;
             height: 40px;
@@ -85,13 +95,13 @@
                 color: #FFA800;
             }
 
-            &:hover {
+            &:hover,
+            &:focus {
                 border-color: #725C32;
                 background-color: #725C32;
             }
 
-            &:active,
-            &:focus {
+            &:active {
                 border-color: #FFA800;
                 background-color: #FFA800;
                 outline: none;
@@ -104,6 +114,8 @@
 
         &-prev,
         &-next {
+            position: absolute;
+            top: calc(50% - 34.5px);
             cursor: pointer;
 
             i {
@@ -139,13 +151,13 @@
             }
 
 
-            &:hover {
+            &:hover,
+            &:focus {
                 border-color: #545454;
                 background-color: #545454;
             }
 
-            &:active,
-            &:focus {
+            &:active {
                 border-color: #fff;
                 background-color: #fff;
                 outline: none;
@@ -156,7 +168,15 @@
             }
         }
 
+        &-like.active {
+            border-color: #fff;
+            background-color: #fff;
+            outline: none;
 
+            i {
+                color: #434343;
+            }
+        }
     }
 
     &-likes {
@@ -172,7 +192,6 @@
 }
 
 .ratings {
-
     display: none;
     text-align: center;
     flex-direction: column;
@@ -229,16 +248,16 @@
         cursor: pointer;
         text-decoration: none;
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: #eaeaea;
 
             color: #282828;
         }
 
-        &:active,
-        &:focus {
-            border-color: #fff;
-            background-color: #fff;
+        &:active {
+            border-color: @white;
+            background-color: @white;
             outline: none;
 
             color: #282828;
@@ -246,9 +265,13 @@
     }
 
     &-warning {
-        .roboto(12px, 130%, 400, #fff);
+        .roboto(12px, 130%, 400, @white);
         max-width: 690px;
         margin-top: 20px;
+
+        a {
+            color: @white;
+        }
     }
 
     .swiper-container {
@@ -256,6 +279,12 @@
             color: #000;
             border-color: #eaeaea;
         }
+    }
+
+    // for JS
+
+    &.disabled &-rate-btn {
+        display: none;
     }
 }
 
@@ -296,7 +325,7 @@
 
 // ===========TODO
 .wall-block {
-    padding: 45px 0 60px 0;
+    padding-top: 45px;
 
     .row.wrap {
         position: relative;
@@ -304,6 +333,11 @@
 
     .ratings {
         display: none;
+    }
+
+    .dots-menu {
+        bottom: 61px;
+        right: calc(50% - 177px);
     }
 }
 
@@ -378,24 +412,43 @@
     }
 
     &-subscribe {
-        .rounded-button(transparent, 22px, 7px, #7BC220);
-        .roboto(@font-weight: 700, @color: #fff);
+        .rounded-button(transparent, 22px, 7px, transparent);
+        .roboto(@font-weight: 700, @color: #282828);
         cursor: pointer;
         text-decoration: none;
+        outline: none;
 
-        &:hover {
-            background-color: #61A30D;
-            border-color: #61A30D;
+        &.green {
+            background-color: #7BC220;
+            color: #fff;
+
+            &:hover,
+            &:focus {
+                background-color: #61A30D;
+                border-color: #61A30D;
+            }
+
+            &:active {
+                border-color: #4C8109;
+                background-color: #4C8109;
+
+                i {
+                    color: #fff;
+                }
+            }
         }
 
-        &:active,
-        &:focus {
-            border-color: #4C8109;
-            background-color: #4C8109;
-            outline: none;
+        &.white {
+            border-color: @grey;
 
-            i {
-                color: #fff;
+            &:hover,
+            &:focus {
+                background-color: @grey;
+            }
+
+            &:active {
+                border-color: @dark-grey;
+                background-color: @dark-grey;
             }
         }
     }
@@ -406,6 +459,7 @@
         height: 40px;
         margin-left: 10px;
         text-decoration: none;
+        outline: none;
 
         i {
             font-size: 15px;
@@ -413,16 +467,7 @@
             color: #282828;
         }
 
-        &:hover {
-            background-color: #eaeaea;
-        }
 
-        &:active,
-        &:focus {
-            border-color: #bcbcbc;
-            background-color: #bcbcbc;
-            outline: none;
-        }
     }
 
     &-more {
@@ -430,7 +475,7 @@
     }
 
     &-about {
-        max-width: 800px;
+        
         margin-left: 20px;
         position: relative;
         margin-top: 30px;
@@ -446,7 +491,7 @@
         }
     }
 
-    &-about:before {
+    &-about::before {
 
         display: block;
         content: ' ';
@@ -472,8 +517,8 @@
     }
 
     &-number {
-        margin-bottom: 17px;
-
+        padding-bottom: 20px;
+        border-bottom:  1px solid @grey;
         span {
             .roboto(12px, 130%)
         }
@@ -481,7 +526,7 @@
 
     &-textfield {
         padding: 40px 20px 40px 0;
-        border-top: 1px solid #EAEAEA;
+        // border-top: 1px solid #EAEAEA;
 
         textarea {
             .roboto();
@@ -506,12 +551,12 @@
         cursor: pointer;
 
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: #eaeaea;
         }
 
-        &:active,
-        &:focus {
+        &:active {
             border-color: #bcbcbc;
             background-color: #bcbcbc;
             outline: none;
@@ -528,6 +573,10 @@
     &-wallpost {
         padding: 20px 0;
     }
+
+    // not logged
+
+
 }
 
 
@@ -539,6 +588,7 @@
         flex-wrap: wrap;
         padding: 20px;
         min-width: fit-content;
+
     }
 
     &-wrapper {
@@ -588,7 +638,7 @@
         margin-left: 9px;
     }
 
-    &-warning {
+    &-complain {
         margin-left: auto;
     }
 
@@ -599,39 +649,84 @@
         border-radius: 20px;
     }
 
-    &-container:hover &-actions {
+    &-container.active {
+        background-color: #f4f4f4;
+        border-radius: 20px;
+        margin: 20px 0;
+    }
+
+    &-container:hover &-actions,
+    &-container.active &-actions {
         display: flex;
     }
 
-    &-btn {
+    &-btn,
+    .comments-post-comment {
         .rounded-button(#eaeaea, @padX: 0, @bg-color: #fff);
-        width: 40px;
+        // width: 40px;
         height: 40px;
         cursor: pointer;
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: #eaeaea;
         }
 
-        &:active,
-        &:focus {
+        &:active {
             border-color: #bcbcbc;
             background-color: #bcbcbc;
             outline: none;
         }
     }
 
+    .comments-post-comment {
+        padding: 7px 12px;
+    }
+
     &>.post-answer {
         width: calc(100% - 40px);
         margin-left: auto;
     }
+
+    .comments-textfield {
+        width: 100%;
+        padding-bottom: 0;
+    }
 }
 
+// my post
+
+.my-post {
+
+    .post-container {
+        &.disabled {
+            opacity: .3;
+
+            .post-actions {
+                display: none;
+            }
+
+            &:hover {
+                background-color: transparent;
+                // border-radius: 20px;
+
+
+                .post-actions {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+}
+
+// my post
 .info {
 
     &-block {
-        position: absolute;
-        right: 0;
+        padding-top: 3px;
+        margin-top: -309px;
     }
 
     &-tags {
@@ -644,7 +739,7 @@
         .rounded-button(transparent, 13px, 13px, #EAEAEA);
         margin-right: 10px;
         margin-bottom: 10px;
-        cursor: pointer;
+        // cursor: pointer;
 
         span {
             .roboto(12px, 117%)
@@ -665,61 +760,64 @@
 
     &-rewards {
         display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 75px;
+        margin-bottom: 70px;
         max-width: 426px;
 
         .flex {
             align-items: center;
             width: 100%;
-
-            &:first-child {
-                justify-content: center;
-                margin-bottom: 8px;
-
-                .info-prize:nth-child(n + 2) {
-                    margin-left: 30px;
-                }
-            }
-
-            &:last-child {
-                justify-content: center;
-            }
+            flex-wrap: wrap;
         }
     }
 
     &-prize {
-        width: 84px;
-        height: 84px;
+        margin-bottom: 10px;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
     }
 
     &-prize.week1 {
-        background: url(../assets/img/rewards/Frame-3.svg) center / cover no-repeat;
+        background: url(../assets/img/rewards/Group%2070.svg) center / cover no-repeat;
+        width: 130px;
+        height: 40px;
     }
 
     &-prize.day1 {
-        background: url(../assets/img/rewards/Frame-6.svg) center / cover no-repeat;
+        background: url(../assets/img/rewards/Group%2071.svg) center / cover no-repeat;
+        width: 102px;
+        height: 40px;
     }
 
     &-prize.m20 {
-        background: url(../assets/img/rewards/Frame-5.svg) center / cover no-repeat;
+        background: url(../assets/img/rewards/Group%2072.svg) center / cover no-repeat;
+        width: 136px;
+        height: 40px;
     }
 
     &-prize.m200 {
-        background: url(../assets/img/rewards/Frame-4.svg) center / cover no-repeat;
+        background: url(../assets/img/rewards/Group%2073.svg) center / cover no-repeat;
+        width: 144px;
+        height: 40px;
     }
 
     &-prize.w20 {
-        background: url(../assets/img/rewards/Frame-1.svg) center / cover no-repeat;
+        background: url(../assets/img/rewards/Group%2074.svg) center / cover no-repeat;
+        width: 144px;
+        height: 40px;
     }
 
     &-prize.w50 {
-        background: url(../assets/img/rewards/Frame-2.svg) center / cover no-repeat;
-        margin: 0 30px;
+        background: url(../assets/img/rewards/Group%2075.svg) center / cover no-repeat;
+        width: 144px;
+        height: 40px;
     }
 
     &-prize.artistical {
-        background: url(../assets/img/rewards/Frame.svg) center / cover no-repeat;
+        background: url(../assets/img/rewards/Group%2076.svg) center / cover no-repeat;
+        width: 182px;
+        height: 40px;
     }
 
     &-location {
@@ -759,7 +857,7 @@
 
     &-camera {
         display: flex;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
 
         .icon {
             background: url(../assets/img/tech-icons/camera.svg) center / cover no-repeat;
@@ -780,11 +878,12 @@
         display: flex;
         flex-wrap: wrap;
 
-        div {
+        .prop {
 
             display: flex;
             align-items: center;
             margin-right: 40px;
+            margin-top: 10px;
 
             &:first-child .icon {
                 background: url(../assets/img/tech-icons/clock.svg) center / cover no-repeat;
@@ -805,9 +904,6 @@
                     background: url(../assets/img/tech-icons/angle.svg) center / cover no-repeat;
                 }
             }
-
-
-
         }
 
 
@@ -831,23 +927,40 @@
         }
     }
 
+    &-shown {
+        display: none;
+        padding: 25px 0 15px;
+
+        p {
+            .small(#000000);
+            word-break: break-all;
+        }
+    }
+
     &-btn {
-        .rounded-button(#eaeaea, @padX: auto);
+        .rounded-button(#eaeaea, @padX: 0);
         width: 40px;
         height: 40px;
         margin-right: 10px;
+        cursor: pointer;
 
         span {
             text-transform: uppercase;
             .roboto(10px, @font-weight: 900)
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: #eaeaea;
         }
 
-        &:active,
-        &:focus {
+        &:active {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
+        }
+
+        &.active {
             border-color: #bcbcbc;
             background-color: #bcbcbc;
             outline: none;
@@ -855,37 +968,33 @@
     }
 }
 
+// not logged
+
+.noauth {
+    &-warning {
+        border-radius: 20px;
+        .p(@black);
+        padding: 20px;
+        background-color: @light-grey;
+        margin-top: 20px;
+
+        a {
+            color: @black;
+        }
+    }
+
+    .col-xs-12, .col-lg-8 {
+        padding: 0;
+    }
+}
+
+// not-logged
 
 // media-queries
 @media (max-width: 1439px) {
     .info {
-        &-rewards {
-            .flex {
-                align-items: center;
-                width: 100%;
-
-                &:first-child {
-                    justify-content: space-between;
-
-                    .info-prize:nth-child(n + 2) {
-                        margin-left: unset;
-                    }
-                }
-
-                &:last-child {
-                    justify-content: center;
-                }
-            }
-
-
-        }
-
-        &-prize.w50 {
-            margin: 0 20px;
-        }
-
-        &-tech div {
-            margin-right: 35px;
+        &-tech .prop {
+            margin-right: 30px;
         }
     }
 }
@@ -895,7 +1004,6 @@
     .photo-image>img:hover~.ratings,
     .ratings:hover {
         display: none;
-
 
     }
 
@@ -947,6 +1055,10 @@
 
         .hero {
             padding-bottom: 40px;
+
+            &-about {
+                max-width: 800px;
+            }
         }
 
         .ratings {
@@ -981,7 +1093,15 @@
             &-wrap {
                 border-color: #eaeaea;
             }
-
+            
+            &-warning {
+                margin: 0 20px;
+                padding-bottom: 10px;
+                a {
+                    color: inherit;
+                    
+                }
+            }
             // rewriting swiper style
             .swiper-container {
                 border-top: 1px solid #EAEAEA;
@@ -998,7 +1118,8 @@
     .info {
 
         &-block {
-            position: static;
+            // position: static;
+            margin-top: unset;
 
             &.col-xs-12 {
                 padding: 55px 0 40px;
@@ -1015,28 +1136,11 @@
 
         &-rewards {
             max-width: unset;
-
-            .flex {
-
-                &:first-child {
-                    width: auto;
-                    margin-bottom: 0;
-
-                    .info-prize {
-                        margin-right: 20px;
-                    }
-                }
-
-                &:last-child {
-                    width: auto;
-                }
-            }
         }
 
-        &-prize.w50 {
-            margin: 0 20px;
+        &-shown {
+            padding-bottom: 0;
         }
-
     }
 
     .comments {
@@ -1069,9 +1173,6 @@
                 width: 100%;
             }
 
-            &-warning {
-                margin: 0 20px;
-            }
         }
 
     }
@@ -1127,13 +1228,13 @@
                 color: #282828;
             }
 
-            &:hover {
+            &:hover,
+            &:focus {
                 background-color: #bcbcbc;
                 border-color: #bcbcbc;
             }
 
-            &:active,
-            &:focus {
+            &:active {
                 border-color: #434343;
                 background-color: #434343;
                 outline: none;
@@ -1163,43 +1264,8 @@
 
     .info {
         &-rewards {
-            max-width: 354px;
             margin: 0 auto;
             margin-bottom: 54px;
-
-            .flex {
-                align-items: center;
-
-
-                &:first-child {
-                    justify-content: space-between;
-                    width: 100%;
-                    margin-bottom: 3px;
-
-                    &>.info-prize:nth-child(n + 2) {
-                        margin-left: unset;
-                    }
-
-                    &>.info-prize {
-                        margin-right: unset;
-                    }
-
-                    &>.week1 {
-                        margin-left: 0;
-                    }
-                }
-
-
-
-                &:last-child {
-                    justify-content: center;
-                    width: 100%;
-                }
-            }
-        }
-
-        &-prize.w50 {
-            margin: 0 8px;
         }
     }
 
@@ -1235,33 +1301,10 @@
     }
 
     .info {
-        &-rewards {
-
-            .flex {
-
-                &:first-child {
-                    &>.info-prize {
-                        margin-left: 6px;
-                    }
-
-                    &>.week1 {
-                        margin-left: 0;
-                    }
-                }
-
-            }
-        }
-
-        &-prize.w50 {
-            margin: 0 6px;
-        }
-
         &-tech {
-            div:last-child {
+            .prop:last-child {
                 margin-top: 10px;
             }
-
-
         }
 
         &-map {
@@ -1273,43 +1316,6 @@
 
 
 @media (max-width: 374px) {
-
-
-    .info {
-        &-rewards {
-
-            .flex {
-
-                &:first-child {
-                    justify-content: space-between;
-
-                    &>.info-prize {
-                        margin-left: 0;
-                    }
-
-                    &>.week1 {
-                        margin-left: 0;
-                    }
-                }
-
-
-            }
-
-
-
-
-        }
-
-        &-prize {
-            width: 75px;
-            height: 75px;
-        }
-
-        &-prize.w50 {
-            margin: 0 3px;
-        }
-    }
-
     .post {
         &-name {
             margin-bottom: 5px;

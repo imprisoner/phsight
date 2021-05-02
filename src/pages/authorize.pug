@@ -6,8 +6,9 @@ block content
             form.authorization-form(name="login_form" id="login_form" action="http://localhost:80/test.php" method="post")
                 input(placeholder="Ваш логин" title="логин" name="LoginForm[username]" id="LoginForm_username" type="text").authorization-login
                 input( placeholder="Пароль" title="пароль" name="LoginForm[password]" id="LoginForm_password" type="password").authorization-password
-                input(т type="hidden" name="yt1" value="войти")
+                input(type="hidden" name="yt1" value="войти")
                 button(type="submit").authorization-submit Войти
+                a(href="forgot_password" rel="nofollow").authorization-remind Забыли пароль?
             .authorization-social
                 p Войти через
                 a(href="#").authorization-btn-social
@@ -16,6 +17,5 @@ block content
                     i.fab.fa-vk
             .authorization-alt-action 
                 p У вас ещё нет аккаунта?&nbsp;
-                        a(href="/registration/").authorization-register Зарегистрируйтесь!
-                a(href="/forgot_password/" rel="nofollow").authorization-remind Забыли пароль?
+                a(href="register.html").authorization-register Зарегистрироваться
                 
