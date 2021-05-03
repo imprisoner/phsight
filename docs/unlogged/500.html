@@ -7,15 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photosight - Oops!</title>
   <link href="styles/styles_common.css" rel="stylesheet">
-  <link href="styles/techworks.css" rel="stylesheet">
+  <link href="styles/error.css" rel="stylesheet">
 </head>
 
 <body>
-  <main class="message">
-    <div class="container flex">
-      <div class="message-logo" style="background: url(./img/logo/logo_black.svg) center / contain no-repeat"></div>
-      <div class="p message-text">Приносим извинения, сейчас на сайте ведутся технические работы. В ближайшее время сайт
-        снова заработает.</div>
+  <header class="top"><a class="top-logo" href="/">
+      <div class="top-logo-image"></div>
+    </a></header>
+  <main>
+    <div class="message">
+      <div class="container flex">
+        <div class="message-code" style="background: url(./img/errors/500.svg) center / cover no-repeat"></div>
+        <div class="p message-text">На сервере произошла непредвиденная ошибка. Пожалуйста, подождите, вскоре она будет
+          исправлена.<br>Вы можете перейти на <a href="/"><b>главную, </b></a> или <a href="#"><b>написать в
+              техподдержку.</b></a></div>
+      </div>
     </div>
   </main>
   <footer class="mini-footer">
@@ -27,7 +33,10 @@
     </div>
     <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
   </footer>
-  <script src="js/techworks.js"></script>
+  <!-- <script src="js/vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_esm_components_core_core-class_js.js"> -->
+  </script>
+  <script src="js/styles_common_less-js_utils_js.js"></script>
+  <script src="js/error.js"></script>
 </body>
 
 </html>

@@ -1,86 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <title>Photosight - Главная</title>
-  <link href="styles/styles_common_less-assets_fonts_all_min_css.css" rel="stylesheet"><link href="styles/index.css" rel="stylesheet"></head>
-  <body>
-<header class="header">
-  <div class="container flex"><a class="header-logo" href="/">
-      <div class="header-logo-image">  </div></a>
-    <div class="header-navigation">
-      <div class="header-menu-btn"><i class="fas fa-bars"></i></div>
-      <nav class="header-menu-list">
-        <div class="header-tab-marker"></div><a class="header-navlink" href="#">Фотографии</a><a class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a><a class="header-navlink" href="#">Работа</a>
-      </nav>
-      <form class="header-search search" action="" method="post"><a class="header-search-btn"><i class="fas fa-search"></i></a>
-        <input class="header-search-field" placeholder="" type="text" id="header_search" name="header_search">
-      </form>
-    </div>
-    <div class="header-user-action"><a class="header-sign-in" href="/register.html">Регистрация</a><a class="header-user-register user-avatar" href="/authorize.html">
-        <div class="header-user-icon"><i class="fas fa-user"></i></div></a></div>
-  </div>
-</header>
-<div class="burger-menu">
-  <div class="wrap">
-    <div class="burger-top">
-      <div class="container">
-        <div class="burger-close"><i class="fas fa-times"></i></div><a class="burger-logo" href="/phsight">
-          <div class="burger-logo-image">  </div></a>
-      </div>
-    </div>
-    <div class="burger-navigation">
-      <div class="container">
-        <nav class="burger-nav"><a class="burger-navlink" href="phsight/photos.html">Фотографии</a><a class="burger-navlink" href="#">Рейтинги</a><a class="burger-navlink" href="#">Авторы</a><a class="burger-navlink" href="#">Работа</a></nav>
-        <form class="burger-search search" action="" method="post"><a class="burger-search-btn"><i class="fas fa-search"></i></a>
-          <input class="burger-search-field" placeholder="" name="burger_search">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <title>Photosight - Главная</title>
+  <link href="styles/styles_common.css" rel="stylesheet">
+  <link href="styles/index.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container flex"><a class="header-logo" href="/">
+        <div class="header-logo-image"> </div>
+      </a>
+      <div class="header-navigation">
+        <div class="header-menu-btn"><i class="fas fa-bars"></i></div>
+        <nav class="header-menu-list">
+          <div class="header-tab-marker"></div><a class="header-navlink" href="#">Фотографии</a><a
+            class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a><a
+            class="header-navlink" href="#">Работа</a>
+        </nav>
+        <form class="header-search search" action="" method="post"><a class="header-search-btn"><i
+              class="fas fa-search"></i></a>
+          <input class="header-search-field" placeholder="" type="text" id="header_search" name="header_search">
         </form>
       </div>
+      <div class="header-user-action"><a class="header-sign-in" href="/register.html">Регистрация</a><a
+          class="header-user-register user-avatar" href="/authorize.html">
+          <div class="header-user-icon"><i class="fas fa-user"></i></div>
+        </a></div>
     </div>
-<footer class="mini-footer">
-  <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-tumblr"></i></a></div>
-  <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
-</footer>
-  </div>
-</div>
-    <main class="main">
-      <div class="swiper-container slider">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/6961078_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/6963472_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/6964117_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/7015655_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/7059841_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/7063157_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/7074224_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/7075800_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-          <div class="swiper-slide slide" style="background: url(./img/maingallery/7110738_xlarge.jpg) center / cover no-repeat">
-            <div class="slide-footer">   <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer"> Roman Bevzenko</b></span></div>
-          </div>
-        </div><a class="slider-btn-prev"><i class="fas fa-chevron-left"></i></a><a class="slider-btn-next"><i class="fas fa-chevron-right"></i></a>
+  </header>
+  <div class="burger-menu">
+    <div class="wrap">
+      <div class="burger-top">
+        <div class="container">
+          <div class="burger-close"><i class="fas fa-times"></i></div><a class="burger-logo" href="/phsight">
+            <div class="burger-logo-image"> </div>
+          </a>
+        </div>
       </div>
-    </main>
-<footer class="mini-footer">
-  <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-tumblr"></i></a></div>
-  <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
-</footer>
-  <script src="js/vendors-node_modules_jquery_dist_jquery_js.js"></script><script src="js/vendors-node_modules_swiper_esm_components_core_core-class_js.js"></script><script src="js/vendors-node_modules_swiper_esm_components_autoplay_autoplay_js-node_modules_swiper_esm_compo-dd8c44.js"></script><script src="js/styles_common_less-js_utils_js.js"></script><script src="js/index.js"></script></body>
+      <div class="burger-navigation">
+        <div class="container">
+          <nav class="burger-nav"><a class="burger-navlink" href="photos.html">Фотографии</a><a
+              class="burger-navlink" href="#">Рейтинги</a><a class="burger-navlink" href="#">Авторы</a><a
+              class="burger-navlink" href="#">Работа</a></nav>
+          <form class="burger-search search" action="" method="post"><a class="burger-search-btn"><i
+                class="fas fa-search"></i></a>
+            <input class="burger-search-field" placeholder="" name="burger_search">
+          </form>
+        </div>
+      </div>
+      <footer class="mini-footer">
+        <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-tumblr"></i></a></div>
+        <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </footer>
+    </div>
+  </div>
+  <main class="main">
+    <div class="swiper-container slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/6961078_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/6963472_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/6964117_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/7015655_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/7059841_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/7063157_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/7074224_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/7075800_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+        <div class="swiper-slide slide"
+          style="background: url(./img/maingallery/7110738_xlarge.jpg) center / cover no-repeat">
+          <div class="slide-footer"> <span class="slide-photo-name">Холмы Словении &copy;<b class="slide-photographer">
+                Roman Bevzenko</b></span></div>
+        </div>
+      </div><a class="slider-btn-prev"><i class="fas fa-chevron-left"></i></a><a class="slider-btn-next"><i
+          class="fas fa-chevron-right"></i></a>
+    </div>
+  </main>
+  <footer class="mini-footer">
+    <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a
+        class="mini-footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="mini-footer-social-link"
+        href="#"><i class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+          class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+          class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-tumblr"></i></a>
+    </div>
+    <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+  </footer>
+  <script src="js/vendors-node_modules_jquery_dist_jquery_js.js"></script>
+  <script src="js/vendors-node_modules_swiper_esm_components_core_core-class_js.js"></script>
+  <script
+    src="js/vendors-node_modules_swiper_esm_components_autoplay_autoplay_js-node_modules_swiper_esm_compo-dd8c44.js">
+  </script>
+  <script src="js/styles_common_less-js_utils_js.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
 </html>

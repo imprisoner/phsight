@@ -24,11 +24,11 @@ module.exports = {
         },
     },
     entry: {
-        index: './index.js',
-        photos: './photos.js',
+        // index: './index.js',
+        // photos: './photos.js',
         // profile: './profile.js',
-        view: './view.js',
-        error: './error.js',
+        // view: './view.js',
+        // error: './error.js',
         // techworks: './techworks.js',
         // authorize: './authorize.js',
         // register: './register.js',
@@ -36,7 +36,7 @@ module.exports = {
         // upload: './upload.js',
         // settings: './settings.js',
         // messages: './messages.js',
-        // wallet: './wallet.js',
+        wallet: './wallet.js',
         
     },
     devtool: 'inline-source-map',
@@ -54,7 +54,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: 'styles/[name].css',
-            chunkFilename: '[id].css',
+            chunkFilename: 'styles_common.css',
         }),
         ...PUG_PAGES.map(page => new HTMLWebpackPlugin({
             template: `${PUG_DIR}/${page}`,

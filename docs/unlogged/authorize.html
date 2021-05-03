@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="styles/styles_common_less-assets_fonts_all_min_css.css" rel="stylesheet"><link href="styles/authorize.css" rel="stylesheet"></head>
-  <body> 
-    <header class="top"><a class="top-logo" href="/">
-        <div class="top-logo-image"></div></a></header>
-    <main>
-      <div class="authorization">
-        <div class="container flex"> 
-          <h4 class="authorization-title">Вход</h4>
-          <form class="authorization-form" name="login_form" id="login_form" action="http://localhost:80/test.php" method="post">
-            <input class="authorization-login" placeholder="Ваш логин" title="логин" name="LoginForm[username]" id="LoginForm_username" type="text">
-            <input class="authorization-password" placeholder="Пароль" title="пароль" name="LoginForm[password]" id="LoginForm_password" type="password">
-            <input type="hidden" name="yt1" value="войти">
-            <button class="authorization-submit" type="submit">Войти</button><a class="authorization-remind" href="forgot_password" rel="nofollow">Забыли пароль?</a>
-          </form>
-          <div class="authorization-social">
-            <p>Войти через</p><a class="authorization-btn-social" href="#"><i class="fab fa-facebook"></i></a><a class="authorization-btn-social" href="#"><i class="fab fa-vk"></i></a>
-          </div>
-          <div class="authorization-alt-action"> 
-            <p>У вас ещё нет аккаунта?&nbsp;</p><a class="authorization-register" href="register.html">Зарегистрироваться</a>
-          </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles/styles_common.css" rel="stylesheet">
+  <link href="styles/authorize.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="top"><a class="top-logo" href="/">
+      <div class="top-logo-image"></div>
+    </a></header>
+  <main>
+    <div class="authorization">
+      <div class="container flex">
+        <h4 class="authorization-title">Вход</h4>
+        <form class="authorization-form" name="login_form" id="login_form" action="http://localhost:80/test.php"
+          method="post">
+          <input class="authorization-login" placeholder="Ваш логин" title="логин" name="LoginForm[username]"
+            id="LoginForm_username" type="text">
+          <input class="authorization-password" placeholder="Пароль" title="пароль" name="LoginForm[password]"
+            id="LoginForm_password" type="password">
+          <input type="hidden" name="yt1" value="войти">
+          <button class="authorization-submit" type="submit">Войти</button><a class="authorization-remind"
+            href="forgot_password" rel="nofollow">Забыли пароль?</a>
+        </form>
+        <div class="authorization-social">
+          <p>Войти через</p><a class="authorization-btn-social" href="#"><i class="fab fa-facebook"></i></a><a
+            class="authorization-btn-social" href="#"><i class="fab fa-vk"></i></a>
+        </div>
+        <div class="authorization-alt-action">
+          <p>У вас ещё нет аккаунта?&nbsp;</p><a class="authorization-register"
+            href="register.html">Зарегистрироваться</a>
         </div>
       </div>
-    </main>
-<footer class="mini-footer">
-  <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-tumblr"></i></a></div>
-  <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
-</footer>
-  <script src="js/authorize.js"></script></body>
+    </div>
+  </main>
+  <footer class="mini-footer">
+    <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a
+        class="mini-footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="mini-footer-social-link"
+        href="#"><i class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+          class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+          class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i class="fab fa-tumblr"></i></a>
+    </div>
+    <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+  </footer>
+  <script src="js/authorize.js"></script>
+</body>
+
 </html>

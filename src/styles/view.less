@@ -475,7 +475,7 @@
     }
 
     &-about {
-        
+
         margin-left: 20px;
         position: relative;
         margin-top: 30px;
@@ -518,7 +518,8 @@
 
     &-number {
         padding-bottom: 20px;
-        border-bottom:  1px solid @grey;
+        border-bottom: 1px solid @grey;
+
         span {
             .roboto(12px, 130%)
         }
@@ -690,7 +691,10 @@
 
     .comments-textfield {
         width: 100%;
-        padding-bottom: 0;
+        background: @white;
+        padding: 20px;
+        margin-top: 10px;
+        border-radius: 20px;
     }
 }
 
@@ -983,7 +987,8 @@
         }
     }
 
-    .col-xs-12, .col-lg-8 {
+    .col-xs-12,
+    .col-lg-8 {
         padding: 0;
     }
 }
@@ -1093,15 +1098,17 @@
             &-wrap {
                 border-color: #eaeaea;
             }
-            
+
             &-warning {
                 margin: 0 20px;
                 padding-bottom: 10px;
+
                 a {
                     color: inherit;
-                    
+
                 }
             }
+
             // rewriting swiper style
             .swiper-container {
                 border-top: 1px solid #EAEAEA;

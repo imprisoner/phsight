@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photosight - Счёт</title>
+  <link href="styles/styles_common.css" rel="stylesheet">
+  <link href="styles/wallet.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container flex"><a class="header-logo" href="/">
+        <div class="header-logo-image"> </div>
+      </a>
+      <div class="header-navigation">
+        <div class="header-menu-btn"><i class="fas fa-bars"></i></div>
+        <nav class="header-menu-list">
+          <div class="header-tab-marker"></div><a class="header-navlink" href="#">Фотографии</a><a
+            class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a><a
+            class="header-navlink" href="#">Работа</a>
+        </nav>
+        <form class="header-search search" action="" method="post"><a class="header-search-btn"><i
+              class="fas fa-search"></i></a>
+          <input class="header-search-field" placeholder="" type="text" id="header_search" name="header_search">
+        </form>
+      </div>
+      <div class="header-user-logged">
+        <p class="header-greets">Привет, Sub-Zero!</p><a class="header-user-avatar user-avatar" href="#"
+          style="background-image: url(./img/subscribers/image%2039-3.jpg)"></a>
+        <div class="new-message"><i class="far fa-envelope"></i></div>
+      </div>
+    </div>
+  </header>
+  <div class="user-menu">
+    <div class="wrap">
+      <div class="user-top">
+        <div class="container">
+          <div class="user-close"><i class="fas fa-times"></i></div><a class="user-logo" href="/phsight">
+            <div class="user-logo-image"> </div>
+          </a>
+        </div>
+      </div>
+      <div class="user-navigation">
+        <div class="container">
+          <div class="user-info"><a class="user-avatar"
+              style="background: url(./img/subscribers/image%2039-3.jpg) center / cover no-repeat"></a><span
+              class="user-name">Sub-Zero</span></div>
+          <nav class="user-nav"><a class="user-navlink" href="#">Профиль</a><a class="user-navlink"
+              href="#">Настройки</a><a class="user-navlink" href="#">Переписка
+              <div class="message"> <i class="far fa-envelope"> </i><span class="message-counter">1</span></div>
+            </a><a class="user-navlink" href="#">Загрузить фото</a><a class="user-navlink" href="#">Личный счёт<span
+                class="user-wallet">$2.00</span></a></nav><a class="user-logout" href="#">Выйти</a>
+        </div>
+      </div>
+      <footer class="mini-footer">
+        <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-tumblr"></i></a></div>
+        <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </footer>
+    </div>
+  </div>
+  <div class="burger-menu">
+    <div class="wrap">
+      <div class="burger-top">
+        <div class="container">
+          <div class="burger-close"><i class="fas fa-times"></i></div><a class="burger-logo" href="/phsight">
+            <div class="burger-logo-image"> </div>
+          </a>
+        </div>
+      </div>
+      <div class="burger-navigation">
+        <div class="container">
+          <nav class="burger-nav"><a class="burger-navlink" href="photos.html">Фотографии</a><a class="burger-navlink"
+              href="#">Рейтинги</a><a class="burger-navlink" href="#">Авторы</a><a class="burger-navlink"
+              href="#">Работа</a></nav>
+          <form class="burger-search search" action="" method="post"><a class="burger-search-btn"><i
+                class="fas fa-search"></i></a>
+            <input class="burger-search-field" placeholder="" name="burger_search">
+          </form>
+        </div>
+      </div>
+      <footer class="mini-footer">
+        <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+              class="fab fa-tumblr"></i></a></div>
+        <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </footer>
+    </div>
+  </div>
+  <main class="wallet">
+    <section class="wallet-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-xs-12">
+            <div class="wallet-title">
+              <h1>Счёт</h1>
+              <div class="wallet-balance">
+                <h1>7&nbsp;</h1>
+                <h3>у.е.</h3>
+              </div>
+            </div>
+            <p class="wallet-info">В настоящий момент пополнение кошелька приостановлено</p>
+            <form class="wallet-trans trans" action="http://localhost:80/test.php" method="post">
+              <h4 class="trans-title">Перевод другому пользователю</h4>
+              <div class="trans-textfields">
+                <div class="trans-field">
+                  <label for="ID">ID пользователя</label>
+                  <input name="ID" id="ID">
+                </div>
+                <div class="trans-field">
+                  <label for="sum">Сумма в у.е.</label>
+                  <input name="sum" id="sum">
+                </div>
+                <input class="btn submit-button" type="submit" name="yt0" value="Перевести">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="wallet-body pricing">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-7 col-xs-12">
+            <div class="pricing-service">
+              <h4 class="pricing-name">Загрузка сверх лимита</h4>
+              <p class="pricing-about">Загрузить более чем 5 фотографий за 7 дней</p>
+            </div>
+          </div>
+          <div class="col-sm-5 col-xs-12">
+            <h3 class="pricing-cost"><span>2</span> у.е.</h3><a class="btn activate-button disabled">Активировать</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-7 col-xs-12">
+            <div class="pricing-service">
+              <h4 class="pricing-name">Чёрный список</h4>
+              <p class="pricing-about">Активируйте возможность добавлять пользователей в черный список, и они больше не
+                смогут комментировать ваши фотографии.</p>
+            </div>
+          </div>
+          <div class="col-sm-5 col-xs-12">
+            <h3 class="pricing-cost"><span class="free">бесплатно</span></h3><a class="btn activate-button"
+              href="#">Активировать</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-7 col-xs-12">
+            <div class="pricing-service">
+              <h4 class="pricing-name">Ещё какая-то услуга</h4>
+              <p class="pricing-about">Загрузить более чем 5 фотографий за 7 дней</p>
+            </div>
+          </div>
+          <div class="col-sm-5 col-xs-12">
+            <h3 class="pricing-cost"><span>2</span> у.е.</h3><a class="btn activate-button used">Активировано</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="wallet-bottom history">
+      <div class="container">
+        <h4 class="history-title">История операций</h4>
+        <table>
+          <thead>
+            <tr class="row">
+              <th class="col-sm-2 col-lg-2">Дата</th>
+              <th class="col-sm-3 col-lg-3">Описание <br>операции</th>
+              <th class="col-sm-4 col-lg-4">Объект</th>
+              <th class="col-sm-2 col-lg-2">Поступление, <br>у.е </th>
+              <th class="col-sm-1 col-lg-1">Расход, <br>у.е.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row">
+              <td class="col-sm-2 col-lg-2 history-date">15 марта, <br> 12:56</td>
+              <td class="col-sm-3 col-lg-3 history-operation">Перевод от <br>пользователя</td>
+              <td class="col-sm-4 col-lg-4 history-object"><b class="object-name">Фото.Сайт @ Администрация</b>, <br>ID
+                417985</td>
+              <td class="col-sm-2 col-lg-2 history-plus">5.00</td>
+              <td class="col-sm-1 col-lg-1 history-minus"> </td>
+            </tr>
+            <tr class="row">
+              <td class="col-sm-2 col-lg-2 history-date">15 марта, <br>12:56</td>
+              <td class="col-sm-3 col-lg-3 history-operation">Перевод от <br>пользователя</td>
+              <td class="col-sm-4 col-lg-4 history-object">
+                <b class="object-name">Lev Novikov</b>, <br>ID 417985
+              </td>
+              <td class="col-sm-2 col-lg-2 history-plus">5.00</td>
+              <td class="col-sm-1 col-lg-1 history-minus"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container flex jcb">
+      <div class="footer-col col-1">
+        <div class="footer-social"><a class="footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a
+            class="footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-odnoklassniki"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-instagram"></i></a><a class="footer-social-link" href="#"><i
+              class="fab fa-telegram"></i></a><a class="footer-social-link" href="#"><i class="fab fa-tumblr"></i></a>
+        </div>
+        <div class="footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+      </div>
+      <div class="footer-col col-2"> <a class="footer-rules-link" href="#">Правила</a><a class="footer-faq-link"
+          href="#">Вопросы и ответы</a></div>
+      <div class="footer-col col-3"><a class="footer-support" href="#">Техническая поддержка</a><a
+          class="footer-advertising" href="#">Реклама на сайте</a><a class="footer-abuse" href="#">Жалобы / Abuse</a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/vendors-node_modules_jquery_dist_jquery_js-node_modules_swiper_esm_components_core_core-class_js.js">
+  </script>
+  <script src="js/styles_common_less-js_utils_js.js"></script>
+  <script src="js/wallet.js"></script>
+</body>
+
+</html>
