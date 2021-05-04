@@ -345,11 +345,14 @@ $('.post-reply').on('click', function(e){
 
     const formTemplate = $('.comments-textfield').clone().attr('id', 'yw1');   
     const commentBlock = $(this).parents('.post-container');
-    console.log(commentBlock)
-    $('#PhotoComment_parent_id', formTemplate).val(commentBlock.data('commentId'));
-    formTemplate.appendTo(commentBlock)
     
-    commentBlock.find('textarea').trigger('focus');
+    $('#PhotoComment_parent_id', formTemplate).val(commentBlock.closest('post').data('commentId'));
+    console.log('commentId: ',commentBlock.closest('.post').data('commentId'))
+    console.log('closest post: ', commentBlock.closest('.post'))
+    commentBlock.after(formTemplate)
+    
+    
+    commentBlock.next('.comments-textfield').find('textarea').trigger('focus');
     commentBlock.addClass('active')
     $(this).hide()
 });
@@ -358,10 +361,9 @@ $('.post-reply').on('click', function(e){
 $('.post-delete').on('click', function(e){
     e.preventDefault();
 
-    var commentBlock = $(this).parents('.post-container');
-    var comment_id = commentBlock.data('commentId');
-
-    // commentBlock.find('.menu-item .dropdown-wrap').remove();
+    const commentBlock = $(this).parents('.post-container');
+    const comment_id = commentBlock.closest('.post').data('commentId');
+    console.log('delee comment id: ', comment_id)
     commentBlock.addClass('disabled');
 
     $.ajax({
@@ -375,9 +377,6 @@ $('.post-delete').on('click', function(e){
                 });
             }
             else {
-                // var popup = new PopUp();
-                // popup.setContent('<p>Произошла ошибка. Перезагрузите страницу.</p>');
-                // popup.open();
                 popup.find('.insertion').html('Произошла ошибка. Перезагрузите страницу.');
                 popup.find('.trigger').trigger('click');
             }

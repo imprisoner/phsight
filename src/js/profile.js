@@ -86,4 +86,59 @@ $(document).on('DOMContentLoaded', function () {
            
         })
     })
+
+    // AJAX
+
+    // $('.complain-member-button').on('click', function(){
+    //     showTroubleTicketForm('Member', 460877);
+    // });
+
+    // $('.ignore-member-button').on('click', function(){
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: '/member/ajaxAddToIgnored/',
+    //         data: {'id' : 460877},
+    //         success: function(msg){
+    //             if(msg == 'success'){
+    //                 msg = 'Автор добавлен в черный список';
+    //             }
+    //             var popup=new PopUp({autoCloseTimeout: 3000, closeOnClick: true});
+    //             popup.setContent('<h3>Внимание</h3>' + msg);
+    //             popup.open();
+    //         }
+    //     });
+    // });
+
+    // $('.block-member-button').on('click', function(){
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: '/moderator/ajaxBlockMember',
+    //         data: {'target_id' : 460877},
+    //         success: function(msg){
+    //             if(msg == 'error'){
+    //                 msg = 'Ошибка! Повторите позже.';
+    //             }
+    //             var popup=new PopUp();
+    //             popup.setContent('<h3>Блокирование пользователя</h3>' + msg);
+    //             popup.open();
+    //         }
+    //     });
+    // });
+
+    // $('body').delegate('#block_form', 'submit', function(){
+    //     var $this = $(this);
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "/moderator/ajaxBlockMember",
+    //         data: $this.serialize()
+    //     })
+    //         .done(function( msg ) {
+    //             var popup=new PopUp();
+    //             popup.setContent('<h3>Внимание</h3>' + msg);
+    //             popup.open();
+    //             setTimeout(function(){location.reload();}, 1500);
+    //         });
+
+    //     return false;
+    // });
 })

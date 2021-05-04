@@ -6,14 +6,67 @@
         .add-lens-selects
             label(for="brand").select.brand-select
                 span(style="color: #777777;") выберите бренд
-                input(type="hidden" name="PhotoEditFormModel[lens_brand]" id="lens_brand" placeholder="выберите бренд").selection
+                input(type="hidden" name="PhotoEditFormModel[lens_brand]" id="lens_brand" placeholder="выберите бренд" value="-1").selection
                 .datalist
-                    div(data-value="2021").option Lomography
-                    div(data-value="2022").option Canon
+                    div(value="16170904").option Bower
+                    div(value="12371341").option Bronica
+                    div(value="1870647").option Canon
+                    div(value="16170894").option Carl Zeiss
+                    div(value="2597239").option Contax
+                    div(value="12285257").option Cosina
+                    div(value="14504626").option Elicar
+                    div(value="1871211").option Fujifilm
+                    div(value="5732171").option Hasselblad
+                    div(value="16170919").option Kamlan
+                    div(value="1871571").option Konica
+                    div(value="1870631").option Leica
+                    div(value="12865286").option Lensbaby
+                    div(value="16170912").option Lomography
+                    div(value="1870339").option Mamiya
+                    div(value="16170909").option Meyer-Optik
+                    div(value="1870483").option Minolta
+                    div(value="1870507").option Nikon
+                    div(value="1871543").option Olympus
+                    div(value="16170916").option OSAWA
+                    div(value="1871531").option Panasonic
+                    div(value="16170922").option Pentacon
+                    div(value="1871591").option Pentax
+                    div(value="16170899").option Phase One
+                    div(value="1871483").option Ricoh
+                    div(value="16170902").option Rokinon
+                    div(value="1871447").option Samsung
+                    div(value="16170901").option Samyang
+                    div(value="4112950").option Sigma
+                    div(value="12948678").option Soligor
+                    div(value="1871023").option Sony
+                    div(value="16170920").option SUN
+                    div(value="10160621").option Tamron
+                    div(value="12271381").option Tokina
+                    div(value="1").option Unknown
+                    div(value="16170921").option Viltrox
+                    div(value="4038022").option Vivitar
+                    div(value="16170905").option Voigtlaender
+                    div(value="16170906").option Walimex
+                    div(value="1870267").option Yashica
+                    div(value="13272429").option Yodobashi
+                    div(value="16170917").option YongNuo
+                    div(value="12272062").option Zeiss
+                    div(value="16170889").option Zuiko
+                    div(value="16170903").option БелОМО
+                    div(value="16170895").option ВЕГА
+                    div(value="16170885").option Волна
+                    div(value="16170884").option Гелиос
+                    div(value="16170915").option Гранит
+                    div(value="1870499").option Зенит
+                    div(value="16170886").option Индустар
+                    div(value="16170880").option Киев
+                    div(value="12706338").option ЛЗОС
+                    div(value="16170887").option Мир
+                    div(value="16170910").option Таир
+                    div(value="16170888").option Юпитер
             label(for="model").select.model-select
                 span(style="color: #777777;") выберите модель
-                input(type="hidden" name="PhotoEditFormModel[lens_model]" id="lens_model" placeholder="выберите модель").selection
+                input(type="hidden" name="PhotoEditFormModel[lens_model]" id="lens_model" placeholder="выберите модель" value="-1").selection
                 .datalist 
-                    //- div(data-value="6273").option BRONICA ETRSi
-                    //- div(data-value="6274").option BRONICA ETRSh
+                    
         a(href="#").add-lens-button.disabled Добавить объектив

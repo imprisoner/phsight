@@ -692,7 +692,7 @@
     .comments-textfield {
         width: 100%;
         background: @white;
-        padding: 20px;
+        padding: 20px 0 10px 20px;
         margin-top: 10px;
         border-radius: 20px;
     }
@@ -727,6 +727,9 @@
 
 // my post
 .info {
+    &-part-two {
+        padding-top: 65px;
+    }
 
     &-block {
         padding-top: 3px;
@@ -751,7 +754,7 @@
     }
 
     &-common {
-        margin-bottom: 64px;
+        // margin-bottom: 64px;
 
         p {
             .roboto()
@@ -1124,12 +1127,15 @@
 
     .info {
 
-        &-block {
-            // position: static;
-            margin-top: unset;
-
+        &-part-one {
             &.col-xs-12 {
-                padding: 55px 0 40px;
+                padding-top: 55px;
+            }
+        }
+
+        &-part-two {
+            &.col-xs-12 {
+                padding-bottom: 40px;
             }
         }
 

@@ -6,7 +6,7 @@ main.upload.info
         h1 Добавление Фотографии
         h3 Информация о фото
     .upload-body
-        form(method="post" action="http://localhost:80/test.php").info-form
+        form(method="post" id="info-form" action="http://localhost:80/test.php").info-form
             .container
                 section.info-crop
                     div(style="background: url(./img/popgallery/image%201.jpg) center / cover no-repeat;").img
@@ -33,7 +33,7 @@ main.upload.info
                         .part-wrap
                             label(for="PhotoEditFormModel_set_id").album-select
                                 span(style="color: #eaeaea;") не добавлять фото в альбомы
-                                .datalist 
+                                div(id="sets-list").datalist
                                     .option
                                         .checkbox
                                             input(id="PhotoEditFormModel_set_id_60294" value="60294"
@@ -144,23 +144,21 @@ main.upload.info
                     .info-part.camera
                         p.subheader Фотокамера
                         .part-wrap
-                            label(for="PhotoEditFormModel[camera_id]").select.camera-select
+                            label(for="camera_id").select.camera-select
                                 span(style="color: #eaeaea;") камера не выбрана
-                                input(type="hidden" name="PhotoEditFormModel[camera_id]" id="PhotoEditFormModel_camera_id" placeholder="фотокамера не выбрана").selection
+                                input(type="hidden" name="PhotoEditFormModel[camera_id]" id="camera_id" placeholder="фотокамера не выбрана").selection
                                 .datalist
                                     div(data-value="0").option У меня нет камеры
-                                    div(data-value="6021").option Bronica BRONICA ETRSi
                                     div(data-value="-1").option Модели нет в моей технике
                             a.btn.camera-popup Добавить новую камеру
                     .info-part.lens
                         p.subheader Объектив
                         .part-wrap
-                            label(for="PhotoEditFormModel[lens_id]").select.lens-select
+                            label(for="lens_id").select.lens-select
                                 span(style="color: #eaeaea;") объектив не выбран
-                                input(type="hidden" name="PhotoEditFormModel[lens_id]" id="PhotoEditFormModel_lens_id" placeholder="объектив не выбран").selection
+                                input(type="hidden" name="PhotoEditFormModel[lens_id]" id="lens_id" placeholder="объектив не выбран").selection
                                 .datalist 
                                     div(data-value="0").option У меня нет объектива
-                                    div(data-value="6273").option Distagon T* 2/28
                                     div(data-value="-1").option Модели нет в моей технике
                             a.btn.lens-popup Добавить новый объектив
                 section.info-details

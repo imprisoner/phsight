@@ -160,7 +160,7 @@ export function selectize(selects = []) {
         const input = $(this)
         const label = $(this).closest('label')
         const datalist = input[0] === label[0] ? $(this).find('.datalist') : $(this).next('.datalist')
-        console.log(input)
+        // console.log(input)
         const span = label.find('span')
 
 
@@ -177,7 +177,7 @@ export function selectize(selects = []) {
             if ($(e.target).hasClass('option')) {
 
                 input[0].value = e.target.dataset.value
-                console.log(input[0].value)
+                // console.log(input[0].value)
                 span.css('color', '')
                 span[0].innerText = e.target.innerHTML
                 input.trigger('change')

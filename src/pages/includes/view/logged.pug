@@ -151,168 +151,7 @@ main.view
                                 span.ratings-counter 0
                             a.ratings-rate-btn Оценить
                     p.ratings-warning Претенденты не могут голосовать за фото. Для голосования необходимо иметь статус любитель или выше. Подробнее о статусах можно узнать здесь
-            .comments.col-xs-12.col-lg-8
-                .comments-number 
-                    span <b>18</b> комментариев
-                form.comments-textfield(name="comment_form" id="yw0" action="http://localhost/test.php" method="post")
-                    //- https://photosight.ru/photo/ajaxPhotoComment/
-                    .row
-                        .comments-user-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                        textarea(name="PhotoComment[comment]" placeholder="Напишите свой комментарий")
-
-                    button(type="submit").comments-post-comment Отправить
-                    input(name="PhotoComment[photo_id]" disabled id="PhotoComment_photo_id" type="hidden" value="7143533")
-                    input(name="PhotoComment[member_id]" disabled id="PhotoComment_member_id" type="hidden" value="539166") 
-                    input(name="PhotoComment[parent_id]" disabled id="PhotoComment_parent_id" type="hidden" value="817087418")
-
-                .comments-wallpost 
-
-                    .post
-                        div(id="comment_817087411" data-comment-id="817087411").post-container
-                            .post-wrapper
-                                .post-avatar(style="background: url('./img/subscribers/image%2039.jpg') center / cover no-repeat;")
-                                .post-content
-                                    .flex
-                                        .post-name Дмитрий Зеленский
-                                        .post-date 12 февраля 2021, 18:34:59
-                                    .post-text как чудесно ВЫ слагаете куплеты<br>рифма с вами дышит и живет<br>мне приятно ВАМ сказать об этом,<br>красота,беспечность,молодость уйдет....а гимны останутся))да,и талант не пропьешь...
-                                    .post-actions
-                                        .post-btn.post-reply
-                                            i.fas.fa-reply
-                                        .post-btn.post-complain
-                                            i.fas.fa-exclamation
-                                        .post-btn.post-like 
-                                            i.fas.fa-heart
-
-
-                        .post-answer
-                            .post.my-post
-                                div(id="comment_817087412" data-comment-id="817087412").post-container
-                                    .post-wrapper
-                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                                        .post-content
-                                            .flex
-                                                .post-name Активный юзер
-                                                .post-date 12 февраля 2021, 18:34:59
-                                            .post-text Нравится!! +Х
-                                            .post-actions
-                                                .post-btn.post-delete
-                                                    i.fas.fa-trash
-
-
-                                .post-answer
-                                    .post
-                                        div(id="comment_817087413" data-comment-id="817087413").post-container
-                                            .post-wrapper
-                                                .post-avatar(style="background: url('./img/subscribers/image%2039-5.jpg') center / cover no-repeat;")
-                                                .post-content
-                                                    .flex
-                                                        .post-name Активный юзер
-                                                        .post-date 12 февраля 2021, 18:34:59
-                                                    .post-text Нравится!! +Х
-                                                    .post-actions
-                                                        .post-btn.post-reply
-                                                            i.fas.fa-reply
-                                                        .post-btn.post-complain
-                                                            i.fas.fa-exclamation
-                                                        .post-btn.post-like 
-                                                            i.fas.fa-heart
-
-
-                                        .post-answer
-                                            .post
-                                                div(id="comment_817087414" data-comment-id="817087414").post-container
-                                                    .post-wrapper
-                                                        .post-avatar(style="background: url('./img/subscribers/image%2039-4.jpg') center / cover no-repeat;")
-                                                        .post-content
-                                                            .flex
-                                                                .post-name Активный юзер
-                                                                .post-date 12 февраля 2021, 18:34:59
-                                                            .post-text Нравится!! +Х
-                                                            .post-actions
-                                                                .post-btn.post-reply
-                                                                    i.fas.fa-reply
-                                                                .post-btn.post-complain
-                                                                    i.fas.fa-exclamation
-                                                                .post-btn.post-like 
-                                                                    i.fas.fa-heart
-
-
-                                                .post-answer
-                                                    .post.my-post
-                                                        div(id="comment_817087415" data-comment-id="817087415").post-container
-                                                            .post-wrapper
-                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
-                                                                .post-content
-                                                                    .flex
-                                                                        .post-name Активный юзер
-                                                                        .post-date 12 февраля 2021, 18:34:59
-                                                                    .post-text Нравится!! +Х
-                                                                    .post-actions
-                                                                        .post-btn.post-delete
-                                                                            i.fas.fa-trash
-
-
-                                                        .post-answer
-                                                            .post
-                                                                div(id="comment_817087416" data-comment-id="817087416").post-container
-                                                                    .post-wrapper
-                                                                        .post-avatar(style="background: url('./img/subscribers/image%2039-2.jpg') center / cover no-repeat;")
-                                                                        .post-content
-                                                                            .flex
-                                                                                .post-name Активный юзер
-                                                                                .post-date 12 февраля 2021, 18:34:59
-                                                                            .post-text Нравится!! +Х
-                                                                            .post-actions
-                                                                                .post-btn.post-reply
-                                                                                    i.fas.fa-reply
-                                                                                .post-btn.post-complain
-                                                                                    i.fas.fa-exclamation
-                                                                                .post-btn.post-like 
-                                                                                    i.fas.fa-heart
-
-
-                                                                .post-answer
-                                                                    .post
-                                                                        div(id="comment_817087417" data-comment-id="817087417").post-container
-                                                                            .post-wrapper
-                                                                                .post-avatar(style="background: url('./img/subscribers/image%2039-1.jpg') center / cover no-repeat;")
-                                                                                .post-content
-                                                                                    .flex
-                                                                                        .post-name Активный юзер
-                                                                                        .post-date 12 февраля 2021, 18:34:59
-                                                                                    .post-text Нравится!! +Х
-                                                                                    .post-actions
-                                                                                        .post-btn.post-reply
-                                                                                            i.fas.fa-reply
-                                                                                        .post-btn.post-complain
-                                                                                            i.fas.fa-exclamation
-                                                                                        .post-btn.post-like 
-                                                                                            i.fas.fa-heart
-
-
-                                                                        .post-answer
-                                                                            .post
-                                                                                div(id="comment_817087418" data-comment-id="817087418").post-container
-                                                                                    .post-wrapper
-                                                                                        .post-avatar(style="background: url('./img/subscribers/image%2039.jpg') center / cover no-repeat;")
-                                                                                        .post-content
-                                                                                            .flex
-                                                                                                .post-name Людочка
-                                                                                                .post-date 12 февраля 2021, 18:34:59
-                                                                                            .post-text Спасибо! Снимала до реконструкции.В то время там были руины павильона.
-                                                                                            .post-actions
-                                                                                                .post-btn.post-reply
-                                                                                                    i.fas.fa-reply
-                                                                                                .post-btn.post-complain
-                                                                                                    i.fas.fa-exclamation
-                                                                                                .post-btn.post-like 
-                                                                                                    i.fas.fa-heart
-
-
-                                                                                .post-answer
-            //- ==================================+====================================================================================================================================================
-            .info-block.col-xs-12.col-lg-4
+            .info-part-one.col-xs-12.col-lg-4
                 .info-tags
                     .info-tag 
                         span Санкт-Петербург
@@ -333,6 +172,169 @@ main.view
                         span "Портрет"
                     p Альбом: 
                         span "Портрет"
+            .comments.col-xs-12.col-lg-8
+                .comments-number 
+                    span <b>18</b> комментариев
+                form.comments-textfield(name="comment_form" id="yw0" action="http://localhost/test.php" method="post")
+                    //- https://photosight.ru/photo/ajaxPhotoComment/
+                    .row
+                        .comments-user-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                        textarea(name="PhotoComment[comment]" placeholder="Напишите свой комментарий")
+
+                    button(type="submit").comments-post-comment Отправить
+                    input(name="PhotoComment[photo_id]" disabled id="PhotoComment_photo_id" type="hidden" value="7143533")
+                    input(name="PhotoComment[member_id]" disabled id="PhotoComment_member_id" type="hidden" value="539166") 
+                    input(name="PhotoComment[parent_id]" disabled id="PhotoComment_parent_id" type="hidden" value="817087418")
+
+                .comments-wallpost 
+
+                    div(id="comment_817087411" data-comment-id="817087411").post
+                        .post-container
+                            .post-wrapper
+                                .post-avatar(style="background: url('./img/subscribers/image%2039.jpg') center / cover no-repeat;")
+                                .post-content
+                                    .flex
+                                        .post-name Дмитрий Зеленский
+                                        .post-date 12 февраля 2021, 18:34:59
+                                    .post-text как чудесно ВЫ слагаете куплеты<br>рифма с вами дышит и живет<br>мне приятно ВАМ сказать об этом,<br>красота,беспечность,молодость уйдет....а гимны останутся))да,и талант не пропьешь...
+                                    .post-actions
+                                        .post-btn.post-reply
+                                            i.fas.fa-reply
+                                        .post-btn.post-complain
+                                            i.fas.fa-exclamation
+                                        .post-btn.post-like 
+                                            i.fas.fa-heart
+
+
+                        .post-answer
+                            div(id="comment_817087412" data-comment-id="817087412").post.my-post
+                                .post-container
+                                    .post-wrapper
+                                        .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                        .post-content
+                                            .flex
+                                                .post-name Активный юзер
+                                                .post-date 12 февраля 2021, 18:34:59
+                                            .post-text Нравится!! +Х
+                                            .post-actions
+                                                .post-btn.post-delete
+                                                    i.fas.fa-trash
+
+
+                                .post-answer
+                                    div(id="comment_817087413" data-comment-id="817087413").post
+                                        .post-container
+                                            .post-wrapper
+                                                .post-avatar(style="background: url('./img/subscribers/image%2039-5.jpg') center / cover no-repeat;")
+                                                .post-content
+                                                    .flex
+                                                        .post-name Активный юзер
+                                                        .post-date 12 февраля 2021, 18:34:59
+                                                    .post-text Нравится!! +Х
+                                                    .post-actions
+                                                        .post-btn.post-reply
+                                                            i.fas.fa-reply
+                                                        .post-btn.post-complain
+                                                            i.fas.fa-exclamation
+                                                        .post-btn.post-like 
+                                                            i.fas.fa-heart
+
+
+                                        .post-answer
+                                            div(id="comment_817087414" data-comment-id="817087414").post
+                                                .post-container
+                                                    .post-wrapper
+                                                        .post-avatar(style="background: url('./img/subscribers/image%2039-4.jpg') center / cover no-repeat;")
+                                                        .post-content
+                                                            .flex
+                                                                .post-name Активный юзер
+                                                                .post-date 12 февраля 2021, 18:34:59
+                                                            .post-text Нравится!! +Х
+                                                            .post-actions
+                                                                .post-btn.post-reply
+                                                                    i.fas.fa-reply
+                                                                .post-btn.post-complain
+                                                                    i.fas.fa-exclamation
+                                                                .post-btn.post-like 
+                                                                    i.fas.fa-heart
+
+
+                                                .post-answer
+                                                    div(id="comment_817087415" data-comment-id="817087415").post.my-post
+                                                        .post-container
+                                                            .post-wrapper
+                                                                .post-avatar(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;")
+                                                                .post-content
+                                                                    .flex
+                                                                        .post-name Активный юзер
+                                                                        .post-date 12 февраля 2021, 18:34:59
+                                                                    .post-text Нравится!! +Х
+                                                                    .post-actions
+                                                                        .post-btn.post-delete
+                                                                            i.fas.fa-trash
+
+
+                                                        .post-answer
+                                                            div(id="comment_817087416" data-comment-id="817087416").post
+                                                                .post-container
+                                                                    .post-wrapper
+                                                                        .post-avatar(style="background: url('./img/subscribers/image%2039-2.jpg') center / cover no-repeat;")
+                                                                        .post-content
+                                                                            .flex
+                                                                                .post-name Активный юзер
+                                                                                .post-date 12 февраля 2021, 18:34:59
+                                                                            .post-text Нравится!! +Х
+                                                                            .post-actions
+                                                                                .post-btn.post-reply
+                                                                                    i.fas.fa-reply
+                                                                                .post-btn.post-complain
+                                                                                    i.fas.fa-exclamation
+                                                                                .post-btn.post-like 
+                                                                                    i.fas.fa-heart
+
+
+                                                                .post-answer
+                                                                    div(id="comment_817087417" data-comment-id="817087417").post
+                                                                        .post-container
+                                                                            .post-wrapper
+                                                                                .post-avatar(style="background: url('./img/subscribers/image%2039-1.jpg') center / cover no-repeat;")
+                                                                                .post-content
+                                                                                    .flex
+                                                                                        .post-name Активный юзер
+                                                                                        .post-date 12 февраля 2021, 18:34:59
+                                                                                    .post-text Нравится!! +Х
+                                                                                    .post-actions
+                                                                                        .post-btn.post-reply
+                                                                                            i.fas.fa-reply
+                                                                                        .post-btn.post-complain
+                                                                                            i.fas.fa-exclamation
+                                                                                        .post-btn.post-like 
+                                                                                            i.fas.fa-heart
+
+
+                                                                        .post-answer
+                                                                            div(id="comment_817087418" data-comment-id="817087418").post
+                                                                                .post-container
+                                                                                    .post-wrapper
+                                                                                        .post-avatar(style="background: url('./img/subscribers/image%2039.jpg') center / cover no-repeat;")
+                                                                                        .post-content
+                                                                                            .flex
+                                                                                                .post-name Людочка
+                                                                                                .post-date 12 февраля 2021, 18:34:59
+                                                                                            .post-text Спасибо! Снимала до реконструкции.В то время там были руины павильона.
+                                                                                            .post-actions
+                                                                                                .post-btn.post-reply
+                                                                                                    i.fas.fa-reply
+                                                                                                .post-btn.post-complain
+                                                                                                    i.fas.fa-exclamation
+                                                                                                .post-btn.post-like 
+                                                                                                    i.fas.fa-heart
+
+
+                                                                                .post-answer
+            //- ==================================+====================================================================================================================================================
+            .info-part-two.col-xs-12.col-lg-4
+
                 .info-rewards
                     .flex
                         .info-prize.week1

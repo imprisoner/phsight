@@ -17,7 +17,7 @@ block content
                                 p.hero-location Россия, Ставрополь,
                                     span.hero-last-visited  был 18 декабря, 16:56
                                     span(style="display: none;").hero-online онлайн
-                            .hero-contacts
+                            //- .hero-contacts
                                 a(href="#").hero-contact-link
                                     i.fab.fa-facebook
                                 a(href="#").hero-contact-link
@@ -57,29 +57,22 @@ block content
                     p.data.viewed 91 156
             .nav
                 .container
-                    .nav-actions
-                        a(href="#").nav-btn.nav-info
-                            i.fas.fa-info
-                        a(href="#").nav-btn.nav-subscribe 
-                            span Подписаться
-                        a(href="#").nav-btn.nav-sendmail
-                            i.fas.fa-envelope
-                        a(href="#").nav-btn.nav-more
-                            i.fas.fa-ellipsis-h
-                        include ../includes/dots-menu.pug
-                            block menu
-                                +menu(['Пожаловаться', 'Заблокировать'])
+                    //- .nav-actions
+                        //- a.nav-btn.nav-info
+                        //-     i.fas.fa-info
+                        //- a.nav-btn.nav-subscribe 
+                        //-     span Подписаться
+                        //- a(href="#").nav-btn.nav-sendmail
+                        //-     i.fas.fa-envelope
+                        //- a.nav-btn.nav-more
+                        //-     i.fas.fa-ellipsis-h
+                        //- include ../includes/dots-menu.pug
+                        //-     block menu
+                        //-         +menu(['Пожаловаться', 'Заблокировать'])
                     include ../includes/nav-tabs.pug
                         block tabs
                             +tabs(['Фотографии', 'Альбомы', 'Избранное', 'Статистика', 'Подписчики'])
         .profile-body
-            //- .container 
-                include ../includes/ads.pug
-                    block mocks
-                        .ads-unit
-                            img(src="./img/mock-ads/4.jpg" alt="mock")
-                        .ads-unit
-                            img(src="./img/mock-ads/6.jpg" alt="mock")
             block profileContents
 
         .profile-footer 

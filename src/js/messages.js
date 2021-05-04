@@ -29,13 +29,11 @@ if (window.innerWidth > 1279) {
 const initialHeight = $('textarea').height() + 'px'
 console.log(initialHeight)
 $('textarea').on('input', function (e) {
+
     const currentHeight = e.target.scrollHeight + 'px'
-    // e.target.style.height = e.target.scrollHeight + 'px'
-    // console.log(currentHeight)
-    // $(this).height(currentHeight)
+    
     $(this).css('height', currentHeight)
     if (!$(this).val()) {
-        // e.target.style.height = initial
         $(this).height(initialHeight)
     }
 })
