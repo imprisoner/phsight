@@ -1,52 +1,12 @@
-import $ from 'jquery'
+// import $ from 'jquery'
 import {
-    expandSearch,
     togglePopup,
     selectize,
-    initNavTabs
 } from './utils'
 
-// replacing fileinput
+import './main'
+
 $(function () {
-
-    $('.replacement').on('click', function (e) {
-        e.preventDefault()
-        $('.file-input').trigger('click')
-    })
-    $('.fa-upload').on('click', function (e) {
-        e.preventDefault()
-        $('.file-input').trigger('click')
-    })
-
-    // header animations
-
-    expandSearch('header')
-    initNavTabs('.header-navlink')
-
-    // popup listeners
-    togglePopup('header-menu-btn', 'burger')
-    if (window.innerWidth < 1279) togglePopup('header-user-logged', 'user')
-    expandSearch('burger')
-
-    
-    // desktop user menu hover appearance
-    if (window.innerWidth > 1279) {
-        $('.header-user-avatar').on('mouseenter', function () {
-            $(document).on('keydown', function (e) {
-                if (e.code === 'Escape') $('.user-menu').hide(200)
-            })
-            $('.user-menu').show(200)
-            $('.user-menu').on('mouseleave', function () {
-                $(this).hide(200)
-            })
-        })
-    }
-
-
-// ============================================ common scripts end
-
-
-
 
     //  INFO upload
 
@@ -113,7 +73,7 @@ $(function () {
     $('.album-select').on('click', function (e) {
 
         const datalist = $(this).find('.datalist')
-
+        const select = $(this)
         $(document).trigger('click')
 
         e.stopPropagation()
@@ -122,6 +82,7 @@ $(function () {
 
         // if (!datalist.hasClass('active')) {
 
+        select.toggleClass('active')
         datalist.toggleClass('active')
         datalist.toggle()
 
@@ -134,12 +95,26 @@ $(function () {
 
         })
 
+        datalist.find('.option').each(function () {
+            $(this).on('click', function (e) {
+                $(this).addClass('checked')
+            })
+        })
+
         // closing on outside clicks
 
         $(document)
             .one('click', function (e) {
+                const count = $(datalist).find('.option.checked').length
+                if (count > 0) {
+
+                    select.find('span').text(count === 1 ? 'Выбрано 1 альбом' : count < 5 ? `Выбрано ${count} альбома` : `Выбрано ${count} альбомов`)
+                        .css('color', '#282828')
+                }
+
                 e.stopPropagation()
                 datalist.removeClass('active')
+                select.removeClass('active')
                 datalist.hide()
             })
     })
@@ -148,7 +123,15 @@ $(function () {
     // other selects
 
     selectize($('.selection'))
-
+    $('.add-camera-menu').on('click', function(e) {
+        $(document).trigger('click')
+    })
+    $('.add-album-menu').on('click', function(e) {
+        $(document).trigger('click')
+    })
+    $('.add-lens-menu').on('click', function(e) {
+        $(document).trigger('click')
+    })
 
     // AJAX
 
@@ -200,9 +183,11 @@ $(function () {
             $.each(data, function (key, val) {
                 $('#camera_model').next('.datalist').append(
                     `
-                    <div class="option" data-value=${val[0]}>
+                        <div class="option" data-value=${val[0]}>
                             ${val[1]}
-                        </div>`);
+                        </div>
+                    `
+                );
             });
         });
     });
@@ -210,15 +195,15 @@ $(function () {
     $("#lens_brand").on('change', function () {
         $.getJSON('/ajax/getPhotoAccessoriesForBrand/', {
             id: $(this).val(),
-            type: 2
+            type: 2 
         }, function (data) {
             $('#lens_model').val('empty');
             $.each(data, function (key, val) {
                 $('#lens_model').next('.datalist').append(
                     `
-                    <div class="option" data-value=${val[0]}>
-                        ${val[1]}
-                    </div>
+                        <div class="option" data-value=${val[0]}>
+                            ${val[1]}
+                        </div>
                     `
                 );
             });

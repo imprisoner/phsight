@@ -1,16 +1,16 @@
-import $ from 'jquery'
-import './libs/jquery.justifiedGallery'
 import {
     initSlider,
     initNavTabs,
     initPagination,
-    togglePopup,
-    expandSearch,
+    // togglePopup,
+    // expandSearch,
 } from './utils'
 
+import './main'
 
-$(document).on('DOMContentLoaded', function () {
-    
+
+$(function () {
+
     // setting slider and navtabs animation
 
     initSlider(480)
@@ -19,32 +19,35 @@ $(document).on('DOMContentLoaded', function () {
     // setting pagination
 
     initPagination(480)
-    
+
     // setting JustifiedGallery plugin
-
-    $('.justified-gallery').justifiedGallery({
-        rowHeight: 415,
-        margins: 2,
-        lastRow: 'justify',
-        randomize: true
-    })
- 
-
-    expandSearch('header')
-    initNavTabs('.header-navlink')
-    // popups
-    
-    togglePopup('header-menu-btn', 'burger')
-    expandSearch('burger')
-    if(window.innerWidth < 1279) togglePopup('header-user-logged', 'user')
-
-    // desktop user menu hover appearance
-    if (window.innerWidth > 1279) {
-        $('.header-user-avatar').on('mouseenter', function () {
-            $('.user-menu').show(200)
-            $('.user-menu').on('mouseleave', function () {
-                $(this).hide(200)
-            })
+    if ($('.justified-gallery').length > 0) {
+        $('.justified-gallery').justifiedGallery({
+            rowHeight: 415,
+            margins: 2,
+            lastRow: 'justify',
+            randomize: true
         })
     }
+
+    // categories dropdown
+
+    $('.content-categories').on('click', function (e) {
+        const dropdown = $('.dropdown')
+        e.stopPropagation()
+        $(this).toggleClass('active')
+        dropdown.toggle()
+        $(document).one('click', function () {
+            dropdown.hide()
+            $('.content-categories').removeClass('active')
+        })
+
+        $(document).one('keydown', function (e) {
+            if (e.code === 'Escape') {
+                dropdown.hide()
+                $('.content-categories').removeClass('active')
+            }
+        })
+    })
+
 })

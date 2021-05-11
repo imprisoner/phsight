@@ -1,0 +1,111 @@
+extends layouts/page.pug
+
+block title 
+    title Photosight - Профиль
+
+block content 
+    main.profile 
+        .profile-top
+            .hero 
+                .container.flex
+                    .flex
+                        div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
+                    .hero-wrap
+                        .flex 
+                            .hero-description
+                                h3.hero-name Дмитрий Зеленский
+                                p.hero-location Россия, Ставрополь,
+                                    span.hero-last-visited  был 18 декабря, 16:56
+                                    span(style="display: none;").hero-online онлайн
+                            .hero-contacts
+                                a(href="#").hero-contact-link
+                                    i.fab.fa-facebook
+                                a(href="#").hero-contact-link
+                                    i.fab.fa-vk
+                                a(href="#").hero-contact-link.phone
+                                    i.fas.fa-phone
+                                    span +7 (903) 567-45-67
+                                a(href="#").hero-contact-link
+                                    i.fab.fa-flickr
+                                a(href="#").hero-contact-link
+                                    i.fab.fa-500px
+                                a(href="#").hero-contact-link
+                                    i.fab.fa-behance
+                        .hero-about 
+                            p i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits
+                            a.edit-btn
+                                i.far.fa-edit
+            .info
+                .info-block
+                    p.text загружено<br>фотографий
+                    p.data.uploaded 44
+                .info-block
+                    p.text получено<br>комментариев
+                    p.data.received 431
+                .info-block
+                    p.text написано<br>комментариев
+                    p.data.written 110
+                .info-block
+                    p.text подписано<br>пользователей
+                    p.data.subscribers 36
+                .info-block
+                    p.text избранных<br>авторов
+                    p.data.authors 5
+                .info-block
+                    p.text оценённых<br>фотографий
+                    p.data.rated 113
+                .info-block
+                    p.text просмотров<br>фотографий
+                    p.data.viewed 91 156
+            .nav
+                .container
+                    .nav-actions
+                        //- вкладка Фотографии
+                        a.nav-btn.upload-photo Загрузить фото
+                        //- вкладка Фотографии
+                        //- вкладка Альбомы
+                        a.nav-btn.album-popup Создать альбом
+                        //- вкладка Альбомы
+                        a.nav-btn.nav-more
+                            i.fas.fa-ellipsis-h
+                        include includes/dots-menu.pug
+                            block menu
+                                +menu(['Пожаловаться', 'Заблокировать'])
+                    include includes/nav-tabs.pug
+                        block tabs
+                            +tabs(['Фотографии', 'Альбомы', 'Комментарии', 'Избранное', 'Статистика', 'Подписчики'])
+        .profile-body
+            //- =====> вкладка Фотографии
+            //- include includes/myprofile/photos.pug
+
+            //- =====> вкладка Подписчики
+            //- include includes/myprofile/subscribers.pug
+
+            //- =====> вкладка Альбомы
+            //- include includes/myprofile/albums.pug
+
+            //- =====> вкладка Статистика
+            //- include includes/myprofile/statistics.pug
+
+            //- =====> вкладка Избранное
+            //- include includes/myprofile/favorites.pug
+
+            //- =====> вкладка Комментарии
+            //- include includes/myprofile/favorites.pug
+
+            
+
+        .profile-footer 
+            .container.flex
+                .profile-pagination.pagination
+                .profile-current-page 
+                    input(type="text" value="1")
+                    span стр.
+        include includes/ads.pug
+            block mocks
+                .ads-unit
+                    img(src="./img/mock-ads/5.jpg" alt="mock")
+
+
+
+                   

@@ -2,7 +2,7 @@
  * Pagination
  * javascript page navigation
  * * * * * * * * * * * * * * * * */
-import $ from 'jquery'
+// import $ from 'jquery'
 
 
 const Pagination = {
@@ -76,7 +76,6 @@ const Pagination = {
 
     // binding pages
     Bind: function () {
-        console.log('inside bind', Pagination.e[0])
         const a = Pagination.e[0].getElementsByClassName('pagination-page-btn');
         for (let i = 0; i < a.length; i++) {
             if (+a[i].innerHTML === Pagination.page) a[i].className = 'pagination-page-btn current';
@@ -86,7 +85,6 @@ const Pagination = {
 
     // write pagination
     Finish: function () {
-        console.log('code: ', Pagination.code)
         Pagination.e[0].innerHTML = ''
         // without JQuery
         // Pagination.e[0].insertAdjacentHTML('beforeend', Pagination.code)
@@ -99,7 +97,6 @@ const Pagination = {
     // find pagination type
     Start: function () {
         if (Pagination.step === 0) {
-            console.log(this.step)
             if (Pagination.page < 2) {
                 Pagination.Add(1, 3)
                 Pagination.Last()
@@ -139,7 +136,6 @@ const Pagination = {
     // binding buttons
     Buttons: function (e) {
         const nav = e[0].getElementsByTagName('a');
-        console.log('inside btns', nav)
         nav[0].addEventListener('click', Pagination.Prev, false);
         nav[1].addEventListener('click', Pagination.Next, false);
     },
@@ -152,7 +148,6 @@ const Pagination = {
             <div class="pagination-page-container"></div>
             <a class="pagination-page-next"><i class="fas fa-chevron-right"></i></a>`
 
-        console.log('after create', e)
         e[0].insertAdjacentHTML('beforeend', html)
         Pagination.e = e[0].getElementsByClassName('pagination-page-container');
         Pagination.Buttons(e);

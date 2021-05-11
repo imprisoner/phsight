@@ -2,5 +2,10 @@
     .wrap
         .popup-close
             i.far.fa-times
-        p.insertion Произошла непредвиденная ошибка!
+        .insertion 
+            //- Произошла непредвиденная ошибка!
+            //- form(action="" method="post").trouble-ticket-form
+                h3.trouble-ticket-title Пожаловаться на пользователя
+                textarea(placeholder="Текст претензии" name="TroubleTicketFormModel[author_comment]" id="TroubleTicketFormModel_author_comment").trouble-ticket-textfield
+                input(type="submit" value="Пожаловаться" name="yt0").trouble-ticket-submit.btn
         .trigger

@@ -132,6 +132,7 @@
 
         .container {
             display: flex;
+            width: calc(100% - 120px);
         }
 
 
@@ -226,6 +227,7 @@
 
     // this one is just for margins in the beginning and the end of wrapper
     .search-options {
+
         .swiper-slide:last-child {
             display: none;
         }
@@ -251,7 +253,15 @@
 
     }
 }
-
+@media (max-width: 1439px) {
+    .search {
+        &-options {
+            .container {
+                width: calc(100% - 80px);
+            }
+        }
+    }
+}
 @media (max-width: 1279px) {
     .search {
         &-current-page {
@@ -261,18 +271,19 @@
         &-navigation {
             .container {
                 margin: 0 40px;
-                width: calc(100% - 80px);
             }
 
-            
+
         }
 
         &-options {
             .container {
                 width: unset;
                 justify-content: center;
-                margin: 0;
+                margin: 0 auto;
             }
+
+
         }
     }
 }
@@ -330,7 +341,7 @@
                 margin: 0;
             }
 
-            
+
         }
 
         &-current {
@@ -353,7 +364,7 @@
 
         &-params-field {
             margin-right: 30px;
-        }   
+        }
 
         .tabs {
             &::before {

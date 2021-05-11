@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+        //- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
         title Photosight - Главная
     body
         include ./includes/header.pug
@@ -13,7 +13,7 @@ html(lang="en")
         main.main
             .swiper-container.slider
                 .swiper-wrapper
-                
+
                     div(style="background: url(./img/maingallery/6961078_xlarge.jpg) center / cover no-repeat").swiper-slide.slide
                         .slide-footer    
                             span.slide-photo-name Холмы Словении &copy;
@@ -59,9 +59,11 @@ html(lang="en")
                             span.slide-photo-name Холмы Словении &copy;
                                 b.slide-photographer  Roman Bevzenko
 
-                            
+
                 a.slider-btn-prev
                     i.fas.fa-chevron-left
                 a.slider-btn-next
                     i.fas.fa-chevron-right
-        include ./includes/mini-footer.pug  
+        include ./includes/mini-footer.pug
+        script(src="./js/libs/jquery.min.js")
+        script(src="./js/main.js") 

@@ -6,13 +6,11 @@
         box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         min-width: 215px;
-        right: 20px;
-        bottom: -76px;
         z-index: 5;
     }
 
     &-wrap {
-        padding: 20px;
+        padding: 15px 0;
         text-align: left;
     }
 
@@ -20,28 +18,14 @@
         display: block;
         .p_bold(@white);
         text-transform: uppercase;
-
+        padding: 4px 20px;
         &:not(:last-child) {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+        }
+
+        &:hover {
+            background-color: #434343;
         }
     }
 }
 
-@media (max-width: 1023px) {
-    .dots-menu {
-        bottom: 15px;
-    }
-}
-
-@media (max-width: 767px) {
-    .dots-menu {
-        bottom: -4px;
-    }
-}
-
-@media (max-width: 679px) {
-    .dots-menu {
-        bottom: -4px;
-        right: calc(50% - 160px);
-    }
-}

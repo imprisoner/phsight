@@ -10,15 +10,20 @@
 // @import './components/mini-footer.less';
 // @import './components/footer.less';
 @import './libs/flexgrid.css';
+
 // @import './components/nav-tabs.less';
+
+// AVATAREDIT
+
+@import '../../node_modules/jquery-jcrop/css/jquery.Jcrop.min.css';
 
 // SERVICES
 
-@import './components/add-album.less';
+// @import './components/add-album.less';
 
 // DEVICES
-@import './components/add-camera.less';
-@import './components/add-lens.less';
+// @import './components/add-camera.less';
+// @import './components/add-lens.less';
 
 // common
 
@@ -65,6 +70,7 @@ textarea {
     outline: none;
     text-align: left;
 }
+
 
 textarea {
     overflow-x: hidden;
@@ -131,11 +137,15 @@ button,
         content: '\f078';
         position: absolute;
         right: 12px;
-        top: 7px;
+        top: 6px;
         font-family: 'Font Awesome 5 Pro';
         font-size: 16px;
         line-height: 26.4px;
         z-index: -1;
+    }
+
+    &.active {
+        border-color: @dark-grey;
     }
 
     input {
@@ -186,6 +196,10 @@ button,
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    i {
+        color: @black;
+    }
 }
 
 // checkbox styling 
@@ -244,12 +258,22 @@ button,
 .general {
     &-avatar {
         padding: 60px 0 40px;
+
+
+        .col-lg-2 {
+            padding: 0;
+        }
     }
 
     &-avatar-preview {
+        margin: 0 auto;
         width: 200px;
         height: 200px;
         background-color: #f4f4f4;
+        background-image: url(../assets/img/tech-icons/camera.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 26px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -263,31 +287,50 @@ button,
             color: @dark-grey;
         }
     }
-
-    &-avatar-upload {
+    &-avatar-actions {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        cursor: pointer;
+        justify-content: space-evenly;
+    }
+    &-avatar {
 
-        i {
-            font-size: 16px;
-            line-height: 165%;
-            color: @black;
+        &-upload,
+        &-edit,
+        &-delete {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            i {
+                font-size: 16px;
+                line-height: 165%;
+                color: @black;
+            }
+
+            p {
+                margin-left: 10px;
+                .p(@black);
+            }
         }
 
-        p {
-            margin-left: 10px;
-            .p(@black);
-        }
+        .file-input {
+            opacity: 0;
+            z-index: -1;
+            position: absolute;
+    }
     }
 
-    input#date::-webkit-calendar-picker-indicator {
+    #PersonalFormModel_form_birth_date::-webkit-calendar-picker-indicator {
         opacity: 0;
     }
 
-    label[for="date"] {
+    #PersonalFormModel_email {
+        &:disabled {
+            .p(@dark-grey)
+        }
+    }
+
+    label[for="PersonalFormModel_form_birth_date"] {
         &:after {
             content: '\f073';
             font-family: 'Font Awesome 5 Pro';
@@ -298,7 +341,9 @@ button,
             bottom: 47px;
             right: 17px;
             z-index: -1;
+            cursor: pointer;
         }
+
     }
 }
 
@@ -406,10 +451,18 @@ button,
 
     .general {
         &-avatar {
-            padding: 40px 0 20px;
+            padding: 40px 0 0;
+
+            &-upload, &-edit, &-delete {
+                margin-bottom: 20px;
+            }
         }
 
-
+        &-avatar-actions {
+            flex-direction: column;
+            justify-content: center;
+        }
+       
         .personal {
             .row {
                 flex-wrap: wrap;
@@ -569,6 +622,10 @@ button,
 .devices {
     padding: 40px 0;
     height: calc(100vh - 614px);
+
+    i {
+        color: @black;
+    }
 
     &-section,
     &-items {
@@ -926,4 +983,50 @@ button,
         }
     }
 
+}
+
+// AVATAR EDIT
+
+.edit {
+    padding-top: 40px;
+    &-top {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-title {
+        .h3(@black);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .hint {
+        margin-bottom: unset;
+    }
+
+    &-cropzone {
+        padding: 40px 0;
+        .crop {
+            width: 100%;
+        }
+        .jcrop-holder {
+            margin: 0 auto;
+        }
+        .hint {
+            margin: 0 auto 20px;
+        }
+        .row:first-child {
+            margin-bottom: 40px;
+        }
+    }
+
+    &-preview {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
 }

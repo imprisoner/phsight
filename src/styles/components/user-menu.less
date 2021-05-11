@@ -43,7 +43,7 @@
     &-close {
         position: absolute;
         z-index: 5;
-        right: 0;
+        right: 35px;
         cursor: pointer;
 
         i {
@@ -110,10 +110,13 @@
 
         text-decoration: none;
         display: block;
-        .roboto(@color: #fff)
+        .roboto(@color: #fff);
 
-        
+        &:hover {
+            background-color: #434343;
+        }
     }
+
     &-navlink:nth-child(3) {
         position: relative;
 
@@ -126,6 +129,7 @@
                 margin-left: 7px;
                 font-weight: bold;
             }
+
             i {
                 font-weight: 300;
                 font-size: 15px;
@@ -133,7 +137,8 @@
             }
         }
     }
-    &-navlink:not(:nth-child(5)) {
+
+    &-navlink:not(:last-child) {
         margin-bottom: 20px;
     }
 
@@ -173,6 +178,10 @@
         &-navigation {
             height: calc(100vh - 163px);
         }
+
+        &-close {
+            right: 15px;
+        }
     }
 }
 
@@ -205,7 +214,7 @@
     }
 }
 
-@media (max-height: 479px) {
+@media (max-height: 560px) {
     .user {
         &-navigation {
             height: auto;
@@ -224,7 +233,7 @@
 @media (max-height: 359px) {
     .user {
 
-        &-navlink:not(:nth-child(5)) {
+        &-navlink:not(:last-child) {
             margin-bottom: 12px;
         }
     }
@@ -238,16 +247,17 @@
             bottom: unset;
             left: unset;
             width: 214px;
-            height: 256px;
+            // height: 256px;
             border-radius: 10px;
             box-shadow: 0px 25px 50px #00000080;
 
             .wrap {
                 position: static;
                 overflow: unset;
+                padding: 15px 0;
             }
 
-           
+
 
             .mini-footer {
                 display: none;
@@ -259,7 +269,8 @@
         }
 
         &-navigation {
-            padding: 20px;
+            height: auto;
+            padding: unset;
 
             .container {
                 margin: 0;
@@ -274,20 +285,32 @@
         }
 
         &-nav {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-align: left;
         }
-        &-navlink:not(:nth-child(5)) {
-            margin-bottom: 10px;
+
+        &-navlink {
+            padding: 5px 20px;
+
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+
+            &:nth-child(3) .message {
+                right: 20px;
+                top: 5px;
+            }
         }
+
         &-logout {
             align-self: flex-start;
             margin-left: 2px;
+            padding: 0 20px;
         }
     }
 }
 
-@media (min-width: 1440px) { 
+@media (min-width: 1440px) {
     .user {
         &-menu {
             right: 60px;

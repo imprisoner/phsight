@@ -1,3 +1,7 @@
-import {expandSearch} from './utils'
+import {
+    expandSearch
+} from './utils'
 
-expandSearch('message')
+$(function () {
+    expandSearch('message')
+})

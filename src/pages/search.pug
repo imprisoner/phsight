@@ -4,11 +4,12 @@ block content
     main.search 
         .search-top
             h1.search-title Поиск
-            form(action="" method="post").search-form
+            form(name="search_form" class="search-form" action="https://photosight.ru/search/search_word/" method="get").search-form
                 .search-textfield
                     a.search-btn
                         i.fas.fa-search
-                    input(placeholder="введите текст для поиска").search-field
+                    input(placeholder="введите текст для поиска" id="search" class="search-input" name="query").search-field
+                    input(type="hidden" name="sort_type" value="weight" id="sort_type_hidden")
                 .search-navigation
                     .search-tabs
                         .container
@@ -21,21 +22,22 @@ block content
                                 p Найдено&nbsp;<span>801</span>&nbsp;фото
                             .search-current-page
                                 input(type="text" value="1")
+                                
                                 span стр.
                     .search-options
                         .options.swiper-container
                             .container.swiper-wrapper
                                 .search-params-field.swiper-slide
-                                    input(type="radio" name="params" id="all" value="all" checked).checked
+                                    input(type="radio" value="all" id="look_at_0" checked="checked" name="look_at").checked
                                     label(for="all") Искать везде
                                 .search-params-field.swiper-slide
-                                    input(type="radio" name="params" id="name" value="name")
+                                    input(type="radio" value="names" id="look_at_1" name="look_at")
                                     label(for="name") В названии
                                 .search-params-field.swiper-slide
-                                    input(type="radio" name="params" id="description" value="description")
+                                    input(type="radio" value="options" id="look_at_2" name="look_at")
                                     label(for="description") В описании
                                 .search-params-field.swiper-slide
-                                    input(type="radio" name="params" id="tags" value="tags")
+                                    input(type="radio" value="tags" id="look_at_3" name="look_at")
                                     label(for="tags") По тегам
                                 .search-params-field.swiper-slide
         .search-body
@@ -48,8 +50,8 @@ block content
                     img(src="./img/mock-ads/3.jpg" alt="mock")
 
             //- main content
-            include includes/search/photos.pug
-            //- include includes/search/users.pug
+            //- include includes/search/photos.pug
+            include includes/search/users.pug
             //- main content
 
         .search-footer 
@@ -66,4 +68,7 @@ block content
                         img(src="./img/mock-ads/2.jpg" alt="mock")
                     .ads-unit
                         img(src="./img/mock-ads/3.jpg" alt="mock")
+//- for photos search
+block scripts
+    script(src="./js/libs/jquery.justifiedGallery.js") 
 

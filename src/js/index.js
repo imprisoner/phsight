@@ -1,19 +1,15 @@
-import $ from 'jquery'
 import Swiper, {
     Navigation,
     Autoplay,
     EffectFade,
     EffectCoverflow
 } from 'swiper'
-import {
-    expandSearch,
-    togglePopup,
-    initNavTabs
-} from './utils'
 
+
+import './main'
 Swiper.use([Navigation, Autoplay, EffectFade, EffectCoverflow])
 
-$(document).on('DOMContentLoaded', function (e) {
+$(function () {
 
 
     new Swiper('.swiper-container', {
@@ -31,24 +27,25 @@ $(document).on('DOMContentLoaded', function (e) {
 
     // header expanding search
 
-    expandSearch('header')
-    initNavTabs('.header-navlink')
+    // expandSearch('header')
+    // initNavTabs('.header-navlink')
 
     // popup listeners
-    togglePopup('header-menu-btn', 'burger')
-    expandSearch('burger')
+    // togglePopup('header-menu-btn', 'burger')
+    // expandSearch('burger')
+
     // desktop user menu appearance
-    if (window.innerWidth > 1279) {
+    // if (window.innerWidth > 1279) {
 
-        $('.header-user-avatar').on('mouseenter', function () {
-            $('.user-menu').show(200)
-            $('.user-menu').on('mouseleave', function () {
-                $(this).hide(200)
-            })
-        })
+    //     $('.header-user-avatar').on('mouseenter', function () {
+    //         $('.user-menu').show(200)
+    //         $('.user-menu').on('mouseleave', function () {
+    //             $(this).hide(200)
+    //         })
+    //     })
 
-        togglePopup('header-user-logged', 'user')
-    }
+    //     togglePopup('header-user-logged', 'user')
+    // }
 
 
 })

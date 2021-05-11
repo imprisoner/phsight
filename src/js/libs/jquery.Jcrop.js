@@ -28,7 +28,7 @@
  *
  * }}}
  */
-import $ from 'jquery'
+// import $ from 'jquery'
 (function ($) {
 
   $.Jcrop = function (obj, opt) {

@@ -1,29 +1,4 @@
-import $ from 'jquery'
-import {
-    expandSearch,
-    togglePopup,
-    initNavTabs
-} from './utils'
-
-// header animations
-
-expandSearch('header')
-initNavTabs('.header-navlink')
-
-// popup listeners
-togglePopup('header-menu-btn', 'burger')
-expandSearch('burger')
-if (window.innerWidth < 1279 && $('.header-user-logged').length > 0) togglePopup('header-user-logged', 'user')
-
-// desktop user menu hover appearance
-if (window.innerWidth > 1279) {
-    $('.header-user-avatar').on('mouseenter', function () {
-        $('.user-menu').show(200)
-        $('.user-menu').on('mouseleave', function () {
-            $(this).hide(200)
-        })
-    })
-}
+import './main'
 
 // auto-expanding textarea
 const initialHeight = $('textarea').height() + 'px'

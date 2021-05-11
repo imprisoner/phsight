@@ -22,33 +22,35 @@
     }
 
     &-navigation {
-         margin-left: calc(50% - 398px);
+        margin-left: calc(50% - 398px);
     }
 }
 
 .swiper-slide {
-        &::before {
-            content: '';
-            background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
-            position: absolute;
-            top: 0;
-            right: 0;
-            left:0;
-            bottom: calc(100vh - 260px);
-            z-index: 2;
-        }
-        &::after {
-            content: '';
-            background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
-            position: absolute;
-            top: calc(100vh - 260px);
-            right: 0;
-            left:0;
-            bottom: 0;
-            // z-index: 2;
-            transform: rotate(-180deg);
-        }
+    &::before {
+        content: '';
+        background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: calc(100vh - 260px);
+        z-index: 2;
     }
+
+    &::after {
+        content: '';
+        background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
+        position: absolute;
+        top: calc(100vh - 260px);
+        right: 0;
+        left: 0;
+        bottom: 0;
+        // z-index: 2;
+        transform: rotate(-180deg);
+    }
+}
+
 .slider {
     height: calc(100vh - 59px);
 
@@ -109,7 +111,13 @@
 
 }
 
-
+.user,
+.burger {
+   
+        &-close {
+            top: 23px;
+        }
+}
 
 @media (max-width: 1279px) {
     .header {
@@ -118,7 +126,7 @@
         }
     }
 
-   
+
 }
 
 
@@ -146,7 +154,7 @@
         }
     }
 
-    
+
 
 }
 
@@ -157,7 +165,8 @@
     .slider {
         height: calc(100vh - 101px);
 
-        &-btn-prev, &-btn-next {
+        &-btn-prev,
+        &-btn-next {
             display: none;
         }
     }
@@ -179,7 +188,7 @@
 }
 
 @media (max-height: 767px) {
-   .slider {
-       min-height: 767px;
-   }
+    .slider {
+        min-height: 767px;
+    }
 }

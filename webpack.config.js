@@ -6,16 +6,18 @@ const {
 } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require("copy-webpack-plugin");
-const {
-    options
-} = require('less')
+// const {
+//     options
+// } = require('less')
+
 
 const PUG_DIR = path.join(__dirname, 'src/pages')
 const PUG_PAGES = fs.readdirSync(PUG_DIR).filter(filename => filename.endsWith('.pug'))
 console.log(PUG_DIR)
 console.log(PUG_PAGES)
 module.exports = {
-    mode: 'development',
+    mode: 'production',
+    // mode: 'development',
     context: path.resolve(__dirname, 'src'),
     resolve: {
         extensions: ['.js', '.less'],
@@ -24,6 +26,28 @@ module.exports = {
         },
     },
     entry: {
+        // main: {
+            //     import: './main.js',
+        //     dependOn: 'shared'
+        // },
+        // index: {
+        //     import: './index.js',
+        //     dependOn: 'shared'
+        // },
+        // photos: {
+        //     import: './photos.js',
+        //     dependOn: 'shared'
+        // },
+        // profile: {
+        //     import: './profile.js',
+        //     dependOn: 'shared'
+        // },
+        // view: {
+        //     import: './view.js',
+        //     dependOn: 'shared'
+        // },
+        // shared: 'jquery',
+        main: './main.js',
         index: './index.js',
         photos: './photos.js',
         profile: './profile.js',
@@ -32,14 +56,15 @@ module.exports = {
         techworks: './techworks.js',
         authorize: './authorize.js',
         register: './register.js',
-        // search: './search.js',
-        // upload: './upload.js',
-        // settings: './settings.js',
-        // messages: './messages.js',
-        // wallet: './wallet.js',
-        
+        search: './search.js',
+        upload: './upload.js',
+        settings: './settings.js',
+        messages: './messages.js',
+        wallet: './wallet.js',
+        // myprofile: './myprofile.js'
+
     },
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         port: 3000
@@ -48,7 +73,7 @@ module.exports = {
         // filename: '[name].[fullhash].js',
         filename: 'js/[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: ''
+        // publicPath: ''
     },
     plugins: [
         new CleanWebpackPlugin(),
@@ -67,6 +92,12 @@ module.exports = {
                 to: path.resolve(__dirname, 'dist/img'),
                 noErrorOnMissing: true,
             }]
+        }),
+        new CopyPlugin({
+            patterns: [{
+                from: path.resolve(__dirname, 'src/js/libs'),
+                to: path.resolve(__dirname, 'dist/js/libs')
+            }]
         })
     ],
     module: {
@@ -82,7 +113,7 @@ module.exports = {
                 use: [{
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                            publicPath: '../'
+                            publicPath: '../',
                         }
                     },
 
@@ -110,8 +141,11 @@ module.exports = {
         ]
     },
     optimization: {
+        // runtimeChunk: 'single',
         splitChunks: {
-            chunks: 'all'
-        }
+            chunks: 'all',
+        },
+
     }
+
 }

@@ -7,12 +7,17 @@ block title
 
 block content
     main.content
+        .dropdown
+            a(href="#") Архитектура и интерьер
+            a(href="#") Гламур
+            a(href="#") Детский мир
+            a(href="#") Город
+            a(href="#") Ню (18+)
         .content-top
             .container
                 h1.content-title Все фотографии
                 .content-nav.flex
-                    a.content-subscribe Подписаться
-
+                    .content-categories Все рубрики
                     include includes/nav-tabs.pug
                         block tabs
                             +tabs(['Все', 'Новые', 'Популярные', 'Выбор редакции', ''])
@@ -47,3 +52,6 @@ block content
                     .ads-unit
                         img(src="./img/mock-ads/3.jpg" alt="mock")
 
+block scripts
+    //- for JS
+    script(src="./js/libs/jquery.justifiedGallery.js")

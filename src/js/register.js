@@ -1,15 +1,14 @@
-import jQuery from 'jquery' 
 /*<![CDATA[*/
-jQuery(function ($) {
-    jQuery('#yw0').after("<a class=\"registration-captcha-refresh\" id=\"yw0_button\" href=\"\/auth\/captcha?refresh=1\"><i class=\"fas fa-redo-alt\"><\/i><\/a>");
-    jQuery(document).on('click', '#yw0_button', function () {
-        jQuery.ajax({
+$(function ($) {
+    $('#yw0').after("<a class=\"registration-captcha-refresh\" id=\"yw0_button\" href=\"\/auth\/captcha?refresh=1\"><i class=\"fas fa-redo-alt\"><\/i><\/a>");
+    $(document).on('click', '#yw0_button', function () {
+        $.ajax({
             url: "\/auth\/captcha?refresh=1",
             dataType: 'json',
             cache: false,
             success: function (data) {
-                jQuery('#yw0').attr('style', `background-image: ${data['url']}`);
-                jQuery('body').data('captcha.hash', [data['hash1'], data['hash2']]);
+                $('#yw0').attr('style', `background-image: ${data['url']}`);
+                $('body').data('captcha.hash', [data['hash1'], data['hash2']]);
             }
         });
         return false;

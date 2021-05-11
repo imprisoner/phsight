@@ -8,7 +8,7 @@
  * 
  * rewrited by Hunter in 2021
  */
-import $ from 'jquery'
+// import $ from 'jquery'
 
 (function (e) {
     e.fn.fileinput = function (t) {
