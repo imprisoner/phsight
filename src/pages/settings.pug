@@ -8,14 +8,14 @@ block content
                 block tabs
                     +tabs(['Основное', 'Услуги', 'Техника', 'Уведомления', 'Смена пароля', 'Чёрный список', ''])
 
-        include includes/settings/general.pug
+        //- include includes/settings/general.pug
         //- include includes/settings/services.pug
-        //- include includes/settings/devices.pug
+        include includes/settings/devices.pug
         //- include includes/settings/notifications.pug
         //- include includes/settings/password.pug
         //- include includes/settings/blacklist.pug
         //- include includes/settings/avataredit.pug
 block scripts 
     //- for AVATAREDIT
-    script(src="./js/libs/jquery.Jcrop.js")
+    //- script(src="./js/libs/jquery.Jcrop.js")
         

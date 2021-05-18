@@ -67,7 +67,8 @@ export function togglePopup(target, popup) {
             $("body").css("overflow-y", "hidden");
             // 
             $(`.${popup}-menu`).on('click', function (e) {
-                e.stopPropagation()
+                // e.stopPropagation()
+                // УБРАЛ ЗДЕСЬ ОТТЕСТИТЬ ВЕЗДЕ!!!
             })
             // 
             $(document).one('keydown', function (e) {

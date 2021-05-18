@@ -1,11 +1,7 @@
-// import $ from 'jquery'
-// import './libs/jquery.justifiedGallery'
 import {
     initSlider,
     initNavTabs,
     initPagination,
-    // togglePopup,
-    // expandSearch,
 } from './utils'
 
 import './main'
@@ -32,17 +28,6 @@ $(function () {
         })
     }
 
-    //header animations
-
-    // expandSearch('header')
-    // initNavTabs('.header-navlink')
-    // popups
-
-    // togglePopup('header-menu-btn', 'burger')
-    // if(window.innerWidth < 1279) togglePopup('header-user-logged', 'user')
-    // expandSearch('burger')
-    // radio inputs
-
     const radioButtons = $('input[type="radio"]')
     radioButtons.each(function () {
         $(this).on('click', function (e) {
@@ -50,18 +35,6 @@ $(function () {
             $(this).addClass('checked')
         })
     })
-
-    // desktop user menu hover appearance
-
-    // if (window.innerWidth > 1279) {
-    //     $('.header-user-avatar').on('mouseenter', function () {
-    //         $('.user-menu').show(200)
-    //         $('.user-menu').on('mouseleave', function () {
-    //             $(this).hide(200)
-    //         })
-    //     })
-    // }
-
 
     // submitting form
 
@@ -74,5 +47,31 @@ $(function () {
             console.log(e.code)
             if (e.code === 'Enter') $('.search-form').trigger('submit')
         })
+    })
+
+    // filters select
+
+    $('.select').on('click', function(e) {
+
+        e.stopPropagation()
+
+        const select = $(this)
+        const datalist = select.find('.datalist')
+        const span = select.find('span')
+        const option = datalist.find('.option')
+
+        datalist.show()
+
+        option.on('click', function() {
+            span.text($(this).text())
+            datalist.hide()
+            $(document).off()
+        })
+
+        $(document).on('click', function() {
+            datalist.hide()
+            $(document).off()
+        })
+
     })
 })

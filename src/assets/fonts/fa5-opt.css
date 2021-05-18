@@ -158,6 +158,10 @@
     content: "\f129"
 }
 
+.fa-arrow-down:before {
+    content: "\f063"
+}
+
 @font-face {
     font-family: "Font Awesome 5 Brands";
     font-style: normal;

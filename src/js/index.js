@@ -24,28 +24,4 @@ $(function () {
             disabledClass: 'slider-btn-disabled'
         },
     })
-
-    // header expanding search
-
-    // expandSearch('header')
-    // initNavTabs('.header-navlink')
-
-    // popup listeners
-    // togglePopup('header-menu-btn', 'burger')
-    // expandSearch('burger')
-
-    // desktop user menu appearance
-    // if (window.innerWidth > 1279) {
-
-    //     $('.header-user-avatar').on('mouseenter', function () {
-    //         $('.user-menu').show(200)
-    //         $('.user-menu').on('mouseleave', function () {
-    //             $(this).hide(200)
-    //         })
-    //     })
-
-    //     togglePopup('header-user-logged', 'user')
-    // }
-
-
 })
