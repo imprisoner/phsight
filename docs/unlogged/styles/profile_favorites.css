@@ -560,7 +560,8 @@
   color: #fff;
   flex-wrap: wrap;
 }
-.profile .pic-name span {
+.profile .pic-name a {
+  color: #fff;
   white-space: nowrap;
 }
 .profile .pic-name b {
@@ -608,6 +609,9 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .hero-wrap {
   margin-left: 45px;
@@ -1077,6 +1081,109 @@
     right: 5px;
   }
 }
+.profile-subscribers {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0 15px;
+}
+.subscriber {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.subscriber-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.subscriber-description {
+  margin-left: 22px;
+  padding: 7px 0;
+}
+.subscriber-name {
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 130%;
+  color: #282828;
+  margin-bottom: 10px;
+}
+.subscriber-location {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 175%;
+  color: #282828;
+}
+.subscriber-online {
+  color: #4BBA07;
+}
+@media (min-width: 2048px) {
+  .subscriber {
+    width: 19%;
+    margin-left: 1.25%;
+  }
+  .subscriber:nth-child(4n + 1) {
+    margin-left: 1.25%;
+  }
+  .subscriber:nth-child(5n + 1) {
+    margin-left: unset;
+  }
+}
+@media (min-width: 1680px) and (max-width: 2047px) {
+  .subscriber {
+    width: 24%;
+    margin-left: 1.33%;
+  }
+  .subscriber:nth-child(3n + 1) {
+    margin-left: 1.33%;
+  }
+  .subscriber:nth-child(4n + 1) {
+    margin-left: unset;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1679px) {
+  .subscriber {
+    width: 32.3%;
+    margin-left: 1.55%;
+  }
+  .subscriber:nth-child(3n + 1) {
+    margin-left: unset;
+  }
+}
+@media (max-width: 1279px) {
+  .profile-subscribers {
+    justify-content: space-between;
+  }
+  .subscriber {
+    margin-bottom: 55px;
+    width: 48.6%;
+  }
+}
+@media (max-width: 767px) {
+  .profile-subscribers {
+    padding: unset;
+  }
+  .subscriber {
+    align-items: flex-start;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .subscriber-avatar {
+    width: 50px;
+    height: 50px;
+  }
+  .subscriber-description {
+    padding: 0;
+  }
+}
 .favorites-nav {
   display: flex;
   justify-content: center;
@@ -1149,6 +1256,9 @@
   border-radius: 50%;
   margin-bottom: 20px;
   cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .author-name {
   font-family: Roboto;
@@ -1177,6 +1287,9 @@
 .author-crop {
   width: 99px;
   height: 99px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .author-crop:nth-child(n+2) {
   margin-left: 4px;

@@ -5,12 +5,12 @@ block title
 
 block content
     include includes/popup.pug
-    main.profile 
+    main.profile
         .profile-top
             .hero 
                 .container.flex
                     .flex
-                        div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
+                        div(style="background-image: url(./img/profile/avatar.jpg").hero-avatar
                     .hero-wrap
                         .flex 
                             .hero-description
@@ -89,13 +89,13 @@ block content
             //- include includes/profile/albums.pug
 
             //- =====> вкладка Статистика
-            include includes/profile/statistics.pug
+            //- include includes/profile/statistics.pug
 
             //- =====> вкладка Избранное
             //- include includes/profile/favorites.pug
 
             //- =====> вкладка Альбом
-            //- include includes/profile/album-look.pug
+            include includes/profile/album-look.pug
 
         //- .profile-footer 
             .container.flex
@@ -121,7 +121,7 @@ block content
 
 block scripts 
     //- for JG
-    //- script(src="./js/libs/jquery.justifiedGallery.js")
+    script(src="./js/libs/jquery.justifiedGallery.js")
 
 
 

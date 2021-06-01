@@ -161,6 +161,9 @@
 .fa-arrow-down:before {
     content: "\f063"
 }
+.fa-chevron-square-right:before {
+    content: "\f32b"
+}
 
 @font-face {
     font-family: "Font Awesome 5 Brands";

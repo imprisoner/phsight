@@ -1,0 +1,16 @@
+include ../ads.pug
+    block mocks
+        .ads-unit
+            img(src="./img/mock-ads/4.jpg" alt="mock")
+        .ads-unit
+            img(src="./img/mock-ads/6.jpg" alt="mock")
+
+.container
+    .album-look.my
+        .album-top    
+            .album-backdrop
+                a(href="#").backdrop-btn
+                    i.fas.fa-arrow-left
+                span к списку альбомов
+            h3.album-title Название альбома
+        include ../jgmyprof.pug

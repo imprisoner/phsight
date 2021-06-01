@@ -1,0 +1,657 @@
+@import './common/mixins-new.less';
+@import './libs/flexgrid.css';
+@import './components/pagination.less';
+
+.col-lg-3,
+.col-lg-7,
+.col-xs-12 {
+    padding: 0;
+}
+
+.jobs {
+    padding-top: 40px;
+
+    &-top {
+        text-align: center;
+        padding: 40px 0;
+
+        h1 {
+            .h1(@black);
+            margin-bottom: 10px;
+        }
+
+        h5 {
+            .h5(@black);
+        }
+
+        .col-lg-8 {
+            margin: 0 auto;
+        }
+    }
+
+
+    &-current {
+
+        border-bottom: 1px solid @grey;
+
+        .container {
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .show-filters {
+            display: none;
+        }
+    }
+
+    &-sort {
+        padding: 30px 0;
+        align-items: center;
+
+        .filters {
+            display: flex;
+            align-items: center;
+
+            p {
+                margin-right: 20px;
+                .p(@black)
+            }
+        }
+    }
+
+    &-result {
+        padding: 30px 0;
+        .p(@black);
+        margin-left: auto;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    &-current-page {
+        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        margin-left: 60px;
+
+        input {
+
+            &:active,
+            &:focus {
+                outline: none;
+            }
+
+            .rounded-button(@padX: 10px);
+            .roboto(@font-weight: 700, @color: #000000);
+            width: 60px;
+        }
+
+        span {
+            .roboto(@color: #000000);
+            margin-left: 10px
+        }
+    }
+
+    .select {
+        .p(@black);
+        .rounded-button(#EAEAEA, 12px, 7px, @white);
+        justify-content: unset;
+        width: 200px;
+        resize: none;
+        outline: none;
+        text-align: left;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+            content: '\f078';
+            position: absolute;
+            right: 12px;
+            top: 6px;
+            font-family: 'Font Awesome 5 Pro';
+            font-size: 16px;
+            line-height: 26.4px;
+            // z-index: -1;
+        }
+
+        &.active {
+            border-color: @dark-grey;
+        }
+
+        input {
+            width: 0;
+            opacity: 0;
+            z-index: -1;
+            cursor: pointer;
+        }
+    }
+
+    .datalist {
+        display: none;
+        max-height: 200px;
+        position: absolute;
+        right: -2px;
+        top: 42px;
+        left: -2px;
+        border: 2px solid #EAEAEA;
+        border-radius: 10px;
+        background-color: #fff;
+        z-index: 5;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 10px 0;
+    }
+
+    .option {
+        display: block;
+        .p(@black);
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: @grey;
+        }
+    }
+
+    .down-btn {
+        .rounded-button(#EAEAEA, 11px);
+        cursor: pointer;
+        outline: none;
+        margin-left: 10px;
+        width: 40px;
+
+        &:hover,
+        &:focus {
+            background-color: #eaeaea;
+        }
+
+        &:active {
+            border-color: #bcbcbc;
+            background-color: #bcbcbc;
+            outline: none;
+        }
+    }
+
+    .autocomplete input {
+        .p(@black);
+        .rounded-button(#EAEAEA, 12px, 7px);
+        width: 100%;
+        resize: none;
+        outline: none;
+        text-align: left;
+        height: 40px;
+
+        &::-moz-placeholder {
+            color: #eaeaea;
+        }
+
+        &:-moz-placeholder {
+            color: #eaeaea;
+        }
+
+        &:-ms-input-placeholder {
+            color: #eaeaea;
+        }
+
+        &::-webkit-input-placeholder {
+            color: #eaeaea;
+        }
+
+        &::placeholder {
+            color: #eaeaea;
+        }
+    }
+
+    &-footer {
+        .container {
+            position: relative;
+        }
+
+        .jobs-current-page {
+            padding: 0;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+
+.content {
+    padding: 20px 0;
+
+    &-filters {
+        padding: 60px 0;
+    }
+
+    .text {
+        .p(@black);
+    }
+
+    .jobs-result {
+        display: none;
+    }
+}
+
+.filters {
+
+    &-location {
+        padding: 20px 0;
+
+        .submit-btn {
+            .rounded-button(#EAEAEA, 22px, @bg-color: @white);
+            .p_bold(@black);
+            cursor: pointer;
+            outline: none;
+            min-width: fit-content;
+            max-width: max-content;
+            margin-left: auto;
+
+            &:hover,
+            &:focus {
+                background-color: #eaeaea;
+            }
+
+            &:active {
+                border-color: #bcbcbc;
+                background-color: #bcbcbc;
+                outline: none;
+            }
+        }
+
+        .select {
+            width: 100%;
+        }
+    }
+
+    &-country {
+        margin-bottom: 10px;
+    }
+
+    &-city {
+        margin-bottom: 20px;
+    }
+
+    &-subsection {
+        padding: 20px 0;
+    }
+
+    &-subheader {
+        .h5_bold(@black);
+        margin-bottom: 20px;
+    }
+
+    &-list {
+        list-style: none;
+    }
+
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            .p(@black);
+            text-decoration: none;
+        }
+
+        span {
+            .p(@dark-grey);
+        }
+    }
+}
+
+.applicants {
+    .applicant {
+
+        position: relative;
+        padding: 40px 0;
+
+        &-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: -120px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        &-description {
+            padding: 13px 0;
+
+        }
+
+        &-name {
+            .h3_bold(@black);
+            margin-bottom: 10px;
+        }
+
+        &-location {
+            .p(@black);
+        }
+
+        &-online {
+            color: #4BBA07;
+        }
+
+        &-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tag {
+            .rounded-button(transparent, 13px, 13px, #EAEAEA);
+            margin-right: 10px;
+            margin-bottom: 10px;
+            // cursor: pointer;
+
+            span {
+                .roboto(12px, 117%)
+            }
+        }
+
+        &-descr {
+            margin-bottom: 30px;
+        }
+
+        &-pricing {
+            width: 315px;
+            margin-bottom: 30px;
+
+            span,
+            p {
+                .p(@black);
+            }
+
+
+            .hour,
+            .project,
+            .min {
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .dots {
+                height: 10px;
+                border-bottom: 1px dashed @dark-grey;
+                flex-grow: 1;
+                margin: 0 5px;
+            }
+
+        }
+
+        &-portfolio {
+            .wrap {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+
+            .img {
+                flex-grow: 1;
+                display: flex;
+                align-items: flex-start;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+            }
+
+
+        }
+    }
+}
+
+@media (max-width: 1279px) {
+    .jobs {
+        &-current {
+            border-top: 1px solid @grey;
+            // border-bottom: none;
+            border-bottom: 1px solid @grey;
+
+            .container {
+                flex-wrap: wrap;
+            }
+
+            .show-filters {
+                .rounded-button(#EAEAEA, 11px);
+                .p_bold(@black);
+                cursor: pointer;
+                outline: none;
+
+                &.active {
+                    background-color: #eaeaea;
+                }
+
+                &:active {
+                    border-color: #bcbcbc;
+                    background-color: #bcbcbc;
+                    outline: none;
+                }
+            }
+
+        }
+
+        &-sort {
+            padding: 25px 0;
+        }
+
+        &-result {
+            display: none;
+        }
+
+        &-current-page {
+            // padding: 25px 0;
+            display: none;
+        }
+    }
+
+    .content {
+        padding-top: 0;
+
+        .row {
+            flex-wrap: wrap;
+        }
+
+        .filters {
+            display: none;
+            margin: 0 -20px;
+            padding: 40px 20px;
+            background-color: @light-grey;
+        }
+
+        .jobs-result {
+            display: block;
+            position: relative;
+            padding-top: 25px;
+            padding-bottom: unset;
+            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .filters {
+
+        &-location {
+            display: flex;
+
+            .select {
+                margin-bottom: unset;
+                margin-right: 10px;
+                flex-grow: 1;
+            }
+
+            .submit-btn {
+                margin-bottom: unset;
+            }
+        }
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        &-item {
+            width: 31.5%;
+
+            &:not(:nth-child(3n)) {
+                margin-right: 2.25%;
+            }
+
+            &:last-child {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .applicants {
+        .applicant {
+            display: flex;
+
+            &-avatar {
+                position: static;
+                margin-right: 20px;
+            }
+
+            &-main {
+                width: calc(100% - 120px);
+            }
+
+            &-portfolio {
+                margin-left: calc(100% - 100vw + 40px);
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .jobs {
+        padding-top: 0;
+
+        &-top {
+            padding-bottom: 20px;
+
+            h1 {
+                .h3(@black);
+            }
+
+            h5 {
+                .p(@black);
+                margin: 0 -1px;
+            }
+        }
+
+        &-current {
+            padding: 25px 0;
+
+            .container {
+                flex-direction: column;
+            }
+        }
+
+        &-sort {
+            width: 100%;
+            padding-bottom: 20px;
+
+            .filters {
+                flex-wrap: wrap;
+
+                p {
+                    width: 100%;
+                    margin-right: unset;
+                    margin-bottom: 10px;
+                    text-align: center;
+                }
+
+                .select {
+                    flex-grow: 1;
+
+                }
+            }
+
+
+        }
+    }
+
+    .content {
+        .jobs-result {
+            padding-bottom: 0;
+        }
+    }
+
+    .filters {
+        &-location {
+            display: block;
+
+            .select {
+                margin-bottom: 10px;
+            }
+        }
+
+        &-list {
+            display: block;
+        }
+
+        &-item {
+            width: 100%;
+
+            &:not(:nth-child(3n)) {
+                margin-right: unset;
+            }
+        }
+
+        &-subsection:last-child {
+            padding-bottom: unset;
+        }
+    }
+
+    .applicants {
+        .applicant {
+            flex-direction: column;
+            align-items: center;
+
+            &-name {
+                .h5_bold(@black);
+
+            }
+
+            &-main {
+                width: 100%;
+
+            }
+
+            &-description {
+                text-align: center;
+            }
+
+            &-tags {
+                justify-content: center;
+            }
+
+            &-portfolio {
+                margin-left: unset;
+                overflow-x: scroll;
+
+                .wrap {
+                    width: 728px;
+                }
+            }
+        }
+    }
+}

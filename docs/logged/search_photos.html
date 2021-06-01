@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="styles/common.css" rel="stylesheet">
+    <link href="styles/search_photos.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container flex"><a class="header-logo" href="/">
+                <div class="header-logo-image"></div>
+            </a>
+            <div class="header-navigation">
+                <div class="header-menu-btn"><i class="fas fa-bars"></i></div>
+                <nav class="header-menu-list">
+                    <div class="header-tab-marker"></div><a class="header-navlink" href="#">Фотографии</a><a
+                        class="header-navlink" href="#">Рейтинги</a><a class="header-navlink" href="#">Авторы</a><a
+                        class="header-navlink" href="#">Работа</a>
+                </nav>
+                <form class="header-search search" action="" method="post"><a class="header-search-btn"><i
+                            class="fas fa-search"></i></a> <input class="header-search-field" placeholder=""
+                        id="header_search" name="header_search"></form>
+            </div>
+            <div class="header-user-logged">
+                <p class="header-greets">Привет, Sub-Zero!</p><a class="header-user-avatar user-avatar" href="#"
+                    style="background-image: url(./img/subscribers/image%2039-3.jpg)"></a>
+                <div class="new-message"><i class="far fa-envelope"></i></div>
+            </div>
+        </div>
+    </header>
+    <div class="user-menu">
+        <div class="wrap">
+            <div class="user-top">
+                <div class="container">
+                    <div class="user-close"><i class="fas fa-times"></i></div><a class="user-logo" href="/">
+                        <div class="user-logo-image"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="user-navigation">
+                <div class="container">
+                    <div class="user-info"><a class="user-avatar"
+                            style="background-image: url(./img/subscribers/image%2039-3.jpg)"></a><span
+                            class="user-name">Sub-Zero</span></div>
+                    <nav class="user-nav"><a class="user-navlink" href="#">Профиль</a><a class="user-navlink"
+                            href="#">Настройки</a><a class="user-navlink" href="#">Переписка<div class="message"><i
+                                    class="far fa-envelope"></i><span class="message-counter">1</span></div></a><a
+                            class="user-navlink" href="#">Загрузить фото</a><a class="user-navlink" href="#">Личный
+                            счёт<span class="user-wallet">$2.00</span></a></nav><a class="user-logout"
+                        href="#">Выйти</a>
+                </div>
+            </div>
+            <footer class="mini-footer">
+                <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-tumblr"></i></a></div>
+                <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+            </footer>
+        </div>
+    </div>
+    <div class="burger-menu">
+        <div class="wrap">
+            <div class="burger-top">
+                <div class="container">
+                    <div class="burger-close"><i class="fas fa-times"></i></div><a class="burger-logo" href="/">
+                        <div class="burger-logo-image"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="burger-navigation">
+                <div class="container">
+                    <nav class="burger-nav"><a class="burger-navlink" href="photos.html">Фотографии</a><a
+                            class="burger-navlink" href="#">Рейтинги</a><a class="burger-navlink" href="#">Авторы</a><a
+                            class="burger-navlink" href="#">Работа</a></nav>
+                    <form class="burger-search search" action="" method="post"><a class="burger-search-btn"><i
+                                class="fas fa-search"></i></a> <input class="burger-search-field" placeholder=""
+                            name="burger_search"></form>
+                </div>
+            </div>
+            <footer class="mini-footer">
+                <div class="mini-footer-social"><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-facebook"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-vk"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-odnoklassniki"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-instagram"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-telegram"></i></a><a class="mini-footer-social-link" href="#"><i
+                            class="fab fa-tumblr"></i></a></div>
+                <div class="mini-footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+            </footer>
+        </div>
+    </div>
+    <main class="search">
+        <div class="search-top">
+            <h1 class="search-title">Поиск</h1>
+            <form class="search-form search-form" name="search_form" action="https://photosight.ru/search/search_word/">
+                <div class="search-textfield"><a class="search-btn"><i class="fas fa-search"></i></a> <input
+                        class="search-input search-field" placeholder="введите текст для поиска" id="search"
+                        name="query"> <input type="hidden" name="sort_type" value="weight" id="sort_type_hidden"></div>
+                <div class="search-navigation">
+                    <div class="search-tabs">
+                        <div class="container">
+                            <nav class="tabs">
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper"><a class="tab-link swiper-slide active"
+                                            href="#">Фотографии</a><a class="tab-link swiper-slide"
+                                            href="#">Пользователи</a></div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="search-found">
+                        <div class="container">
+                            <div class="search-result">
+                                <p>Найдено&nbsp;<span>801</span>&nbsp;фото</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="search-options">
+                        <div class="options swiper-container">
+                            <div class="container swiper-wrapper">
+                                <div class="search-params-field swiper-slide"><input class="checked" type="radio"
+                                        value="all" id="look_at_0" checked="checked" name="look_at"> <label
+                                        for="all">Искать везде</label></div>
+                                <div class="search-params-field swiper-slide"><input type="radio" value="names"
+                                        id="look_at_1" name="look_at"> <label for="name">В названии</label></div>
+                                <div class="search-params-field swiper-slide"><input type="radio" value="options"
+                                        id="look_at_2" name="look_at"> <label for="description">В описании</label></div>
+                                <div class="search-params-field swiper-slide"><input type="radio" value="tags"
+                                        id="look_at_3" name="look_at"> <label for="tags">По тегам</label></div>
+                                <div class="search-params-field swiper-slide"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="search-body">
+            <div class="ads">
+                <div class="container">
+                    <div class="ads-wrap">
+                        <div class="ads-unit"><img src="./img/mock-ads/1.jpg" alt="mock"></div>
+                        <div class="ads-unit"><img src="./img/mock-ads/2.jpg" alt="mock"></div>
+                        <div class="ads-unit"><img src="./img/mock-ads/3.jpg" alt="mock"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-actions">
+                <div class="container flex">
+                    <div class="search-filters">
+                        <div class="filters">
+                            <p>Сортировать по</p><label class="select"><span>релевантности</span>
+                                <div class="datalist"><a class="option"
+                                        href="https://photosight.ru/search/search_word/?look_at=all&amp;amp;query=%D0%9E%D0%B1%D0%BD%D0%B0%D0%B6%D1%91%D0%BD%D0%BA%D0%B0&amp;amp;sort_type=weight">релевантности</a><a
+                                        class="option"
+                                        href="https://photosight.ru/search/search_word/?look_at=all&amp;amp;query=%D0%9E%D0%B1%D0%BD%D0%B0%D0%B6%D1%91%D0%BD%D0%BA%D0%B0&amp;amp;sort_type=ctime">дате</a><a
+                                        class="option"
+                                        href="https://photosight.ru/search/search_word/?look_at=all&amp;query=%D0%9E%D0%B1%D0%BD%D0%B0%D0%B6%D1%91%D0%BD%D0%BA%D0%B0&amp;sort_type=rating">рейтингу</a><a
+                                        class="option"
+                                        href="https://photosight.ru/search/search_word/?look_at=all&amp;query=%D0%9E%D0%B1%D0%BD%D0%B0%D0%B6%D1%91%D0%BD%D0%BA%D0%B0&amp;sort_type=art">художественности</a><a
+                                        class="option"
+                                        href="https://photosight.ru/search/search_word/?look_at=all&amp;query=%D0%9E%D0%B1%D0%BD%D0%B0%D0%B6%D1%91%D0%BD%D0%BA%D0%B0&amp;sort_type=orig">оригинальности</a><a
+                                        class="option"
+                                        href="https://photosight.ru/search/search_word/?look_at=all&amp;query=%D0%9E%D0%B1%D0%BD%D0%B0%D0%B6%D1%91%D0%BD%D0%BA%D0%B0&amp;sort_type=tech">техничности</a>
+                                </div>
+                            </label>
+                            <div class="down-btn"><i class="fas fa-arrow-down"></i></div>
+                        </div>
+                    </div>
+                    <div class="search-current-page"><input value="1"><span>стр.</span></div>
+                </div>
+            </div>
+            <div class="search-photos">
+                <div class="container">
+
+                    <div class="justified-gallery">
+                        <div> <a href="./img/popgallery/image 1.jpg"><img src="./img/popgallery/image 1.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"><span
+                                                    class="counter">4</span></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 2.jpg"><img src="./img/popgallery/image 2.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 3.jpg"><img src="./img/popgallery/image 3.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 4.jpg"><img src="./img/popgallery/image 4.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 5.jpg"><img src="./img/popgallery/image 5.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 6.jpg"><img src="./img/popgallery/image 6.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 7.jpg"><img src="./img/popgallery/image 7.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 8.jpg"><img src="./img/popgallery/image 8.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 10.jpg"><img src="./img/popgallery/image 10.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 11.jpg"><img src="./img/popgallery/image 11.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 12.jpg"><img src="./img/popgallery/image 12.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 17.jpg"><img src="./img/popgallery/image 17.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div> <a href="./img/popgallery/image 18.jpg"><img src="./img/popgallery/image 18.jpg"
+                                    alt="" /></a>
+                            <div class="pic-footer jg-caption">
+                                <div class="wrap">
+                                    <div class="pic-name"> <a href="#">Холмы Словении&nbsp;</a><b
+                                            class="pic-photographer">
+                                            <span> &copy;</span> <a href="#">Roman Bevzenko</a></b></div>
+                                    <div class="pic-actions">
+                                        <div class="pic-comments"> <i class="fas fa-comment"> </i><span
+                                                class="counter">23</span></div>
+                                        <div class="pic-likes"> <i class="fas fa-heart"></i><span
+                                                class="counter">4</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search-footer">
+            <div class="container flex">
+                <div class="search-pagination pagination"></div>
+                <div class="search-current-page"><input value="1"><span>стр.</span></div>
+            </div>
+            <div class="ads">
+                <div class="container">
+                    <div class="ads-wrap">
+                        <div class="ads-unit"><img src="./img/mock-ads/1.jpg" alt="mock"></div>
+                        <div class="ads-unit"><img src="./img/mock-ads/2.jpg" alt="mock"></div>
+                        <div class="ads-unit"><img src="./img/mock-ads/3.jpg" alt="mock"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container flex jcb">
+            <div class="footer-col col-1">
+                <div class="footer-social"><a class="footer-social-link" href="#"><i class="fab fa-facebook"></i></a><a
+                        class="footer-social-link" href="#"><i class="fab fa-vk"></i></a><a class="footer-social-link"
+                        href="#"><i class="fab fa-odnoklassniki"></i></a><a class="footer-social-link" href="#"><i
+                            class="fab fa-instagram"></i></a><a class="footer-social-link" href="#"><i
+                            class="fab fa-telegram"></i></a><a class="footer-social-link" href="#"><i
+                            class="fab fa-tumblr"></i></a></div>
+                <div class="footer-copyright">PhotoSight LLP &copy; 1999-2021</div>
+            </div>
+            <div class="footer-col col-2"><a class="footer-rules-link" href="#">Правила</a><a class="footer-faq-link"
+                    href="#">Вопросы и ответы</a></div>
+            <div class="footer-col col-3"><a class="footer-support" href="#">Техническая поддержка</a><a
+                    class="footer-advertising" href="#">Реклама на сайте</a><a class="footer-abuse" href="#">Жалобы /
+                    Abuse</a></div>
+        </div>
+    </footer>
+    <script src="./js/libs/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/libs/jquery.justifiedGallery.js"></script>
+    <script src="js/205.js"></script>
+    <script src="js/search.js"></script>
+</body>
+
+</html>

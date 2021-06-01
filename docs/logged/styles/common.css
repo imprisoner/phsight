@@ -158,6 +158,13 @@
     content: "\f129"
 }
 
+.fa-arrow-down:before {
+    content: "\f063"
+}
+.fa-chevron-square-right:before {
+    content: "\f32b"
+}
+
 @font-face {
     font-family: "Font Awesome 5 Brands";
     font-style: normal;
@@ -657,6 +664,9 @@ a {
   height: 30px;
   border-radius: 50%;
   margin-bottom: 10px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .user-info span {
   font-family: Roboto;

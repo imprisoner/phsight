@@ -1,6 +1,3 @@
-// // import $ from 'jquery'
-//  import './libs/jquery.justifiedGallery'
-
 import {
     initSlider,
     initPagination,
@@ -15,9 +12,8 @@ $(function () {
 
     // setting slider and navtabs animation
 
-    initSlider(680)
+    initSlider($('.tab-link').length === 7 ? 780 : 680)
     initNavTabs('.tab-link')
-
 
     // popup
 
@@ -30,14 +26,12 @@ $(function () {
 
     // setting JustifiedGallery plugin
     if ($('.justified-gallery').length > 0) {
-        console.log('JG here')
         $('.justified-gallery').justifiedGallery({
             rowHeight: 310,
             margins: 2,
             lastRow: 'justify',
             randomize: true
         })
-
     }
 
     // init small nav
@@ -81,6 +75,7 @@ $(function () {
     })
 
     // section info on mobile
+
     let slider
 
     $('.nav-info').on('click', function (e) {
@@ -125,7 +120,7 @@ $(function () {
         showTroubleTicketForm('Member', targetId);
     });
 
-    
+
     $('body').on('submit', '#troubleTicketForm', function (e) {
         $.ajax({
             type: 'POST',
@@ -140,7 +135,7 @@ $(function () {
                         $('.popup-close').trigger('click')
                     }, 3000)
 
-                    $('.popup-close').one('click', function() {
+                    $('.popup-close').one('click', function () {
                         clearTimeout(timer)
                     })
                 }
@@ -148,7 +143,7 @@ $(function () {
                 closeTimeout()
             },
             error: function (jqXHR) {
-            
+
                 popup.find('.insertion').html(jqXHR.responseText);
                 popup.find('.trigger').trigger('click')
             }
@@ -179,36 +174,122 @@ $(function () {
 
     // КОНЕЦ ЧЁРНЫЙ СПИСОК
 
-    // РЕДАКТИРОВАНИЕ СТАТУСА
 
-    // $('.user-info-status-text').on('click', function(){
-	// 		if($(this).children('input').length == 0){
-	// 			var statusText=$(this);
-	// 			var text = $(this).text();
-	// 			if(text == 'Кликните, чтобы изменить статус')
-	// 				text = '';
-	// 			var statusInput=$('<input>')
-	// 				.attr('type', 'text')
-	// 				.attr('maxlength', 250)
-	// 				.val(text);
-	// 			$(this).html(statusInput);
-	// 			$(this).append('<br>Нажмите Enter чтобы сохранить статус');
-	// 			statusInput.focus();
-	// 			statusInput.on('keydown', function(e){
-	// 				if(e.code == 'Enter'){
-	// 					$.ajax({
-	// 						type: 'POST',
-	// 						url: '/member/ajax/updateStatus/',
-	// 						data: {'status': $(this).val()},
-	// 						success: function(msg){
-	// 							if(msg == '') msg = 'Кликните, чтобы изменить статус';
-	// 							statusText.html(msg + '<span class="icon icon-edit-status"></span>');
-	// 						}
-	// 					});
-	// 				}
-	// 			});
-	// 		}
-	// 	})
+    // МОЙ ПРОФИЛЬ МЕНЮ ФОТОГРАФИИ
 
-    // КОНЕЦ РЕДАКТИРОВАНИЕ СТАТУСА
+    $(window).on('load resize', function (e) {
+        e.stopPropagation()
+        if (this.innerWidth < 1280) {
+            $('.my-photo').off('click.popup')
+            $('.my-photo').on('click.popup', function (e) {
+                e.preventDefault()
+
+                const overlay = $('.overlay')
+                const caption = $(this).find('.jg-caption').clone()
+
+                overlay.addClass('active')
+                $('body').css('overflow-y', 'hidden')
+
+                overlay.append(caption.css('display', 'flex'))
+
+                caption.find('.my-photo-close').on('click', function (e) {
+                    overlay.find('.jg-caption').remove()
+                    overlay.removeClass('active')
+                    $('body').css('overflow-y', '')
+                    $(this).off()
+                })
+
+            })
+        }
+        if (this.innerWidth >= 1280) {
+            $('.my-photo').off('click.popup')
+        }
+    })
+
+    togglePopup('album-popup', 'add-album')
+
+    $("#create_set_button").on('click', function () {
+        $.ajax({
+            type: 'POST',
+            url: '/my/ajaxCreateNewSet/',
+            data: {
+                'PhotoSet[caption]': $('#album_name').val()
+            },
+            dataType: 'json'
+        }).done(function (json) {
+            if (json.id !== undefined) {
+                $('#album_name').val('');
+                $('#sets-list').append(
+                    `
+                <div class="option">
+                    <div class="checkbox">
+                        <input id="PhotoEditFormModel_set_id_${json.id}" value="${json.id}" type="checkbox" name="PhotoEditFormModel[set_id][]" checked />
+                        <label for="PhotoEditFormModel_set_id_${json.id}"></label>
+                    </div>
+                    <div class="content">
+                        <p class="subheader">${json.caption}</p>
+                    </div>
+                </div>
+                `);
+            }
+        });
+    });
+
+
+    $('.select').on('click', function (e) {
+
+        e.stopPropagation()
+
+        const select = $(this)
+        const datalist = select.find('.datalist')
+        const span = select.find('span')
+        const option = datalist.find('.option')
+
+        datalist.show()
+
+        option.on('click', function (e) {
+            e.stopPropagation()
+            span.text($(this).text())
+            datalist.hide()
+            option.off()
+            $(document).off()
+        })
+
+        $(document).on('click', function () {
+            datalist.hide()
+            option.off()
+            $(document).off()
+        })
+
+    })
+
+    // УБРАТЬ АВТОРА ИЗ ИЗБРАННЫХ    
+    $(function () {
+
+        // подтверждение
+        $('body').on('click', '.author-delete', function () {
+            $.ajax({
+                type: 'POST',
+                url: '/member/addDeleteFavoriteAuthor/',
+                data: { type: 'delete', id: $(this).data('favoriteId') },
+                dataType: 'json',
+                success: function (data) {
+                    if (typeof data.type == 'string' && data.type == 'ok') {
+                        location.reload();
+                    } else {
+                        popup.find('.insertion').html('<h3>Сообщение</h3>' + data.text);
+                        popup.find('.trigger').trigger('click');
+                    }
+                },
+                error: function (jqXHR, textStatus) {
+                    popup.find('.insertion').html('<h3>Ошибка</h3>' + textStatus + '<br>' + jqXHR.responseText);
+                    popup.find('.trigger').trigger('click');
+                },
+            });
+        });
+    });
+    // КОНЕЦ УБРАТЬ АВТОРА ИЗ ИЗБРАННЫХ    
 })
+
+togglePopup('edit-album-popup', 'edit-album')
+

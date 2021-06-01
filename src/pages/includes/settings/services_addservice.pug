@@ -1,0 +1,83 @@
+.settings-services.services
+    form(method="post" action="http://localhost:80/test.php").container
+        section.services-define
+            .row 
+                .col-lg-3.col-md-6.col-xs-12
+                    .services-profession
+                        p.subheader Кто вы
+                        label(for="job_category").select
+                            span я фотограф
+                            input(type="hidden" name="job_category" id="job_category" value="1").selection
+                            .datalist 
+                                div(data-value="1").option я фотограф
+                                div(data-value="2").option я модель
+                                div(data-value="3").option я занимаюсь обработкой
+                .col-lg-3.col-md-6.col-xs-12
+                    .services-sphere
+                        p.subheader Чем занимаетесь
+                        label(for="job_type_id").select
+                            span 
+                            input(type="hidden" id="job_type_id" name="JobTypeMember[job_type_id]").selection
+                            .datalist 
+
+            .row
+                .col-lg-6.col-xs-12.flex
+                    .checkbox
+                        input(id="ytJobTypeMember_is_primary" type="hidden" value="0" name="JobTypeMember[is_primary]")
+                        input(name="JobTypeMember[is_primary]" id="JobTypeMember_is_primary" value="1" type="checkbox")
+                        label(for="JobTypeMember_is_primary")
+                    .description
+                        p.subheader Это одна из 3-х основных услуг
+                        p.hint Вы уже выбрали 0 из 3 основных услуг. Основные услуги выводятся первыми в описании вашего профиля.
+        section.services-description 
+            .row
+                .col-lg-6.col-xs-12 
+                    .services-textfield
+                        .description
+                            p.subheader Краткое описание
+                            p.hint Коротко, в пределах 1200 символов, расскажите о себе, о вашем опыте, услугах, которые вы можете предоставить.
+                        textarea(name="JobTypeMember[description]" id="JobTypeMember_description")
+                    .services-textfield
+                        .description
+                            p.subheader Альбом-портфолио
+                            p.hint Выберите один из ваших альбомов, который лучше всего иллюстрирует ваш профиль в рубрике «Услуги». Отсутствие фотографий делает ваш профиль менее заметным и сильно снижает его привлекательность для заказчиков! Профили без альбома будет выводиться в самом конце списка.
+                        label.select
+                            span
+                            input(type="hidden" name="JobTypeMember[set_id]" id="JobTypeMember_set_id" placeholder="альбом не выбран").selection
+                            .datalist 
+                                div(data-value="60123").option Люди
+                                div(data-value="60124").option Всякие штуки
+                                div(data-value="60125").option Цветы
+                        a(href="#").btn.album-popup Создать альбом
+
+        section.services-pricing
+            .row
+                .col-lg-6.col-xs-12
+                    .description
+                        h4.services-title Стоимость
+                        p.hint Вам не обязательно указывать стоимость для каждой услуги отдельно. По умолчанию будут использоваться глобальные настройки стоимости из вашего профиля.
+            .row.wrap
+                .col-lg-6.col-xs-12
+                    .services-textfield
+                        p.subheader Валюта
+                        label.select
+                            span 
+                            input(type="hidden" name="JobTypeMember[price_currency]" id="JobTypeMember_price_currency").selection
+                            .datalist 
+                                div(data-value="RUR").option Рубли
+                                div(data-value="USD").option Доллары
+                                div(data-value="EUR").option Теньге
+                    .services-textfield
+                        p.subheader Стоимость часа
+                        input(type="text" data-allowed-symbols="0-9" maxlength="6" name="JobTypeMember[price_hour]" id="JobTypeMember_price_hour")
+                    .services-textfield
+                        p.subheader Стоимость проекта
+                        input(type="text" data-allowed-symbols="0-9" maxlength="6" name="JobTypeMember[price_project]" id="JobTypeMember_price_project")
+                    .services-textfield
+                        p.subheader Мин. стоимость
+                        input(type="text" data-allowed-symbols="0-9" maxlength="6" name="JobTypeMember[price_min]" id="JobTypeMember_price_min")
+
+        section.services-submit.submit
+            .container.flex
+                a(href="/my/job/").cancel-button.btn Отмена
+                input(type="submit" name="yt0" value="Добавить услугу").submit-button.btn

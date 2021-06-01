@@ -1,0 +1,10 @@
+.edit-album-menu
+    form(id="set-new-form" action="/my/set/update/60291/" method="post").wrap
+        .edit-album-close
+            i.far.fa-times
+        h5 Редактирование альбома
+        p.hint Название альбома
+        input(maxlength="50" name="PhotoSet[caption]" id="PhotoSet_caption" type="text" placeholder="Введите название альбома").album-name-field
+        p.hint Описание
+        textarea(maxlength="255" placeholder="Краткое описание альбома, до 255 знаков." name="PhotoSet[description]" id="PhotoSet_description").album-description-field
+        a(id="create_set_button").save-btn.btn Сохранить изменения

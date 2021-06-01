@@ -1,0 +1,494 @@
+extends layouts/page.pug
+
+block title 
+    title Photosight - Работа
+
+block content
+    main.jobs
+        section.jobs-top
+            .container
+                .row
+                    .col-lg-8.col-xs-12
+                        h1 Работа
+                        h5 Именно здесь вы можете подобрать фотографа для исполнения работы, заказать пост-продакшн или найти модель для вашей фотосессии.
+        section.jobs-current
+            .container.flex
+                .jobs-sort
+                    .filters
+                        p Сортировать по 
+                        label.select
+                            span стоимости часа
+                            .datalist
+                                a(href="?order=price_hour").option стоимости часа
+                                a(href="?order=price_project").option стоимости проекта
+                                a(href="?order=price_min").option мин. стоимости
+                        .down-btn
+                            i.fas.fa-arrow-down
+                .btn.show-filters
+                    span Показать фильтры
+                .jobs-result
+                    p Найдено&nbsp;<span>801</span>&nbsp;предложение
+                .jobs-current-page
+                    input(type="text" value="1")
+                    span стр.
+        section.jobs-content.content
+            .container
+                .row
+                    .col-lg-3.col-xs-12
+                        .content-filters.filters
+                            p.text Выберите страну и город, в котором вы хотите найти услугу:
+                            form(id="job_filter" action="/job/?job_type_id=18" method="get").filters-location
+                                label.select.filters-country
+                                    span выберите страну
+                                    input(type="hidden" id="country_id" name="country").selection
+                                    .datalist 
+                                        div(data-value="1").option Австралия
+                                        div(data-value="2").option Австрия
+                                        div(data-value="3").option Азербайджан
+                                        div(data-value="173").option Аландские острова
+                                        div(data-value="4").option Албания
+                                        div(data-value="165").option Алжир
+                                        div(data-value="203").option Американское Самоа
+                                        div(data-value="212").option Ангилья
+                                        div(data-value="5").option Ангола
+                                        div(data-value="6").option Андорра
+                                        div(data-value="224").option Антарктида
+                                        div(data-value="174").option Антигуа и Барбуда
+                                        div(data-value="186").option Антильские острова
+                                        div(data-value="7").option Аргентина
+                                        div(data-value="8").option Армения
+                                        div(data-value="207").option Аруба
+                                        div(data-value="9").option Афганистан
+                                        div(data-value="132").option Багамские острова
+                                        div(data-value="140").option Бангладеш
+                                        div(data-value="192").option Барбадос
+                                        div(data-value="178").option Бахрейн
+                                        div(data-value="10").option Беларусь
+                                        div(data-value="141").option Белиз
+                                        div(data-value="11").option Бельгия
+                                        div(data-value="149").option Бенин
+                                        div(data-value="103").option Бермуды
+                                        div(data-value="12").option Болгария
+                                        div(data-value="130").option Боливия
+                                        div(data-value="13").option Босния и Герцеговина
+                                        div(data-value="151").option Ботсвана
+                                        div(data-value="14").option Бразилия
+                                        div(data-value="225").option Британская территория в Индийском океане
+                                        div(data-value="188").option Британские Виргинские острова
+                                        div(data-value="15").option Бруней
+                                        div(data-value="16").option Буркина Фасо
+                                        div(data-value="217").option Бурунди
+                                        div(data-value="219").option Бутан
+                                        div(data-value="211").option Вануату
+                                        div(data-value="206").option Ватикан
+                                        div(data-value="17").option Великобритания
+                                        div(data-value="18").option Венгрия
+                                        div(data-value="19").option Венесуэла
+                                        div(data-value="129").option Виргинские Острова США
+                                        div(data-value="183").option Внешние малые острова США
+                                        div(data-value="232").option Восточный Тимор
+                                        div(data-value="20").option Вьетнам
+                                        div(data-value="147").option Габон
+                                        div(data-value="180").option Гаити
+                                        div(data-value="208").option Гайана
+                                        div(data-value="153").option Гамбия
+                                        div(data-value="144").option Гана
+                                        div(data-value="214").option Гваделупа
+                                        div(data-value="190").option Гватемала
+                                        div(data-value="162").option Гвинея
+                                        div(data-value="227").option Гвинея-Бисау
+                                        div(data-value="21").option Германия
+                                        div(data-value="216").option Гернси
+                                        div(data-value="22").option Гибралтар
+                                        div(data-value="106").option Гондурас
+                                        div(data-value="127").option Гонконг
+                                        div(data-value="189").option Гренада
+                                        div(data-value="226").option Гренландия
+                                        div(data-value="23").option Греция
+                                        div(data-value="24").option Грузия
+                                        div(data-value="181").option Гуам
+                                        div(data-value="25").option Дания
+                                        div(data-value="158").option Демократическая Республика Конго
+                                        div(data-value="223").option Джерси
+                                        div(data-value="167").option Джибути
+                                        div(data-value="135").option Доминика
+                                        div(data-value="122").option Доминиканская республика
+                                        div(data-value="26").option Египет
+                                        div(data-value="142").option Замбия
+                                        div(data-value="247").option Западная Сахара
+                                        div(data-value="105").option Зимбабве
+                                        div(data-value="27").option Израиль
+                                        div(data-value="28").option Индия
+                                        div(data-value="29").option Индонезия
+                                        div(data-value="30").option Иордания
+                                        div(data-value="31").option Ирак
+                                        div(data-value="32").option Иран
+                                        div(data-value="33").option Ирландия
+                                        div(data-value="34").option Исландия
+                                        div(data-value="35").option Испания
+                                        div(data-value="36").option Италия
+                                        div(data-value="187").option Йемен
+                                        div(data-value="152").option Кабо-Верде
+                                        div(data-value="37").option Казахстан
+                                        div(data-value="185").option Каймановы острова
+                                        div(data-value="137").option Камбоджа
+                                        div(data-value="38").option Камерун
+                                        div(data-value="39").option Канада
+                                        div(data-value="202").option Катар
+                                        div(data-value="40").option Кения
+                                        div(data-value="41").option Кипр
+                                        div(data-value="237").option Кирибати
+                                        div(data-value="42").option Китай
+                                        div(data-value="43").option КНДР
+                                        div(data-value="246").option Кокосовые острова
+                                        div(data-value="44").option Колумбия
+                                        div(data-value="168").option Коморские острова
+                                        div(data-value="45").option Конго
+                                        div(data-value="47").option Коста-Рика
+                                        div(data-value="118").option Кот-д'Ивуар
+                                        div(data-value="48").option Куба
+                                        div(data-value="117").option Кувейт
+                                        div(data-value="49").option Кыргызстан
+                                        div(data-value="243").option Лаос
+                                        div(data-value="50").option Латвия
+                                        div(data-value="154").option Лесото
+                                        div(data-value="163").option Либерия
+                                        div(data-value="51").option Ливан
+                                        div(data-value="52").option Ливия
+                                        div(data-value="53").option Литва
+                                        div(data-value="220").option Лихтенштейн
+                                        div(data-value="54").option Люксембург
+                                        div(data-value="155").option Маврикий
+                                        div(data-value="166").option Мавритания
+                                        div(data-value="150").option Мадагаскар
+                                        div(data-value="241").option Майотта
+                                        div(data-value="138").option Макао
+                                        div(data-value="55").option Македония
+                                        div(data-value="146").option Малави
+                                        div(data-value="56").option Малайзия
+                                        div(data-value="148").option Мали
+                                        div(data-value="139").option Мальдивские острова
+                                        div(data-value="176").option Мальта
+                                        div(data-value="61").option Марокко
+                                        div(data-value="222").option Мартиника
+                                        div(data-value="194").option Маршалловы острова
+                                        div(data-value="57").option Мексика
+                                        div(data-value="184").option Микронезия
+                                        div(data-value="58").option Мозамбик
+                                        div(data-value="59").option Молдова
+                                        div(data-value="179").option Монако
+                                        div(data-value="60").option Монголия
+                                        div(data-value="131").option Монтсеррат
+                                        div(data-value="218").option Мьянма
+                                        div(data-value="123").option Намибия
+                                        div(data-value="240").option Науру
+                                        div(data-value="111").option Непал
+                                        div(data-value="120").option Нигер
+                                        div(data-value="62").option Нигерия
+                                        div(data-value="63").option Нидерланды
+                                        div(data-value="110").option Никарагуа
+                                        div(data-value="238").option Ниуэ
+                                        div(data-value="64").option Новая Зеландия
+                                        div(data-value="134").option Новая Каледония
+                                        div(data-value="65").option Норвегия
+                                        div(data-value="239").option Норфолк
+                                        div(data-value="66").option Объединенные Арабские Эмираты
+                                        div(data-value="171").option Оман
+                                        div(data-value="210").option Остров Мэн
+                                        div(data-value="245").option Остров Святой Елены
+                                        div(data-value="195").option Острова Кука
+                                        div(data-value="67").option Пакистан
+                                        div(data-value="201").option Палау
+                                        div(data-value="68").option Палестина
+                                        div(data-value="69").option Панама
+                                        div(data-value="70").option Папуа Новая Гвинея
+                                        div(data-value="196").option Парагвай
+                                        div(data-value="71").option Перу
+                                        div(data-value="242").option Питкэрн
+                                        div(data-value="72").option Польша
+                                        div(data-value="73").option Португалия
+                                        div(data-value="101").option Прочая
+                                        div(data-value="128").option Пуэрто Рико
+                                        div(data-value="46").option Республика Корея
+                                        div(data-value="169").option Реюньон
+                                        div(data-value="74" data-selected="selected").selected.option Россия
+                                        div(data-value="102").option Руанда
+                                        div(data-value="75").option Румыния
+                                        div(data-value="191").option Сальвадор
+                                        div(data-value="116").option Самоа
+                                        div(data-value="175").option Сан-Марино
+                                        div(data-value="233").option Сан-Томе и Принсипи
+                                        div(data-value="76").option Саудовская Аравия
+                                        div(data-value="160").option Свазиленд
+                                        div(data-value="244").option Свальбард и Ян-Майен
+                                        div(data-value="205").option Святая Люсия
+                                        div(data-value="200").option Северные Марианские острова
+                                        div(data-value="164").option Сейшеллы
+                                        div(data-value="215").option Сен-Мартен
+                                        div(data-value="213").option Сен-Пьер и Микелон
+                                        div(data-value="143").option Сенегал
+                                        div(data-value="198").option Сент Китс и Невис
+                                        div(data-value="133").option Сент-Винсент и Гренадины
+                                        div(data-value="124").option Сербия
+                                        div(data-value="77").option Сингапур
+                                        div(data-value="78").option Сирия
+                                        div(data-value="79").option Словакия
+                                        div(data-value="80").option Словения
+                                        div(data-value="235").option Соломоновы острова
+                                        div(data-value="157").option Сомали
+                                        div(data-value="145").option Судан
+                                        div(data-value="209").option Суринам
+                                        div(data-value="81").option США
+                                        div(data-value="156").option Сьерра-Леоне
+                                        div(data-value="82").option Таджикистан
+                                        div(data-value="83").option Таиланд
+                                        div(data-value="126").option Тайвань
+                                        div(data-value="109").option Танзания
+                                        div(data-value="204").option Теркс и Кайкос
+                                        div(data-value="161").option Того
+                                        div(data-value="136").option Токелау
+                                        div(data-value="231").option Тонга
+                                        div(data-value="112").option Тринидад и Тобаго
+                                        div(data-value="236").option Тувалу
+                                        div(data-value="170").option Тунис
+                                        div(data-value="84").option Туркменистан
+                                        div(data-value="85").option Турция
+                                        div(data-value="104").option Уганда
+                                        div(data-value="86").option Узбекистан
+                                        div(data-value="87").option Украина
+                                        div(data-value="229").option Уоллис и Футуна
+                                        div(data-value="107").option Уругвай
+                                        div(data-value="221").option Фарерские острова
+                                        div(data-value="199").option Фиджи
+                                        div(data-value="88").option Филиппины
+                                        div(data-value="89").option Финляндия
+                                        div(data-value="177").option Фолклендские острова
+                                        div(data-value="90").option Франция
+                                        div(data-value="234").option Французская Гвинея
+                                        div(data-value="230").option Французская Полинезия
+                                        div(data-value="91").option Хорватия
+                                        div(data-value="159").option Центрально-Африканская Республика
+                                        div(data-value="114").option Чад
+                                        div(data-value="125").option Черногория
+                                        div(data-value="92").option Чехия
+                                        div(data-value="93").option Чили
+                                        div(data-value="94").option Швейцария
+                                        div(data-value="95").option Швеция
+                                        div(data-value="96").option Шри-Ланка
+                                        div(data-value="119").option Эквадор
+                                        div(data-value="115").option Экваториальная Гвинея
+                                        div(data-value="228").option Эритрея
+                                        div(data-value="97").option Эстония
+                                        div(data-value="108").option Эфиопия
+                                        div(data-value="98").option Южно-Африканская Республика
+                                        div(data-value="197").option Южный Судан
+                                        div(data-value="182").option Ямайка
+                                        div(data-value="100").option Япония
+                                .autocomplete.filters-city
+                                    input(id="city_name" type="text" value="" name="city_name" autocomplete="off" placeholder="выберите город")
+                                input(type="submit" value="Найти").submit-btn
+                                script.
+                                    // setting autocomplete
+                                    window.addEventListener('load', function(e) {
+                                        const countryID = $("#country_id").val()
+                                        const options = {
+                                            url: function (phrase) {
+                                                if (phrase !== "") {
+                                                    return `https://photosight.ru/ajax/citySuggest?term=${phrase}&country_id=${countryID}`;
+                                                } else {
+                                                    return
+                                                }
+                                            },
+                                            getValue: "value",
+                                            ajaxSettings: {
+                                                method: 'GET',
+                                                dataType: 'json',
+                                                success: function (data) {
+                                                    console.log(data)
+                                                },
+                                                error: function(err) {
+                                                    console.log('error', err)
+                                                }
+
+                                            },
+                                            list: {
+                                                match: {
+                                                    enabled: true
+                                                },
+
+                                                onClickEvent: function (a, b) {
+                                                    $("#city_name").getSelectedItemData().val()
+                                                }
+                                            }
+                                        };
+                                        $("#city_name").on('keydown', function (e) {
+                                            if ($('.easy-autocomplete-container ul').children().length > 0) $('.easy-autocomplete-container').show()
+                                        })
+                                        $("#city_name").easyAutocomplete(options);
+                                    })
+                            .filters-categories
+                                .filters-subsection
+                                    h5.filters-subheader Фотосъёмка
+                                    ul.filters-list
+                                        li.filters-item 
+                                            a(href="#").filters-name Портрет
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Свадебная съёмка
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Мероприятия и репортаж
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Съёмка детей
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Портфолио
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name НЮ
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Интерьеры и архитектура
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Рекламная съёмка
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Предметная съёмка
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Съёмка беременных
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Для интернет-магазинов
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Каталоги
+                                            span.filters-counter 630
+                                .filters-subsection 
+                                    h5.filters-subheader Обработка
+                                    ul.filters-list 
+                                        li.filters-item 
+                                            a(href="#").filters-name Ретушь
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Коллаж
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Для интернет-магазинов
+                                            span.filters-counter 630
+                                .filters-subsection 
+                                    h5.filters-subheader Фотомодели
+                                    ul.filters-list 
+                                        li.filters-item 
+                                            a(href="#").filters-name Реклама и каталоги
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name НЮ
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Съёмка для журналов
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Одежда
+                                            span.filters-counter 630
+                                        li.filters-item 
+                                            a(href="#").filters-name Бельё
+                                            span.filters-counter 630
+                    //- insertion
+                    .jobs-result
+                        p Найдено&nbsp;<span>801</span>&nbsp;предложение
+                    //- insertion
+                    .col-lg-7.col-xs-12.col-lg-offset-3
+                        .content-applicants.applicants
+                            .applicant 
+                                .applicant-avatar(style="background-image: url(./img/subscribers/image%2039.jpg)")
+                                .applicant-main
+                                    .applicant-description
+                                        h3.applicant-name Анастасия Никаноровская
+                                        p.applicant-location Россия, Ставрополь,&nbsp;
+                                            span.applicant-last-visited была 18 декабря, 16:56
+                                    .applicant-tags 
+                                        .tag
+                                            span НЮ
+                                        .tag
+                                            span Портрет
+                                        .tag
+                                            span Портфолио
+                                    .applicant-descr
+                                        p.text Фотографирую в Москве и МО<br>Преимущественно работаю в жанрах портрет и ню, снимаю как для Вашего личного архива (конфиденциально), так и для пополнения портфолио.<br>Работаю в лучших студиях Москвы, есть всё необходимое оборудование для съёмки в других локациях
+                                    .applicant-pricing
+                                        .hour
+                                            p Стоимость за час
+                                            .dots
+                                            span от <b>10000</b> руб.
+                                        .project
+                                            p Стоимость за проект
+                                            .dots
+                                            span от <b>20000</b> руб.
+                                        .min
+                                            p Минимальный заказ
+                                            .dots
+                                            span от <b>18000</b> руб.
+                                    .applicant-portfolio
+                                        .wrap
+                                            .img
+                                                img(src="./img/models/image%2041.jpg")
+                                            .img
+                                                img(src="./img/models/image%2042.jpg")
+                                            .img
+                                                img(src="./img/models/image%2043.jpg")
+                            .applicant 
+                                .applicant-avatar(style="background-image: url(./img/subscribers/image%2039.jpg)")
+                                .applicant-main
+                                    .applicant-description
+                                        h3.applicant-name Анастасия Никаноровская
+                                        p.applicant-location Россия, Ставрополь,&nbsp;
+                                            span.applicant-last-visited была 18 декабря, 16:56
+                                    .applicant-tags 
+                                        .tag
+                                            span НЮ
+                                        .tag
+                                            span Портрет
+                                        .tag
+                                            span Портфолио
+                                    .applicant-descr
+                                        p.text Фотографирую в Москве и МО<br>Преимущественно работаю в жанрах портрет и ню, снимаю как для Вашего личного архива (конфиденциально), так и для пополнения портфолио.<br>Работаю в лучших студиях Москвы, есть всё необходимое оборудование для съёмки в других локациях
+                                    .applicant-pricing
+                                        .hour
+                                            p Стоимость за час
+                                            .dots
+                                            span от <b>10000</b> руб.
+                                        .project
+                                            p Стоимость за проект
+                                            .dots
+                                            span от <b>20000</b> руб.
+                                        .min
+                                            p Минимальный заказ
+                                            .dots
+                                            span от <b>18000</b> руб.
+                                    .applicant-portfolio
+                                        .wrap
+                                            .img
+                                                img(src="./img/models/image%2044.jpg")
+                                            .img
+                                                img(src="./img/models/image%2045.jpg")
+                                            .img
+                                                img(src="./img/models/image%2046.jpg")
+        section.jobs-footer 
+            .container.flex
+                .jobs-pagination.pagination
+                .jobs-current-page
+                    input(type="text" value="1")
+                    span стр.
+            include includes/ads.pug
+                block mocks
+                    .ads-unit
+                        img(src="./img/mock-ads/1.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/2.jpg" alt="mock")
+                    .ads-unit
+                        img(src="./img/mock-ads/3.jpg" alt="mock")
+block scripts
+    script(src="./js/libs/jquery.easy-autocomplete.min.js")

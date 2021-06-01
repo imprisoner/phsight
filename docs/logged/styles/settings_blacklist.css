@@ -609,6 +609,93 @@
 .swiper-container-vertical.swiper-container-css-mode > .swiper-wrapper {
   scroll-snap-type: y mandatory;
 }
+.tabs {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.tabs::before {
+  content: '';
+  width: 100vw;
+  height: 1px;
+  background-color: #0000001A;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50vw);
+}
+.tabs::after {
+  content: '';
+  width: 100vw;
+  height: 1px;
+  background-color: #0000001A;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 50vw);
+}
+.tab-link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 175%;
+  color: #00000040;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 40px 0;
+}
+.tab-link:nth-child(n + 2) {
+  margin-left: 50px;
+}
+.tab-link::after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background-color: #000000;
+  transition: opacity 200ms ease;
+}
+.tab-link.active::after {
+  opacity: 1;
+}
+.tab-link.active {
+  color: #000000;
+  cursor: default;
+}
+.tab-link.swiper-slide {
+  width: auto;
+}
+@media (max-width: 1024px) {
+  .tab-link {
+    padding: 30px 0;
+  }
+  .tab-link:nth-child(n + 2) {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .tab-link {
+    padding: 20px 0;
+  }
+}
+@media (max-width: 480px) {
+  .tab-link:first-child {
+    margin-left: 8px;
+  }
+  .tab-link:nth-child(n + 2) {
+    margin-left: 30px;
+  }
+  .tabs::before {
+    left: 0;
+  }
+  .tabs::after {
+    left: 0;
+  }
+}
 h1 {
   font-family: Roboto;
   font-style: normal;
@@ -652,7 +739,7 @@ p.hint {
   color: #434343;
   margin-bottom: 20px;
 }
-input[type="text"]:not(#header_search),
+input[type="text"]:not(#header_search):not(#album_name),
 input[type="password"],
 input[type="date"],
 input[type="email"],
@@ -710,13 +797,13 @@ button,
   max-width: max-content;
 }
 button:hover,
-.btn:hover {
+.btn:hover,
+button:focus,
+.btn:focus {
   background-color: #eaeaea;
 }
 button:active,
-.btn:active,
-button:focus,
-.btn:focus {
+.btn:active {
   border-color: #bcbcbc;
   background-color: #bcbcbc;
   outline: none;
@@ -724,8 +811,11 @@ button:focus,
 .settings-navigation {
   overflow: hidden;
 }
-.tabs {
-  width: fit-content;
+.settings-navigation .tabs .tab-link:first-child {
+  margin-left: 10px;
+}
+.settings-navigation .tabs .tab-link:last-child {
+  margin-left: 0px;
 }
 .select {
   font-family: Roboto;
@@ -863,6 +953,11 @@ button:focus,
 .submit-button {
   margin-left: auto;
 }
+@media (max-width: 1023px) {
+  .settings-navigation .tabs .tab-link:last-child {
+    margin-left: 10px;
+  }
+}
 .blacklist {
   min-height: calc(100vh - 614px);
   max-height: max-content;
@@ -882,6 +977,9 @@ button:focus,
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .blacklist-description {
   margin-left: 22px;
@@ -895,8 +993,10 @@ button:focus,
   line-height: 130%;
   color: #282828;
   margin-bottom: 10px;
+  display: block;
 }
 .blacklist-remove {
+  display: block;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;

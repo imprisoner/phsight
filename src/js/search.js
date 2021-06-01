@@ -14,13 +14,14 @@ $(function () {
     initNavTabs('.tab-link')
 
     // setting pagination
-
-    initSlider(580, false)
     initPagination(680)
+
+    // setting slider
+    initSlider(585)
 
     // setting JustifiedGallery plugin
     if ($('.justified-gallery').length > 0) {
-         $('.justified-gallery').justifiedGallery({
+        $('.justified-gallery').justifiedGallery({
             rowHeight: 310,
             margins: 2,
             lastRow: 'justify',
@@ -38,12 +39,12 @@ $(function () {
 
     // submitting form
 
-    $('.search-btn').on('click', function() {
+    $('.search-btn').on('click', function () {
         $('.search-form').trigger('submit')
     })
 
-    $('.search-field').on('focus', function() {
-        $(document).one('keydown', function(e) {
+    $('.search-field').on('focus', function () {
+        $(document).one('keydown', function (e) {
             console.log(e.code)
             if (e.code === 'Enter') $('.search-form').trigger('submit')
         })
@@ -51,7 +52,7 @@ $(function () {
 
     // filters select
 
-    $('.select').on('click', function(e) {
+    $('.select').on('click', function (e) {
 
         e.stopPropagation()
 
@@ -62,14 +63,17 @@ $(function () {
 
         datalist.show()
 
-        option.on('click', function() {
+        option.on('click', function (e) {
+            e.stopPropagation()
             span.text($(this).text())
             datalist.hide()
+            option.off()
             $(document).off()
         })
 
-        $(document).on('click', function() {
+        $(document).on('click', function () {
             datalist.hide()
+            option.off()
             $(document).off()
         })
 

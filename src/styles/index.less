@@ -27,6 +27,9 @@
 }
 
 .swiper-slide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     &::before {
         content: '';
         background: linear-gradient(180deg, rgba(40, 40, 40, 0.75) 0%, rgba(40, 40, 40, 0) 100%);
@@ -89,25 +92,23 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        display: flex;
-        justify-content: space-between;
         padding: 0 60px 40px;
         align-items: baseline;
         z-index: 1;
     }
-
-    &-photo-name {
-        .roboto(@line-height: 175%, @color: #fff);
+    
+    &-photo-name, span {
+        .p(@white)
     }
 
-    &-copyright {
-        .roboto(12px, 130%, @color: #fff)
+    &-photographer {
+        .p_bold(@white)
     }
 
-    &-photo-name,
-    &-copyright {
-        display: block;
-    }
+    // &-photo-name,
+    // &-photographer {
+    //     display: block;
+    // }
 
 }
 
@@ -174,13 +175,10 @@
     .slide {
         &-footer {
             padding: 0 0 40px 0;
+            display: flex;
         }
 
-        &-copyright {
-            display: none;
-        }
-
-        &-photo-name {
+        &-owner {
             margin: 0 auto;
         }
     }

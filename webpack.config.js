@@ -27,7 +27,7 @@ module.exports = {
     },
     entry: {
         // main: {
-            //     import: './main.js',
+        //     import: './main.js',
         //     dependOn: 'shared'
         // },
         // index: {
@@ -61,7 +61,9 @@ module.exports = {
         settings: './settings.js',
         messages: './messages.js',
         wallet: './wallet.js',
-        // myprofile: './myprofile.js'
+        myprofile: './myprofile.js',
+        content: './content.js',
+        jobs: './jobs.js'
 
     },
     devtool: 'inline-source-map',
@@ -84,7 +86,15 @@ module.exports = {
         ...PUG_PAGES.map(page => new HTMLWebpackPlugin({
             template: `${PUG_DIR}/${page}`,
             filename: `./${page}`.replace(/\.pug/, '.html'),
-            chunks: [`${page}`.replace(/\.pug/, '')]
+            chunks: [`${page}`.replace(/\.pug/, '')],
+            minify: {
+                collapseWhitespace: true,
+                keepClosingSlash: true,
+                removeComments: true,
+                removeRedundantAttributes: false,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true
+            }
         })),
         new CopyPlugin({
             patterns: [{
@@ -102,42 +112,42 @@ module.exports = {
     ],
     module: {
         rules: [{
-                test: /\.pug$/,
-                loader: 'pug-loader',
+            test: /\.pug$/,
+            loader: 'pug-loader',
+            options: {
+                pretty: true
+            }
+        },
+        {
+            test: /\.less|.css$/,
+            use: [{
+                loader: MiniCssExtractPlugin.loader,
                 options: {
-                    pretty: true
+                    publicPath: '../',
                 }
             },
-            {
-                test: /\.less|.css$/,
-                use: [{
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: '../',
-                        }
-                    },
 
-                    'css-loader',
-                    'less-loader',
-                ]
-            },
-            {
-                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-                use: [{
-                    loader: 'file-loader',
-                    options: {
-                        name: '[name].[ext]',
-                        outputPath: 'fonts/'
-                    }
-                }]
-            },
-            {
-                test: /\.(jpg|png|svg|jpeg|svg|gif)$/,
+                'css-loader',
+                'less-loader',
+            ]
+        },
+        {
+            test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+            use: [{
                 loader: 'file-loader',
                 options: {
-                    outputPath: 'icons/'
+                    name: '[name].[ext]',
+                    outputPath: 'fonts/'
                 }
+            }]
+        },
+        {
+            test: /\.(jpg|png|svg|jpeg|svg|gif)$/,
+            loader: 'file-loader',
+            options: {
+                outputPath: 'icons/'
             }
+        }
         ]
     },
     optimization: {

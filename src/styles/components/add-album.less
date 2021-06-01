@@ -17,6 +17,7 @@
         background-color: @dark;
         margin: calc(50vh - 112px) auto;
         border-radius: 20px;
+        box-shadow: 0px 9px 100px #3d3d3d;
     }
 
     h5 {
@@ -25,10 +26,12 @@
     }
 
     .album-name-field {
+        .rounded-button(#ffffff1a, 12px, @bg-color: #4C4C4C);
         margin-bottom: 20px;
         color: @white;
-        border-color: #ffffff1a;
-        background-color: #4C4C4C;
+        outline: none;
+        width: 100%;
+        text-align: left;
         &::-webkit-input-placeholder {
             color: #777777;
         }
@@ -63,10 +66,9 @@
     }
 
 
-
-
-
     .create-album-button.btn {
+        .rounded-button(@white, 12px);
+        .p_bold(@white);
         color: @white;
         width: fit-content;
         margin-left: auto;

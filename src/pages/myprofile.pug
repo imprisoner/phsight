@@ -1,12 +1,20 @@
 extends layouts/page.pug
 
 block title 
-    title Photosight - Профиль
+    title Photosight - Мой профиль
 
-block content 
-    main.profile 
+block content
+    include includes/popup.pug
+    include includes/add-album.pug
+    include includes/edit-album.pug
+    main.profile.my-profile 
+        .overlay
         .profile-top
             .hero 
+                .dots-menu
+                        .dots-wrap
+                            a(href="#").dots-option.settings Настройки
+                            a(href="#").dots-option.add-photo Добавить фото
                 .container.flex
                     .flex
                         div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
@@ -33,47 +41,46 @@ block content
                                     i.fab.fa-behance
                         .hero-about 
                             p i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits i am a hobbyphotographer from passion...versatile and creative ...i make all myself Self portraits
-                            a.edit-btn
-                                i.far.fa-edit
-            .info
-                .info-block
-                    p.text загружено<br>фотографий
-                    p.data.uploaded 44
-                .info-block
-                    p.text получено<br>комментариев
-                    p.data.received 431
-                .info-block
-                    p.text написано<br>комментариев
-                    p.data.written 110
-                .info-block
-                    p.text подписано<br>пользователей
-                    p.data.subscribers 36
-                .info-block
-                    p.text избранных<br>авторов
-                    p.data.authors 5
-                .info-block
-                    p.text оценённых<br>фотографий
-                    p.data.rated 113
-                .info-block
-                    p.text просмотров<br>фотографий
-                    p.data.viewed 91 156
+
             .nav
-                .container
-                    .nav-actions
-                        //- вкладка Фотографии
-                        a.nav-btn.upload-photo Загрузить фото
-                        //- вкладка Фотографии
-                        //- вкладка Альбомы
-                        a.nav-btn.album-popup Создать альбом
-                        //- вкладка Альбомы
-                        a.nav-btn.nav-more
-                            i.fas.fa-ellipsis-h
-                        include includes/dots-menu.pug
-                            block menu
-                                +menu(['Пожаловаться', 'Заблокировать'])
-                    include includes/nav-tabs.pug
-                        block tabs
-                            +tabs(['Фотографии', 'Альбомы', 'Комментарии', 'Избранное', 'Статистика', 'Подписчики'])
+                .info
+                    .info-container
+                        .swiper-wrapper
+                            .info-block.swiper-slide
+                                p.text загружено<br>фотографий
+                                p.data.uploaded 44
+                            .info-block.swiper-slide
+                                p.text получено<br>комментариев
+                                p.data.received 431
+                            .info-block.swiper-slide
+                                p.text написано<br>комментариев
+                                p.data.written 110
+                            .info-block.swiper-slide
+                                p.text подписано<br>пользователей
+                                p.data.subscribers 36
+                            .info-block.swiper-slide
+                                p.text избранных<br>авторов
+                                p.data.authors 5
+                            .info-block.swiper-slide
+                                p.text оценённых<br>фотографий
+                                p.data.rated 113
+                            .info-block.swiper-slide
+                                p.text просмотров<br>фотографий
+                                p.data.viewed 91 156
+
+                .nav-actions
+                    a.nav-btn.nav-info
+                        i.fas.fa-info
+                    //- a(href="#").nav-btn.add-photo Загрузить фото
+                    //- a.nav-btn.album-popup Создать альбом
+                    a.nav-btn.edit-album-popup Редактировать альбом
+                    a.nav-btn.nav-more
+                        i.fas.fa-ellipsis-h
+                    
+
+                include includes/nav-tabs.pug
+                    block tabs
+                        +tabs(['Фотографии', 'Альбомы', 'Комментарии', 'Избранное', 'Статистика', 'Подписчики', ''])
         .profile-body
             //- =====> вкладка Фотографии
             //- include includes/myprofile/photos.pug
@@ -88,15 +95,21 @@ block content
             //- include includes/myprofile/statistics.pug
 
             //- =====> вкладка Избранное
-            //- include includes/myprofile/favorites.pug
+            include includes/myprofile/favorites.pug
+
+            //- =====> вкладка Альбом
+            //- include includes/myprofile/album-look.pug
 
             //- =====> вкладка Комментарии
-            //- include includes/myprofile/favorites.pug
+            //- include includes/myprofile/comments.pug
 
-            
 
+        //- для просмотра Альбомов
         .profile-footer 
             .container.flex
+                //- .album-backdrop
+                    a(href="#").backdrop-btn
+                        i.fas.fa-arrow-left
                 .profile-pagination.pagination
                 .profile-current-page 
                     input(type="text" value="1")
@@ -106,6 +119,9 @@ block content
                 .ads-unit
                     img(src="./img/mock-ads/5.jpg" alt="mock")
 
+block scripts 
+    //- for JG
+    script(src="./js/libs/jquery.justifiedGallery.js")
 
 
-                   
+

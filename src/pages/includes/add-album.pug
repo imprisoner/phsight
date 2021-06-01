@@ -1,7 +1,7 @@
 .add-album-menu
-    .wrap
+    form(id="set-new-form" action="/my/set/create/" method="post").wrap
         .add-album-close
             i.far.fa-times
         h5 Создание нового альбома
-        input(type="text" id="album_name" name="album_name" placeholder="Введите название нового альбома").album-name-field
+        input(maxlength="50" name="PhotoSet[caption]" id="PhotoSet_caption" type="text" placeholder="Введите название нового альбома").album-name-field
         a(id="create_set_button").create-album-button.btn Создать альбом

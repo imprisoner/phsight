@@ -1,0 +1,110 @@
+.edit-album-menu {
+
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #434343cc;
+    z-index: 999;
+
+    .wrap {
+        position: relative;
+        width: 560px;
+        max-width: 90%;
+        padding: 40px;
+        background-color: @dark;
+        margin: calc(50vh - 112px) auto;
+        border-radius: 20px;
+        box-shadow: 0px 9px 100px #3d3d3d;
+    }
+
+    h5 {
+        .h5_bold(@white);
+        margin-bottom: 20px;
+    }
+
+    .album-name-field, .album-description-field {
+        .rounded-button(#ffffff1a, 12px);
+        outline: none;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+        background-color: #4C4C4C;
+        .p(@white);
+        &::-webkit-input-placeholder {
+            color: #777777;
+        }
+
+        &::-moz-placeholder {
+            color: #777777;
+        }
+
+        &:-moz-placeholder {
+            color: #777777;
+        }
+
+        &:-ms-input-placeholder {
+            color: #777777;
+        }
+
+        &::placeholder {
+            color: #777777;
+        }
+    }
+    .album-description-field {
+        min-height: 100px;
+        resize: none;
+        padding: 10px 20px;
+    }
+
+    .hint {
+        .p(#ffffff59);
+        margin-bottom: 5px;
+    }
+
+    .edit-album-close {
+        font-size: 20px;
+        line-height: 165%;
+        color: @white;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+
+    }
+
+
+
+   
+    .btn {
+        .rounded-button(@white, 12px);
+        .p_bold(@white);
+        color: @white;
+        width: fit-content;
+        margin-left: auto;
+
+        &:hover,
+        &:focus {
+            background-color: @grey;
+            color: @black;
+            border-color: transparent;
+        }
+
+        &:active {
+            border-color: @white;
+            background-color: @white;
+            color: @black;
+            outline: none;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .add-album-menu {
+        .wrap {
+            padding: 40px 20px;
+        }
+    }
+}

@@ -863,6 +863,17 @@ button:focus,
 .submit-button {
   margin-left: auto;
 }
+
+@media (max-width: 1279px) {
+  h1 {
+    padding: 60px 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  h1 {
+    padding: 40px 0 20px;
+  }
+}
 .notifications {
   height: calc(100vh - 614px);
 }

@@ -2,8 +2,6 @@ import {
     initSlider,
     initNavTabs,
     initPagination,
-    // togglePopup,
-    // expandSearch,
 } from './utils'
 
 import './main'

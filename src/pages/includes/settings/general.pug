@@ -2,10 +2,11 @@ main.settings-general.general
     form(method="post" id="personal-form" action="https://photosight.ru/my/personal/").container
         section.general-avatar
             //- NO AVATAR UPLOADED
-            //- .row
+            .row
                 .col-lg-2
                     .general-avatar-preview
-            //- .row
+                        i.fas.fa-camera
+            .row
                 .col-md-6.col-xs-12
                     .general-avatar-actions 
                         label.general-avatar-upload
@@ -14,10 +15,10 @@ main.settings-general.general
                             input(type="file" name="avatar_upload" id="avatar_upload").file-input
 
             //- HAS AVATAR
-            .row
+            //- .row
                 .col-lg-2
-                    div(style="background: url('./img/user-avatar.jpg') center / cover no-repeat;").general-avatar-preview
-            .row
+                    div(style="background-image: url('./img/user-avatar.jpg')").general-avatar-preview
+            //- .row
                 .col-md-6.col-xs-12
                     .general-avatar-actions        
                         label.general-avatar-upload
@@ -62,7 +63,7 @@ main.settings-general.general
                     .personal-textfield
                         p.subheader Страна
                         label.select
-                            span 
+                            span выберите страну
                             input(type="hidden" name="PersonalFormModel[country_id]" id="PersonalFormModel_country_id" placeholder="страна не выбрана").selection
                             .datalist 
                                 div(data-value="1").option Австралия
@@ -310,7 +311,48 @@ main.settings-general.general
                 .col-lg-3.col-md-6.col-xs-12
                     .personal-textfield
                         p.subheader Город
-                        input(type="text" name="PersonalFormModel[city]" id="PersonalFormModel_city" maxlength="50")
+                        .autocomplete
+                            input(type="text" name="PersonalFormModel[city]" id="PersonalFormModel_city" maxlength="50" placeholder="выберите город")
+                        script.
+                            // setting autocomplete
+                            window.addEventListener('load', function(e) {
+                                const countryID = $("#PersonalFormModel_country_id").val()
+                                const options = {
+                                    url: function (phrase) {
+                                        if (phrase !== "") {
+                                            return `https://photosight.ru/ajax/citySuggest?term=${phrase}&country_id=${countryID}`;
+                                        } else {
+                                            return
+                                        }
+                                    },
+                                    getValue: "value",
+                                    ajaxSettings: {
+                                        method: 'GET',
+                                        dataType: 'json',
+                                        success: function (data) {
+                                            console.log(data)
+                                        },
+                                        error: function(err) {
+                                            console.log('error', err)
+                                        }
+
+                                    },
+                                    list: {
+                                        match: {
+                                            enabled: true
+                                        },
+
+                                        onClickEvent: function (a, b) {
+                                            $("#PersonalFormModel_city").getSelectedItemData().val()
+                                        }
+                                    }
+                                };
+                                $("#PersonalFormModel_city").on('keydown', function (e) {
+                                    if ($('.easy-autocomplete-container ul').children().length > 0) $('.easy-autocomplete-container').show()
+                                })
+                                $("#PersonalFormModel_city").easyAutocomplete(options);
+                            })
+
 
             .row
                 .col-lg-6.col-xs-12

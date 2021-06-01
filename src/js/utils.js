@@ -5,16 +5,43 @@ import Pagination from './pagination'
 // setting slider
 
 export function initSlider(breakpoint = 0, clickSlide = true, container) {
-    // console.log('slider init')
-    let sliderInstance = window.innerWidth < breakpoint ?
-        new Swiper(container || '.swiper-container', {
-            slidesPerView: 'auto',
-            slideToClickedSlide: clickSlide,
-            freeMode: true
-        }) :
-        null
-    console.log(sliderInstance)
-    return sliderInstance
+    // let sliderInstance = window.innerWidth < breakpoint ?
+    //     new Swiper(container || '.swiper-container', {
+    //         slidesPerView: 'auto',
+    //         slideToClickedSlide: clickSlide,
+    //         freeMode: true
+    //     }) :
+    //     null
+
+    let slider = new Swiper(container || '.swiper-container', {
+        init: false,
+        slidesPerView: 'auto',
+        slideToClickedSlide: clickSlide,
+        freeMode: true
+    })
+    if (window.innerWidth < breakpoint) {
+        slider.init()
+    }
+    $(window).on('resize', function (e) {
+        if (this.innerWidth < breakpoint) {
+            if (slider.destroyed) {
+                slider = new Swiper('.swiper-container', {
+                    slidesPerView: 'auto',
+                    freeMode: true
+                })
+            }
+            if (!slider.initialized) {
+                slider.init()
+            }
+        }
+        if (this.innerWidth >= 585) {
+            if (slider.initialized) {
+                console.log(slider.initialized)
+                slider.destroy()
+            }
+        }
+    })
+    return slider
 }
 
 // setting navtabs animation
@@ -100,7 +127,6 @@ export function togglePopup(target, popup) {
 export function expandSearch(area = '') {
 
     $(`.${area}-search-btn`).on('click', function (e) {
-        console.log('here')
         const button = $(this)
         const input = $(`.${area}-search-field`)
         const form = button.closest('form')
@@ -164,7 +190,9 @@ export function selectize(selects = []) {
         const selected = datalist.find('.selected')
         const span = label.find('span')
 
-        if(selected.length > 0) {
+        span.css('color', '#eaeaea')
+        if (selected.length > 0) {
+            span.prop('style', '')
             span.text(selected.text())
             input.val(selected.data('value'))
         }

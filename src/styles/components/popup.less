@@ -22,38 +22,50 @@
         align-items: center;
         justify-content: center;
         min-height: 120px;
+        box-shadow: 0px 9px 100px #3d3d3d;
     }
 
     .insertion {
+        .h5_bold(@white);
+
+        h5 {
             .h5_bold(@white);
+            padding-right: 100px;
+        }
 
         h3 {
             .h3_bold(@white)
         }
+
         form {
             padding-top: 10px;
             padding-right: 10px;
         }
+
         textarea {
-            .p(@black);
+            .p(@white);
             margin: 20px 0;
             width: 100%;
             border-radius: 10px;
             padding: 10px 20px;
-            min-height: 67px;
+            min-height: 100px;
             outline: none;
             resize: none;
             overflow: hidden;
+            background: #ffffff0d;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
+
         p {
             margin-top: 20px;
         }
+
         .btn {
             .rounded-button(#eaeaea, 22px, 5px);
             .p_bold(@white);
             cursor: pointer;
             outline: none;
-
+            margin-left: auto;
             &:hover,
             &:focus {
                 background-color: @grey;
@@ -82,11 +94,16 @@
 
 @media (max-width: 767px) {
     .popup-menu {
-        
+
         .insertion {
             .p_bold(@white);
+
             h3 {
                 .h5_bold(@white)
+            }
+
+            h5 {
+                padding-right: unset;
             }
         }
     }

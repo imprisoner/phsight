@@ -652,7 +652,7 @@ p.hint {
   color: #434343;
   margin-bottom: 20px;
 }
-input[type="text"]:not(#header_search),
+input[type="text"]:not(#header_search):not(#album_name),
 input[type="password"],
 input[type="date"],
 input[type="email"],
@@ -710,13 +710,13 @@ button,
   max-width: max-content;
 }
 button:hover,
-.btn:hover {
+.btn:hover,
+button:focus,
+.btn:focus {
   background-color: #eaeaea;
 }
 button:active,
-.btn:active,
-button:focus,
-.btn:focus {
+.btn:active {
   border-color: #bcbcbc;
   background-color: #bcbcbc;
   outline: none;
@@ -724,8 +724,11 @@ button:focus,
 .settings-navigation {
   overflow: hidden;
 }
-.tabs {
-  width: fit-content;
+.settings-navigation .tabs .tab-link:first-child {
+  margin-left: 10px;
+}
+.settings-navigation .tabs .tab-link:last-child {
+  margin-left: 0px;
 }
 .select {
   font-family: Roboto;
@@ -856,6 +859,29 @@ button:focus,
 .checkbox.disabled ~ .content .subheader {
   color: #bcbcbc;
 }
+.submit {
+  padding: 40px 0;
+  border-top: 1px solid #bcbcbc;
+}
+.submit-button {
+  margin-left: auto;
+}
+
+@media (max-width: 1279px) {
+  h1 {
+    padding: 60px 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  h1 {
+    padding: 40px 0 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .settings-navigation .tabs .tab-link:last-child {
+    margin-left: 10px;
+  }
+}
 .general-avatar {
   padding: 60px 0 40px;
 }
@@ -867,10 +893,9 @@ button:focus,
   width: 200px;
   height: 200px;
   background-color: #f4f4f4;
-  background-image: url(../icons/7ab5e7868233c0b6524564ee91b25352.svg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 26px;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1009,13 +1034,6 @@ button:focus,
 .accounts .account-vk .icon {
   background: url(../icons/a23b5175014a2a32196920ac6cc742a8.svg);
 }
-.submit {
-  padding: 40px 0;
-  border-top: 1px solid #bcbcbc;
-}
-.submit-button {
-  margin-left: auto;
-}
 @media (max-width: 767px) {
   .tabs {
     width: unset;
@@ -1059,5 +1077,39 @@ button:focus,
   .accounts .account-fb {
     margin-bottom: 20px;
   }
+}
+.easy-autocomplete {
+  width: 100% !important;
+}
+.easy-autocomplete-container {
+  display: none;
+  position: relative;
+}
+.easy-autocomplete-container ul {
+  max-height: 200px;
+  position: absolute;
+  right: 0px;
+  top: 4px;
+  left: 0px;
+  border: 2px solid #EAEAEA;
+  border-radius: 10px;
+  background-color: #fff;
+  z-index: 5;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 0;
+}
+.easy-autocomplete-container li {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 175%;
+  color: #282828;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.easy-autocomplete-container li:hover {
+  background-color: #eaeaea;
 }
 

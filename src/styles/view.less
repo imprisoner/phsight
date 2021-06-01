@@ -4,14 +4,7 @@
 @import './components/dots-menu.less';
 @import './libs/flexgrid.css';
 @import './libs/lightbox.css';
-// @import './common/spec.less';
-// @import './common/fonts.less';
-// @import './components/ads.less';
-// @import './components/burger-menu.less';
-// @import './components/user-menu.less';
-// @import './components/mini-footer.less';
-// @import './components/header.less';
-// @import './components/footer.less';
+
 
 .photo {
     &-block {
@@ -71,6 +64,9 @@
         div {
             width: 40px;
             height: 40px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         &.active {
@@ -354,6 +350,9 @@
         height: 75px;
         border-radius: 50%;
         position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &-pro {
@@ -565,6 +564,9 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &-wallpost {
@@ -597,6 +599,9 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     &-content {
@@ -979,6 +984,7 @@
     top: 48px;
     right: 0px;
 }
+
 // not logged
 
 .noauth {
@@ -1265,6 +1271,9 @@
         &-avatar {
             width: 50px;
             height: 50px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         &-description {
@@ -1298,6 +1307,10 @@
 
         &-date {
             margin: 0;
+        }
+
+        &-name {
+            margin-bottom: 5px;
         }
     }
 }

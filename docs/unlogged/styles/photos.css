@@ -557,7 +557,9 @@
   color: #fff;
   flex-wrap: wrap;
 }
-.pic-name span {
+.pic-name a {
+  text-decoration: none;
+  color: #fff;
   white-space: nowrap;
 }
 .pic-name b {
