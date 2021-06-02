@@ -5,8 +5,8 @@ block title
 
 block content
     include includes/popup.pug
-    include includes/add-album.pug
-    include includes/edit-album.pug
+    //- include includes/add-album.pug
+    //- include includes/edit-album.pug
     main.profile.my-profile 
         .overlay
         .profile-top
@@ -14,10 +14,10 @@ block content
                 .dots-menu
                         .dots-wrap
                             a(href="#").dots-option.settings Настройки
-                            a(href="#").dots-option.add-photo Добавить фото
+                            //- a(href="#").dots-option.add-photo Добавить фото
                 .container.flex
                     .flex
-                        div(style="background: url(./img/profile/avatar.jpg) center / cover").hero-avatar
+                        div(style="background-image: url(./img/profile/avatar.jpg)").hero-avatar
                     .hero-wrap
                         .flex 
                             .hero-description
@@ -73,7 +73,7 @@ block content
                         i.fas.fa-info
                     //- a(href="#").nav-btn.add-photo Загрузить фото
                     //- a.nav-btn.album-popup Создать альбом
-                    a.nav-btn.edit-album-popup Редактировать альбом
+                    //- a.nav-btn.edit-album-popup Редактировать альбом
                     a.nav-btn.nav-more
                         i.fas.fa-ellipsis-h
                     
@@ -95,13 +95,13 @@ block content
             //- include includes/myprofile/statistics.pug
 
             //- =====> вкладка Избранное
-            include includes/myprofile/favorites.pug
+            //- include includes/myprofile/favorites.pug
 
             //- =====> вкладка Альбом
             //- include includes/myprofile/album-look.pug
 
             //- =====> вкладка Комментарии
-            //- include includes/myprofile/comments.pug
+            include includes/myprofile/comments.pug
 
 
         //- для просмотра Альбомов
@@ -121,7 +121,7 @@ block content
 
 block scripts 
     //- for JG
-    script(src="./js/libs/jquery.justifiedGallery.js")
+    //- script(src="./js/libs/jquery.justifiedGallery.js")
 
 
 

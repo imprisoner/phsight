@@ -8,6 +8,10 @@ block content
     main.profile
         .profile-top
             .hero 
+                .dots-menu
+                        .dots-wrap
+                            a(href="#").dots-option.complain Пожаловаться
+                            a(href="#").dots-option.ignore Заблокировать
                 .container.flex
                     .flex
                         div(style="background-image: url(./img/profile/avatar.jpg").hero-avatar
@@ -70,17 +74,14 @@ block content
                         i.fas.fa-envelope
                     a.nav-btn.nav-more
                         i.fas.fa-ellipsis-h
-                    .dots-menu
-                        .dots-wrap
-                            a(href="#").dots-option.complain Пожаловаться
-                            a(href="#").dots-option.ignore Заблокировать
+                    
 
                 include includes/nav-tabs.pug
                     block tabs
                         +tabs(['Фотографии', 'Альбомы', 'Избранное', 'Статистика', 'Подписчики', ''])
         .profile-body
             //- =====> вкладка Фотографии
-            //- include includes/profile/photos.pug
+            include includes/profile/photos.pug
 
             //- =====> вкладка Подписчики
             //- include includes/profile/subscribers.pug
@@ -95,7 +96,7 @@ block content
             //- include includes/profile/favorites.pug
 
             //- =====> вкладка Альбом
-            include includes/profile/album-look.pug
+            //- include includes/profile/album-look.pug
 
         //- .profile-footer 
             .container.flex

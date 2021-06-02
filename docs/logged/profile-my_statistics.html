@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Photosight - Профиль</title>
+    <title>Photosight - Мой профиль</title>
     <link href="styles/common.css" rel="stylesheet">
     <link href="styles/profile_statistics.css" rel="stylesheet">
 </head>
@@ -23,12 +23,12 @@
                         class="header-navlink" href="#">Работа</a>
                 </nav>
                 <form class="header-search search" action="" method="post"><a class="header-search-btn"><i
-                            class="fas fa-search"></i></a> <input class="header-search-field" placeholder=""
+                            class="fas fa-search"></i></a> <input class="header-search-field" placeholder="" type="text"
                         id="header_search" name="header_search"></form>
             </div>
             <div class="header-user-logged">
                 <p class="header-greets">Привет, Sub-Zero!</p><a class="header-user-avatar user-avatar" href="#"
-                    style="background-image:  url(./img/subscribers/image%2039-3.jpg)"></a>
+                    style="background-image: url(./img/subscribers/image%2039-3.jpg)"></a>
                 <div class="new-message"><i class="far fa-envelope"></i></div>
             </div>
         </div>
@@ -45,7 +45,7 @@
             <div class="user-navigation">
                 <div class="container">
                     <div class="user-info"><a class="user-avatar"
-                            style="background-image:  url(./img/subscribers/image%2039-3.jpg)"></a><span
+                            style="background-image: url(./img/subscribers/image%2039-3.jpg)"></a><span
                             class="user-name">Sub-Zero</span></div>
                     <nav class="user-nav"><a class="user-navlink" href="#">Профиль</a><a class="user-navlink"
                             href="#">Настройки</a><a class="user-navlink" href="#">Переписка<div class="message"><i
@@ -105,16 +105,36 @@
             <div class="trigger"></div>
         </div>
     </div>
-    <main class="profile">
+    <div class="add-album-menu">
+        <form class="wrap" id="set-new-form" action="/my/set/create/" method="post">
+            <div class="add-album-close"><i class="far fa-times"></i></div>
+            <h5>Создание нового альбома</h5><input class="album-name-field" maxlength="50" name="PhotoSet[caption]"
+                id="PhotoSet_caption" type="text" placeholder="Введите название нового альбома"><a
+                class="create-album-button btn" id="create_set_button">Создать альбом</a>
+        </form>
+    </div>
+    <div class="edit-album-menu">
+        <form class="wrap" id="set-new-form" action="/my/set/update/60291/" method="post">
+            <div class="edit-album-close"><i class="far fa-times"></i></div>
+            <h5>Редактирование альбома</h5>
+            <p class="hint">Название альбома</p><input class="album-name-field" maxlength="50" name="PhotoSet[caption]"
+                id="PhotoSet_caption" type="text" placeholder="Введите название альбома">
+            <p class="hint">Описание</p><textarea class="album-description-field" maxlength="255"
+                placeholder="Краткое описание альбома, до 255 знаков." name="PhotoSet[description]"
+                id="PhotoSet_description"></textarea><a class="save-btn btn" id="create_set_button">Сохранить
+                изменения</a>
+        </form>
+    </div>
+    <main class="profile my-profile">
+        <div class="overlay"></div>
         <div class="profile-top">
             <div class="hero">
                 <div class="dots-menu">
-                    <div class="dots-wrap"><a class="dots-option complain" href="#">Пожаловаться</a><a
-                            class="dots-option ignore" href="#">Заблокировать</a></div>
+                    <div class="dots-wrap"><a class="dots-option settings" href="#">Настройки</a></div>
                 </div>
                 <div class="container flex">
                     <div class="flex">
-                        <div class="hero-avatar" style="background-image:  url(./img/profile/avatar.jpg)  "></div>
+                        <div class="hero-avatar" style="background-image: url(./img/profile/avatar.jpg)"></div>
                     </div>
                     <div class="hero-wrap">
                         <div class="flex">
@@ -176,16 +196,13 @@
                     </div>
                 </div>
                 <div class="nav-actions"><a class="nav-btn nav-info"><i class="fas fa-info"></i></a><a
-                        class="nav-btn nav-subscribe" data-member-id="460877"> <span>Подписаться</span></a><a
-                        class="nav-btn nav-message" href="#"><i class="fas fa-envelope"></i></a><a
-                        class="nav-btn nav-more"><i class="fas fa-ellipsis-h"></i></a>
-
-                </div>
+                        class="nav-btn nav-more"><i class="fas fa-ellipsis-h"></i></a></div>
                 <nav class="tabs">
                     <div class="swiper-container">
                         <div class="swiper-wrapper"><a class="tab-link swiper-slide" href="#">Фотографии</a><a
                                 class="tab-link swiper-slide" href="#">Альбомы</a><a class="tab-link swiper-slide"
-                                href="#">Избранное</a><a class="tab-link swiper-slide" href="#">Статистика</a><a
+                                href="#">Комментарии</a><a class="tab-link swiper-slide" href="#">Избранное</a><a
+                                class="tab-link swiper-slide active" href="#">Статистика</a><a
                                 class="tab-link swiper-slide" href="#">Подписчики</a><a class="tab-link swiper-slide"
                                 href="#"></a></div>
                     </div>
@@ -221,51 +238,63 @@
                                 <tbody class="statistics-content">
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%201.jpg)"></a></td>
+                                                style="background-image: url(./img/popgallery/image%201.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%202.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%202.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%203.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%203.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%204.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%204.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%205.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%205.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%206.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%206.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%201.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%201.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%202.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%202.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%203.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%203.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%204.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%204.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%205.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%205.jpg)"></a>
+                                        </td>
                                     </tr>
                                     <tr class="statistics-table-row">
                                         <td class="statistics-image"><a
-                                                style="background-image: url(./img/popgallery/image%206.jpg)  "></a></td>
+                                                style="background-image: url(./img/popgallery/image%206.jpg)"></a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -609,7 +638,7 @@
         <div class="profile-footer">
             <div class="container flex">
                 <div class="profile-pagination pagination"></div>
-                <div class="profile-current-page"><input value="1"><span>стр.</span></div>
+                <div class="profile-current-page"><input type="text" value="1"><span>стр.</span></div>
             </div>
         </div>
         <div class="ads">

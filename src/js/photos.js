@@ -18,16 +18,6 @@ $(function () {
 
     initPagination(480)
 
-    // setting JustifiedGallery plugin
-    if ($('.justified-gallery').length > 0) {
-        $('.justified-gallery').justifiedGallery({
-            rowHeight: 415,
-            margins: 2,
-            lastRow: 'justify',
-            randomize: true
-        })
-    }
-
     // categories dropdown
 
     $('.content-categories').on('click', function (e) {

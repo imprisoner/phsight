@@ -16,8 +16,8 @@ const PUG_PAGES = fs.readdirSync(PUG_DIR).filter(filename => filename.endsWith('
 console.log(PUG_DIR)
 console.log(PUG_PAGES)
 module.exports = {
-    // mode: 'production',
-    mode: 'development',
+    mode: 'production',
+    // mode: 'development',
     context: path.resolve(__dirname, 'src'),
     resolve: {
         extensions: ['.js', '.less'],
@@ -50,7 +50,7 @@ module.exports = {
         main: './main.js',
         index: './index.js',
         photos: './photos.js',
-        profile: './profile.js',
+        // profile: './profile.js',
         view: './view.js',
         error: './error.js',
         techworks: './techworks.js',
@@ -66,7 +66,7 @@ module.exports = {
         jobs: './jobs.js'
 
     },
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         port: 3000

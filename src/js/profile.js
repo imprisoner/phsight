@@ -24,15 +24,7 @@ $(function () {
 
     initPagination(680)
 
-    // setting JustifiedGallery plugin
-    if ($('.justified-gallery').length > 0) {
-        $('.justified-gallery').justifiedGallery({
-            rowHeight: 310,
-            margins: 2,
-            lastRow: 'justify',
-            randomize: true
-        })
-    }
+    
 
     // init small nav
 

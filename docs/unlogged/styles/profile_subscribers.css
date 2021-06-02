@@ -258,6 +258,7 @@
   align-items: center;
   justify-content: center;
   min-height: 120px;
+  box-shadow: 0px 9px 100px #3d3d3d;
 }
 .popup-menu .insertion {
   font-family: Roboto;
@@ -266,6 +267,15 @@
   font-size: 18.75px;
   line-height: 130%;
   color: #ffffff;
+}
+.popup-menu .insertion h5 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18.75px;
+  line-height: 130%;
+  color: #ffffff;
+  padding-right: 100px;
 }
 .popup-menu .insertion h3 {
   font-family: Roboto;
@@ -285,15 +295,17 @@
   font-weight: normal;
   font-size: 15px;
   line-height: 175%;
-  color: #282828;
+  color: #ffffff;
   margin: 20px 0;
   width: 100%;
   border-radius: 10px;
   padding: 10px 20px;
-  min-height: 67px;
+  min-height: 100px;
   outline: none;
   resize: none;
   overflow: hidden;
+  background: #ffffff0d;
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 .popup-menu .insertion p {
   margin-top: 20px;
@@ -317,6 +329,7 @@
   color: #ffffff;
   cursor: pointer;
   outline: none;
+  margin-left: auto;
 }
 .popup-menu .insertion .btn:hover,
 .popup-menu .insertion .btn:focus {
@@ -354,6 +367,9 @@
     font-size: 18.75px;
     line-height: 130%;
     color: #ffffff;
+  }
+  .popup-menu .insertion h5 {
+    padding-right: unset;
   }
 }
 .profile-top {
@@ -407,8 +423,72 @@
 .profile-photos {
   padding-bottom: 40px;
 }
-
+.profile .pic-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.profile .pic-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  transform: rotate(-180deg);
+  padding: 20px;
+}
+.profile .pic-name {
+  padding-top: 12px;
+  display: flex;
+  margin-right: 15px;
+  align-items: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 175%;
+  color: #fff;
+  flex-wrap: wrap;
+}
+.profile .pic-name a {
+  color: #fff;
+  white-space: nowrap;
+}
+.profile .pic-name b {
+  color: #fff;
+  white-space: nowrap;
+}
+.profile .pic-photographer span {
+  font-weight: 400;
+}
+.profile .pic-photographer a {
+  color: #ffffff;
+}
+.profile .pic-actions {
+  padding-top: 12px;
+  display: flex;
+}
+.profile .pic-actions span {
+  margin-left: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18.75px;
+  line-height: 130%;
+  color: #fff;
+}
+.profile .pic-actions i {
+  font-size: 20px;
+  line-height: 165%;
+  color: #fff;
+}
+.profile .pic-actions div {
+  display: flex;
+  align-items: center;
+}
+.profile .pic-actions div:last-child {
+  margin-left: 25px;
+}
 .hero {
+  position: relative;
   padding-bottom: 100px;
 }
 .hero .container {
@@ -713,8 +793,8 @@
   left: -60px;
 }
 .dots-menu {
-  bottom: -77px;
   right: 60px;
+  top: calc(100% + 215px);
 }
 @media (max-width: 1439px) {
   .nav-actions {
@@ -728,7 +808,6 @@
     left: -40px;
   }
   .dots-menu {
-    bottom: -77px;
     right: 40px;
   }
 }
@@ -822,20 +901,8 @@
     left: calc(50% - 50vw);
   }
   .dots-menu {
-    bottom: 16px;
     right: 20px;
-  }
-}
-@media (max-width: 1023px) {
-  .dots-menu {
-    bottom: -4px;
-    right: 20px;
-  }
-}
-@media (max-width: 767px) {
-  .dots-menu {
-    bottom: -24px;
-    right: 20px;
+    top: calc(100% + 48px);
   }
 }
 @media (max-width: 679px) {
@@ -885,9 +952,6 @@
   }
   .nav-info {
     margin-right: unset;
-  }
-  .dots-menu {
-    right: 5px;
   }
 }
 .profile-subscribers {
@@ -991,6 +1055,201 @@
   }
   .subscriber-description {
     padding: 0;
+  }
+}
+.my-profile .overlay {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #434343aa;
+  z-index: 5;
+}
+.my-profile .overlay.active {
+  display: flex;
+}
+.my-profile .profile-photos.my .justified-gallery > a > .jg-caption,
+.my-profile .album-look.my .justified-gallery > a > .jg-caption,
+.my-profile .overlay .justified-gallery > a > .jg-caption,
+.my-profile .profile-photos.my .justified-gallery > div > .jg-caption,
+.my-profile .album-look.my .justified-gallery > div > .jg-caption,
+.my-profile .overlay .justified-gallery > div > .jg-caption,
+.my-profile .profile-photos.my .justified-gallery > figure > .jg-caption,
+.my-profile .album-look.my .justified-gallery > figure > .jg-caption,
+.my-profile .overlay .justified-gallery > figure > .jg-caption {
+  height: unset;
+  top: 0;
+  background: #434343aa;
+  transform: none;
+}
+.my-profile .profile-photos.my .justified-gallery > a > .jg-caption.jg-caption-visible,
+.my-profile .album-look.my .justified-gallery > a > .jg-caption.jg-caption-visible,
+.my-profile .overlay .justified-gallery > a > .jg-caption.jg-caption-visible,
+.my-profile .profile-photos.my .justified-gallery > div > .jg-caption.jg-caption-visible,
+.my-profile .album-look.my .justified-gallery > div > .jg-caption.jg-caption-visible,
+.my-profile .overlay .justified-gallery > div > .jg-caption.jg-caption-visible,
+.my-profile .profile-photos.my .justified-gallery > figure > .jg-caption.jg-caption-visible,
+.my-profile .album-look.my .justified-gallery > figure > .jg-caption.jg-caption-visible,
+.my-profile .overlay .justified-gallery > figure > .jg-caption.jg-caption-visible {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.my-profile .profile-photos.my .my-photo-footer .wrap,
+.my-profile .album-look.my .my-photo-footer .wrap,
+.my-profile .overlay .my-photo-footer .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+.my-profile .profile-photos.my .my-photo-preview,
+.my-profile .album-look.my .my-photo-preview,
+.my-profile .overlay .my-photo-preview,
+.my-profile .profile-photos.my .my-photo-close,
+.my-profile .album-look.my .my-photo-close,
+.my-profile .overlay .my-photo-close {
+  display: none;
+}
+.my-profile .profile-photos.my .my-photo-preview,
+.my-profile .album-look.my .my-photo-preview,
+.my-profile .overlay .my-photo-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 55px;
+}
+.my-profile .profile-photos.my .my-photo-close,
+.my-profile .album-look.my .my-photo-close,
+.my-profile .overlay .my-photo-close {
+  position: absolute;
+  font-size: 20px;
+  line-height: 165%;
+  color: #ffffff;
+  top: 10px;
+  right: 20px;
+}
+.my-profile .profile-photos.my .my-photo-actions a,
+.my-profile .album-look.my .my-photo-actions a,
+.my-profile .overlay .my-photo-actions a {
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 175%;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.my-profile .profile-photos.my .my-photo-actions a:not(:last-child),
+.my-profile .album-look.my .my-photo-actions a:not(:last-child),
+.my-profile .overlay .my-photo-actions a:not(:last-child) {
+  margin-bottom: 20px;
+}
+.my-profile .nav .add-photo,
+.my-profile .nav .album-popup,
+.my-profile .nav .edit-album-popup {
+  border: 2px solid #eaeaea;
+  border-radius: 10px;
+  padding: 5px 12px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 40px;
+  height: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 175%;
+  color: #282828;
+}
+.my-profile .nav .add-photo:hover,
+.my-profile .nav .album-popup:hover,
+.my-profile .nav .edit-album-popup:hover,
+.my-profile .nav .add-photo:focus,
+.my-profile .nav .album-popup:focus,
+.my-profile .nav .edit-album-popup:focus {
+  background-color: #eaeaea;
+}
+.my-profile .nav .add-photo:active,
+.my-profile .nav .album-popup:active,
+.my-profile .nav .edit-album-popup:active {
+  border-color: #bcbcbc;
+  background-color: #bcbcbc;
+  outline: none;
+}
+.my-profile .tabs {
+  margin: 0;
+  margin-left: 60px;
+}
+.my-profile .tabs:before,
+.my-profile .tabs:after {
+  left: -60px;
+}
+.my-profile .tab-link:last-child {
+  margin-left: unset;
+}
+@media (max-width: 1439px) {
+  .my-profile .tabs {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 1279px) {
+  .my-profile .profile-photos.my .justified-gallery > a > .jg-caption.jg-caption-visible,
+  .my-profile .overlay .justified-gallery > a > .jg-caption.jg-caption-visible,
+  .my-profile .profile-photos.my .justified-gallery > div > .jg-caption.jg-caption-visible,
+  .my-profile .overlay .justified-gallery > div > .jg-caption.jg-caption-visible,
+  .my-profile .profile-photos.my .justified-gallery > figure > .jg-caption.jg-caption-visible,
+  .my-profile .overlay .justified-gallery > figure > .jg-caption.jg-caption-visible {
+    display: none;
+  }
+  .my-profile .profile-photos.my .my-photo-footer,
+  .my-profile .overlay .my-photo-footer {
+    display: none;
+  }
+  .my-profile .profile-photos.my .my-photo-footer .wrap,
+  .my-profile .overlay .my-photo-footer .wrap {
+    width: 320px;
+    height: 405px;
+    max-height: 100vh;
+    background: #434343;
+    box-shadow: 0px 9px 100px #3D3D3D;
+    border-radius: 20px;
+    text-align: center;
+  }
+  .my-profile .profile-photos.my .my-photo-preview,
+  .my-profile .overlay .my-photo-preview,
+  .my-profile .profile-photos.my .my-photo-close,
+  .my-profile .overlay .my-photo-close {
+    display: block;
+  }
+  .my-profile .tabs {
+    margin: 0 auto;
+    width: 100%;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+  }
+  .my-profile .tabs::before,
+  .my-profile .tabs::after {
+    display: none;
+  }
+}
+@media (max-width: 808px) {
+  .my-profile .tab-link:last-child {
+    margin-left: 40px;
   }
 }
 
